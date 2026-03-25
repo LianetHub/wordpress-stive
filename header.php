@@ -2,17 +2,17 @@
 <html lang="en" prefix="og: https://ogp.me/ns#">
 
 <head>
-	<?php if (is_page()) { ?>
-  <title><?php echo get_the_title() ?></title>
-	<?php } ?>
-	<?php if (is_single()) { ?>
-  <title><?php echo get_the_title() ?></title>
-	<?php } ?>
-	<?php if (is_search()) { ?>
-  <title>Search | Stive</title>
-	<meta name="description" content="Search results for your query for IT Medical's services">
-	<meta name="keywords" content="IT medical">
-	<?php } ?>
+  <?php if (is_page()) { ?>
+    <title><?php echo get_the_title() ?></title>
+  <?php } ?>
+  <?php if (is_single()) { ?>
+    <title><?php echo get_the_title() ?></title>
+  <?php } ?>
+  <?php if (is_search()) { ?>
+    <title>Search | Stive</title>
+    <meta name="description" content="Search results for your query for IT Medical's services">
+    <meta name="keywords" content="IT medical">
+  <?php } ?>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,8 +26,9 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
   <!-- favicon -->
-	<?php wp_head();?>
+  <?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
-	<?php wp_body_open(); ?>
+  <?php wp_body_open(); ?>
   <div class="wrapper">
