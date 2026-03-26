@@ -32,3 +32,5 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <div class="wrapper">
+    <?php require_once(TEMPLATE_PATH . '_header-main.php'); ?>
+    <main class="main">

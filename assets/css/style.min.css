@@ -15,6 +15,14 @@
 }
 
 @font-face {
+    font-family: HelveticaNeue;
+    font-display: swap;
+    src: url(../fonts/HelveticaNeue-Thin.woff2) format("woff2"), url(../fonts/HelveticaNeue-Thin.woff) format("woff");
+    font-weight: 100;
+    font-style: normal
+}
+
+@font-face {
     font-family: SFProDisplay;
     font-display: swap;
     src: url(../fonts/SFProDisplay-Bold.woff2) format("woff2"), url(../fonts/SFProDisplay-Bold.woff) format("woff");
@@ -27,14 +35,6 @@
     font-display: swap;
     src: url(../fonts/SFProDisplay-Black.woff2) format("woff2"), url(../fonts/SFProDisplay-Black.woff) format("woff");
     font-weight: 900;
-    font-style: normal
-}
-
-@font-face {
-    font-family: SFProDisplay;
-    font-display: swap;
-    src: url(../fonts/SFProDisplay-Heavy.woff2) format("woff2"), url(../fonts/SFProDisplay-Heavy.woff) format("woff");
-    font-weight: 800;
     font-style: normal
 }
 
@@ -55,9 +55,17 @@
 }
 
 @font-face {
-    font-family: HelveticaNeue;
+    font-family: SFProDisplay;
     font-display: swap;
-    src: url(../fonts/HelveticaNeue-Thin.woff2) format("woff2"), url(../fonts/HelveticaNeue-Thin.woff) format("woff");
+    src: url(../fonts/SFProDisplay-Heavy.woff2) format("woff2"), url(../fonts/SFProDisplay-Heavy.woff) format("woff");
+    font-weight: 800;
+    font-style: normal
+}
+
+@font-face {
+    font-family: SFProDisplay;
+    font-display: swap;
+    src: url(../fonts/SFProDisplay-Thin.woff2) format("woff2"), url(../fonts/SFProDisplay-Thin.woff) format("woff");
     font-weight: 100;
     font-style: normal
 }
@@ -73,24 +81,16 @@
 @font-face {
     font-family: SFProDisplay;
     font-display: swap;
-    src: url(../fonts/SFProDisplay-Ultralight.woff2) format("woff2"), url(../fonts/SFProDisplay-Ultralight.woff) format("woff");
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    font-family: SFProDisplay;
-    font-display: swap;
-    src: url(../fonts/SFProDisplay-Thin.woff2) format("woff2"), url(../fonts/SFProDisplay-Thin.woff) format("woff");
-    font-weight: 100;
-    font-style: normal
-}
-
-@font-face {
-    font-family: SFProDisplay;
-    font-display: swap;
     src: url(../fonts/SFProDisplay-Semibold.woff2) format("woff2"), url(../fonts/SFProDisplay-Semibold.woff) format("woff");
     font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: SFProDisplay;
+    font-display: swap;
+    src: url(../fonts/SFProDisplay-Ultralight.woff2) format("woff2"), url(../fonts/SFProDisplay-Ultralight.woff) format("woff");
+    font-weight: 400;
     font-style: normal
 }
 
@@ -4839,7 +4839,7 @@ body {
 }
 
 .options-card.active {
-    background: url(../img/options-card-bg-pattern.webp) no-repeat center center, #16eedc;
+    background: url(../images/options-card-bg-pattern.webp) no-repeat center center, #16eedc;
     background-size: cover;
     max-width: 704px;
     width: 100%;
@@ -5155,101 +5155,6 @@ body {
     display: -ms-flexbox;
     display: flex;
     gap: 16px
-}
-
-.hero {
-    min-height: 100vh;
-    background: radial-gradient(circle, #1f2228, #18191b);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative
-}
-
-.hero-pattern__bottom {
-    position: absolute;
-    width: calc(100vw + 46px);
-    height: calc(100vh + 10%);
-    background: url(img/bg-pattern.webp) center center no-repeat;
-    mix-blend-mode: multiply;
-    bottom: -8%;
-    left: -23px
-}
-
-.hero-pattern__top {
-    position: absolute;
-    width: calc(100vw + 46px);
-    height: calc(100vh + 5%);
-    background: url(img/bg-pattern.webp) center center no-repeat;
-    mix-blend-mode: multiply;
-    top: -20%;
-    left: -23px;
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg)
-}
-
-.container {
-    margin-top: 149px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    gap: 96px
-}
-
-.container__content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    gap: 16px
-}
-
-.container__text {
-    color: #19d6c7;
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: 400
-}
-
-.container__header {
-    background: linear-gradient(-10deg, #b2b2b2 0, #eaeaea 53%, #999 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: inline-block;
-    text-align: center;
-    font-weight: 700
-}
-
-.container-links {
-    padding-top: 64px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 120px
-}
-
-.container-links__divider, .container-links__link {
-    font-weight: 100;
-    font-size: 48px;
-    color: #d9d9d9;
-    border-bottom: rgba(255, 255, 255, .14) 1px solid;
-    line-height: 100%
 }
 
 @media (min-width:389.98px) {
@@ -6478,31 +6383,6 @@ body {
     }
 }
 
-@media screen and (max-width:768px) {
-    .container {
-        gap: 36px;
-        padding: 0 8px
-    }
-
-    .container .logo svg {
-        width: 135px;
-        height: 38px
-    }
-
-    .container__text {
-        font-size: 20px
-    }
-
-    .container-links {
-        padding-top: 32px;
-        gap: 28px
-    }
-
-    .container-links__divider, .container-links__link {
-        font-size: 24px
-    }
-}
-
 @media (max-width:767.98px) {
     body.menu-lock {
         overflow: hidden
@@ -6839,7 +6719,7 @@ body {
     }
 
     .options-card:hover {
-        background: url(../img/options-card-bg-pattern.webp) no-repeat center center, #16eedc;
+        background: url(../images/options-card-bg-pattern.webp) no-repeat center center, #16eedc;
         background-size: cover;
         max-width: 704px;
         width: 100%;
