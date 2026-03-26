@@ -41,10 +41,10 @@ function defer_js($url)
 add_filter('script_loader_tag', 'defer_js', 11);
 
 
-add_action('wp_head', function() {
+add_action('wp_head', function () {
     $header_scripts = get_field('header_scripts', 'options');
-    
-    if( !empty($header_scripts) ) {
+
+    if (!empty($header_scripts)) {
         echo "\n<!-- Global Header Scripts from ACF -->\n";
         echo $header_scripts;
         echo "\n<!-- End Global Header Scripts -->\n";
@@ -52,12 +52,20 @@ add_action('wp_head', function() {
 }, 100);
 
 
-add_action('wp_footer', function() {
+add_action('wp_footer', function () {
     $footer_scripts = get_field('footer_scripts', 'options');
-    
-    if( !empty($footer_scripts) ) {
+
+    if (!empty($footer_scripts)) {
         echo "\n<!-- Global Footer Scripts from ACF -->\n";
         echo $footer_scripts;
         echo "\n<!-- End Global Footer Scripts -->\n";
     }
 }, 100);
+
+// add support svg mime type 
+function allow_svg_uploads($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'allow_svg_uploads');

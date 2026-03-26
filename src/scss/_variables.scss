@@ -2,23 +2,23 @@
 @use "sass:math";
 @use "mixins" as *;
 
-// Шрифты
+// Fonts
+$fontfamily: "SFProDisplay" !default;
+$font-helvetica: "HelveticaNeue" !default;
 
-$fontfamily: "HelveticaNeue" !default;
-$font-sf: "SFProDisplay" !default;
 
-// Шрифты
-
-$md1: 1219.98px !default;
-$md2: 991.98px !default;
-$md3: 767.98px !default;
-$md4: 575.98px !default;
-$md5: 389.98px !default;
+// Breakpoints
+$md1: 1455.98px !default;
+$md2: 1219.98px !default;
+$md3: 991.98px !default;
+$md4: 767.98px !default;
+$md5: 575.98px !default;
+$md6: 389.98px !default;
 
 // ПЕРЕМЕННЫЕ
 $minWidth: 320; // Минимальная ширина страницы
 $maxWidth: 1920; // Ширина макета
-$maxWidthContainer: rem(1680); // Максимальная ширина ограничивающего контейнера
+$maxWidthContainer: rem(1424); // Максимальная ширина ограничивающего контейнера
 $containerPadding: 30;
 
 $white: #ffffff;
