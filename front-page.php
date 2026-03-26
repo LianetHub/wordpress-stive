@@ -1876,39 +1876,7 @@ defined( 'ABSPATH' ) || exit; //silence is gold
                     </svg>
                 </div>
             </div>
-            <form class="form-container" id="proposal-form-form">
-                <div class="input-container">
-                    <label for="form-name">Name</label>
-                    <input type="text" name="form-name" id="form-name" placeholder="Name">
-                    <span class="input-error" id="form-name-error"></span>
-                </div>
-                <div class="input-container">
-                    <label for="form-phone">Phone</label>
-                    <div class="phone-input-container">
-                        <div class="country-select">
-                            <span>+38</span>
-                            <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                                <path d="M1 1L5 5L9 1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round""" ) />>
-                            </svg>
-                        </div>
-                        <div class="divider"></div>
-                        <input type="tel" placeholder=" " class="phone-field" name="form-phone" id="form-phone">
-                    </div>
-                    <span class="input-error" id="form-phone-error"></span>
-                </div>
-                <div class="input-container">
-                    <label for="form-email">E-mail</label>
-                    <input type="email" name="form-email" id="form-email" placeholder="E-mail">
-                    <span class="input-error" id="form-email-error"></span>
-                </div>
-                <div class="input-container">
-                    <label for="form-message">Message</label>
-                    <input type="text" name="form-message" id="form-message" placeholder="Message">
-                </div>
-                <div class="form-buttons">
-                    <button type="submit" class="btn__secondary" id="apply-btn">Apply Now</button>
-                </div>
-            </form>
+            <?php echo do_shortcode('[contact-form-7 id="7c8db98" title="Get Proposal"]'); ?>
         </div>
     </div>
 </main>
