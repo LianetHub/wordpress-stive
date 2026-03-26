@@ -10,16 +10,16 @@ define('JS_DIR', get_template_directory() . '/assets/js');
 define('STYLES_DIR', get_template_directory() . '/assets/css');
 
 
-function r4_themestive_style()
+function r4_themestive_enqueue_style()
 {
     wp_enqueue_style('swiper', STYLES_PATH . '/libs/swiper-bundle.min.css', array(), filemtime(STYLES_DIR . '/libs/swiper-bundle.min.css'));
     wp_enqueue_style('fancybox', STYLES_PATH . '/libs/fancybox.css', array(), filemtime(STYLES_DIR . '/libs/fancybox.css'));
     wp_enqueue_style('reset', STYLES_PATH . '/reset.min.css', array(), filemtime(STYLES_DIR . '/reset.min.css'));
     wp_enqueue_style('main-style', STYLES_PATH . '/style.min.css', array(), filemtime(STYLES_DIR . '/style.min.css'));
 }
-add_action('wp_enqueue_scripts', 'r4_themestive_style');
+add_action('wp_enqueue_scripts', 'r4_themestive_enqueue_style');
 
-function r4_theme_enqueue_scripts()
+function r4_themestive_enqueue_scripts()
 {
     wp_deregister_script('jquery');
     wp_enqueue_script('jquery', JS_PATH . '/libs/jquery-4.0.0.min.js', array(), filemtime(JS_DIR . '/libs/jquery-4.0.0.min.js'), ['in_footer' => true, 'strategy'  => 'async',]);
@@ -27,7 +27,7 @@ function r4_theme_enqueue_scripts()
     wp_enqueue_script('fancybox-js', JS_PATH . '/libs/fancybox.umd.js', array(), filemtime(JS_DIR . '/libs/fancybox.umd.js'), ['in_footer' => true, 'strategy'  => 'async',]);
     wp_enqueue_script('app-js', JS_PATH . '/app.min.js', array('jquery'), filemtime(JS_DIR . '/app.min.js'), ['in_footer' => true, 'strategy'  => 'async',]);
 }
-add_action('wp_enqueue_scripts', 'r4_theme_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'r4_themestive_enqueue_scripts');
 
 // mark recaptcha js deferred
 function defer_js($url)
