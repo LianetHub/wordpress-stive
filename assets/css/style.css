@@ -3165,6 +3165,16 @@ select.select {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.5rem;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.header__languages-toggler:hover {
+  background: rgba(25, 214, 199, 0.1);
+}
+
+.header__languages-toggler:active {
+  background: rgba(25, 214, 199, 0.15);
 }
 
 .header__languages-icon {
