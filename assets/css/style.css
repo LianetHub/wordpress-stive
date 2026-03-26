@@ -5020,7 +5020,7 @@ body {
 }
 
 .options-card.active {
-  background: url(../images/options-card-bg-pattern.webp) no-repeat center center, #16eedc;
+  background: url(../img/options-card-bg-pattern.webp) no-repeat center center, #16eedc;
   background-size: cover;
   max-width: 704px;
   width: 100%;
@@ -5358,7 +5358,7 @@ body {
   position: absolute;
   width: calc(100vw + 46px);
   height: calc(100vh + 10%);
-  background: url(./images/bg-pattern.webp) center center no-repeat;
+  background: url(./img/bg-pattern.webp) center center no-repeat;
   mix-blend-mode: multiply;
   bottom: -8%;
   left: -23px;
@@ -5368,7 +5368,7 @@ body {
   position: absolute;
   width: calc(100vw + 46px);
   height: calc(100vh + 5%);
-  background: url(./images/bg-pattern.webp) center center no-repeat;
+  background: url(./img/bg-pattern.webp) center center no-repeat;
   mix-blend-mode: multiply;
   top: -20%;
   left: -23px;
@@ -7091,7 +7091,7 @@ body {
   }
 
   .options-card:hover {
-    background: url(../images/options-card-bg-pattern.webp) no-repeat center center, #16eedc;
+    background: url(../img/options-card-bg-pattern.webp) no-repeat center center, #16eedc;
     background-size: cover;
     max-width: 704px;
     width: 100%;

@@ -22,7 +22,7 @@ add_action('wp_enqueue_scripts', 'r4_themestive_style');
 function r4_theme_enqueue_scripts()
 {
     wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', JS_PATH . '/libs/jquery-4.0.0.min.js', array(), filemtime(JS_DIR . '/libs/jquery-4.0.0.min.js'), ['in_footer' => true, 'strategy'  => 'async',]));
+    wp_enqueue_script('jquery', JS_PATH . '/libs/jquery-4.0.0.min.js', array(), filemtime(JS_DIR . '/libs/jquery-4.0.0.min.js'), ['in_footer' => true, 'strategy'  => 'async',]);
     wp_enqueue_script('swiper-js', JS_PATH . '/libs/swiper-bundle.min.js', array(), filemtime(JS_DIR . '/libs/swiper-bundle.min.js'), ['in_footer' => true, 'strategy'  => 'async',]);
     wp_enqueue_script('fancybox-js', JS_PATH . '/libs/fancybox.umd.js', array(), filemtime(JS_DIR . '/libs/fancybox.umd.js'), ['in_footer' => true, 'strategy'  => 'async',]);
     wp_enqueue_script('app-js', JS_PATH . '/app.min.js', array('jquery'), filemtime(JS_DIR . '/app.min.js'), ['in_footer' => true, 'strategy'  => 'async',]);
