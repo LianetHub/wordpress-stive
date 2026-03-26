@@ -1,3 +1,11 @@
+<?php
+defined( 'ABSPATH' ) || exit; //silence is gold
+/*
+ * Template Name: Main Home
+*/
+
+<?php $page_id = $post->ID; ?>
+
 <?php get_header(); ?>
 <main class="main">
     <nav class="nav">
@@ -353,7 +361,7 @@
                         Get Your AI Audit
                     </button>
                     <a href="#" class="btn-chat">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/whatsapp-icon.webp" alt="Chat icon" />
+                        <img src="<?php echo IMG_PATH ?>/assets/img/whatsapp-icon.webp" alt="Chat icon" />
                         Chat with Us
                     </a>
                 </div>
@@ -365,23 +373,23 @@
             <div class="hero-right-images">
                 <img
                     class="hero-float-img img-top-left"
-                    src="<?php echo get_template_directory_uri() ?>/assets/img/img-grok.webp"
+                    src="<?php echo IMG_PATH ?>/assets/img/img-grok.webp"
                     alt="grok AI" />
                 <img
                     class="hero-float-img img-bottom-left"
-                    src="<?php echo get_template_directory_uri() ?>/assets/img/img-copilot.webp"
+                    src="<?php echo IMG_PATH ?>/assets/img/img-copilot.webp"
                     alt="copilot AI" />
                 <img
                     class="hero-float-img img-center"
-                    src="<?php echo get_template_directory_uri() ?>/assets/img/img-claude.webp"
+                    src="<?php echo IMG_PATH ?>/assets/img/img-claude.webp"
                     alt="claude AI" />
                 <img
                     class="hero-float-img img-top-right"
-                    src="<?php echo get_template_directory_uri() ?>/assets/img/img-gpt.webp"
+                    src="<?php echo IMG_PATH ?>/assets/img/img-gpt.webp"
                     alt="chat gpt AI" />
                 <img
                     class="hero-float-img img-bottom-right"
-                    src="<?php echo get_template_directory_uri() ?>/assets/img/img-gemini.webp"
+                    src="<?php echo IMG_PATH ?>/assets/img/img-gemini.webp"
                     alt="gemini AI" />
                 <div class="hero-tag top">AI Visibility</div>
                 <div class="hero-tag bottom">Free Check</div>
@@ -404,19 +412,19 @@
             <div class="hero-badges">
                 <div class="hero-badge">
                     <div class="hero-badge-icon place">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/badge-place.webp" alt="LLM Marketing" />
+                        <img src="<?php echo IMG_PATH ?>/assets/img/badge-place.webp" alt="LLM Marketing" />
                     </div>
                     <span class="hero-badge-text">#1 in LLM Marketing</span>
                 </div>
                 <div class="hero-badge">
                     <div class="hero-badge-icon">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/badge-rating.webp" alt="Quality Rating" />
+                        <img src="<?php echo IMG_PATH ?>/assets/img/badge-rating.webp" alt="Quality Rating" />
                     </div>
                     <span class="hero-badge-text">4.9 Quality Rating</span>
                 </div>
                 <div class="hero-badge">
                     <div class="hero-badge-icon">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/badge-trust.webp" alt="Leaders Trust Us" />
+                        <img src="<?php echo IMG_PATH ?>/assets/img/badge-trust.webp" alt="Leaders Trust Us" />
                     </div>
                     <span class="hero-badge-text">Leaders Trust Us</span>
                 </div>
@@ -740,16 +748,16 @@
             <h2 class="solutions-title">Our<br />Solutions</h2>
             <div class="solutions-logos">
                 <div class="solutions-logo-item">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo-clutch.webp" alt="Clutch logo" />
+                    <img src="<?php echo IMG_PATH ?>/assets/img/logo-clutch.webp" alt="Clutch logo" />
                 </div>
                 <div class="solutions-logo-item">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo-techreviewer.webp" alt="Techreviewer logo" />
+                    <img src="<?php echo IMG_PATH ?>/assets/img/logo-techreviewer.webp" alt="Techreviewer logo" />
                 </div>
                 <div class="solutions-logo-item">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo-trustpilot.webp" alt="Trustpilot logo" />
+                    <img src="<?php echo IMG_PATH ?>/assets/img/logo-trustpilot.webp" alt="Trustpilot logo" />
                 </div>
                 <div class="solutions-logo-item">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo-marketinghub.webp" alt="Marketinghub logo" />
+                    <img src="<?php echo IMG_PATH ?>/assets/img/logo-marketinghub.webp" alt="Marketinghub logo" />
                 </div>
             </div>
         </div>
@@ -757,7 +765,7 @@
             <a href="#" class="solutions-card" data-solution="optimization">
                 <div class="solutions-card__image">
                     <img
-                        src="<?php echo get_template_directory_uri() ?>/assets/img/card-optimization.webp"
+                        src="<?php echo IMG_PATH ?>/assets/img/card-optimization.webp"
                         alt="AI SEO & GEO Optimization image" />
                 </div>
                 <p class="solutions-card__title">AI SEO & GEO Optimization</p>
@@ -777,7 +785,7 @@
             <a href="#" class="solutions-card" data-solution="analytics">
                 <div class="solutions-card__image">
                     <img
-                        src="<?php echo get_template_directory_uri() ?>/assets/img/card-analytics.webp"
+                        src="<?php echo IMG_PATH ?>/assets/img/card-analytics.webp"
                         alt="LLM Analytics & Audit image" />
                 </div>
                 <p class="solutions-card__title">LLM Analytics & Audit</p>
@@ -797,7 +805,7 @@
             <a href="#" class="solutions-card" data-solution="automation">
                 <div class="solutions-card__image">
                     <img
-                        src="<?php echo get_template_directory_uri() ?>/assets/img/card-automation.webp"
+                        src="<?php echo IMG_PATH ?>/assets/img/card-automation.webp"
                         alt="Ai Content & Automation image" />
                 </div>
                 <p class="solutions-card__title">Ai Content <br />& Automation</p>
@@ -816,7 +824,7 @@
             </a>
             <a href="#" class="solutions-card" data-solution="ads">
                 <div class="solutions-card__image">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/card-ads.webp" alt="LLM Ads Management image" />
+                    <img src="<?php echo IMG_PATH ?>/assets/img/card-ads.webp" alt="LLM Ads Management image" />
                 </div>
                 <p class="solutions-card__title">LLM Ads Management</p>
                 <svg
@@ -835,7 +843,7 @@
             <a href="#" class="solutions-card" data-solution="reputation">
                 <div class="solutions-card__image">
                     <img
-                        src="<?php echo get_template_directory_uri() ?>/assets/img/card-reputation.webp"
+                        src="<?php echo IMG_PATH ?>/assets/img/card-reputation.webp"
                         alt="LLM Reputation Management image" />
                 </div>
                 <p class="solutions-card__title">LLM Reputation Management</p>
@@ -854,7 +862,7 @@
             </a>
             <a href="#" class="solutions-card" data-solution="strategy">
                 <div class="solutions-card__image">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/card-strategy.webp" alt="LLM Brand Strategy image" />
+                    <img src="<?php echo IMG_PATH ?>/assets/img/card-strategy.webp" alt="LLM Brand Strategy image" />
                 </div>
                 <p class="solutions-card__title">LLM Brand Strategy</p>
                 <svg
@@ -874,16 +882,16 @@
         <div class="solutions-logos">
             <a href="#" class="btn-primary"> Explore All Solutions </a>
             <div class="solutions-logo-item">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo-clutch.webp" alt="Clutch logo" />
+                <img src="<?php echo IMG_PATH ?>/assets/img/logo-clutch.webp" alt="Clutch logo" />
             </div>
             <div class="solutions-logo-item">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo-techreviewer.webp" alt="Techreviewer logo" />
+                <img src="<?php echo IMG_PATH ?>/assets/img/logo-techreviewer.webp" alt="Techreviewer logo" />
             </div>
             <div class="solutions-logo-item">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo-trustpilot.webp" alt="Trustpilot logo" />
+                <img src="<?php echo IMG_PATH ?>/assets/img/logo-trustpilot.webp" alt="Trustpilot logo" />
             </div>
             <div class="solutions-logo-item">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/logo-marketinghub.webp" alt="Marketinghub logo" />
+                <img src="<?php echo IMG_PATH ?>/assets/img/logo-marketinghub.webp" alt="Marketinghub logo" />
             </div>
         </div>
     </section>
@@ -896,7 +904,7 @@
             <div class="case-study-card inactive">
                 <a href="#" class="case-study-image">
                     <img
-                        src="<?php echo get_template_directory_uri() ?>/assets/img/case_study-1.webp"
+                        src="<?php echo IMG_PATH ?>/assets/img/case_study-1.webp"
                         alt="How we fixed casino reviews" />
                 </a>
                 <div class="case-study-info">
@@ -913,7 +921,7 @@
             <div class="case-study-card">
                 <a href="#" class="case-study-image">
                     <img
-                        src="<?php echo get_template_directory_uri() ?>/assets/img/case_study-2.webp"
+                        src="<?php echo IMG_PATH ?>/assets/img/case_study-2.webp"
                         alt="Case Study - 80% Organic Traffic Growth" />
                 </a>
                 <div class="case-study-info">
@@ -941,7 +949,7 @@
             </div>
             <div class="case-study-card inactive">
                 <a href="#" class="case-study-image">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/case_study-3.webp" alt="YouTube & Reddit strategy" />
+                    <img src="<?php echo IMG_PATH ?>/assets/img/case_study-3.webp" alt="YouTube & Reddit strategy" />
                 </a>
                 <div class="case-study-info">
                     <div class="case-study-info__text">
@@ -964,15 +972,15 @@
             <div class="why-card why-card-ai">
                 <div class="why-imgs">
                     <img
-                        src="<?php echo get_template_directory_uri() ?>/assets/img/img-gemini.webp"
+                        src="<?php echo IMG_PATH ?>/assets/img/img-gemini.webp"
                         alt="Gemini AI"
                         class="why-imgs-image gemini" />
                     <img
-                        src="<?php echo get_template_directory_uri() ?>/assets/img/img-claude.webp"
+                        src="<?php echo IMG_PATH ?>/assets/img/img-claude.webp"
                         alt="Claude AI"
                         class="why-imgs-image claude" />
                     <img
-                        src="<?php echo get_template_directory_uri() ?>/assets/img/img-gpt.webp"
+                        src="<?php echo IMG_PATH ?>/assets/img/img-gpt.webp"
                         alt="Chat GPT AI"
                         class="why-imgs-image gpt" />
                 </div>
@@ -980,19 +988,19 @@
             </div>
             <div class="why-card why-card-analysis">
                 <p class="why-card-title">In-house <br />data analysis</p>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/img-analysis.webp" alt="data analysis" />
+                <img src="<?php echo IMG_PATH ?>/assets/img/img-analysis.webp" alt="data analysis" />
             </div>
             <div class="why-card why-card-reporting">
                 <p class="why-card-title">Transparent <br />Reporting</p>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/img-reporting.webp" alt="transparent reporting" />
+                <img src="<?php echo IMG_PATH ?>/assets/img/img-reporting.webp" alt="transparent reporting" />
             </div>
             <div class="why-card why-card-strategy">
                 <p class="why-card-title">ROI-driven <br />Strategy</p>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/img-roi.webp" alt="ROI driven strategy" />
+                <img src="<?php echo IMG_PATH ?>/assets/img/img-roi.webp" alt="ROI driven strategy" />
             </div>
             <div class="why-card why-card-growth">
                 <p class="why-card-title">Cross-channel <br />Growth</p>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/img-growth.webp" alt="Cross-channel growth" />
+                <img src="<?php echo IMG_PATH ?>/assets/img/img-growth.webp" alt="Cross-channel growth" />
             </div>
         </div>
     </section>
@@ -1007,7 +1015,7 @@
             <a href="#" class="industry-tab" data-industry="realestate" data-img="./images/industries-realestate.webp" data-text="Artificial intelligence (AI) is rapidly transforming our world. It is being applied across various fields, from healthcare to finance." data-position="top 42% left 50%">Real Estate</a>
         </div>
         <a href="#" class="industries-image-wrap">
-            <img id="industries-hero-img" src="<?php echo get_template_directory_uri() ?>/assets/img/industries-saas.webp" alt="Industry image" />
+            <img id="industries-hero-img" src="<?php echo IMG_PATH ?>/assets/img/industries-saas.webp" alt="Industry image" />
             <div class="industries-image-content">
                 <p class="industries-image-text" id="industries-hero-text">Artificial intelligence (AI) is rapidly transforming our world. It is being applied across various fields, from healthcare to finance.</p>
                 <div class="industries-image-arrow-btn">
@@ -1030,11 +1038,11 @@
             <div class="events-list">
                 <div class="event-card">
                     <img
-                        src="<?php echo get_template_directory_uri() ?>/assets/img/event_item-1.webp"
+                        src="<?php echo IMG_PATH ?>/assets/img/event_item-1.webp"
                         alt="Blockchain Life 2026 Event" />
                 </div>
                 <div class="event-card">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/event_item-2.webp" alt="Crypto Event of the Year" />
+                    <img src="<?php echo IMG_PATH ?>/assets/img/event_item-2.webp" alt="Crypto Event of the Year" />
                 </div>
             </div>
         </div>
@@ -1048,7 +1056,7 @@
             <div class="articles-list hide-scroll">
                 <div class="article-card">
                     <div class="article-img">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/article_image-1.webp" alt="Article thumbnail" />
+                        <img src="<?php echo IMG_PATH ?>/assets/img/article_image-1.webp" alt="Article thumbnail" />
                     </div>
                     <div class="article-card__content">
                         <div class="article-tags">
@@ -1069,7 +1077,7 @@
                 </div>
                 <div class="article-card">
                     <div class="article-img">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/article_image-2.webp" alt="Article thumbnail" />
+                        <img src="<?php echo IMG_PATH ?>/assets/img/article_image-2.webp" alt="Article thumbnail" />
                     </div>
                     <div class="article-card__content">
                         <div class="article-tags">
@@ -1089,7 +1097,7 @@
                 </div>
                 <div class="article-card">
                     <div class="article-img">
-                        <img src="<?php echo get_template_directory_uri() ?>/assets/img/article_image-3.webp" alt="Article thumbnail" />
+                        <img src="<?php echo IMG_PATH ?>/assets/img/article_image-3.webp" alt="Article thumbnail" />
                     </div>
                     <div class="article-card__content">
                         <div class="article-tags">
@@ -1116,7 +1124,7 @@
         <a href="#" class="options-card active">
             <img
                 class="options-card-icon"
-                src="<?php echo get_template_directory_uri() ?>/assets/img/options-audit-icon.webp"
+                src="<?php echo IMG_PATH ?>/assets/img/options-audit-icon.webp"
                 alt="Audit icon" />
             <div class="options-card__content">
                 <h5 class="options-card__content-title">Audit &amp; Research</h5>
@@ -1174,7 +1182,7 @@
         <a href="#" class="options-card">
             <img
                 class="options-card-icon"
-                src="<?php echo get_template_directory_uri() ?>/assets/img/options-strategy-icon.webp"
+                src="<?php echo IMG_PATH ?>/assets/img/options-strategy-icon.webp"
                 alt="Audit icon" />
             <div class="options-card__content">
                 <h5 class="options-card__content-title">Strategy & Planning</h5>
@@ -1208,7 +1216,7 @@
         <a href="#" class="options-card">
             <img
                 class="options-card-icon"
-                src="<?php echo get_template_directory_uri() ?>/assets/img/options-optimization-icon.webp"
+                src="<?php echo IMG_PATH ?>/assets/img/options-optimization-icon.webp"
                 alt="Audit icon" />
             <div class="options-card__content">
                 <h5 class="options-card__content-title">AI Optimization & Exeсution</h5>
@@ -1242,7 +1250,7 @@
         <a href="#" class="options-card">
             <img
                 class="options-card-icon"
-                src="<?php echo get_template_directory_uri() ?>/assets/img/options-scale-icon.webp"
+                src="<?php echo IMG_PATH ?>/assets/img/options-scale-icon.webp"
                 alt="Audit icon" />
             <div class="options-card__content">
                 <h5 class="options-card__content-title">Scale & Reporting</h5>
@@ -1624,7 +1632,7 @@
         </div>
         <div class="book-bottom-part">
             <div class="book-img-wrap">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/img/book-cover.webp" alt="HackGPT Book" />
+                <img src="<?php echo IMG_PATH ?>/assets/img/book-cover.webp" alt="HackGPT Book" />
             </div>
             <div class="bottom-part-content">
                 <div class="book-points">
