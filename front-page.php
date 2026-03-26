@@ -358,7 +358,7 @@ defined( 'ABSPATH' ) || exit; //silence is gold
                 </p>
                 <div class="hero-btns">
                     <button class="btn-dark" data-modal-open="proposal-form">
-                        Get Your AI Audit
+                        Get Your Proposal
                     </button>
                     <a href="#" class="btn-chat">
                         <img src="<?php echo IMG_PATH ?>/whatsapp-icon.webp" alt="Chat icon" />
