@@ -10,8 +10,8 @@
   <?php } ?>
   <?php if (is_search()) { ?>
     <title>Search | Stive</title>
-    <meta name="description" content="Search results for your query for IT Medical's services">
-    <meta name="keywords" content="IT medical">
+    <meta name="description" content="Search results for your query for Stive">
+    <meta name="keywords" content="Stive">
   <?php } ?>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="format-detection" content="telephone=no">
