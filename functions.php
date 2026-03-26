@@ -39,3 +39,25 @@ function defer_js($url)
     return $url;
 }
 add_filter('script_loader_tag', 'defer_js', 11);
+
+
+add_action('wp_head', function() {
+    $header_scripts = get_field('header_scripts', 'options');
+    
+    if( !empty($header_scripts) ) {
+        echo "\n<!-- Global Header Scripts from ACF -->\n";
+        echo $header_scripts;
+        echo "\n<!-- End Global Header Scripts -->\n";
+    }
+}, 100);
+
+
+add_action('wp_footer', function() {
+    $footer_scripts = get_field('footer_scripts', 'options');
+    
+    if( !empty($footer_scripts) ) {
+        echo "\n<!-- Global Footer Scripts from ACF -->\n";
+        echo $footer_scripts;
+        echo "\n<!-- End Global Footer Scripts -->\n";
+    }
+}, 100);
