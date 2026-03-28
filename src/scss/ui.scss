@@ -6,9 +6,8 @@
 @use "icons";
 
 //============ МОДУЛИ ====================
-@use "modules/breadcrumbs";
-@use "modules/booking-calendar";
 @use "modules/popup";
+// @use "modules/breadcrumbs";
 // @use "modules/preloader";
 // @use "modules/tooltip";
 // @use "modules/marguee";
@@ -81,13 +80,13 @@
 	}
 }
 
-.swiper-button-prev {
-	@extend %ic, .icon-chevron-left;
-}
+// .swiper-button-prev {
+// 	@extend %ic, .icon-chevron-left;
+// }
 
-.swiper-button-next {
-	@extend %ic, .icon-chevron-right;
-}
+// .swiper-button-next {
+// 	@extend %ic, .icon-chevron-right;
+// }
 
 .swiper-pagination {
 	&.swiper-pagination-fraction {
@@ -265,7 +264,7 @@
 
 // Стилизация скролла
 
-$scrollbarColor: $accent;
+$scrollbarColor: #16eedc;
 $scrollbarHover: color.adjust($accent, $lightness: -10%);
 
 ::-webkit-scrollbar {

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icons';
-  src:  url('fonts/icons.eot?w2ndbw');
-  src:  url('fonts/icons.eot?w2ndbw#iefix') format('embedded-opentype'),
-    url('fonts/icons.ttf?w2ndbw') format('truetype'),
-    url('fonts/icons.woff?w2ndbw') format('woff'),
-    url('fonts/icons.svg?w2ndbw#icons') format('svg');
+  src:  url('fonts/icons.eot?13rgns');
+  src:  url('fonts/icons.eot?13rgns#iefix') format('embedded-opentype'),
+    url('fonts/icons.ttf?13rgns') format('truetype'),
+    url('fonts/icons.woff?13rgns') format('woff'),
+    url('fonts/icons.svg?13rgns#icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-whatsapp:before {
+  content: "\e901";
+}
 .icon-calendar:before {
   content: "\e900";
 }
