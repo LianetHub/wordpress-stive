@@ -1,24 +1,19 @@
 <section class="hero">
     <div class="hero__container container">
         <div class="hero__left">
-            <div class="hero-left-bg"></div>
-            <div class="hero-left-content">
-                <span class="hero-tagline">YOUR RIGHT CHOICE</span>
-                <h1 class="hero-title">Marketing Agency<br />for LLM Era</h1>
-                <p class="hero-desc">
-                    First in ChatGPT. First in Gemini.<br class="br__mobile" />
-                    First in Perplexity.<br />
-                    We make your brand the answer AI gives.
-                </p>
-                <div class="hero-btns">
-                    <button class="btn-dark" data-modal-open="proposal-form">
-                        Get Your Proposal
-                    </button>
-                    <a href="#" class="btn-chat">
-                        <img src="<?php echo IMG_PATH ?>/whatsapp-icon.webp" alt="Chat icon" />
-                        Chat with Us
-                    </a>
-                </div>
+            <span class="hero__badge">YOUR RIGHT CHOICE</span>
+            <h1 class="hero__title">Marketing Agency for LLM Era</h1>
+            <p class="hero__desc">
+                First in ChatGPT. First in Gemini. First in Perplexity. We make your brand the answer AI gives.
+            </p>
+            <div class="hero__btns">
+                <button class="btn-dark" data-modal-open="proposal-form">
+                    Get Your Proposal
+                </button>
+                <a href="#" class="btn-chat">
+                    <img src="<?php echo IMG_PATH ?>/whatsapp-icon.webp" alt="Chat icon" />
+                    Chat with Us
+                </a>
             </div>
         </div>
 
