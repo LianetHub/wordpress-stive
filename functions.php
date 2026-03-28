@@ -69,3 +69,8 @@ function allow_svg_uploads($mimes)
     return $mimes;
 }
 add_filter('upload_mimes', 'allow_svg_uploads');
+
+
+// CF7 Settings
+
+add_filter('wpcf7_autop_or_not', '__return_false');

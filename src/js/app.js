@@ -24,6 +24,20 @@ document.addEventListener('DOMContentLoaded', () => {
     initSolutionsCards();
     initOptionsCards();
     initIndustriesCarousel();
+
+    document.addEventListener('wpcf7init', function (event) {
+        const form = event.target;
+
+        form.querySelectorAll('.wpcf7-form-control').forEach(field => {
+            field.addEventListener('change', function (e) {
+                e.stopImmediatePropagation();
+            }, true);
+
+            field.addEventListener('blur', function (e) {
+                e.stopImmediatePropagation();
+            }, true);
+        });
+    }, false);
 });
 
 function initMobileMenu() {

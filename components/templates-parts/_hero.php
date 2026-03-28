@@ -5,7 +5,7 @@
             <h1 class="hero__title">Marketing Agency for&nbsp;LLM Era</h1>
             <p class="hero__desc">First in ChatGPT. First in Gemini. First in Perplexity. We make your brand the answer AI gives.</p>
             <div class="hero__btns">
-                <a href="#proposal-form"
+                <a href="#get-proposal"
                     class="hero__btn btn btn-secondary"
                     data-fancybox>
                     Get Your AI Audit

@@ -11,6 +11,7 @@ defined('ABSPATH') || exit; //silence is gold
 
 <?php require_once(TEMPLATE_PATH . '_hero.php'); ?>
 
+
 <?php require_once(TEMPLATE_PATH . '_testimonials.php'); ?>
 
 <?php require_once(TEMPLATE_PATH . '_solutions.php'); ?>
@@ -29,9 +30,17 @@ defined('ABSPATH') || exit; //silence is gold
 
 <?php require_once(TEMPLATE_PATH . '_book.php'); ?>
 
-<div class="popup" id="proposal-form">
-    <h5 class="popup__header">Get Proposal</h5>
+<div class="popup" id="get-proposal">
+    <h5 class="popup__title title gradient-text">Get Proposal</h5>
     <?php echo do_shortcode('[contact-form-7 id="7c8db98" title="Get Proposal"]'); ?>
 </div>
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        Fancybox.show([{
+            src: "#get-proposal"
+        }])
+    })
+</script> -->
+
 
 <?php get_footer(); ?>
