@@ -5,11 +5,11 @@
             <h1 class="hero__title">Marketing Agency for&nbsp;LLM Era</h1>
             <p class="hero__desc">First in ChatGPT. First in Gemini. First in Perplexity. We make your brand the answer AI gives.</p>
             <div class="hero__btns">
-                <button
+                <a href="#proposal-form"
                     class="hero__btn btn btn-secondary"
-                    data-modal-open="proposal-form">
+                    data-fancybox>
                     Get Your AI Audit
-                </button>
+                </a>
                 <a href="" class="hero__btn btn btn-tertiary icon-whatsapp">Chat with Us</a>
             </div>
         </div>

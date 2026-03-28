@@ -1,13 +1,28 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    //  init Fancybox
+    if (typeof Fancybox !== "undefined" && Fancybox !== null) {
+        Fancybox.bind("[data-fancybox]", {
+            dragToClose: false,
+        });
+    }
+
+    if ($(".testimonials__slider").length) {
+        new Swiper('.testimonials__slider', {
+            slidesPerView: "auto",
+            spaceBetween: 16
+        })
+    }
+
+
     initMobileMenu();
     initFooterAccordion();
     initApplyButton();
     initFormValidation();
     initSolutionsCards();
     initOptionsCards();
-    initModal();
     initIndustriesCarousel();
 });
 
@@ -159,7 +174,6 @@ function initFormValidation() {
     });
 }
 
-
 function initSolutionsCards() {
     const cards = document.querySelectorAll('.solutions-card');
 
@@ -237,55 +251,6 @@ function initOptionsCards() {
             });
         });
     }
-}
-
-function initModal() {
-    const openButtons = document.querySelectorAll('[data-modal-open]');
-    const closeButtons = document.querySelectorAll('[data-modal-close]');
-    const modals = document.querySelectorAll('[data-modal]');
-
-    if (!modals.length) return;
-
-    openButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            const modalId = button.getAttribute('data-modal-open');
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    });
-
-    closeButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            const modal = button.closest('[data-modal]');
-            if (modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    });
-
-    modals.forEach((modal) => {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            modals.forEach((modal) => {
-                if (modal.classList.contains('active')) {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        }
-    });
 }
 
 function initIndustriesCarousel() {

@@ -6,7 +6,7 @@
 @use "icons";
 
 .hero {
-    padding: 1rem 0;
+    padding: 1rem 0 0.5rem;
 
     // .hero__container
     &__container {
@@ -361,136 +361,86 @@
     }
 }
 
+.testimonials {
+    padding: rem(8) 0;
 
-
-
-/* ===================== HERO ===================== */
-
-// .grad-text {
-//     background: linear-gradient(169deg, #272727 0%, #2cdacc 100%);
-//     -webkit-background-clip: text;
-//     -webkit-text-fill-color: transparent;
-//     background-clip: text;
-// }
-
-// .hide-scroll {
-//     -ms-overflow-style: none;
-//     scrollbar-width: none;
-// }
-
-// .hide-scroll::-webkit-scrollbar {
-//     display: none;
-// }
-.br__mobile {
-    display: none;
-
-    @media (max-width: 1400px) {
-        display: block;
-    }
+    // .testimonials__slider
+    &__slider {}
 }
 
 
-.section-title {
-    @media (max-width: 1400px) {
-        font-size: 32px;
-        line-height: 100%;
-    }
-
-    &.why {
-        background: linear-gradient(132deg, #272727 30%, #2cdacc 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 114%;
-    }
-}
-
-/* ===================== TESTIMONIALS ===================== */
 .testimonial {
-    &-section {
-        margin: 0 auto 96px;
-        max-width: 1424px;
-        overflow: hidden;
+    background: #fff;
+    border: 0.0625rem solid #f2f2f2;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    min-width: 27.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 
-        @media (max-width: 1400px) {
-            margin-bottom: 64px;
-        }
+    &.swiper-slide {
+        width: rem(440);
+        height: auto;
     }
 
-    &-scroll {
-        width: 100%;
-        display: flex;
-        gap: 16px;
-        overflow-x: scroll;
-
-        @media (max-width: 1400px) {
-            padding: 0 16px;
-        }
+    @media (max-width: 87.5rem) {
+        min-height: unset;
+        min-width: 19.75rem;
+        height: 13.3125rem;
+        padding: 2rem;
     }
 
-    &-card {
-        background: #ffffff;
-        border: 1px solid #f2f2f2;
-        border-radius: 12px;
-        padding: 32px;
-        min-width: 440px;
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-
-        @media (max-width: 1400px) {
-            min-height: unset;
-            min-width: 316px;
-            height: 213px;
-            padding: 32px;
-        }
-    }
-
-    &-header {
+    &__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 12px;
+        gap: 0.75rem;
     }
 
     &-author {
         &-name {
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 500;
             color: #192a3f;
-            margin-bottom: 4px;
+            margin-bottom: 0.25rem;
         }
 
         &-title {
-            font-size: 14px;
+            font-size: 0.875rem;
             font-weight: 500;
             color: #28d8ca;
         }
     }
 
-    &-rating {
+    &__rating {
         display: flex;
         flex-shrink: 0;
 
-        .star {
+        .icon-star {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 16px;
-            height: 16px;
+            width: 1rem;
+            height: 1rem;
+            font-size: 1rem;
+            color: #FFC49F;
         }
     }
 
     &-text {
-        font-size: 14px;
+        font-size: 0.875rem;
         font-weight: 300;
         color: #6e6e6e;
 
-        @media (max-width: 1400px) {
+        @media (max-width: 87.5rem) {
             line-height: 110%;
         }
     }
 }
+
+/* ===================== TESTIMONIALS ===================== */
+
 
 /* ===================== SOLUTIONS ===================== */
 .solutions {
@@ -1135,6 +1085,21 @@
     }
 }
 
+
+.section-title {
+    @media (max-width: 1400px) {
+        font-size: 32px;
+        line-height: 100%;
+    }
+
+    &.why {
+        background: linear-gradient(132deg, #272727 30%, #2cdacc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 114%;
+    }
+}
 
 /* ===================== INDUSTRIES ===================== */
 
@@ -1810,6 +1775,7 @@
 
 .book {
     &-section {
+        width: 100%;
         margin: 0 auto 64px;
         max-width: 1424px;
         display: flex;
@@ -2038,3 +2004,12 @@
 }
 
 /* ===================== RESPONSIVE ===================== */
+
+
+.br__mobile {
+    display: none;
+
+    @media (max-width: 1400px) {
+        display: block;
+    }
+}
