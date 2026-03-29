@@ -2,29 +2,29 @@
 $steps = [
     [
         'title'    => 'Audit & Research',
-        'img_webp' => 'options-audit-icon.webp',
-        'img_jpg'  => 'options-audit-icon.jpg',
+        'img_webp' => 'audit-icon.webp',
+        'img_png'  => 'audit-icon.png',
         'url'      => '#',
         'active'   => true,
     ],
     [
         'title'    => 'Strategy & Planning',
-        'img_webp' => 'options-strategy-icon.webp',
-        'img_jpg'  => 'options-strategy-icon.jpg',
+        'img_webp' => 'strategy-icon.webp',
+        'img_png'  => 'strategy-icon.png',
         'url'      => '#',
         'active'   => false,
     ],
     [
         'title'    => 'AI Optimization & Exeсution',
-        'img_webp' => 'options-optimization-icon.webp',
-        'img_jpg'  => 'options-optimization-icon.jpg',
+        'img_webp' => 'optimization-icon.webp',
+        'img_png'  => 'optimization-icon.png',
         'url'      => '#',
         'active'   => false,
     ],
     [
         'title'    => 'Scale & Reporting',
-        'img_webp' => 'options-scale-icon.webp',
-        'img_jpg'  => 'options-scale-icon.jpg',
+        'img_webp' => 'scale-icon.webp',
+        'img_png'  => 'scale-icon.png',
         'url'      => '#',
         'active'   => false,
     ],
@@ -75,9 +75,9 @@ $steps = [
 
                         <picture class="steps__item-image">
                             <source
-                                srcset="<?php echo IMG_PATH . '/' . $step['img_webp']; ?>"
+                                srcset="<?php echo IMG_PATH . '/steps/' . $step['img_webp']; ?>"
                                 type="image/webp">
-                            <img src="<?php echo IMG_PATH . '/' . $step['img_jpg']; ?>"
+                            <img src="<?php echo IMG_PATH . '/steps/' . $step['img_png']; ?>"
                                 alt="<?php echo esc_attr($step['title']); ?>"
                                 loading="lazy">
                         </picture>
