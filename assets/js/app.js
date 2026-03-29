@@ -98,12 +98,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    initStepsInteractions();
 
 
     initMobileMenu();
     initFooterAccordion();
     initApplyButton();
-    initOptionsCards();
+
 
     const inputs = document.querySelectorAll("input[type='tel']");
 
@@ -120,6 +121,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+function initStepsInteractions() {
+    const $items = $('.steps__item');
+    if (!$items.length) return;
+
+    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+    if (isTouch) {
+        $items.find('.steps__item-wrapper').on('click', function (e) {
+            const $parent = $(this).closest('.steps__item');
+
+            if (!$parent.hasClass('active')) {
+                e.preventDefault();
+                $items.removeClass('active');
+                $parent.addClass('active');
+            }
+        });
+    } else {
+        $items.on('mouseenter', function () {
+            $items.removeClass('active');
+            $(this).addClass('active');
+        });
+    }
+}
 
 function initMobileMenu() {
     const menuToggle = document.getElementById('mobile-menu-toggle');
@@ -166,56 +192,3 @@ function initApplyButton() {
         applyBtn.textContent = 'Applied Successfully!';
     });
 }
-
-function initOptionsCards() {
-    const cards = document.querySelectorAll('.options-card');
-
-    if (!cards.length) return;
-
-    const hasHover = window.matchMedia('(hover: hover)').matches;
-
-    function updateCardState(card, isActive) {
-        const numberSvg = card.querySelector('.options-card__number text');
-        if (numberSvg) {
-            if (isActive) {
-                numberSvg.setAttribute('fill', 'url(#fill-grad-active)');
-                numberSvg.setAttribute('stroke', 'url(#stroke-grad-active)');
-            } else {
-                numberSvg.setAttribute('fill', 'none');
-                numberSvg.setAttribute('stroke', 'url(#stroke-grad-inactive)');
-            }
-        }
-    }
-
-    cards.forEach((card) => {
-        updateCardState(card, card.classList.contains('active'));
-    });
-
-    if (hasHover) {
-        cards.forEach((card) => {
-            card.addEventListener('mouseenter', () => {
-                cards.forEach((c) => {
-                    c.classList.remove('active');
-                    updateCardState(c, false);
-                });
-                card.classList.add('active');
-                updateCardState(card, true);
-            });
-        });
-    } else {
-        cards.forEach((card) => {
-            card.addEventListener('click', (e) => {
-                if (!card.classList.contains('active')) {
-                    e.preventDefault();
-                    cards.forEach((c) => {
-                        c.classList.remove('active');
-                        updateCardState(c, false);
-                    });
-                    card.classList.add('active');
-                    updateCardState(card, true);
-                }
-            });
-        });
-    }
-}
-

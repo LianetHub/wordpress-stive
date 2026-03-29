@@ -1234,33 +1234,144 @@
     &__date {}
 }
 
+.steps {
+    padding: rem(30) 0;
 
-/* ===================== AUDIT & RESEARCH ===================== */
-.options {
-    &-section {
-        padding: 0 0;
-        margin: 0 auto 124px;
-        max-width: 1424px;
+    // .steps__list
+    &__list {
+        margin-top: rem(148);
         display: flex;
-        height: 400px;
-        gap: 17px;
+        gap: 1.0625rem;
+    }
 
-        @media (max-width: 1400px) {
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 52px;
-            height: auto;
+    // .steps__item
+    &__item {
+        flex: 1 1 auto;
+        transition: all 0.4s ease;
+        touch-action: manipulation;
+        max-width: 13.9375rem;
+
+        &.active {
+            max-width: 44rem;
+            width: 100%;
+
+            .steps__item-wrapper {
+                background: #16EEDC;
+            }
+
+            .steps__item-image {
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+            }
+
+            .steps__item-bottom {
+                opacity: 1;
+                visibility: visible;
+            }
+
+
+            .steps__item-num {
+                & text {
+                    fill: url(#fill-grad-active);
+                    stroke: url(#stroke-grad-active);
+                }
+            }
         }
     }
+
+    // .steps__item-wrapper
+    &__item-wrapper {
+        height: 25rem;
+        position: relative;
+        background: #fff;
+        border: 0.0625rem solid #f3f3f3;
+        border-radius: 1rem;
+        padding: 1.375rem 1.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transition: all .4s ease;
+    }
+
+    // .steps__item-image
+    &__item-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: rem(-148);
+        width: rem(475);
+        height: rem(475);
+        transform: scale(0);
+        margin-left: auto;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .4s ease, visibility .4s ease, transform 0.4s ease;
+
+    }
+
+    // .steps__item-bottom
+    &__item-bottom {
+        transition: opacity .4s ease, visibility .4s ease;
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // .steps__item-num
+    &__item-num {
+        position: absolute;
+        bottom: rem(22);
+        left: rem(27);
+        font-size: 8rem;
+        font-weight: 800;
+        line-height: 1;
+
+
+        & text {
+            fill: none;
+            stroke: url(#stroke-grad-inactive);
+            transition: fill 0.4s ease, stroke 0.4s ease;
+        }
+    }
+
+    // .steps__item-title
+    &__item-title {
+        position: relative;
+        z-index: 2;
+        color: #FFF;
+    }
+
+    // .steps__item-arrow
+    &__item-arrow {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.22);
+        border: rem(1) solid rgba(230, 230, 230, 0.35);
+        backdrop-filter: blur(rem(4));
+        -webkit-backdrop-filter: blur(rem(4));
+        width: 5.1875rem;
+        height: 5.1875rem;
+        flex-shrink: 0;
+    }
+}
+
+
+
+.options {
 
     &-card {
         position: relative;
         background: #fff;
-        border: 1px solid #f3f3f3;
-        border-radius: 16px;
-        padding: 22px 28px;
+        border: 0.0625rem solid #f3f3f3;
+        border-radius: 1rem;
+        padding: 1.375rem 1.75rem;
         flex: 1 1 auto;
-        max-width: 223px;
+        max-width: 13.9375rem;
         height: 100%;
         display: flex;
         align-items: flex-end;
@@ -1268,74 +1379,22 @@
         transition: all 0.4s ease;
         touch-action: manipulation;
 
-        .options-card__content,
-        &-icon {
-            pointer-events: none;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
-        }
 
-        &__number {
-            position: absolute;
-            bottom: 22px;
-            left: 27px;
-            opacity: 0.32;
 
-            @media (max-width: 1400px) {
-                left: 30px;
-                top: -30px;
-                bottom: auto;
-                transform: none;
-            }
-        }
-
-        &__content {
-            z-index: 2;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            width: 100%;
-
-            &-title {
-                font-weight: 700;
-                color: #fff;
-                text-transform: none;
-
-                @media (max-width: 1400px) {
-                    text-align: center;
-                }
-            }
-
-            &-button {
-                width: 83px;
-                height: 83px;
-                background: rgba(#fff, 0.22);
-                border: 1px solid rgba(#e6e6e6, 0.35);
-                border-radius: 16px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                @media (max-width: 1400px) {
-                    display: none;
-                }
-            }
-        }
 
         &-icon {
-            width: 475px;
-            height: 475px;
+            width: 29.6875rem;
+            height: 29.6875rem;
             position: absolute;
-            right: 43px;
-            top: -148px;
+            right: 2.6875rem;
+            top: -9.25rem;
             object-fit: contain;
             flex-shrink: 0;
 
-            @media (max-width: 1400px) {
-                width: 256px;
-                height: 256px;
-                top: -131px;
+            @media (max-width: 87.5rem) {
+                width: 16rem;
+                height: 16rem;
+                top: -8.1875rem;
                 left: 50%;
                 right: auto;
                 transform: translateX(-50%);
@@ -1346,9 +1405,9 @@
             &:hover {
                 background: url(../images/options-card-bg-pattern.webp) no-repeat center center, #16eedc;
                 background-size: cover;
-                max-width: 704px;
+                max-width: 44rem;
                 width: 100%;
-                padding: 33px 24px 33px 51px;
+                padding: 2.0625rem 1.5rem 2.0625rem 3.1875rem;
 
                 .options-card-icon,
                 .options-card__content {
@@ -1366,9 +1425,9 @@
         &.active {
             background: url(../images/options-card-bg-pattern.webp) no-repeat center center, #16eedc;
             background-size: cover;
-            max-width: 704px;
+            max-width: 44rem;
             width: 100%;
-            padding: 33px 24px 33px 51px;
+            padding: 2.0625rem 1.5rem 2.0625rem 3.1875rem;
             transition: all 0.4s ease;
 
             .options-card-icon,
@@ -1379,33 +1438,33 @@
             }
 
             .options-card__number {
-                left: 27px;
-                bottom: 22px;
+                left: 1.6875rem;
+                bottom: 1.375rem;
                 opacity: 1;
                 z-index: 1;
             }
 
-            @media (max-width: 1400px) {
+            @media (max-width: 87.5rem) {
                 overflow: visible;
-                min-height: 396px;
-                padding: 0 45px 100px;
-                margin-bottom: 8px;
+                min-height: 24.75rem;
+                padding: 0 2.8125rem 6.25rem;
+                margin-bottom: 0.5rem;
                 max-width: unset;
 
                 .options-card__number {
                     top: unset;
                     left: 50%;
-                    bottom: 121px;
+                    bottom: 7.5625rem;
                     transform: translateX(-50%);
                 }
             }
         }
 
-        @media (max-width: 1400px) {
+        @media (max-width: 87.5rem) {
             width: 100%;
             height: 100%;
             max-width: unset;
-            min-height: 140px;
+            min-height: 8.75rem;
             overflow: hidden;
         }
     }
