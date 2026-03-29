@@ -1,5 +1,7 @@
 "use strict";
 
+// const { default: Swiper } = require("swiper");
+
 document.addEventListener('DOMContentLoaded', () => {
 
     //  init Fancybox
@@ -9,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Sliders
     if ($(".testimonials__slider").length) {
         new Swiper('.testimonials__slider', {
             slidesPerView: "auto",
@@ -22,6 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
             spaceBetween: 16
         })
     }
+
+    if ($(".cases__slider").length) {
+        new Swiper('.cases__slider', {
+            slidesPerView: 1,
+            initialSlide: 1,
+            loop: true,
+            slideToClickedSlide: true,
+            watchSlidesVisibility: true,
+            spaceBetween: 32
+        })
+    }
+
 
 
     initMobileMenu();
