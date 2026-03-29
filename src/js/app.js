@@ -12,6 +12,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Sliders
+    class MobileSwiper {
+        constructor(sliderName, options, condition = 767.98) {
+            this.$slider = $(sliderName);
+            this.options = options;
+            this.init = false;
+            this.swiper = null;
+            this.condition = condition;
+
+            if (this.$slider.length) {
+                this.handleResize();
+                $(window).on("resize", () => this.handleResize());
+            }
+        }
+
+        handleResize() {
+            if (window.innerWidth <= this.condition) {
+                if (!this.init) {
+                    this.init = true;
+                    this.swiper = new Swiper(this.$slider[0], this.options);
+                }
+            } else if (this.init) {
+                this.swiper.destroy();
+                this.swiper = null;
+                this.init = false;
+            }
+        }
+    }
+
     if ($(".testimonials__slider").length) {
         new Swiper('.testimonials__slider', {
             slidesPerView: "auto",

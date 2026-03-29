@@ -1,38 +1,64 @@
-<section class="why-section">
-    <h2 class="section-title why">Why Choose Us?</h2>
-    <div class="why-grid hide-scroll">
-        <div class="why-card why-card-ai">
-            <div class="why-imgs">
-                <img
-                    src="<?php echo IMG_PATH ?>/img-gemini.webp"
-                    alt="Gemini AI"
-                    class="why-imgs-image gemini" />
-                <img
-                    src="<?php echo IMG_PATH ?>/img-claude.webp"
-                    alt="Claude AI"
-                    class="why-imgs-image claude" />
-                <img
-                    src="<?php echo IMG_PATH ?>/img-gpt.webp"
-                    alt="Chat GPT AI"
-                    class="why-imgs-image gpt" />
-            </div>
-            <p class="why-card-title">AI-First <br />Approach</p>
-        </div>
-        <div class="why-card why-card-analysis">
-            <p class="why-card-title">In-house <br />data analysis</p>
-            <img src="<?php echo IMG_PATH ?>/img-analysis.webp" alt="data analysis" />
-        </div>
-        <div class="why-card why-card-reporting">
-            <p class="why-card-title">Transparent <br />Reporting</p>
-            <img src="<?php echo IMG_PATH ?>/img-reporting.webp" alt="transparent reporting" />
-        </div>
-        <div class="why-card why-card-strategy">
-            <p class="why-card-title">ROI-driven <br />Strategy</p>
-            <img src="<?php echo IMG_PATH ?>/img-roi.webp" alt="ROI driven strategy" />
-        </div>
-        <div class="why-card why-card-growth">
-            <p class="why-card-title">Cross-channel <br />Growth</p>
-            <img src="<?php echo IMG_PATH ?>/img-growth.webp" alt="Cross-channel growth" />
+<?php
+$why_cards = [
+    [
+        'id'        => 'ai',
+        'title'     => 'AI-First <br>Approach',
+        'img_png'   => 'ai-collage.png',
+        'img_webp'  => 'ai-collage.webp',
+        'alt'       => 'Integration of Gemini, Claude, and ChatGPT AI for business automation',
+        'size'      => 'normal',
+        'color'     => 'default',
+    ],
+    [
+        'id'        => 'analysis',
+        'title'     => 'In-house data&nbsp;analysis',
+        'img_png'   => 'analysis.png',
+        'img_webp'  => 'analysis.webp',
+        'alt'       => 'Professional in-house data analysis and visualization dashboard',
+        'size'      => 'wide',
+        'color'     => 'default',
+    ],
+    [
+        'id'        => 'reporting',
+        'title'     => 'Transparent Reporting',
+        'img_png'   => 'reporting.png',
+        'img_webp'  => 'reporting.webp',
+        'alt'       => 'Detailed marketing reports and transparent documentation in a folder',
+        'size'      => 'tall',
+        'color'     => 'secondary',
+    ],
+    [
+        'id'        => 'strategy',
+        'title'     => 'ROI-driven Strategy',
+        'img_png'   => 'roi.png',
+        'img_webp'  => 'roi.webp',
+        'alt'       => 'Rising arrows symbolizing ROI-driven marketing strategy and financial growth',
+        'size'      => 'wide',
+        'color'     => 'primary',
+    ],
+    [
+        'id'        => 'growth',
+        'title'     => 'Cross-channel Growth',
+        'img_png'   => 'growth.png',
+        'img_webp'  => 'growth.webp',
+        'alt'       => 'Omnichannel marketing growth showing connections between media, video, and social icons',
+        'size'      => 'normal',
+        'color'     => 'default',
+    ],
+];
+?>
+
+<section class="why">
+    <div class="container">
+        <h2 class="why__title title">Why Choose Us?</h2>
+        <div class="why__slider swiper">
+            <ul class="swiper-wrapper">
+                <?php if (!empty($why_cards)) : ?>
+                    <?php foreach ($why_cards as $card) : ?>
+                        <?php include(locate_template('components/parts/_why-card.php')); ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </ul>
         </div>
     </div>
 </section>

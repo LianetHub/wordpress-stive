@@ -1,22 +1,22 @@
 <?php
 $case_studies = [
     [
-        'name'    => 'How we fixed casino reviews',
-        'desc'    => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
+        'name'     => 'How we fixed casino reviews',
+        'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
         'img_webp' => 'case_study-1.webp',
         'img_jpg'  => 'case_study-1.jpg',
         'link'     => '#',
     ],
     [
-        'name'    => '80% Organic Traffic Growth',
-        'desc'    => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
+        'name'     => '80% Organic Traffic Growth',
+        'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
         'img_webp' => 'case_study-2.webp',
         'img_jpg'  => 'case_study-2.jpg',
         'link'     => '#',
     ],
     [
-        'name'    => 'YouTube & Reddit strategy',
-        'desc'    => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
+        'name'     => 'YouTube & Reddit strategy',
+        'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
         'img_webp' => 'case_study-3.webp',
         'img_jpg'  => 'case_study-3.jpg',
         'link'     => '#',

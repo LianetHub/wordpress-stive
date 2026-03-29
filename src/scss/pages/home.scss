@@ -622,7 +622,6 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-
     }
 
     // .cases__slider
@@ -722,7 +721,7 @@
         background: #ffffff;
         border: 0.0625rem solid #e6e6e6;
         border-radius: 1rem;
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -757,312 +756,85 @@
     }
 }
 
-/* ===================== WHY CHOOSE US ===================== */
 
 .why {
-    &-section {
-        margin: 0 auto 96px;
-        max-width: 1424px;
-        background: #fafafa;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 32px;
+    padding: rem(64) 0 rem(48);
 
-        @media (max-width: 1400px) {
-            margin-bottom: 80px;
+    // .why__title
+    &__title {
+        @extend .cases__title;
+    }
 
-            .section-title.why {
-                background: linear-gradient(132deg, #272727 30%, #295551 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                line-height: 114%;
-            }
+    // .why__slider
+    &__slider {
+        margin-top: 2rem;
+
+        .swiper-wrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: rem(344);
+            gap: 1rem;
         }
     }
 
-    &-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 344px 344px;
-        grid-template-areas:
-            "ai analysis analysis reporting"
-            "strategy strategy growth reporting";
-        gap: 16px;
-        width: 100%;
-        max-width: 1424px;
-
-        @media (max-width: 1400px) {
-            gap: 4px;
-            grid-template-columns: repeat(5, 344px);
-            grid-template-rows: 1fr;
-            grid-template-areas: unset;
-            overflow-x: scroll;
-            overflow-y: hidden;
-        }
-    }
-
-    &-card {
-        background: #ffffff;
-        border-radius: 16px;
+    // .why__card
+    &__card {
+        background: #fff;
+        border-radius: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        padding: 48px;
+        padding: 3rem;
         position: relative;
         overflow: hidden;
 
-        @media (max-width: 1400px) {
-            overflow: visible;
-            grid-area: unset;
-            width: 100%;
-            height: 200px;
-            border-radius: 8px;
-            margin-bottom: calc(29px + 16px);
+        &.why__card--primary {
+            background: #CDFFFB;
         }
 
-        &-title {
-            font-size: 32px;
-            font-weight: 700;
-            line-height: 100%;
-            padding-bottom: 4px;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            z-index: 2;
-
-            @media (max-width: 1400px) {
-                position: absolute;
-                bottom: calc(-30px - 16px);
-                left: 50%;
-                transform: translateX(-50%);
-                width: 100%;
-                height: 45px;
-                display: flex;
-                align-items: flex-end;
-                justify-content: center;
-                background: #fafafa;
-                -webkit-background-clip: unset;
-                -webkit-text-fill-color: unset;
-                background-clip: unset;
-                color: #192a3f;
-                text-align: center;
-                font-size: 24px;
-                line-height: 114%;
-                white-space: nowrap;
-                padding: 0;
-
-                br {
-                    display: none;
-                }
-            }
+        &.why__card--secondary {
+            background: radial-gradient(66.67% 66.67% at 50% 50%, #F9F2EE 0%, #FEF5EE 100%), #FFF;
         }
 
-        &-ai {
-            grid-area: ai;
-            overflow: visible;
-
-            .why-card-title {
-                background: linear-gradient(149deg, #272727 10%, #2cdacc 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-
-            .why-imgs {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 270px;
-                pointer-events: none;
-
-                @media (max-width: 1400px) {
-                    height: 100%;
-                }
-
-                &-image {
-                    position: absolute;
-                    object-fit: cover;
-
-                    &.claude {
-                        top: 18px;
-                        left: 89px;
-                        height: 216px;
-                        width: 216px;
-                        z-index: 2;
-
-                        @media (max-width: 1400px) {
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            height: 160px;
-                            width: 160px;
-                        }
-                    }
-
-                    &.gpt {
-                        top: 84px;
-                        right: -36px;
-                        height: 179px;
-                        width: 179px;
-                        transform: scaleX(-1) rotate(10deg);
-
-                        @media (max-width: 1400px) {
-                            top: 56px;
-                            right: 21px;
-                            height: 130px;
-                            width: 130px;
-                            transform: none;
-                        }
-                    }
-
-                    &.gemini {
-                        top: -23px;
-                        left: 17px;
-                        width: 199px;
-                        height: 199px;
-
-                        @media (max-width: 1400px) {
-                            top: 4px;
-                            left: 34px;
-                            width: 140px;
-                            height: 140px;
-                        }
-                    }
-                }
-            }
-        }
-
-        &-analysis {
-            grid-area: analysis;
+        &.why__card--wide {
+            grid-column: span 2;
             justify-content: center;
 
-            .why-card-title {
-                background: linear-gradient(145deg, #272727 0%, #2cdacc 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-
-            img {
-                width: 505px;
-                height: 505px;
-                position: absolute;
-                bottom: -137px;
-                right: 12px;
-                filter: drop-shadow(12px 12px 28px rgba(25, 42, 63, 0.12));
-
-                @media (max-width: 1400px) {
-                    width: auto;
-                    height: 190%;
-                }
-            }
         }
 
-        &-reporting {
-            grid-area: reporting;
-            padding-left: 64px;
-            background: radial-gradient(circle at 50% 0%, #f9f2ee 0%, #fef5ee 100%);
-
-            .why-card-title {
-                background: linear-gradient(145deg, #272727 10%, #2cdacc 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-
-            img {
-                width: 341px;
-                height: 341px;
-                position: absolute;
-                top: 148px;
-                left: 1px;
-
-                @media (max-width: 1400px) {
-                    width: auto;
-                    height: 100%;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-            }
+        &.why__card--tall {
+            grid-row: span 2;
+            padding: 3rem 4rem;
         }
 
-        &-strategy {
-            background: #cdfffb;
-            grid-area: strategy;
-            justify-content: center;
 
-            .why-card-title {
-                background: linear-gradient(143deg, #272727 0%, #2cdacc 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-
-            img {
-                width: 801px;
-                height: 801px;
-                position: absolute;
-                top: -154px;
-                right: -50px;
-
-                @media (max-width: 1400px) {
-                    width: 100%;
-                    height: auto;
-                    top: -40px;
-                    right: -21px;
-                }
-            }
-        }
-
-        &-growth {
-            grid-area: growth;
-
-            .why-card-title {
-                background: linear-gradient(139deg, #272727 10%, #2cdacc 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-
-            img {
-                width: 322px;
-                height: 322px;
-                position: absolute;
-                top: -57px;
-                left: 12px;
-
-                @media (max-width: 1400px) {
-                    width: 70%;
-                    height: auto;
-                    top: -40px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-            }
-        }
     }
-}
 
+    // .why__card-img
+    &__card-img {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
 
-.section-title {
-    @media (max-width: 1400px) {
-        font-size: 32px;
+    // .why__card-title
+    &__card-title {
+        position: relative;
+        z-index: 2;
+        font-size: 2rem;
+        font-weight: 700;
         line-height: 100%;
-    }
-
-    &.why {
-        background: linear-gradient(132deg, #272727 30%, #2cdacc 100%);
+        padding-block: 0.25rem;
+        max-width: rem(220);
+        background: linear-gradient(103deg, #272727 8.18%, #2CDACC 130.61%);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 114%;
+
     }
 }
+
 
 /* ===================== INDUSTRIES ===================== */
 

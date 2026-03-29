@@ -1,14 +1,6 @@
 @font-face {
   font-family: "HelveticaNeue";
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "HelveticaNeue";
-  font-display: swap;
   src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -19,6 +11,22 @@
   font-display: swap;
   src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -41,8 +49,8 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -57,14 +65,6 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
   src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
@@ -73,16 +73,8 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -91,6 +83,14 @@
   font-display: swap;
   src: url("../fonts/SFProDisplay-Thin.woff2") format("woff2"), url("../fonts/SFProDisplay-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -2177,7 +2177,8 @@ dd {
   padding: 3rem 0;
 }
 
-.cases__title {
+.cases__title,
+.why__title {
   width: 100%;
   text-align: center;
   background: linear-gradient(92deg, #272727 41.3%, #2CDACC 73.65%);
@@ -2259,7 +2260,7 @@ dd {
   background: #ffffff;
   border: 0.0625rem solid #e6e6e6;
   border-radius: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2304,41 +2305,26 @@ dd {
   color: #7c8698;
 }
 
-/* ===================== WHY CHOOSE US ===================== */
-
-.why-section {
-  margin: 0 auto 96px;
-  max-width: 1424px;
-  background: #fafafa;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 32px;
+.why {
+  padding: 4rem 0 3rem;
 }
 
-.why-grid {
+.why__slider {
+  margin-top: 2rem;
+}
+
+.why__slider .swiper-wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 16px 1fr 16px 1fr 16px 1fr;
+  -ms-grid-columns: (1fr)[4];
   grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: 344px 16px 344px;
-  grid-template-rows: 344px 344px;
-      grid-template-areas: "ai analysis analysis reporting" "strategy strategy growth reporting";
-  gap: 16px;
-  width: 100%;
-  max-width: 1424px;
+  grid-auto-rows: 21.5rem;
+  gap: 1rem;
 }
 
-.why-card {
-  background: #ffffff;
-  border-radius: 16px;
+.why__card {
+  background: #fff;
+  border-radius: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2349,181 +2335,52 @@ dd {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 48px;
+  padding: 3rem;
   position: relative;
   overflow: hidden;
 }
 
-.why-card-title {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 100%;
-  padding-bottom: 4px;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-  z-index: 2;
+.why__card.why__card--primary {
+  background: #CDFFFB;
 }
 
-.why-card-ai {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: ai;
-  overflow: visible;
+.why__card.why__card--secondary {
+  background: radial-gradient(66.67% 66.67% at 50% 50%, #F9F2EE 0%, #FEF5EE 100%), #FFF;
 }
 
-.why-card-ai .why-card-title {
-  background: linear-gradient(149deg, #272727 10%, #2cdacc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.why__card.why__card--wide {
+  -ms-grid-column-span: 2;
+  grid-column: span 2;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.why-card-ai .why-imgs {
+.why__card.why__card--tall {
+  -ms-grid-row-span: 2;
+  grid-row: span 2;
+  padding: 3rem 4rem;
+}
+
+.why__card-img {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 270px;
+  inset: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
-.why-card-ai .why-imgs-image {
-  position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.why-card-ai .why-imgs-image.claude {
-  top: 18px;
-  left: 89px;
-  height: 216px;
-  width: 216px;
+.why__card-title {
+  position: relative;
   z-index: 2;
-}
-
-.why-card-ai .why-imgs-image.gpt {
-  top: 84px;
-  right: -36px;
-  height: 179px;
-  width: 179px;
-  -webkit-transform: scaleX(-1) rotate(10deg);
-      -ms-transform: scaleX(-1) rotate(10deg);
-          transform: scaleX(-1) rotate(10deg);
-}
-
-.why-card-ai .why-imgs-image.gemini {
-  top: -23px;
-  left: 17px;
-  width: 199px;
-  height: 199px;
-}
-
-.why-card-analysis {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 3;
-  grid-area: analysis;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.why-card-analysis .why-card-title {
-  background: linear-gradient(145deg, #272727 0%, #2cdacc 100%);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 100%;
+  padding-block: 0.25rem;
+  max-width: 13.75rem;
+  background: linear-gradient(103deg, #272727 8.18%, #2CDACC 130.61%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.why-card-analysis img {
-  width: 505px;
-  height: 505px;
-  position: absolute;
-  bottom: -137px;
-  right: 12px;
-  -webkit-filter: drop-shadow(12px 12px 28px rgba(25, 42, 63, 0.12));
-          filter: drop-shadow(12px 12px 28px rgba(25, 42, 63, 0.12));
-}
-
-.why-card-reporting {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 3;
-  -ms-grid-column: 7;
-  grid-area: reporting;
-  padding-left: 64px;
-  background: radial-gradient(circle at 50% 0%, #f9f2ee 0%, #fef5ee 100%);
-}
-
-.why-card-reporting .why-card-title {
-  background: linear-gradient(145deg, #272727 10%, #2cdacc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.why-card-reporting img {
-  width: 341px;
-  height: 341px;
-  position: absolute;
-  top: 148px;
-  left: 1px;
-}
-
-.why-card-strategy {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  background: #cdfffb;
-  grid-area: strategy;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.why-card-strategy .why-card-title {
-  background: linear-gradient(143deg, #272727 0%, #2cdacc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.why-card-strategy img {
-  width: 801px;
-  height: 801px;
-  position: absolute;
-  top: -154px;
-  right: -50px;
-}
-
-.why-card-growth {
-  -ms-grid-row: 3;
-  -ms-grid-column: 5;
-  grid-area: growth;
-}
-
-.why-card-growth .why-card-title {
-  background: linear-gradient(139deg, #272727 10%, #2cdacc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.why-card-growth img {
-  width: 322px;
-  height: 322px;
-  position: absolute;
-  top: -57px;
-  left: 12px;
-}
-
-.section-title.why {
-  background: linear-gradient(132deg, #272727 30%, #2cdacc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 114%;
 }
 
 /* ===================== INDUSTRIES ===================== */
@@ -3449,140 +3306,6 @@ html {
 
   .hero__feature-text {
     font-size: 0.875rem;
-  }
-
-  .why-section {
-    margin-bottom: 80px;
-  }
-
-  .why-section .section-title.why {
-    background: linear-gradient(132deg, #272727 30%, #295551 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 114%;
-  }
-
-  .why-grid {
-    gap: 4px;
-    -ms-grid-columns: 344px 4px 344px 4px 344px 4px 344px 4px 344px;
-    grid-template-columns: repeat(5, 344px);
-    -ms-grid-rows: 1fr;
-    grid-template-rows: 1fr;
-        grid-template-areas: unset;
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
-
-  .why-card {
-    overflow: visible;
-    grid-area: unset;
-    width: 100%;
-    height: 200px;
-    border-radius: 8px;
-    margin-bottom: 45px;
-  }
-
-  .why-card-title {
-    position: absolute;
-    bottom: -46px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-    width: 100%;
-    height: 45px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    background: #fafafa;
-    -webkit-background-clip: unset;
-    -webkit-text-fill-color: unset;
-    background-clip: unset;
-    color: #192a3f;
-    text-align: center;
-    font-size: 24px;
-    line-height: 114%;
-    white-space: nowrap;
-    padding: 0;
-  }
-
-  .why-card-title br {
-    display: none;
-  }
-
-  .why-card-ai .why-imgs {
-    height: 100%;
-  }
-
-  .why-card-ai .why-imgs-image.claude {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    height: 160px;
-    width: 160px;
-  }
-
-  .why-card-ai .why-imgs-image.gpt {
-    top: 56px;
-    right: 21px;
-    height: 130px;
-    width: 130px;
-    -webkit-transform: none;
-        -ms-transform: none;
-            transform: none;
-  }
-
-  .why-card-ai .why-imgs-image.gemini {
-    top: 4px;
-    left: 34px;
-    width: 140px;
-    height: 140px;
-  }
-
-  .why-card-analysis img {
-    width: auto;
-    height: 190%;
-  }
-
-  .why-card-reporting img {
-    width: auto;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-  }
-
-  .why-card-strategy img {
-    width: 100%;
-    height: auto;
-    top: -40px;
-    right: -21px;
-  }
-
-  .why-card-growth img {
-    width: 70%;
-    height: auto;
-    top: -40px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-  }
-
-  .section-title {
-    font-size: 32px;
-    line-height: 100%;
   }
 
   .industries-section {
