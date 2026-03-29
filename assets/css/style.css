@@ -1,22 +1,6 @@
 @font-face {
   font-family: "HelveticaNeue";
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "HelveticaNeue";
-  font-display: swap;
-  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "HelveticaNeue";
-  font-display: swap;
   src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -31,26 +15,26 @@
 }
 
 @font-face {
+  font-family: "HelveticaNeue";
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "icons";
   font-display: swap;
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
-  font-weight: 300;
   font-style: normal;
 }
 
@@ -65,8 +49,24 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -81,16 +81,16 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Thin.woff2") format("woff2"), url("../fonts/SFProDisplay-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/SFProDisplay-Thin.woff2") format("woff2"), url("../fonts/SFProDisplay-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -112,6 +112,10 @@
 [class^=icon-]:before,
 [class*=" icon-"]:before {
   display: block;
+}
+
+.icon-arrow-top-right:before {
+  content: "\e906";
 }
 
 .icon-long-arrow:before {
@@ -2383,19 +2387,133 @@ dd {
   -webkit-text-fill-color: transparent;
 }
 
-/* ===================== INDUSTRIES ===================== */
+.industries {
+  padding: 3rem 0;
+}
 
-.industries-section {
-  margin: 0 auto 96px;
-  max-width: 1424px;
+.industries__tab {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #737F94;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 100%;
+  padding: 1.5rem 4rem;
+  border-radius: 62.4375rem;
+  border: 0.0625rem solid rgba(216, 216, 216, 0.5);
+  background: #FFF;
+  -webkit-transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.industries__tab.swiper-slide-thumb-active {
+  border: 0.0625rem solid #00E5D2;
+  background: #16EEDC;
+  color: #192A3F;
+}
+
+.industries__slider {
+  margin-top: 1rem;
+}
+
+.industries__slide {
+  position: relative;
+  background: radial-gradient(66.67% 66.67% at 50% 50%, #1F3445 0%, #303942 100%);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.industries__slide-image {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 39.8876404494%;
+  z-index: 1;
+  overflow: hidden;
+  display: block;
+}
+
+.industries__slide-image img,
+.industries__slide-image source {
+  position: absolute;
+  inset: 0;
+}
+
+.industries__slide-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #1e6e8c), color-stop(50%, rgba(102, 102, 102, 0)));
+  background: linear-gradient(to top, #1e6e8c 0, rgba(102, 102, 102, 0) 50%);
+  z-index: 2;
+}
+
+.industries__slide-content {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 130%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 6.6875rem;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.industries__slide-text {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 130%;
+  max-width: 47rem;
+}
+
+.industries__slide-arrow {
+  width: 8.75rem;
+  height: 8.75rem;
+  border: 0.0625rem solid #E6E6E6;
+  background: #fff;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 2rem;
+}
+
+.industries__slide-arrow::before {
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  color: #16EEDC;
 }
 
 .industries-tabs {
@@ -2405,7 +2523,7 @@ dd {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -2420,11 +2538,11 @@ dd {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 24px 64px;
-  border-radius: 999px;
-  border: 1px solid rgba(216, 216, 216, 0.5);
+  padding: 1.5rem 4rem;
+  border-radius: 62.4375rem;
+  border: 0.0625rem solid rgba(216, 216, 216, 0.5);
   background: #ffffff;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 100%;
   font-weight: 600;
   color: #737f94;
@@ -2447,9 +2565,9 @@ dd {
 }
 
 .industries-image-wrap {
-  border-radius: 32px;
+  border-radius: 2rem;
   overflow: hidden;
-  height: 568px;
+  height: 35.5rem;
   background: #f6f6f6;
   border-color: #00e5d2;
   position: relative;
@@ -2489,25 +2607,25 @@ dd {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 16px;
-  gap: 107px;
+  padding: 1rem;
+  gap: 6.6875rem;
 }
 
 .industries-image-text {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 800;
   line-height: 130%;
   color: #fff;
-  max-width: 752px;
-  margin-bottom: 7px;
+  max-width: 47rem;
+  margin-bottom: 0.4375rem;
 }
 
 .industries-image-arrow-btn {
-  width: 140px;
-  height: 140px;
+  width: 8.75rem;
+  height: 8.75rem;
   background: #ffffff;
-  border: 1px solid #e6e6e6;
-  border-radius: 32px;
+  border: 0.0625rem solid #e6e6e6;
+  border-radius: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3308,37 +3426,6 @@ html {
     font-size: 0.875rem;
   }
 
-  .industries-section {
-    margin: 0 0 51px;
-  }
-
-  .industries-tabs {
-    overflow-x: scroll;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    padding: 0 16px;
-  }
-
-  .industries-tab {
-    padding: 16px 24px;
-    color: #192a3f;
-    font-size: 16px;
-  }
-
-  .industries-image-wrap::before {
-    display: none;
-  }
-
-  .industries-image-wrap {
-    height: 150px;
-    width: 100%;
-    border-radius: 8px;
-  }
-
-  .industries-image-content {
-    display: none;
-  }
-
   .events-articles-section {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3913,6 +4000,33 @@ html {
         -ms-flex: 1 1 9.375rem;
             flex: 1 1 9.375rem;
   }
+
+  .industries-tabs {
+    overflow-x: scroll;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    padding: 0 1rem;
+  }
+
+  .industries-tab {
+    padding: 1rem 1.5rem;
+    color: #192a3f;
+    font-size: 1rem;
+  }
+
+  .industries-image-wrap::before {
+    display: none;
+  }
+
+  .industries-image-wrap {
+    height: 9.375rem;
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+
+  .industries-image-content {
+    display: none;
+  }
 }
 
 @media (any-hover: hover) {
@@ -3972,6 +4086,18 @@ html {
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
     color: #000;
+  }
+
+  .industries__tab:hover {
+    border: 0.0625rem solid #00E5D2;
+    background: #16EEDC;
+    color: #192A3F;
+  }
+
+  .industries__slide:hover .industries__slide-arrow::before {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
   }
 }
 
