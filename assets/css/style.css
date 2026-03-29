@@ -3199,6 +3199,10 @@ dd {
   padding-left: 2.4rem;
 }
 
+.book__action.btn.btn-sm {
+  font-size: 1rem;
+}
+
 .book__action.btn.btn-tertiary {
   border: 0.0625rem solid rgba(255, 255, 255, 0.16);
   background: rgba(234, 234, 234, 0.1);

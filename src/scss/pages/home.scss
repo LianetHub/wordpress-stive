@@ -1567,17 +1567,23 @@
 
     // .book__action
     &__action {
-        &.btn.btn-tertiary {
-            border: rem(1) solid rgba(255, 255, 255, 0.16);
-            background: rgba(234, 234, 234, 0.10);
-            color: #fff;
-
-            &:hover {
-                background: rgba(255, 255, 255, 0.26);
+        &.btn {
+            &.btn-sm {
+                font-size: 1rem;
             }
 
-            &:active {
-                background: rgba(255, 255, 255, 0.36);
+            &.btn-tertiary {
+                border: rem(1) solid rgba(255, 255, 255, 0.16);
+                background: rgba(234, 234, 234, 0.10);
+                color: #fff;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.26);
+                }
+
+                &:active {
+                    background: rgba(255, 255, 255, 0.36);
+                }
             }
         }
     }
