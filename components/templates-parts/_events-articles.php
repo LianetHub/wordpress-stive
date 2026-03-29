@@ -1,89 +1,100 @@
-<section class="events-articles-section">
-    <!-- Upcoming Events -->
-    <div class="events-block">
-        <div class="event-card__header">
-            <p class="header-title">Upcoming Events</p>
-            <a href="#" class="header-all">All events</a>
-        </div>
-        <div class="events-list">
-            <div class="event-card">
-                <img
-                    src="<?php echo IMG_PATH ?>/event_item-1.webp"
-                    alt="Blockchain Life 2026 Event" />
-            </div>
-            <div class="event-card">
-                <img src="<?php echo IMG_PATH ?>/event_item-2.webp" alt="Crypto Event of the Year" />
-            </div>
-        </div>
-    </div>
+<?php
 
-    <!-- Latest Articles -->
-    <div class="articles-block">
-        <div class="event-card__header">
-            <p class="header-title">Latest Articles</p>
-            <a href="#" class="header-all">All articles</a>
+$upcoming_events = [
+    [
+        'img_webp' => 'event_item-1.webp',
+        'img_jpg'  => 'event_item-1.jpg',
+        'alt'      => 'Blockchain Life 2026 Event',
+        'url'      => '#'
+    ],
+    [
+        'img_webp' => 'event_item-2.webp',
+        'img_jpg'  => 'event_item-2.jpg',
+        'alt'      => 'Crypto Event of the Year',
+        'url'      => '#'
+    ],
+];
+
+
+$latest_articles = [
+    [
+        'img_webp'   => 'article_image-1.webp',
+        'img_jpg'    => 'article_image-1.jpg',
+        'url'        => '#',
+        'text'       => 'Artificial Intelligence (AI) is rapidly transforming our world. It is being applied across various fields, from healthcare and finance.',
+        'author'     => 'Anastasia Shalepina',
+        'date'       => 'March 1, 2026',
+        'categories' => [
+            ['name' => 'AI Search', 'is_main' => true],
+            ['name' => 'AI SEO', 'is_main' => false],
+            ['name' => 'AI Marketing', 'is_main' => false],
+        ]
+    ],
+    [
+        'img_webp'   => 'article_image-2.webp',
+        'img_jpg'    => 'article_image-2.jpg',
+        'url'        => '#',
+        'text'       => 'From smart homes to personalized healthcare, AI is paving the way for a better tomorrow',
+        'author'     => 'Anastasia Shalepina',
+        'date'       => 'March 5, 2026',
+        'categories' => [
+            ['name' => 'AI Search', 'is_main' => false],
+            ['name' => 'AI SEO', 'is_main' => false],
+            ['name' => 'AI Marketing', 'is_main' => false],
+        ]
+    ],
+    [
+        'img_webp'   => 'article_image-3.webp',
+        'img_jpg'    => 'article_image-3.jpg',
+        'url'        => '#',
+        'text'       => 'The rise of artificial intelligence (AI) is reshaping industries at an unprecedented pace',
+        'author'     => 'Anastasia Shalepina',
+        'date'       => 'March 10, 2026',
+        'categories' => [
+            ['name' => 'AI Search', 'is_main' => false],
+            ['name' => 'AI SEO', 'is_main' => false],
+            ['name' => 'AI Marketing', 'is_main' => false],
+        ]
+    ],
+];
+
+?>
+<section class="media">
+    <div class="media__container container">
+        <div class="media__block">
+            <div class="media__block-header">
+                <h2 class="media__block-title gradient-text">UPCOMING EVENTS</h2>
+                <a href="/events" class="media__block-all">ALL EVENTS</a>
+            </div>
+            <div class="media__block-events">
+                <?php foreach ($upcoming_events as $event): ?>
+                    <a
+                        href="<?php echo esc_url($event['url']); ?>"
+                        class="media__block-event">
+                        <picture class="media__block-image">
+                            <source
+                                srcset="<?php echo IMG_PATH . '/media/' . $event['img_webp']; ?>"
+                                type="image/webp">
+                            <img
+                                src="<?php echo IMG_PATH . '/media/' . $event['img_jpg']; ?>"
+                                alt="<?php echo esc_attr($event['alt']); ?>"
+                                loading="lazy">
+                        </picture>
+                    </a>
+                <?php endforeach; ?>
+            </div>
         </div>
-        <div class="articles-list hide-scroll">
-            <div class="article-card">
-                <div class="article-img">
-                    <img src="<?php echo IMG_PATH ?>/article_image-1.webp" alt="Article thumbnail" />
-                </div>
-                <div class="article-card__content">
-                    <div class="article-tags">
-                        <span class="article-tag active">AI Search</span>
-                        <span class="article-tag">AI SEO</span>
-                        <span class="article-tag">AI Marketing</span>
-                    </div>
-                    <p class="article-text">
-                        Artificial Intelligence (AI) is rapidly transforming our world. It
-                        is being applied across various fields, from healthcare and
-                        finance...
-                    </p>
-                    <div class="article-info">
-                        <span class="article-info__author"> Anastasia Shalepina </span>
-                        <span class="article-info__date">  March 1, 2026 </span>
-                    </div>
-                </div>
+        <div class="media__block">
+            <div class="media__block-header">
+                <h2 class="media__block-title gradient-text">Latest Articles</h2>
+                <a href="/blog" class="media__block-all">All articles</a>
             </div>
-            <div class="article-card">
-                <div class="article-img">
-                    <img src="<?php echo IMG_PATH ?>/article_image-2.webp" alt="Article thumbnail" />
-                </div>
-                <div class="article-card__content">
-                    <div class="article-tags">
-                        <span class="article-tag">AI Search</span>
-                        <span class="article-tag">AI SEO</span>
-                        <span class="article-tag">AI Marketing</span>
-                    </div>
-                    <p class="article-text">
-                        From smart homes to personalized healthcare, AI is paving the way
-                        for a better tomorrow
-                    </p>
-                    <div class="article-info">
-                        <span class="article-info__author"> Anastasia Shalepina </span>
-                        <span class="article-info__date">  March 1, 2026 </span>
-                    </div>
-                </div>
-            </div>
-            <div class="article-card">
-                <div class="article-img">
-                    <img src="<?php echo IMG_PATH ?>/article_image-3.webp" alt="Article thumbnail" />
-                </div>
-                <div class="article-card__content">
-                    <div class="article-tags">
-                        <span class="article-tag active">AI Search</span>
-                        <span class="article-tag">AI SEO</span>
-                        <span class="article-tag">AI Marketing</span>
-                    </div>
-                    <p class="article-text">
-                        The rise of artificial intelligence (AI) is reshaping industries at
-                        an unprecedented pace
-                    </p>
-                    <div class="article-info">
-                        <span class="article-info__author"> Anastasia Shalepina </span>
-                        <span class="article-info__date">  March 1, 2026 </span>
-                    </div>
-                </div>
+            <div class="media__block-articles">
+                <?php
+                foreach ($latest_articles as $article) {
+                    include(locate_template('components/parts/_article-card.php'));
+                }
+                ?>
             </div>
         </div>
     </div>
