@@ -141,8 +141,10 @@ function initStepsInteractions() {
         });
     } else {
         $items.on('mouseenter', function () {
-            $items.removeClass('active');
-            $(this).addClass('active');
+            if (!$(this).hasClass('active')) {
+                $items.removeClass('active');
+                $(this).addClass('active');
+            }
         });
     }
 }
