@@ -15,8 +15,21 @@
 // @use "modules/animation";
 //============ МОДУЛИ ====================
 
-
 .title {
+	font-weight: 800;
+	line-height: 100%;
+	font-size: 1.75rem;
+
+	@media (min-width: $md5) {
+		font-size: 2.25rem;
+	}
+
+	@media (min-width: $md2) {
+		font-size: 3rem;
+	}
+}
+
+.title-sm {
 	font-weight: 800;
 	line-height: 100%;
 	font-size: 1.75rem;

@@ -83,4 +83,9 @@
 	width: 100%;
 	max-width: rem(517);
 	padding: 2rem;
+	cursor: default;
+
+	&__form {
+		margin-top: 2rem;
+	}
 }

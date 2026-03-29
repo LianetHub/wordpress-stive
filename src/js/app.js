@@ -16,28 +16,34 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    if ($(".solutions__slider").length) {
+        new Swiper('.solutions__slider', {
+            slidesPerView: 6,
+            spaceBetween: 16
+        })
+    }
+
 
     initMobileMenu();
     initFooterAccordion();
     initApplyButton();
-    initFormValidation();
-    initSolutionsCards();
     initOptionsCards();
     initIndustriesCarousel();
 
-    document.addEventListener('wpcf7init', function (event) {
-        const form = event.target;
+    const inputs = document.querySelectorAll("input[type='tel']");
 
-        form.querySelectorAll('.wpcf7-form-control').forEach(field => {
-            field.addEventListener('change', function (e) {
-                e.stopImmediatePropagation();
-            }, true);
-
-            field.addEventListener('blur', function (e) {
-                e.stopImmediatePropagation();
-            }, true);
+    inputs?.forEach((input) => {
+        window.intlTelInput(input, {
+            separateDialCode: true,
+            initialCountry: "auto",
+            geoIpLookup: (callback) => {
+                fetch("https://ipapi.co/json")
+                    .then((res) => res.json())
+                    .then((data) => callback(data.country_code))
+                    .catch(() => callback("us"));
+            }
         });
-    }, false);
+    });
 });
 
 function initMobileMenu() {
@@ -84,135 +90,6 @@ function initApplyButton() {
         applyBtn.classList.remove('btn__secondary');
         applyBtn.textContent = 'Applied Successfully!';
     });
-}
-
-function initFormValidation() {
-    const form = document.getElementById('proposal-form-form');
-    if (!form) return;
-
-    const fields = {
-        'form-name': {
-            element: document.getElementById('form-name'),
-            errorElement: document.getElementById('form-name-error'),
-            validate: (value) => {
-                if (!value.trim()) {
-                    return "Field can't be empty";
-                }
-                if (value.trim().length < 2) {
-                    return 'Name must be at least 2 characters';
-                }
-                return null;
-            }
-        },
-        'form-phone': {
-            element: document.getElementById('form-phone'),
-            errorElement: document.getElementById('form-phone-error'),
-            validate: (value) => {
-                if (!value.trim()) {
-                    return 'Phone number is required';
-                }
-                const phoneRegex = /^\+?[\d\s\-()]{7,20}$/;
-                if (!phoneRegex.test(value.replace(/\s/g, ''))) {
-                    return 'Enter a valid phone number';
-                }
-                return null;
-            }
-        },
-        'form-email': {
-            element: document.getElementById('form-email'),
-            errorElement: document.getElementById('form-email-error'),
-            validate: (value) => {
-                if (!value.trim()) {
-                    return 'Email is required';
-                }
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(value)) {
-                    return 'Enter a valid email address';
-                }
-                return null;
-            }
-        }
-    };
-
-    Object.values(fields).forEach((field) => {
-        if (!field.element) return;
-
-        field.element.addEventListener('blur', () => {
-            validateField(field);
-        });
-
-        field.element.addEventListener('input', () => {
-            const container = field.element.closest('.input-container');
-            if (container && container.classList.contains('error')) {
-                container.classList.remove('error');
-                field.errorElement.textContent = '';
-            }
-        });
-    });
-
-    function validateField(field) {
-        const value = field.element.value;
-        const error = field.validate(value);
-        const container = field.element.closest('.input-container');
-
-        if (!container) return false;
-
-        if (error) {
-            container.classList.add('error');
-            container.classList.remove('success');
-            field.errorElement.textContent = error;
-            return false;
-        } else {
-            container.classList.remove('error');
-            container.classList.add('success');
-            field.errorElement.textContent = '';
-            return true;
-        }
-    }
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        let isValid = true;
-
-        Object.values(fields).forEach((field) => {
-            const result = validateField(field);
-            if (!result) {
-                isValid = false;
-            }
-        });
-
-        if (isValid) {
-            console.log('Form is valid, submitting...');
-        }
-    });
-}
-
-function initSolutionsCards() {
-    const cards = document.querySelectorAll('.solutions-card');
-
-    if (!cards.length) return;
-
-    const hasHover = window.matchMedia('(hover: hover)').matches;
-
-    if (hasHover) {
-        cards.forEach((card) => {
-            card.addEventListener('mouseenter', () => {
-                cards.forEach((c) => c.classList.remove('active'));
-                card.classList.add('active');
-            });
-        });
-    } else {
-        cards.forEach((card) => {
-            card.addEventListener('click', (e) => {
-                if (!card.classList.contains('active')) {
-                    e.preventDefault();
-                    cards.forEach((c) => c.classList.remove('active'));
-                    card.classList.add('active');
-                }
-            });
-        });
-    }
 }
 
 function initOptionsCards() {
