@@ -385,7 +385,6 @@
 	}
 
 
-
 	&.btn-primary {
 		color: #192A3F;
 		background: #16EEDC;
@@ -447,6 +446,19 @@
 			;
 		}
 
+	}
+
+	&.btn-grey {
+		border: rem(1) solid #E3E3E3;
+		background: #EAEAEA;
+
+		&:hover {
+			background: color.adjust($color: #EAEAEA, $lightness: -10%);
+		}
+
+		&:active {
+			background: color.adjust($color: #EAEAEA, $lightness: -15%);
+		}
 	}
 
 	&.btn-sm {

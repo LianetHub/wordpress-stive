@@ -1,4 +1,26 @@
-<section class="cta-section">
+<section class="ready">
+    <div class="container">
+        <div class="ready__content">
+            <div class="ready__header">
+                <div class="ready__map">
+                    <img src="<?php echo IMG_PATH ?>/map.svg" alt="map">
+                </div>
+            </div>
+            <div class="ready__main">
+                <h2 class="ready__title title-lg gradient-text">Ready to Scale with AI?</h2>
+                <div class="ready__actions">
+                    <a href="" class="ready__btn btn btn-primary">Book Strategy Call</a>
+                    <a href="#get-proposal"
+                        data-fancybox
+                        class="ready__btn btn btn-grey">Get Proposal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- <section class="cta-section">
     <h2 class="cta-title">Ready to Scale<br />with AI?</h2>
     <div class="cta-badges">
         <div class="cta-badge">
@@ -314,4 +336,4 @@
         <a href="#" class="btn-cta-primary">Book Strategy Call</a>
         <a href="#" class="btn-cta-secondary">Get Proposal</a>
     </div>
-</section>
+</section> -->
