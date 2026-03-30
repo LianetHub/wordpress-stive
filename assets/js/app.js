@@ -2,6 +2,8 @@
 
 // const { default: Swiper } = require("swiper");
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
     //  init Fancybox
@@ -77,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+
     if ($(".cases__slider").length) {
         new Swiper('.cases__slider', {
             slidesPerView: 1,
@@ -84,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
             loop: true,
             slideToClickedSlide: true,
             watchSlidesVisibility: true,
+            preventClicks: true,
+            preventClicksPropagation: true,
             spaceBetween: 32
         })
     }

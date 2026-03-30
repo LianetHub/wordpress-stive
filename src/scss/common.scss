@@ -101,10 +101,14 @@ body {
 	}
 
 	@media (min-width: $md2) {
-		max-width: rem(1180);
+		max-width: rem(1140);
 	}
 
 	@media (min-width:$md1) {
+		max-width: rem(1320);
+	}
+
+	@media (min-width:$md0) {
 		max-width: rem(1424);
 	}
 
@@ -332,158 +336,3 @@ body {
 // 		}
 // 	}
 // }
-
-p {
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 100%;
-	margin: 0;
-}
-
-.title {
-	h2 {
-		margin-bottom: 32px;
-	}
-
-	p {
-		white-space: pre-line;
-		margin-bottom: 16px;
-	}
-
-	p:last-of-type {
-		opacity: 0.5;
-		margin: 0;
-	}
-}
-
-@media (max-width: 768px) {
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		white-space: initial;
-	}
-
-	h1 {
-		font-size: 36px;
-	}
-
-	h2 {
-		font-size: 42px;
-	}
-
-	h3 {
-		font-size: 40px;
-	}
-
-	h4 {
-		font-size: 34px;
-	}
-
-	h5 {
-		font-size: 42px;
-	}
-}
-
-.main {
-	overflow: hidden;
-	// position: relative;
-}
-
-.with-bg {
-	position: relative;
-
-	&::before {
-		position: absolute;
-		font-size: 108px;
-		line-height: 110%;
-		left: 50%;
-		top: -27px;
-		transform: translateX(-50%);
-		opacity: .1;
-	}
-}
-
-.dots-bg {
-	position: absolute;
-	width: 2235px;
-	height: 2276px;
-	z-index: -1;
-}
-
-.block {
-	flex: 1;
-	border-radius: 16px;
-	border-image: linear-gradient(90deg, rgba(75, 242, 242, 0) 0%, rgba(#4BF2F2, .7) 50%, rgba(75, 242, 242, 0) 100%) 1;
-	border-top: 1px solid transparent;
-	padding: 40px;
-	background: rgba(#4BF2F2, .1);
-	backdrop-filter: blur(8px);
-	display: flex;
-	flex-direction: column;
-}
-
-.badge {
-	&-social {
-		font-size: 16px;
-		text-transform: capitalize;
-		display: flex;
-		gap: 24px;
-		align-items: center;
-
-		a {
-			display: flex;
-			align-items: center;
-		}
-
-		img {
-			height: 24px;
-			width: auto;
-			margin-right: 12px;
-		}
-	}
-}
-
-ul,
-ol {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-li>ul,
-li>ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
-
-ul.has-bullets {
-	li {
-		display: flex;
-		align-items: center;
-		margin-bottom: 12px;
-	}
-
-	li::before {
-		content: "";
-		flex-shrink: 0;
-		background-color: #2fc991;
-		display: block;
-		transform: rotate(45deg);
-		border-radius: 3px;
-		width: 1rem;
-		height: 1rem;
-		margin-right: 12px;
-	}
-}
-
-dt {
-	font-weight: 700;
-}
-
-dd {
-	margin: 0;
-}

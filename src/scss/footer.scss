@@ -26,16 +26,7 @@
 	}
 
 	// .footer__header-main
-	&__header-main {
-		@media (max-width: 87.5rem) {
-			order: 2;
-			margin-top: 1.1875rem;
-
-			.footer-logo {
-				display: none;
-			}
-		}
-	}
+	&__header-main {}
 
 	// .footer__logo
 	&__logo {
@@ -73,12 +64,6 @@
 		display: flex;
 		justify-content: space-between;
 
-		@media (max-width: 87.5rem) {
-			padding: 1rem 1rem 0;
-			flex-direction: column;
-			gap: 0;
-			order: 1;
-		}
 	}
 
 	// .footer__menu-block
@@ -139,13 +124,6 @@
 		justify-content: space-between;
 		align-items: center;
 
-		@media (max-width: 87.5rem) {
-			flex-direction: column;
-			gap: 0;
-			align-items: flex-start;
-			border: none;
-			padding: 0;
-		}
 	}
 
 	// .footer__copyright
@@ -154,10 +132,6 @@
 		font-weight: 400;
 		color: #7c8698;
 
-		@media (max-width: 87.5rem) {
-			max-width: 5.8125rem;
-			color: #838383;
-		}
 	}
 
 	// .footer__terms
@@ -182,9 +156,7 @@
 				}
 			}
 
-			@media (max-width: 87.5rem) {
-				gap: 1rem;
-			}
+
 		}
 	}
 
