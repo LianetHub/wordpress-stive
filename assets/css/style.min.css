@@ -1,16 +1,16 @@
 @font-face {
     font-family: HelveticaNeue;
     font-display: swap;
-    src: url(../fonts/HelveticaNeue-Medium.woff2) format("woff2"), url(../fonts/HelveticaNeue-Medium.woff) format("woff");
-    font-weight: 500;
+    src: url(../fonts/HelveticaNeue-Bold.woff2) format("woff2"), url(../fonts/HelveticaNeue-Bold.woff) format("woff");
+    font-weight: 700;
     font-style: normal
 }
 
 @font-face {
     font-family: HelveticaNeue;
     font-display: swap;
-    src: url(../fonts/HelveticaNeue-Thin.woff2) format("woff2"), url(../fonts/HelveticaNeue-Thin.woff) format("woff");
-    font-weight: 100;
+    src: url(../fonts/HelveticaNeue-Medium.woff2) format("woff2"), url(../fonts/HelveticaNeue-Medium.woff) format("woff");
+    font-weight: 500;
     font-style: normal
 }
 
@@ -31,10 +31,10 @@
 }
 
 @font-face {
-    font-family: SFProDisplay;
+    font-family: HelveticaNeue;
     font-display: swap;
-    src: url(../fonts/SFProDisplay-Black.woff2) format("woff2"), url(../fonts/SFProDisplay-Black.woff) format("woff");
-    font-weight: 900;
+    src: url(../fonts/HelveticaNeue-Thin.woff2) format("woff2"), url(../fonts/HelveticaNeue-Thin.woff) format("woff");
+    font-weight: 100;
     font-style: normal
 }
 
@@ -47,10 +47,10 @@
 }
 
 @font-face {
-    font-family: HelveticaNeue;
+    font-family: SFProDisplay;
     font-display: swap;
-    src: url(../fonts/HelveticaNeue-Bold.woff2) format("woff2"), url(../fonts/HelveticaNeue-Bold.woff) format("woff");
-    font-weight: 700;
+    src: url(../fonts/SFProDisplay-Black.woff2) format("woff2"), url(../fonts/SFProDisplay-Black.woff) format("woff");
+    font-weight: 900;
     font-style: normal
 }
 
@@ -65,16 +65,16 @@
 @font-face {
     font-family: SFProDisplay;
     font-display: swap;
-    src: url(../fonts/SFProDisplay-Light.woff2) format("woff2"), url(../fonts/SFProDisplay-Light.woff) format("woff");
-    font-weight: 300;
+    src: url(../fonts/SFProDisplay-Regular.woff2) format("woff2"), url(../fonts/SFProDisplay-Regular.woff) format("woff");
+    font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: SFProDisplay;
     font-display: swap;
-    src: url(../fonts/SFProDisplay-Regular.woff2) format("woff2"), url(../fonts/SFProDisplay-Regular.woff) format("woff");
-    font-weight: 400;
+    src: url(../fonts/SFProDisplay-Semibold.woff2) format("woff2"), url(../fonts/SFProDisplay-Semibold.woff) format("woff");
+    font-weight: 600;
     font-style: normal
 }
 
@@ -89,8 +89,8 @@
 @font-face {
     font-family: SFProDisplay;
     font-display: swap;
-    src: url(../fonts/SFProDisplay-Semibold.woff2) format("woff2"), url(../fonts/SFProDisplay-Semibold.woff) format("woff");
-    font-weight: 600;
+    src: url(../fonts/SFProDisplay-Light.woff2) format("woff2"), url(../fonts/SFProDisplay-Light.woff) format("woff");
+    font-weight: 300;
     font-style: normal
 }
 
@@ -1505,7 +1505,7 @@ dd {
 .footer__wrapper {
     border-radius: 1rem 1rem 0 0;
     background: #fff;
-    padding: 4rem 9.1875rem 2.625rem 7.4375rem
+    padding: 4.0625rem 7.4375rem 2.0625rem
 }
 
 .footer__header {
@@ -1514,25 +1514,26 @@ dd {
     -ms-grid-columns: 14.4375rem 4fr;
     grid-template-columns: 14.4375rem 4fr;
     gap: 8rem;
-    margin-bottom: 2.8125rem
+    padding-bottom: 2.22rem;
+    border-bottom: .0625rem solid rgba(0, 0, 0, .05)
 }
 
 .footer__logo {
-    margin-bottom: 2.75rem;
-    display: block
+    display: block;
+    max-width: 5.9375rem
 }
 
 .footer__desc {
-    margin-left: .3125rem;
-    margin-bottom: .9375rem;
+    margin-top: 2.875rem;
+    color: #838383;
     font-size: .8125rem;
     font-weight: 300;
-    color: #7c8698;
-    max-width: 14.4375rem
+    max-width: 17.875rem;
+    line-height: 1.2
 }
 
 .footer__addresses {
-    margin-left: .3125rem;
+    margin-top: .9375rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1545,9 +1546,7 @@ dd {
 
 .footer__addresses address {
     font-size: .8125rem;
-    font-weight: 500;
-    line-height: 100%;
-    color: #192a3f
+    font-weight: 500
 }
 
 .footer__menu {
@@ -1569,11 +1568,19 @@ dd {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    cursor: pointer;
-    padding: 1rem 0
+    font-size: .875rem;
+    font-weight: 500
+}
+
+.footer__menu-caption::before {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    display: none
 }
 
 .footer__menu-list {
+    margin-top: 3.1875rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1588,16 +1595,17 @@ dd {
     line-height: 100%
 }
 
-.footer__menu-list a {
+.footer__menu-list li a {
     font-size: .875rem;
     font-weight: 400;
     color: #7c8698;
     text-decoration: none;
-    -webkit-transition: color .2s;
-    transition: color .2s
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease
 }
 
 .footer__bottom {
+    padding-top: 3rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1606,9 +1614,7 @@ dd {
     justify-content: space-between;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
-    padding-top: 1.5rem;
-    border-top: .0625rem solid rgba(0, 0, 0, .05)
+    align-items: center
 }
 
 .footer__copyright {
@@ -2996,7 +3002,7 @@ dd {
 }
 
 .book {
-    padding: 2.625rem 0
+    padding: 2.625rem 0 4rem
 }
 
 .book__content {
@@ -3176,6 +3182,10 @@ dd {
         min-width: 2.5rem;
         height: 2.5rem;
         margin-left: 1rem
+    }
+
+    .footer__menu-caption {
+        cursor: default
     }
 }
 
@@ -3427,18 +3437,6 @@ dd {
 }
 
 @media (max-width:87.5rem) {
-    .footer__header {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        gap: 0;
-        margin-bottom: 0
-    }
-
     .footer__header-main {
         -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -3448,19 +3446,6 @@ dd {
 
     .footer__header-main .footer-logo {
         display: none
-    }
-
-    .footer__desc {
-        width: 100%;
-        max-width: unset;
-        margin: 0;
-        padding: .5rem 1rem;
-        color: #838383
-    }
-
-    .footer__addresses {
-        margin: 0;
-        padding: .5rem 1rem
     }
 
     .footer__menu {
@@ -3473,16 +3458,6 @@ dd {
         -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
         order: 1
-    }
-
-    .footer__menu-list {
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        -webkit-transition: max-height .4s ease, opacity .3s ease, padding .3s ease;
-        transition: max-height .4s ease, opacity .3s ease, padding .3s ease;
-        padding: 0;
-        gap: 1rem
     }
 
     .footer__bottom {
@@ -3559,6 +3534,10 @@ dd {
 
     .menu__link:hover {
         color: #737f94
+    }
+
+    .footer__menu-list li a:hover {
+        color: #16eedc
     }
 
     .solution-card__wrapper:hover::after {

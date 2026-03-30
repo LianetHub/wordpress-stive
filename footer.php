@@ -1,14 +1,68 @@
 <?php
 $logotype = get_field('logotype_for_site', 'option');
-?>
 
+$footer_addresses = [
+    'Poland, Wrocław, 50-202, Księcia Witolda Street, No. 49, Apt. 15',
+    'United States, Bellevue, WA, 98004-6424, 35 112th Ave NE, Apt 420',
+];
+
+$footer_menus = [
+    [
+        'title' => 'Services',
+        'items' => [
+            ['text' => 'AI SEO & GEO Optimization', 'url' => '#'],
+            ['text' => 'LLM Analytics & Audit', 'url' => '#'],
+            ['text' => 'AI Content & Automation', 'url' => '#'],
+            ['text' => 'LLM Ads Management', 'url' => '#'],
+            ['text' => 'LLM Reputation Management', 'url' => '#'],
+            ['text' => 'LLM Brand Strategy', 'url' => '#'],
+        ]
+    ],
+    [
+        'title' => 'Industries',
+        'items' => [
+            ['text' => 'SaaS', 'url' => '#'],
+            ['text' => 'FinTech', 'url' => '#'],
+            ['text' => 'E-commerce', 'url' => '#'],
+            ['text' => 'Healthcare', 'url' => '#'],
+            ['text' => 'Real Estate', 'url' => '#'],
+        ]
+    ],
+    [
+        'title' => 'Company',
+        'items' => [
+            ['text' => 'About us', 'url' => '#'],
+            ['text' => 'Cases', 'url' => '#'],
+            ['text' => 'Events', 'url' => '#'],
+        ]
+    ],
+    [
+        'title' => 'Resources',
+        'items' => [
+            ['text' => 'Blog', 'url' => '#'],
+            ['text' => 'Book', 'url' => '#'],
+        ]
+    ],
+];
+
+$footer_socials = [
+    ['name' => 'Telegram', 'url' => '#'],
+    ['name' => 'X', 'url' => '#'],
+    ['name' => 'Facebook', 'url' => '#'],
+];
+
+$footer_terms = [
+    ['text' => 'Privacy Policy', 'url' => '#'],
+    ['text' => 'Terms and Conditions', 'url' => '#'],
+];
+?>
 </main>
 <footer class="footer">
     <div class="container">
         <div class="footer__wrapper">
             <div class="footer__header">
                 <div class="footer__header-main">
-                    <a href="#" class="footer__logo">
+                    <a href="/" class="footer__logo">
                         <img
                             src="<?php echo esc_url($logotype['url']); ?>"
                             alt="<?php echo esc_attr($logotype['alt']) ?: 'logotype'; ?>">
@@ -19,65 +73,51 @@ $logotype = get_field('logotype_for_site', 'option');
                         delivering high-quality results.
                     </p>
                     <div class="footer__addresses">
-                        <address>Poland, Wrocław, 50-202, Księcia Witolda Street, No. 49, Apt. 15</address>
-                        <address>United States, Bellevue, WA, 98004-6424, 35 112th Ave NE, Apt 420</address>
+                        <?php foreach ($footer_addresses as $address) : ?>
+                            <address><?php echo esc_html($address); ?></address>
+                        <?php endforeach; ?>
                     </div>
                 </div>
+
                 <nav aria-label="footer menu" class="footer__menu">
-                    <div class="footer__menu-block">
-                        <div class="footer__menu-caption icon-plus">Services</div>
-                        <ul class="footer__menu-list">
-                            <li><a href="#">AI SEO & GEO Optimization</a></li>
-                            <li><a href="#">LLM Analytics & Audit</a></li>
-                            <li><a href="#">AI Content & Automation</a></li>
-                            <li><a href="#">LLM Ads Management</a></li>
-                            <li><a href="#">LLM Reputation Management</a></li>
-                            <li><a href="#">LLM Brand Strategy</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__menu-block">
-                        <div class="footer__menu-caption icon-plus">Industries</div>
-                        <ul class="footer__menu-list">
-                            <li><a href="#">SaaS</a></li>
-                            <li><a href="#">FinTech</a></li>
-                            <li><a href="#">E-commerce</a></li>
-                            <li><a href="#">Healthcare</a></li>
-                            <li><a href="#">Real Estate</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__menu-block">
-                        <div class="footer__menu-caption icon-plus">Company</div>
-                        <ul class="footer__menu-list">
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Cases</a></li>
-                            <li><a href="#">Events</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__menu-block">
-                        <div class="footer__menu-caption icon-plus">Resources</div>
-                        <ul class="footer__menu-list">
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Book</a></li>
-                        </ul>
-                    </div>
+                    <?php foreach ($footer_menus as $menu_block) : ?>
+                        <div class="footer__menu-block">
+                            <button
+                                type="button"
+                                class="footer__menu-caption icon-plus">
+                                <?php echo esc_html($menu_block['title']); ?>
+                            </button>
+                            <ul class="footer__menu-list">
+                                <?php foreach ($menu_block['items'] as $item) : ?>
+                                    <li><a href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['text']); ?></a></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endforeach; ?>
                 </nav>
             </div>
+
             <div class="footer__bottom">
-                <p class="footer__copyright">All rights reserved © 2026 — stive.ai</p>
+                <p class="footer__copyright">All rights reserved © <?php echo date('Y'); ?> — stive.ai</p>
+
                 <nav aria-label="Terms menu" class="footer__terms">
-                    <ul>
-                        <li>
-                            <a href="">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="">Terms and Conditions</a>
-                        </li>
+                    <ul class="footer__terms-list">
+                        <?php foreach ($footer_terms as $term) : ?>
+                            <li>
+                                <a href="<?php echo esc_url($term['url']); ?>"><?php echo esc_html($term['text']); ?></a>
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
                 </nav>
+
                 <ul class="footer__socials">
-                    <li class="footer__social"><a href="" class="footer__social-link">Telegram</a></li>
-                    <li class="footer__social"><a href="" class="footer__social-link">X</a></li>
-                    <li class="footer__social"><a href="" class="footer__social-link">Facebook</a></li>
+                    <?php foreach ($footer_socials as $social) : ?>
+                        <li class="footer__social">
+                            <a href="<?php echo esc_url($social['url']); ?>" class="footer__social-link">
+                                <?php echo esc_html($social['name']); ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
