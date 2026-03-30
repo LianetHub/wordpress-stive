@@ -15,10 +15,30 @@ function r4_themestive_enqueue_style()
     wp_enqueue_style('swiper', STYLES_PATH . '/libs/swiper-bundle.min.css', array(), filemtime(STYLES_DIR . '/libs/swiper-bundle.min.css'));
     wp_enqueue_style('fancybox', STYLES_PATH . '/libs/fancybox.css', array(), filemtime(STYLES_DIR . '/libs/fancybox.css'));
     wp_enqueue_style('intlTelInput', STYLES_PATH . '/libs/intlTelInput.css', array(), filemtime(STYLES_DIR . '/libs/intlTelInput.css'));
+
+    wp_enqueue_style('calendly', 'https://assets.calendly.com/assets/external/widget.css', array(), null);
+
     wp_enqueue_style('reset', STYLES_PATH . '/reset.min.css', array(), filemtime(STYLES_DIR . '/reset.min.css'));
     wp_enqueue_style('main-style', STYLES_PATH . '/style.min.css', array(), filemtime(STYLES_DIR . '/style.min.css'));
 }
 add_action('wp_enqueue_scripts', 'r4_themestive_enqueue_style');
+
+function r4_make_styles_async($tag, $handle, $src)
+{
+    $async_styles = [
+        'swiper',
+        'fancybox',
+        'intlTelInput',
+        'calendly'
+    ];
+
+    if (in_array($handle, $async_styles)) {
+        return '<link rel="stylesheet" id="' . $handle . '-css" href="' . $src . '" media="print" onload="this.media=\'all\'; this.onload=null;">' . "\n" . '<noscript><link rel="stylesheet" href="' . $src . '"></noscript>';
+    }
+
+    return $tag;
+}
+add_filter('style_loader_tag', 'r4_make_styles_async', 10, 3);
 
 function r4_themestive_enqueue_scripts()
 {
@@ -28,6 +48,11 @@ function r4_themestive_enqueue_scripts()
     wp_enqueue_script('jquery', JS_PATH . '/libs/jquery-4.0.0.min.js', array(), filemtime(JS_DIR . '/libs/jquery-4.0.0.min.js'), [
         'in_footer' => true,
         'strategy'  => 'defer',
+    ]);
+
+    wp_enqueue_script('calendly-js', 'https://assets.calendly.com/assets/external/widget.js', array(), null, [
+        'in_footer' => true,
+        'strategy'  => 'async',
     ]);
 
     wp_enqueue_script('swiper-js', JS_PATH . '/libs/swiper-bundle.min.js', array(), filemtime(JS_DIR . '/libs/swiper-bundle.min.js'), [

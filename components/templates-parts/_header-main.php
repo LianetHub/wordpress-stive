@@ -42,7 +42,7 @@ $logotype = get_field('logotype_for_site', 'option');
                     </span>
                 </button>
             </div>
-            <a href="" class="header__btn btn btn-primary">Book Intro Call</a>
+            <a href="https://calendly.com/as-stive/30min" data-calendly class="header__btn btn btn-primary">Book Intro Call</a>
         </div>
     </div>
 </header>

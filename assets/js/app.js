@@ -11,6 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // event handlers
+    $(document).on('click', (e) => {
+        const $target = $(e.target);
+
+        if ($target.is('[data-calendly]')) {
+            e.preventDefault();
+
+            const calendarUrl = $target.attr('href');
+
+            if (typeof Calendly !== 'undefined' && calendarUrl) {
+                Calendly.initPopupWidget({
+                    url: calendarUrl
+                });
+            } else if (calendarUrl) {
+                window.open(calendarUrl, '_blank');
+            }
+        }
+
+
+    });
+
+
+
     // Sliders
     class MobileSwiper {
         constructor(sliderName, options, condition = 767.98) {

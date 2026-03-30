@@ -9,7 +9,7 @@
             <div class="ready__main">
                 <h2 class="ready__title title-lg gradient-text">Ready to Scale with AI?</h2>
                 <div class="ready__actions">
-                    <a href="" class="ready__btn btn btn-primary">Book Strategy Call</a>
+                    <a href="https://calendly.com/as-stive/30min" data-calendly class="ready__btn btn btn-primary">Book Strategy Call</a>
                     <a href="#get-proposal"
                         data-fancybox
                         class="ready__btn btn btn-grey">Get Proposal</a>
