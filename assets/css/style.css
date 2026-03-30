@@ -1646,6 +1646,11 @@ dd {
   color: #7c8698;
 }
 
+.footer__terms {
+  margin-right: auto;
+  margin-left: 11rem;
+}
+
 .footer__terms ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1657,6 +1662,8 @@ dd {
   font-size: 0.75rem;
   font-weight: 400;
   color: #16eedc;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .footer__socials {
@@ -1667,12 +1674,13 @@ dd {
 }
 
 .footer__social-link {
+  color: #19D6C7;
   font-size: 0.8125rem;
-  font-weight: 400;
-  color: #16eedc;
-  text-decoration: underline;
-  text-underline-offset: 0.125rem;
-  text-decoration-color: rgba(22, 238, 220, 0.2);
+  display: inline-block;
+  min-width: 1.6875rem;
+  text-align: center;
+  padding-block: 0.0625rem;
+  border-bottom: 0.0625rem solid rgba(22, 238, 220, 0.2);
 }
 
 .hero {
@@ -3519,17 +3527,6 @@ dd {
     gap: 1rem;
   }
 
-  .footer__socials {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-    width: 100%;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding: 1.5rem 0 1.625rem;
-  }
-
   .testimonial {
     min-height: unset;
     min-width: 19.75rem;
@@ -3576,6 +3573,10 @@ dd {
 
   .footer__menu-list li a:hover {
     color: #16eedc;
+  }
+
+  .footer__terms ul a:hover {
+    color: rgb(14.212, 194.788, 179.74);
   }
 
   .solution-card__wrapper:hover::after {
