@@ -1,24 +1,16 @@
 @font-face {
     font-family: HelveticaNeue;
     font-display: swap;
-    src: url(../fonts/HelveticaNeue-Bold.woff2) format("woff2"), url(../fonts/HelveticaNeue-Bold.woff) format("woff");
-    font-weight: 700;
-    font-style: normal
-}
-
-@font-face {
-    font-family: HelveticaNeue;
-    font-display: swap;
-    src: url(../fonts/HelveticaNeue-Thin.woff2) format("woff2"), url(../fonts/HelveticaNeue-Thin.woff) format("woff");
-    font-weight: 100;
-    font-style: normal
-}
-
-@font-face {
-    font-family: HelveticaNeue;
-    font-display: swap;
     src: url(../fonts/HelveticaNeue-Medium.woff2) format("woff2"), url(../fonts/HelveticaNeue-Medium.woff) format("woff");
     font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: HelveticaNeue;
+    font-display: swap;
+    src: url(../fonts/HelveticaNeue-Bold.woff2) format("woff2"), url(../fonts/HelveticaNeue-Bold.woff) format("woff");
+    font-weight: 700;
     font-style: normal
 }
 
@@ -33,16 +25,24 @@
 @font-face {
     font-family: SFProDisplay;
     font-display: swap;
-    src: url(../fonts/SFProDisplay-Heavy.woff2) format("woff2"), url(../fonts/SFProDisplay-Heavy.woff) format("woff");
-    font-weight: 800;
+    src: url(../fonts/SFProDisplay-Black.woff2) format("woff2"), url(../fonts/SFProDisplay-Black.woff) format("woff");
+    font-weight: 900;
+    font-style: normal
+}
+
+@font-face {
+    font-family: HelveticaNeue;
+    font-display: swap;
+    src: url(../fonts/HelveticaNeue-Thin.woff2) format("woff2"), url(../fonts/HelveticaNeue-Thin.woff) format("woff");
+    font-weight: 100;
     font-style: normal
 }
 
 @font-face {
     font-family: SFProDisplay;
     font-display: swap;
-    src: url(../fonts/SFProDisplay-Medium.woff2) format("woff2"), url(../fonts/SFProDisplay-Medium.woff) format("woff");
-    font-weight: 500;
+    src: url(../fonts/SFProDisplay-Heavy.woff2) format("woff2"), url(../fonts/SFProDisplay-Heavy.woff) format("woff");
+    font-weight: 800;
     font-style: normal
 }
 
@@ -65,8 +65,8 @@
 @font-face {
     font-family: SFProDisplay;
     font-display: swap;
-    src: url(../fonts/SFProDisplay-Black.woff2) format("woff2"), url(../fonts/SFProDisplay-Black.woff) format("woff");
-    font-weight: 900;
+    src: url(../fonts/SFProDisplay-Medium.woff2) format("woff2"), url(../fonts/SFProDisplay-Medium.woff) format("woff");
+    font-weight: 500;
     font-style: normal
 }
 
@@ -803,12 +803,12 @@ body {
     user-select: none;
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
-    font-size: 1.125rem;
     font-weight: 700;
     padding: 1rem 1.5rem;
     border-radius: .5rem;
     line-height: 1.1;
-    min-height: 4.25rem
+    min-height: 4.25rem;
+    font-size: 1.125rem
 }
 
 .btn::before {
@@ -1054,8 +1054,7 @@ body {
 .menu {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    padding-left: 8.125rem
+    flex: 1 1 auto
 }
 
 .menu__list {
@@ -1068,6 +1067,8 @@ body {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     gap: 2.5rem
 }
 
@@ -1361,11 +1362,9 @@ body {
 }
 
 .hero__left {
-    min-height: 43.5rem;
     border-radius: 1rem;
     background: url(../img/hero-left-bg.webp) center/cover no-repeat, #16eedc;
     overflow: hidden;
-    padding: 11.875rem 4rem 4rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1376,7 +1375,12 @@ body {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    height: 100%
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 5.125rem 2rem;
+    min-height: 37.5rem
 }
 
 .hero__tagline {
@@ -1421,7 +1425,6 @@ body {
     -ms-flex: 1 1 50%;
     flex: 1 1 50%;
     clip-path: inset(0 -1000% 0 -1000%);
-    min-height: 43.5rem;
     border-radius: 1rem;
     border: .0625rem solid #ffebdb;
     background: radial-gradient(66.67% 66.67% at 50% 50%, #f9f2ee 0, #fef5ee 100%);
@@ -1432,7 +1435,8 @@ body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column
+    flex-direction: column;
+    min-height: 37.5rem
 }
 
 .hero__right-services {
@@ -1450,38 +1454,38 @@ body {
 }
 
 .hero__right-service.img-center {
-    width: 304px;
-    height: 304px;
-    top: 130px;
-    left: 164px
+    top: 80px;
+    left: 160px;
+    width: 240px;
+    height: 240px
 }
 
 .hero__right-service.img-top-left {
-    width: 207px;
-    height: 207px;
     top: -40px;
-    left: 36px
+    left: 36px;
+    width: 180px;
+    height: 180px
 }
 
 .hero__right-service.img-bottom-left {
-    width: 372px;
-    height: 372px;
     top: 84px;
-    left: -189px
+    width: 279px;
+    height: 279px;
+    left: -116px
 }
 
 .hero__right-service.img-top-right {
-    width: 282px;
-    height: 282px;
     top: -11px;
-    right: -21px
+    right: -21px;
+    width: 211px;
+    height: 211px
 }
 
 .hero__right-service.img-bottom-right {
-    width: 313px;
-    height: 313px;
-    top: 227px;
-    right: -114px
+    top: 189px;
+    right: -68px;
+    width: 245px;
+    height: 245px
 }
 
 .hero__badge {
@@ -1575,7 +1579,7 @@ body {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 1.375rem 2rem 3.125rem
+    padding: 1rem 1.5rem 1.875rem
 }
 
 .hero__feature {
@@ -1614,9 +1618,9 @@ body {
 }
 
 .hero__feature-text {
-    font-size: 1rem;
     font-weight: 500;
-    color: #000
+    color: #000;
+    font-size: .875rem
 }
 
 .testimonials {
@@ -1659,7 +1663,7 @@ body {
 
 .testimonial.swiper-slide {
     height: auto;
-    width: 25.3125rem
+    width: 19.75rem
 }
 
 .testimonial__header {
@@ -1793,7 +1797,8 @@ body {
 }
 
 .solution-card.swiper-slide {
-    height: auto
+    height: auto;
+    width: 14rem
 }
 
 .solution-card__wrapper {
@@ -2044,8 +2049,8 @@ body {
     display: grid;
     -ms-grid-columns: (1fr)[4];
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 21.5rem;
-    gap: 1rem
+    gap: 1rem;
+    grid-auto-rows: 17.5rem
 }
 
 .why__card {
@@ -2061,9 +2066,9 @@ body {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
-    padding: 3rem;
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    padding: 2rem
 }
 
 .why__card.why__card--primary {
@@ -2084,8 +2089,7 @@ body {
 
 .why__card.why__card--tall {
     -ms-grid-row-span: 2;
-    grid-row: span 2;
-    padding: 3rem 4rem
+    grid-row: span 2
 }
 
 .why__card-img {
@@ -2098,7 +2102,7 @@ body {
 .why__card-title {
     position: relative;
     z-index: 2;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
     line-height: 100%;
     padding-block: .25rem;
@@ -2279,7 +2283,7 @@ body {
     display: grid;
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
-    gap: 5.5rem
+    gap: 2rem
 }
 
 .media__block-header {
@@ -2517,8 +2521,6 @@ body {
     align-items: center;
     margin-top: -9.25rem;
     margin-right: .9375rem;
-    width: 29.6875rem;
-    height: 29.6875rem;
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
     transform: scale(0);
@@ -2534,7 +2536,9 @@ body {
     transition: opacity .15s ease, transform .15s ease, visibility .15s, -webkit-transform .15s ease;
     pointer-events: none;
     position: relative;
-    z-index: 1
+    z-index: 1;
+    width: 22.5rem;
+    height: 22.5rem
 }
 
 .steps__item-image img, .steps__item-image source {
@@ -2671,7 +2675,6 @@ body {
 
 .ready__main {
     position: absolute;
-    bottom: 8.8rem;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
@@ -2684,7 +2687,8 @@ body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column
+    flex-direction: column;
+    bottom: 4rem
 }
 
 .ready__actions {
@@ -2847,15 +2851,15 @@ html {
     }
 
     .title-lg {
-        font-size: 2.25rem
+        font-size: 3rem
     }
 
     .title {
-        font-size: 2.25rem
+        font-size: 2.5rem
     }
 
     .title-sm {
-        font-size: 2.25rem
+        font-size: 2rem
     }
 
     .form__control:is(textarea) {
@@ -2895,11 +2899,25 @@ html {
     .footer__menu-caption {
         cursor: default
     }
+
+    .testimonial.swiper-slide {
+        width: 21.25rem
+    }
 }
 
 @media (min-width:1199.98px) {
     .container {
         max-width: 71.25rem
+    }
+
+    .icon-menu {
+        display: none
+    }
+}
+
+@media (min-width:1399.98px) {
+    .container {
+        max-width: 82.5rem
     }
 
     .title-lg {
@@ -2914,14 +2932,93 @@ html {
         font-size: 2.5rem
     }
 
-    .icon-menu {
-        display: none
+    .menu {
+        padding-left: 8.125rem
     }
-}
 
-@media (min-width:1399.98px) {
-    .container {
-        max-width: 82.5rem
+    .hero__left {
+        padding: 7.5rem 4rem 6.75rem;
+        min-height: 43.5rem
+    }
+
+    .hero__right {
+        min-height: 43.5rem
+    }
+
+    .hero__right-service.img-center {
+        top: 130px;
+        left: 164px;
+        width: 304px;
+        height: 304px
+    }
+
+    .hero__right-service.img-top-left {
+        width: 207px;
+        height: 207px
+    }
+
+    .hero__right-service.img-bottom-left {
+        left: -189px;
+        width: 372px;
+        height: 372px
+    }
+
+    .hero__right-service.img-top-right {
+        width: 282px;
+        height: 282px
+    }
+
+    .hero__right-service.img-bottom-right {
+        top: 227px;
+        right: -114px;
+        width: 313px;
+        height: 313px
+    }
+
+    .hero__features {
+        padding: 1.375rem 2rem 3.125rem
+    }
+
+    .hero__feature-text {
+        font-size: 1rem
+    }
+
+    .testimonial.swiper-slide {
+        width: 25.3125rem
+    }
+
+    .solution-card.swiper-slide {
+        width: 100%
+    }
+
+    .solution-card__image {
+        width: 11.875rem;
+        height: 11.875rem
+    }
+
+    .why__slider .swiper-wrapper {
+        grid-auto-rows: 21.5rem
+    }
+
+    .why__card {
+        padding: 3rem
+    }
+
+    .why__card.why__card--tall {
+        padding: 3rem 4rem
+    }
+
+    .why__card-title {
+        font-size: 2rem
+    }
+
+    .media__container {
+        gap: 5.5rem
+    }
+
+    .steps__item-image {
+        width: 29.6875rem;
+        height: 29.6875rem
     }
 }
 
@@ -2932,6 +3029,10 @@ html {
 
     .testimonial.swiper-slide {
         width: 27.5rem
+    }
+
+    .ready__main {
+        bottom: 8.8rem
     }
 }
 
@@ -3049,5 +3150,11 @@ html {
 
     .steps__item-arrow:hover {
         background-color: rgba(255, 255, 255, .5)
+    }
+}
+
+@media (any-hover:none) {
+    .solution-card__title {
+        color: #192a3f
     }
 }

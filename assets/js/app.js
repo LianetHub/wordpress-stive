@@ -74,8 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if ($(".solutions__slider").length) {
         new Swiper('.solutions__slider', {
-            slidesPerView: 6,
-            spaceBetween: 16
+            slidesPerView: "auto",
+            spaceBetween: 16,
+            breakpoints: {
+                1399.98: {
+                    slidesPerView: 6,
+                }
+            }
         })
     }
 

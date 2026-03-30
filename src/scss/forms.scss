@@ -367,12 +367,12 @@
 	text-align: center;
 	user-select: none;
 	transition: all 0.3s ease;
-	font-size: 1.125rem;
 	font-weight: 700;
 	padding: 1rem 1.5rem;
 	border-radius: 0.5rem;
 	line-height: 1.1;
 	min-height: rem(68);
+	font-size: 1.125rem;
 
 	&::before {
 		width: 1.5rem;
