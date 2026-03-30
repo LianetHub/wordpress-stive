@@ -33,25 +33,25 @@ $steps = [
 
 <div class="steps">
     <div class="container">
+        <svg width="0" height="0" style="position:absolute;z-index:-1;">
+            <defs>
+                <linearGradient id="fill-grad-active" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#fff" stop-opacity="0.18" />
+                    <stop offset="76%" stop-color="#fff" stop-opacity="0" />
+                </linearGradient>
+
+                <linearGradient id="stroke-grad-active" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#fff" stop-opacity="1" />
+                    <stop offset="65%" stop-color="#fff" stop-opacity="0" />
+                </linearGradient>
+
+                <linearGradient id="stroke-grad-inactive" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#19D6C7" stop-opacity="0.32" />
+                    <stop offset="100%" stop-color="#F5F5F5" stop-opacity="0.32" />
+                </linearGradient>
+            </defs>
+        </svg>
         <ol class="steps__list">
-            <svg width="0" height="0" style="position:absolute;z-index:-1;">
-                <defs>
-                    <linearGradient id="fill-grad-active" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#fff" stop-opacity="0.18" />
-                        <stop offset="76%" stop-color="#fff" stop-opacity="0" />
-                    </linearGradient>
-
-                    <linearGradient id="stroke-grad-active" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#fff" stop-opacity="1" />
-                        <stop offset="65%" stop-color="#fff" stop-opacity="0" />
-                    </linearGradient>
-
-                    <linearGradient id="stroke-grad-inactive" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stop-color="#19D6C7" stop-opacity="0.32" />
-                        <stop offset="100%" stop-color="#F5F5F5" stop-opacity="0.32" />
-                    </linearGradient>
-                </defs>
-            </svg>
 
             <?php foreach ($steps as $key => $step) :
                 $num = sprintf('%02d', $key + 1);
