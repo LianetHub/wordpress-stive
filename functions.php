@@ -26,6 +26,9 @@ add_action('wp_enqueue_scripts', 'r4_themestive_enqueue_style');
 
 function r4_make_styles_async($tag, $handle, $src)
 {
+
+    if (is_admin() || is_user_logged_in()) return $tag;
+
     $async_styles = [
         'swiper',
         'fancybox',
@@ -34,12 +37,13 @@ function r4_make_styles_async($tag, $handle, $src)
     ];
 
     if (in_array($handle, $async_styles)) {
-        return '<link rel="stylesheet" id="' . $handle . '-css" href="' . $src . '" media="print" onload="this.media=\'all\'; this.onload=null;">' . "\n" . '<noscript><link rel="stylesheet" href="' . $src . '"></noscript>';
+        $async_tag = '<link rel="preload" id="' . $handle . '-css-preload" href="' . $src . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n";
+        $async_tag .= '<noscript>' . $tag . '</noscript>';
+        return $async_tag;
     }
 
     return $tag;
 }
-add_filter('style_loader_tag', 'r4_make_styles_async', 10, 3);
 
 function r4_themestive_enqueue_scripts()
 {
