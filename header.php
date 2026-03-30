@@ -17,15 +17,46 @@
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/png" href="<?php echo ASSETS_PATH ?>/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="<?php echo ASSETS_PATH ?>/favicon.svg">
+  <link rel="shortcut icon" href="<?php echo ASSETS_PATH ?>/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo ASSETS_PATH ?>/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Stive">
+  <link rel="manifest" href="<?php echo ASSETS_PATH ?>/site.webmanifest">
   <!-- favicon -->
+
+  <?php
+  $og_title = get_bloginfo('name');
+  $og_description = get_bloginfo('description');
+  $og_url = home_url(add_query_arg([], $wp->request));
+
+  if (is_singular()) {
+    $og_title = get_the_title();
+    $og_description = get_the_excerpt() ? strip_tags(get_the_excerpt()) : $og_description;
+    $og_url = get_permalink();
+  } elseif (is_category() || is_tax()) {
+    $term = get_queried_object();
+    $og_title = $term->name;
+    $og_description = $term->description ? strip_tags($term->description) : $og_description;
+    $og_url = get_term_link($term);
+  }
+  ?>
+
+  <!-- Open Graph  -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<?php echo esc_attr($og_title); ?>">
+  <meta property="og:description" content="<?php echo esc_attr($og_description); ?>">
+  <meta property="og:url" content="<?php echo esc_url($og_url); ?>">
+  <meta property="og:image" content="<?php echo ASSETS_PATH ?>/og_image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
+  <meta property="og:locale" content="en_EN">
+  <!-- Open Graph  -->
+
+
   <?php wp_head(); ?>
 </head>
 

@@ -2,6 +2,7 @@
 define('COMPONENTS_PATH', dirname(__FILE__) . '/components/');
 define('FUNC_PATH', dirname(__FILE__) . '/functionality/');
 define('TEMPLATE_PATH', dirname(__FILE__) . '/components/templates-parts/');
+define('ASSETS_PATH', get_stylesheet_directory_uri() . '/assets');
 define('JS_PATH', get_stylesheet_directory_uri() . '/assets/js');
 define('STYLES_PATH', get_stylesheet_directory_uri() . '/assets/css');
 define('FONTS_PATH', get_stylesheet_directory_uri() . '/assets/fonts');
