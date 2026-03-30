@@ -304,11 +304,6 @@
         align-items: center;
         gap: rem(8);
 
-        @media (max-width: 1400px) {
-            &:nth-child(3) {
-                display: none;
-            }
-        }
     }
 
     // .hero__feature-icon
@@ -328,11 +323,7 @@
             object-fit: cover;
         }
 
-        &.place {
-            & img {
-                margin-top: 8px;
-            }
-        }
+
     }
 
     // .hero__feature-icon

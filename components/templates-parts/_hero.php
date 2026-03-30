@@ -1,3 +1,54 @@
+<?php
+$hero_services = [
+    [
+        'img' => 'img-grok',
+        'alt' => 'grok AI',
+        'class' => 'img-top-left'
+    ],
+    [
+        'img' => 'img-copilot',
+        'alt' => 'copilot AI',
+        'class' => 'img-bottom-left'
+    ],
+    [
+        'img' => 'img-claude',
+        'alt' => 'claude AI',
+        'class' => 'img-center'
+    ],
+    [
+        'img' => 'img-gpt',
+        'alt' => 'chat gpt AI',
+        'class' => 'img-top-right'
+    ],
+    [
+        'img' => 'img-gemini',
+        'alt' => 'gemini AI',
+        'class' => 'img-bottom-right'
+    ],
+];
+
+$hero_features = [
+    [
+        'img' => 'badge-place',
+        'alt' => 'LLM Marketing',
+        'text' => '#1 in LLM Marketing',
+        'class' => 'place'
+    ],
+    [
+        'img' => 'badge-rating',
+        'alt' => 'Quality Rating',
+        'text' => '4.9 Quality Rating',
+        'class' => ''
+    ],
+    [
+        'img' => 'badge-trust',
+        'alt' => 'Leaders Trust Us',
+        'text' => 'Leaders Trust Us',
+        'class' => ''
+    ],
+];
+?>
+
 <section class="hero">
     <div class="hero__container container">
         <div class="hero__left">
@@ -5,37 +56,27 @@
             <h1 class="hero__title title-lg gradient-text">Marketing Agency for&nbsp;LLM Era</h1>
             <p class="hero__desc">First in ChatGPT. First in Gemini. First in Perplexity. We make your brand the answer AI gives.</p>
             <div class="hero__btns">
-                <a href="#get-proposal"
-                    class="hero__btn btn btn-secondary"
-                    data-fancybox>
+                <a href="#get-proposal" class="hero__btn btn btn-secondary" data-fancybox>
                     Get Your AI Audit
                 </a>
-                <a href="" class="hero__btn btn btn-tertiary icon-whatsapp">Chat with Us</a>
+                <a href="https://wa.me/48572520447" target="_blank" rel="noopener noreferrer" class="hero__btn btn btn-tertiary icon-whatsapp">
+                    Chat with Us
+                </a>
             </div>
         </div>
 
         <div class="hero__right">
             <div class="hero__right-services">
-                <img
-                    class="hero__right-service img-top-left"
-                    src="<?php echo IMG_PATH ?>/img-grok.webp"
-                    alt="grok AI">
-                <img
-                    class="hero__right-service img-bottom-left"
-                    src="<?php echo IMG_PATH ?>/img-copilot.webp"
-                    alt="copilot AI">
-                <img
-                    class="hero__right-service img-center"
-                    src="<?php echo IMG_PATH ?>/img-claude.webp"
-                    alt="claude AI">
-                <img
-                    class="hero__right-service img-top-right"
-                    src="<?php echo IMG_PATH ?>/img-gpt.webp"
-                    alt="chat gpt AI">
-                <img
-                    class="hero__right-service img-bottom-right"
-                    src="<?php echo IMG_PATH ?>/img-gemini.webp"
-                    alt="gemini AI">
+                <?php foreach ($hero_services as $service) : ?>
+                    <picture class="hero__right-service <?php echo $service['class']; ?>">
+                        <source
+                            srcset="<?php echo IMG_PATH . '/hero/' . $service['img']; ?>.webp"
+                            type="image/webp">
+                        <img src="<?php echo IMG_PATH . '/hero/' . $service['img']; ?>.png"
+                            alt="<?php echo esc_attr($service['alt']); ?>">
+                    </picture>
+                <?php endforeach; ?>
+
                 <div class="hero__badges">
                     <div class="hero__badge hero__badge--primary">AI Visibility</div>
                     <div class="hero__badge hero__badge--secondary">Free Check</div>
@@ -45,34 +86,25 @@
             <form action="#" class="hero__form">
                 <div class="hero__form-caption">Do AI Models Know About Your brand?</div>
                 <div class="hero__form-row">
-                    <input
-                        type="text"
-                        name="website_url"
-                        class="form__control form__control--large"
-                        placeholder="Enter your website url here">
+                    <input type="text" name="website_url" class="form__control form__control--large" placeholder="Enter your website url here">
                     <button class="hero__form-submit btn btn-secondary">Free Check Now!</button>
                 </div>
             </form>
 
             <ul class="hero__features">
-                <li class="hero__feature">
-                    <div class="hero__feature-icon place">
-                        <img src="<?php echo IMG_PATH ?>/badge-place.webp" alt="LLM Marketing">
-                    </div>
-                    <span class="hero__feature-text">#1 in LLM Marketing</span>
-                </li>
-                <li class="hero__feature">
-                    <div class="hero__feature-icon">
-                        <img src="<?php echo IMG_PATH ?>/badge-rating.webp" alt="Quality Rating">
-                    </div>
-                    <span class="hero__feature-text">4.9 Quality Rating</span>
-                </li>
-                <li class="hero__feature">
-                    <div class="hero__feature-icon">
-                        <img src="<?php echo IMG_PATH ?>/badge-trust.webp" alt="Leaders Trust Us">
-                    </div>
-                    <span class="hero__feature-text">Leaders Trust Us</span>
-                </li>
+                <?php foreach ($hero_features as $feature) : ?>
+                    <li class="hero__feature">
+                        <picture class="hero__feature-icon <?php echo $feature['class']; ?>">
+                            <source
+                                srcset="<?php echo IMG_PATH . '/hero/' . $feature['img']; ?>.webp"
+                                type="image/webp">
+                            <img
+                                src="<?php echo IMG_PATH . '/hero/' . $feature['img']; ?>.png"
+                                alt="<?php echo esc_attr($feature['alt']); ?>">
+                        </picture>
+                        <span class="hero__feature-text"><?php echo esc_html($feature['text']); ?></span>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>

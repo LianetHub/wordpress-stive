@@ -31,14 +31,6 @@
 }
 
 @font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "icons";
   font-display: swap;
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
@@ -57,6 +49,14 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
+  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
   src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
@@ -65,8 +65,8 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/SFProDisplay-Thin.woff2") format("woff2"), url("../fonts/SFProDisplay-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -89,8 +89,8 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Thin.woff2") format("woff2"), url("../fonts/SFProDisplay-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -1944,10 +1944,6 @@ dd {
      object-fit: cover;
 }
 
-.hero__feature-icon.place img {
-  margin-top: 8px;
-}
-
 .hero__feature-text {
   font-size: 1rem;
   font-weight: 500;
@@ -3451,10 +3447,6 @@ dd {
 
   .hero__features {
     gap: 1.5rem;
-  }
-
-  .hero__feature:nth-child(3) {
-    display: none;
   }
 
   .hero__feature-text {
