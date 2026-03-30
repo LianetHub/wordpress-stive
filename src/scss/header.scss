@@ -40,9 +40,13 @@
 		top: rem(8);
 	}
 
-	.container {
-		@media (max-width:$md3) {
-			max-width: 100%;
+
+	// .header__container
+	&__container {
+		&.container {
+			@media (max-width:$md3) {
+				max-width: 100%;
+			}
 		}
 	}
 

@@ -13,7 +13,12 @@
 	&__wrapper {
 		border-radius: 1rem 1rem 0 0;
 		background: #FFF;
-		padding: rem(65) rem(119) rem(33);
+		padding: rem(32) rem(24);
+
+		@media (min-width:$md2) {
+			padding: rem(65) rem(119) rem(33);
+
+		}
 	}
 
 	// .footer__header
@@ -124,10 +129,14 @@
 
 	// .footer__bottom
 	&__bottom {
-		padding-top: 3rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		padding-top: 1.5rem;
+
+		@media (min-width:$md2) {
+			padding-top: 3rem;
+		}
 
 	}
 

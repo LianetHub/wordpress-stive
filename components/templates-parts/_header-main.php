@@ -9,7 +9,7 @@ $header_socials = [
 
 ?>
 <header class="header">
-    <div class="container">
+    <div class="header__container container">
         <div class="header__wrapper">
             <a href="<?php echo home_url(); ?>" class="header__logo">
                 <img
