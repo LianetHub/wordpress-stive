@@ -20,9 +20,14 @@
 	&__header {
 		display: grid;
 		grid-template-columns: 14.4375rem 4fr;
-		gap: 8rem;
 		padding-bottom: 2.22rem;
 		border-bottom: rem(1) solid rgba(0, 0, 0, 0.05);
+		gap: 4rem;
+
+		@media (min-width:$md1) {
+			gap: 8rem;
+
+		}
 	}
 
 	// .footer__header-main
@@ -136,12 +141,20 @@
 
 	// .footer__terms
 	&__terms {
-		margin-right: auto;
-		margin-left: 11rem;
+
+		@media (min-width:$md1) {
+			margin-right: auto;
+			margin-left: 11rem;
+		}
 
 		& ul {
 			display: flex;
-			gap: 6.9375rem;
+			gap: 3rem;
+
+			@media (min-width:$md1) {
+				gap: 6.9375rem;
+
+			}
 
 			a {
 				font-size: 0.75rem;

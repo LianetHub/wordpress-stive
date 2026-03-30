@@ -1169,7 +1169,7 @@
     &__list {
         display: flex;
         gap: 1.0625rem;
-        margin-top: rem(76);
+        margin-top: rem(124);
 
         @media (min-width:$md1) {
             margin-top: rem(148);
@@ -1363,7 +1363,12 @@
 }
 
 .ready {
-    padding: rem(80) 0 0;
+    padding: rem(80) 0 rem(40);
+
+    @media (min-width:$md1) {
+        padding: rem(80) 0 0;
+
+    }
 
     // .ready__content 
     &__content {
@@ -1395,7 +1400,12 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        bottom: 4rem;
+        bottom: 0;
+
+        @media (min-width:$md1) {
+            bottom: 4rem;
+
+        }
 
         @media (min-width:$md0) {
             bottom: 8.8rem;
@@ -1431,10 +1441,17 @@
     // .book__image
     &__image {
         position: absolute;
-        top: rem(-44);
-        left: 4.1rem;
-        width: rem(525);
         height: auto;
+        top: 0;
+        left: 2rem;
+        width: rem(475);
+
+        @media (min-width:$md1) {
+            left: 4.1rem;
+            top: rem(-44);
+            width: rem(525);
+
+        }
 
         & img,
         & source {

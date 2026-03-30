@@ -41,8 +41,8 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -57,16 +57,24 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -81,16 +89,8 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -1222,9 +1222,9 @@ body {
   display: grid;
   -ms-grid-columns: 14.4375rem 4fr;
   grid-template-columns: 14.4375rem 4fr;
-  gap: 8rem;
   padding-bottom: 2.22rem;
   border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.05);
+  gap: 4rem;
 }
 
 .footer__logo {
@@ -1332,16 +1332,11 @@ body {
   color: #7c8698;
 }
 
-.footer__terms {
-  margin-right: auto;
-  margin-left: 11rem;
-}
-
 .footer__terms ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 6.9375rem;
+  gap: 3rem;
 }
 
 .footer__terms ul a {
@@ -2462,7 +2457,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 1.0625rem;
-  margin-top: 4.75rem;
+  margin-top: 7.75rem;
 }
 
 .steps__item {
@@ -2673,7 +2668,7 @@ body {
 }
 
 .ready {
-  padding: 5rem 0 0;
+  padding: 5rem 0 2.5rem;
 }
 
 .ready__content {
@@ -2717,7 +2712,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  bottom: 4rem;
+  bottom: 0;
 }
 
 .ready__actions {
@@ -2744,10 +2739,10 @@ body {
 
 .book__image {
   position: absolute;
-  top: -2.75rem;
-  left: 4.1rem;
-  width: 32.8125rem;
   height: auto;
+  top: 0;
+  left: 2rem;
+  width: 29.6875rem;
 }
 
 .book__image img,
@@ -2967,6 +2962,19 @@ html {
     padding-left: 8.125rem;
   }
 
+  .footer__header {
+    gap: 8rem;
+  }
+
+  .footer__terms {
+    margin-right: auto;
+    margin-left: 11rem;
+  }
+
+  .footer__terms ul {
+    gap: 6.9375rem;
+  }
+
   .hero__left {
     padding: 7.5rem 4rem 6.75rem;
     min-height: 43.5rem;
@@ -3077,6 +3085,20 @@ html {
   .steps__item-num {
     left: 1.6875rem;
     font-size: 8rem;
+  }
+
+  .ready {
+    padding: 5rem 0 0;
+  }
+
+  .ready__main {
+    bottom: 4rem;
+  }
+
+  .book__image {
+    left: 4.1rem;
+    top: -2.75rem;
+    width: 32.8125rem;
   }
 }
 
