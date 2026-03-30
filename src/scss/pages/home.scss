@@ -11,13 +11,15 @@
     // .hero__container
     &__container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+
+        @media (min-width:$md3) {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     // .hero__left
     &__left {
-
         border-radius: 1rem;
         background: url("@img/hero-left-bg.webp") center / cover no-repeat, #16eedc;
         overflow: hidden;
@@ -26,9 +28,13 @@
         align-items: flex-start;
         justify-content: flex-end;
         height: 100%;
+        padding: 2rem 1rem;
 
-        min-height: rem(540);
-        padding: rem(68) rem(32);
+        @media (min-width:$md3) {
+            min-height: rem(540);
+            padding: rem(68) rem(32);
+
+        }
 
         @media (min-width:$md2) {
             padding: rem(82) rem(32);
@@ -121,9 +127,15 @@
 
         &.img-center {
             top: 14px;
-            left: 120px;
             width: 180px;
             height: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media (min-width:$md3) {
+                left: 120px;
+                transform: none;
+            }
 
             @media (min-width:$md2) {
                 top: 80px;
@@ -277,6 +289,11 @@
 
         & .form__control {
             padding: 1.63rem 1.5rem;
+            text-align: center;
+
+            @media (min-width:$md5) {
+                text-align: left;
+            }
 
             @media (min-width:$md2) {
                 padding: 1.63rem 13.44rem 1.63rem 1.5rem;
@@ -872,7 +889,7 @@
         margin-top: 2rem;
 
         .swiper-wrapper {
-            @media (min-width:$md4) {
+            @media (min-width:$md3) {
                 display: grid;
                 gap: 1rem;
                 grid-auto-rows: rem(280);
@@ -893,14 +910,28 @@
 
     // .why__card
     &__card {
-        background: #fff;
-        border-radius: 1rem;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        position: relative;
-        overflow: hidden;
-        padding: 2rem;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+
+        &.swiper-slide {
+            @media (max-width:$md3) {
+                width: 21rem;
+            }
+        }
+
+        @media (min-width:$md3) {
+            position: relative;
+            justify-content: flex-end;
+            align-items: flex-start;
+            text-align: left;
+            background: #fff;
+            border-radius: 1rem;
+            overflow: hidden;
+            padding: 2rem;
+        }
 
         @media (min-width:$md1) {
             padding: 3rem;
@@ -908,21 +939,41 @@
         }
 
         &.why__card--primary {
-            background: #CDFFFB;
+            @media (max-width:$md3) {
+                .why__card-img {
+                    background: #CDFFFB;
+                }
+            }
+
+            @media (min-width:$md3) {
+                background: #CDFFFB;
+            }
         }
 
         &.why__card--secondary {
-            background: radial-gradient(66.67% 66.67% at 50% 50%, #F9F2EE 0%, #FEF5EE 100%), #FFF;
+            @media (max-width:$md3) {
+                .why__card-img {
+                    background: radial-gradient(66.67% 66.67% at 50% 50%, #F9F2EE 0%, #FEF5EE 100%), #FFF;
+                }
+            }
+
+            @media (min-width:$md3) {
+                background: radial-gradient(66.67% 66.67% at 50% 50%, #F9F2EE 0%, #FEF5EE 100%), #FFF;
+            }
         }
 
         &.why__card--wide {
-            grid-column: span 2;
-            justify-content: center;
+            @media (min-width:$md3) {
+                grid-column: span 2;
+                justify-content: center;
+            }
 
         }
 
         &.why__card--wide-tablet {
-            grid-column: span 2;
+            @media (min-width:$md3) {
+                grid-column: span 2;
+            }
 
             @media (min-width:$md2) {
                 grid-column: auto;
@@ -931,7 +982,9 @@
         }
 
         &.why__card--tall {
-            grid-row: span 2;
+            @media (min-width:$md3) {
+                grid-row: span 2;
+            }
 
             @media (min-width:$md1) {
                 padding: 3rem 4rem;
@@ -944,25 +997,52 @@
 
     // .why__card-img
     &__card-img {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        pointer-events: none;
+        @media (max-width:$md3) {
+            width: 21.5rem;
+            height: 10.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background: #fff;
+
+            & img {
+                max-height: 100%;
+            }
+        }
+
+        @media (min-width:$md3) {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
     }
 
     // .why__card-title
     &__card-title {
         position: relative;
         z-index: 2;
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         font-weight: 700;
         line-height: 100%;
         padding-block: 0.25rem;
-        max-width: rem(220);
         background: linear-gradient(103deg, #272727 8.18%, #2CDACC 130.61%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+
+        @media (min-width:$md3) {
+            font-size: 1.75rem;
+            max-width: rem(220);
+        }
 
         @media (min-width:$md1) {
             font-size: 2rem;
@@ -980,6 +1060,8 @@
 
     // .industries__tabs
     &__tabs {
+        overflow: visible;
+
         &:not(.swiper-initialized) {
 
             .swiper-wrapper {
@@ -1234,7 +1316,10 @@
         margin-top: 1.3rem;
         gap: 1.5rem;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+
+        @media (min-width:$md4) {
+            grid-template-columns: repeat(2, 1fr);
+        }
 
         @media (min-width:$md2) {
             grid-template-columns: 1fr;
@@ -1355,7 +1440,12 @@
     &__list {
         display: flex;
         gap: 1.0625rem;
-        margin-top: rem(124);
+        flex-direction: column;
+
+        @media (min-width:$md3) {
+            margin-top: rem(124);
+            flex-direction: row;
+        }
 
         @media (min-width:$md1) {
             margin-top: rem(148);
@@ -1365,11 +1455,17 @@
 
     // .steps__item
     &__item {
-        flex: 1 1 auto;
-        transition: max-width 0.8s cubic-bezier(0.16, 1, 0.3, 1), flex 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: max-width 0.8s cubic-bezier(0.16, 1, 0.3, 1), flex 0.8s cubic-bezier(0.16, 1, 0.3, 1), height 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         touch-action: manipulation;
-        width: 8rem;
-        max-width: 8rem;
+        width: 100%;
+        height: 8.75rem;
+
+        @media (min-width:$md3) {
+            flex: 1 1 auto;
+            height: 100%;
+            width: 8rem;
+            max-width: 8rem;
+        }
 
         @media (min-width:$md2) {
             width: 10rem;
@@ -1383,7 +1479,13 @@
         }
 
         &.active {
-            max-width: 44rem;
+            @media (max-width:$md3) {
+                height: 24.75rem;
+            }
+
+            @media (min-width:$md3) {
+                max-width: 44rem;
+            }
 
             .steps__item-wrapper {
                 background: url("@img/steps/steps-pattern.png") 0 0 / cover no-repeat, #16EEDC;
@@ -1415,7 +1517,6 @@
 
     // .steps__item-wrapper
     &__item-wrapper {
-
         position: relative;
         background: #fff;
         border: 0.0625rem solid #f3f3f3;
@@ -1425,7 +1526,11 @@
         flex-direction: column;
         justify-content: flex-end;
         transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        height: 16rem;
+        height: 100%;
+
+        @media (min-width:$md3) {
+            height: 16rem;
+        }
 
         @media (min-width:$md2) {
             height: 20rem;
@@ -1478,13 +1583,18 @@
             position: absolute;
             top: 6.25rem;
             right: 3.5rem;
-            width: 14.6875rem;
-            height: 19.9375rem;
+            width: 10rem;
+            height: 10rem;
             transform: rotate(13.47deg);
             border-radius: 19.9375rem;
             background: rgba(178, 178, 178, 0.50);
             filter: blur(2rem);
             z-index: -1;
+
+            @media (min-width:$md2) {
+                width: 14.6875rem;
+                height: 19.9375rem;
+            }
         }
     }
 
@@ -1655,7 +1765,11 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        margin-top: -4rem;
+
+        @media (min-width:$md3) {
+            margin-top: -4rem;
+
+        }
 
         @media (min-width:$md2) {
             margin-top: 0;
@@ -1678,7 +1792,13 @@
     }
 
     // .ready__title
-    &__title {}
+    &__title {
+        text-align: center;
+
+        @media (min-width:$md3) {
+            text-align: left;
+        }
+    }
 
     // .ready__actions
     &__actions {
@@ -1703,18 +1823,46 @@
 
     // .book__content
     &__content {
-        position: relative;
+        @media (min-width:$md3) {
+            position: relative;
+
+        }
     }
 
 
     // .book__image
     &__image {
-        position: absolute;
-        height: auto;
-        top: 0;
-        left: 2rem;
+        max-width: 16.35681rem;
+        margin-inline: auto;
+        display: block;
+        position: relative;
+        margin-bottom: 2rem;
 
-        width: rem(425);
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 50%;
+            z-index: -1;
+            background: url("@img/book-bottom-decor.svg") 0 0 / cover no-repeat, url("@img/book-pattern.png") 0 0 / cover no-repeat, radial-gradient(66.67% 66.67% at 50% 50%, #1F3445 0%, #303942 100%);
+
+            @media (min-width:$md3) {
+                display: none;
+            }
+        }
+
+        @media (min-width:$md3) {
+            position: absolute;
+            height: auto;
+            top: 0;
+            left: 2rem;
+            width: rem(425);
+            max-width: 100%;
+            margin-bottom: 0;
+        }
 
         @media (min-width:$md2) {
             width: rem(475);
@@ -1740,9 +1888,12 @@
     &__header {
         display: flex;
         flex-direction: column;
-        margin-left: auto;
-        padding-left: 52.1%;
-        padding-right: rem(30);
+
+        @media (min-width:$md3) {
+            padding-right: rem(30);
+            padding-left: 52.1%;
+
+        }
 
 
     }
@@ -1778,15 +1929,17 @@
     &__bottom {
         margin-top: 2.19rem;
         width: 100%;
-        padding: rem(47) rem(30) rem(60) 49.4%;
-        border-radius: 1rem;
-        border: rem(1) solid #F2F2F2;
-
-        background: url("@img/book-bottom-decor.svg") 0 0 / cover no-repeat, url("@img/book-pattern.png") 0 0 / cover no-repeat, radial-gradient(66.67% 66.67% at 50% 50%, #1F3445 0%, #303942 100%);
-        color: #fff;
         display: flex;
         flex-direction: column;
         gap: rem(43);
+
+        @media (min-width:$md3) {
+            border-radius: 1rem;
+            padding: rem(47) rem(30) rem(60) 49.4%;
+            border: rem(1) solid #F2F2F2;
+            background: url("@img/book-bottom-decor.svg") 0 0 / cover no-repeat, url("@img/book-pattern.png") 0 0 / cover no-repeat, radial-gradient(66.67% 66.67% at 50% 50%, #1F3445 0%, #303942 100%);
+            color: #fff
+        }
     }
 
     // .book__features
@@ -1834,17 +1987,32 @@
                 font-size: 1rem;
             }
 
+
             &.btn-tertiary {
+                color: #192A3F;
+                border-radius: 0.5rem;
                 border: rem(1) solid rgba(255, 255, 255, 0.16);
-                background: rgba(234, 234, 234, 0.10);
-                color: #fff;
+                background: rgba(234, 234, 234, 0.48);
 
                 &:hover {
-                    background: rgba(255, 255, 255, 0.26);
+                    background: rgba(234, 234, 234, 0.58);
                 }
 
                 &:active {
-                    background: rgba(255, 255, 255, 0.36);
+                    background: rgba(234, 234, 234, 0.68);
+                }
+
+                @media (min-width:$md3) {
+                    background: rgba(234, 234, 234, 0.10);
+                    color: #fff;
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.26);
+                    }
+
+                    &:active {
+                        background: rgba(255, 255, 255, 0.36);
+                    }
                 }
             }
         }

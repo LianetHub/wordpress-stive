@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sliders
     class MobileSwiper {
-        constructor(sliderName, options, condition = 767.98) {
+        constructor(sliderName, options, condition = 991.98) {
             this.$slider = $(sliderName);
             this.options = options;
             this.init = false;
@@ -94,6 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.init = false;
             }
         }
+    }
+
+    if ($(".why").length) {
+        new MobileSwiper('.why__slider', {
+            slidesPerView: "auto",
+            spaceBetween: 16
+        })
     }
 
     if ($(".testimonials__slider").length) {

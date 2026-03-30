@@ -20,7 +20,6 @@ $classes = [
         <img
             src="<?php echo IMG_PATH . '/why/' . $card['img_png']; ?>"
             alt="<?php echo esc_attr($card_alt ?: strip_tags($card_title)); ?>"
-            class="cover-image"
             loading="lazy">
     </picture>
     <p class="why__card-title"><?php echo $card_title; ?></p>
