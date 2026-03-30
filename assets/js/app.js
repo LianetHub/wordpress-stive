@@ -13,6 +13,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Detect user device
+    const isMobile = {
+        Android: () => /Android/i.test(navigator.userAgent),
+        BlackBerry: () => /BlackBerry/i.test(navigator.userAgent),
+        iOS: () => /iPhone|iPad|iPod/i.test(navigator.userAgent),
+        Opera: () => /Opera Mini/i.test(navigator.userAgent),
+        Windows: () => /IEMobile/i.test(navigator.userAgent),
+        any: () => (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows())
+    };
+
+    function getNavigator() {
+        const isTouchDevice = isMobile.any() || window.innerWidth < 992;
+
+        if (isTouchDevice) {
+            $('body').removeClass('_pc').addClass('_touch');
+        } else {
+            $('body').removeClass('_touch').addClass('_pc');
+        }
+    }
+
+    getNavigator();
+    $(window).on('resize', getNavigator);
+
+
+
     // event handlers
     $(document).on('click', (e) => {
         const $target = $(e.target);
@@ -33,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     });
-
 
 
     // Sliders
@@ -84,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-
     if ($(".cases__slider").length) {
         new Swiper('.cases__slider', {
             slidesPerView: 1,
@@ -131,14 +154,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    initStepsInteractions();
+
+    // Steps Animation
+    if ($('.steps__item').length) {
+        const $stepsList = $('.steps__list');
+        const $items = $('.steps__item');
+
+        $stepsList.on('click', '.steps__item-wrapper', function (e) {
+            if ($('body').hasClass('_touch')) {
+                const $parent = $(this).closest('.steps__item');
+
+                if (!$parent.hasClass('active')) {
+                    e.preventDefault();
+                    $items.removeClass('active');
+                    $parent.addClass('active');
+                }
+            }
+        });
+
+        $stepsList.on('mouseenter', '.steps__item', function () {
+            if ($('body').hasClass('_pc')) {
+                $items.removeClass('active');
+                $(this).addClass('active');
+            }
+        });
+    }
 
 
-    initMobileMenu();
-    initFooterAccordion();
-    initApplyButton();
-
-
+    // International Input Mask
     const inputs = document.querySelectorAll("input[type='tel']");
 
     inputs?.forEach((input) => {
@@ -155,75 +198,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-function initStepsInteractions() {
-    const $items = $('.steps__item');
-    if (!$items.length) return;
-
-    const isTouch = window.matchMedia('(pointer: coarse)').matches;
-
-    if (isTouch) {
-        $items.find('.steps__item-wrapper').on('click', function (e) {
-            const $parent = $(this).closest('.steps__item');
-
-            if (!$parent.hasClass('active')) {
-                e.preventDefault();
-                $items.removeClass('active');
-                $parent.addClass('active');
-            }
-        });
-    } else {
-        $items.on('mouseenter', function () {
-            if (!$(this).hasClass('active')) {
-                $items.removeClass('active');
-                $(this).addClass('active');
-            }
-        });
-    }
-}
-
-function initMobileMenu() {
-    const menuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('nav-mobile-menu');
-
-    if (!menuToggle || !mobileMenu) return;
-
-    menuToggle.addEventListener('click', () => {
-        const isOpen = menuToggle.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-}
-
-function initFooterAccordion() {
-    const footerCols = document.querySelectorAll('.footer-col-header');
-
-    if (!footerCols.length) return;
-
-    footerCols.forEach((header) => {
-        header.addEventListener('click', () => {
-            const col = header.parentElement;
-            const isActive = col.classList.contains('active');
-
-            footerCols.forEach((h) => {
-                h.parentElement.classList.remove('active');
-            });
-
-            if (!isActive) {
-                col.classList.add('active');
-            }
-        });
-    });
-}
-
-function initApplyButton() {
-    const applyBtn = document.getElementById('apply-btn');
-
-    if (!applyBtn) return;
-
-    applyBtn.addEventListener('click', () => {
-        applyBtn.classList.add('btn__primary');
-        applyBtn.classList.remove('btn__secondary');
-        applyBtn.textContent = 'Applied Successfully!';
-    });
-}
