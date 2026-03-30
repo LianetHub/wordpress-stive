@@ -1,206 +1,85 @@
+<?php
+$logotype = get_field('logotype_for_site', 'option');
+?>
+
 </main>
 <footer class="footer">
-    <div class="footer-top">
-        <div class="footer-top__right">
-            <a href="#" class="footer-logo">
-                <svg
-                    width="103"
-                    height="24"
-                    viewBox="0 0 103 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M68.9665 23.486H63.1748L55.6162 0.546192H60.8843L66.087 16.6747H66.1525L71.4206 0.546192H76.7215L68.9665 23.486Z"
-                        fill="#243538" />
-                    <mask
-                        id="mask0_61_36"
-                        style="mask-type: alpha"
-                        maskUnits="userSpaceOnUse"
-                        x="55"
-                        y="0"
-                        width="22"
-                        height="24">
-                        <path
-                            d="M68.9665 23.486H63.1748L55.6162 0.546192H60.8843L66.087 16.6747H66.1525L71.4206 0.546192H76.7215L68.9665 23.486Z"
-                            fill="#222222" />
-                    </mask>
-                    <g mask="url(#mask0_61_36)">
-                        <g filter="url(#filter0_d_61_36)">
-                            <path
-                                d="M70.4363 3.89161L74.0887 8.90459L68.8108 23.4859H63.7505L70.4363 3.89161Z"
-                                fill="#243538" />
-                        </g>
-                    </g>
-                    <path
-                        d="M48.3818 0.546185H53.5191V23.4859H48.3818V9.06324L52.3665 4.77834H48.3818V0.546185Z"
-                        fill="#243538" />
-                    <path
-                        d="M32.6066 4.78716H25.6042V0.546192H44.7462V4.78716H37.7439V23.486H32.6066V4.78716Z"
-                        fill="#243538" />
-                    <path
-                        d="M8.88311 15.8715C9.43539 15.8715 9.86678 16.324 9.9741 16.8658C10.0446 17.2217 10.1561 17.5435 10.3085 17.8313C10.5921 18.3668 10.9629 18.8059 11.421 19.1486C11.9009 19.4699 12.4572 19.7162 13.0898 19.8876C13.7224 20.0375 14.3768 20.1124 15.0531 20.1124C15.5112 20.1124 16.002 20.0803 16.5255 20.0161C17.0491 19.9304 17.5399 19.7805 17.998 19.5663C18.4561 19.3521 18.8378 19.0629 19.1432 18.6988C19.4486 18.3133 19.6013 17.8313 19.6013 17.253C19.6013 16.6319 19.3941 16.1285 18.9796 15.743C18.587 15.3574 18.0634 15.0361 17.409 14.7791C16.7546 14.5221 16.0129 14.2972 15.184 14.1044C14.355 13.9116 13.5152 13.6975 12.6644 13.4618C11.7919 13.2477 10.9411 12.9906 10.1122 12.6908C9.28321 12.3695 8.54153 11.9625 7.8871 11.4699C7.23268 10.9772 6.69823 10.3668 6.28376 9.63855C5.8911 8.88889 5.69477 7.98929 5.69477 6.93976C5.69477 5.76171 5.94564 4.74431 6.44736 3.88755C6.97091 3.00937 7.64715 2.28112 8.47609 1.70281C9.30503 1.1245 10.243 0.696116 11.2901 0.417669C12.3372 0.139223 13.3843 0 14.4314 0C15.653 0 16.82 0.139223 17.9326 0.417669C19.0669 0.674697 20.0703 1.10308 20.9429 1.70281C21.8155 2.30254 22.5026 3.07363 23.0044 4.01606C23.3913 4.69671 23.6352 5.48848 23.7362 6.39138C23.7976 6.94025 23.342 7.38956 22.7897 7.38956H19.7544C19.2268 7.38956 18.8076 6.9737 18.6725 6.46368C18.5958 6.17428 18.4909 5.91531 18.3579 5.68675C18.118 5.23695 17.7908 4.88353 17.3763 4.62651C16.9618 4.36948 16.4819 4.18741 15.9366 4.08032C15.413 3.97322 14.8349 3.91968 14.2023 3.91968C13.7879 3.91968 13.3734 3.96252 12.9589 4.04819C12.5444 4.13387 12.1627 4.2838 11.8137 4.49799C11.4865 4.71218 11.2138 4.97992 10.9956 5.3012C10.7775 5.62249 10.6684 6.02945 10.6684 6.52209C10.6684 6.97189 10.7557 7.33601 10.9302 7.61446C11.1047 7.8929 11.4428 8.14993 11.9445 8.38554C12.4681 8.62115 13.1771 8.85676 14.0714 9.09237C14.9876 9.32798 16.1765 9.62784 17.6381 9.99197C18.0743 10.0776 18.6742 10.2383 19.4377 10.4739C20.223 10.6881 20.9975 11.0415 21.761 11.5341C22.5244 12.0268 23.1789 12.6908 23.7242 13.5261C24.2914 14.34 24.575 15.3896 24.575 16.6747C24.575 17.7242 24.3678 18.6988 23.9533 19.5984C23.5388 20.498 22.9171 21.2798 22.0882 21.9438C21.281 22.5863 20.2667 23.0897 19.0451 23.4538C17.8453 23.8179 16.4492 24 14.8567 24C13.5697 24 12.3154 23.8394 11.0938 23.5181C9.89401 23.2182 8.82512 22.7363 7.8871 22.0723C6.97091 21.4083 6.24013 20.5622 5.69477 19.5341C5.28021 18.7526 5.02952 17.8596 4.9427 16.8553C4.89565 16.3111 5.34788 15.8715 5.89415 15.8715H8.88311Z"
-                        fill="#243538" />
-                    <path
-                        d="M82.3598 0.820126H91.44V4.84457H80.9985L82.3598 0.820126Z"
-                        fill="#243538" />
-                    <path
-                        d="M79.9277 9.62281H91.44V13.6473H78.0308L79.9277 9.62281Z"
-                        fill="#16EEDC" />
-                    <path
-                        d="M76.1791 19.2638H91.4167V23.2883H74.7654L76.1791 19.2638Z"
-                        fill="#243538" />
-                    <defs>
-                        <filter
-                            id="filter0_d_61_36"
-                            x="56.7505"
-                            y="0.891609"
-                            width="17.3381"
-                            height="25.5943"
-                            filterUnits="userSpaceOnUse"
-                            color-interpolation-filters="sRGB">
-                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                            <feColorMatrix
-                                in="SourceAlpha"
-                                type="matrix"
-                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                                result="hardAlpha" />
-                            <feOffset dx="-4" />
-                            <feGaussianBlur stdDeviation="1.5" />
-                            <feComposite in2="hardAlpha" operator="out" />
-                            <feColorMatrix
-                                type="matrix"
-                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.52 0" />
-                            <feBlend
-                                mode="normal"
-                                in2="BackgroundImageFix"
-                                result="effect1_dropShadow_61_36" />
-                            <feBlend
-                                mode="normal"
-                                in="SourceGraphic"
-                                in2="effect1_dropShadow_61_36"
-                                result="shape" />
-                        </filter>
-                    </defs>
-                </svg>
-            </a>
-            <p class="footer-tagline">
-                Experienced software developer with a passion for creating innovative
-                solutions. Proficient in various programming languages and dedicated to
-                delivering high-quality results.
-            </p>
-            <div class="footer-contacts">
-                <span>Poland, Wrocław, 50-202, Księcia Witolda Street, No. 49, Apt. 15</span>
-                <span>United States, Bellevue, WA, 98004-6424, 35 112th Ave NE, Apt 420</span>
-            </div>
-            <div class="footer-col-divider"></div>
-        </div>
-        <div class="footer-col__container">
-            <div class="footer-col">
-                <div class="footer-col-header">
-                    <p class="footer-col-title">Services</p>
-                    <svg
-                        class="footer-col-toggle"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M5.99613 13.3313L6.00085 7.3303L-0.00013262 7.33502L-0.00013268 5.99623L6.00085 6.00094L5.99613 -3.91896e-05L7.33492 -3.91298e-05L7.33021 6.00094L13.3265 6.00094L13.3265 7.3303L7.33021 7.3303L7.33021 13.3266L5.99613 13.3313Z"
-                            fill="#7C8698" />
-                    </svg>
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="footer__header">
+                <div class="footer__header-main">
+                    <a href="#" class="footer__logo">
+                        <img
+                            src="<?php echo esc_url($logotype['url']); ?>"
+                            alt="<?php echo esc_attr($logotype['alt']) ?: 'logotype'; ?>">
+                    </a>
+                    <p class="footer__desc">
+                        Experienced software developer with a passion for creating innovative
+                        solutions. Proficient in various programming languages and dedicated to
+                        delivering high-quality results.
+                    </p>
+                    <div class="footer__addresses">
+                        <address>Poland, Wrocław, 50-202, Księcia Witolda Street, No. 49, Apt. 15</address>
+                        <address>United States, Bellevue, WA, 98004-6424, 35 112th Ave NE, Apt 420</address>
+                    </div>
                 </div>
-                <ul class="footer-links">
-                    <li><a href="#">AI SEO & GEO Optimization</a></li>
-                    <li><a href="#">LLM Analytics & Audit</a></li>
-                    <li><a href="#">AI Content & Automation</a></li>
-                    <li><a href="#">LLM Ads Management</a></li>
-                    <li><a href="#">LLM Reputation Management</a></li>
-                    <li><a href="#">LLM Brand Strategy</a></li>
+                <nav aria-label="footer menu" class="footer__menu">
+                    <div class="footer__menu-block">
+                        <div class="footer__menu-caption icon-plus">Services</div>
+                        <ul class="footer__menu-list">
+                            <li><a href="#">AI SEO & GEO Optimization</a></li>
+                            <li><a href="#">LLM Analytics & Audit</a></li>
+                            <li><a href="#">AI Content & Automation</a></li>
+                            <li><a href="#">LLM Ads Management</a></li>
+                            <li><a href="#">LLM Reputation Management</a></li>
+                            <li><a href="#">LLM Brand Strategy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu-block">
+                        <div class="footer__menu-caption icon-plus">Industries</div>
+                        <ul class="footer__menu-list">
+                            <li><a href="#">SaaS</a></li>
+                            <li><a href="#">FinTech</a></li>
+                            <li><a href="#">E-commerce</a></li>
+                            <li><a href="#">Healthcare</a></li>
+                            <li><a href="#">Real Estate</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu-block">
+                        <div class="footer__menu-caption icon-plus">Company</div>
+                        <ul class="footer__menu-list">
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Cases</a></li>
+                            <li><a href="#">Events</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__menu-block">
+                        <div class="footer__menu-caption icon-plus">Resources</div>
+                        <ul class="footer__menu-list">
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Book</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">All rights reserved © 2026 — stive.ai</p>
+                <nav aria-label="Terms menu" class="footer__terms">
+                    <ul>
+                        <li>
+                            <a href="">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="">Terms and Conditions</a>
+                        </li>
+                    </ul>
+                </nav>
+                <ul class="footer__socials">
+                    <li class="footer__social"><a href="" class="footer__social-link">Telegram</a></li>
+                    <li class="footer__social"><a href="" class="footer__social-link">X</a></li>
+                    <li class="footer__social"><a href="" class="footer__social-link">Facebook</a></li>
                 </ul>
-                <div class="footer-col-divider"></div>
             </div>
-            <div class="footer-col">
-                <div class="footer-col-header">
-                    <p class="footer-col-title">Industries</p>
-                    <svg
-                        class="footer-col-toggle"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M5.99613 13.3313L6.00085 7.3303L-0.00013262 7.33502L-0.00013268 5.99623L6.00085 6.00094L5.99613 -3.91896e-05L7.33492 -3.91298e-05L7.33021 6.00094L13.3265 6.00094L13.3265 7.3303L7.33021 7.3303L7.33021 13.3266L5.99613 13.3313Z"
-                            fill="#7C8698" />
-                    </svg>
-                </div>
-                <ul class="footer-links">
-                    <li><a href="#">SaaS</a></li>
-                    <li><a href="#">FinTech</a></li>
-                    <li><a href="#">E-commerce</a></li>
-                    <li><a href="#">Healthcare</a></li>
-                    <li><a href="#">Real Estate</a></li>
-                </ul>
-                <div class="footer-col-divider"></div>
-            </div>
-            <div class="footer-col">
-                <div class="footer-col-header">
-                    <p class="footer-col-title">Company</p>
-                    <svg
-                        class="footer-col-toggle"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M5.99613 13.3313L6.00085 7.3303L-0.00013262 7.33502L-0.00013268 5.99623L6.00085 6.00094L5.99613 -3.91896e-05L7.33492 -3.91298e-05L7.33021 6.00094L13.3265 6.00094L13.3265 7.3303L7.33021 7.3303L7.33021 13.3266L5.99613 13.3313Z"
-                            fill="#7C8698" />
-                    </svg>
-                </div>
-                <ul class="footer-links">
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Cases</a></li>
-                    <li><a href="#">Events</a></li>
-                </ul>
-                <div class="footer-col-divider"></div>
-            </div>
-            <div class="footer-col">
-                <div class="footer-col-header">
-                    <p class="footer-col-title">Resources</p>
-                    <svg
-                        class="footer-col-toggle"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 14 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M5.99613 13.3313L6.00085 7.3303L-0.00013262 7.33502L-0.00013268 5.99623L6.00085 6.00094L5.99613 -3.91896e-05L7.33492 -3.91298e-05L7.33021 6.00094L13.3265 6.00094L13.3265 7.3303L7.33021 7.3303L7.33021 13.3266L5.99613 13.3313Z"
-                            fill="#7C8698" />
-                    </svg>
-                </div>
-                <ul class="footer-links">
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Book</a></li>
-                </ul>
-                <div class="footer-col-divider"></div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <div class="footer-left">
-            <p class="footer-rights">All rights reserved © 2026 — stive.ai</p>
-            <div class="footer-bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms and Conditions</a>
-            </div>
-        </div>
-        <div class="footer-socials">
-            <a href="#">Telegram</a>
-            <a href="#">X</a>
-            <a href="#">Facebook</a>
         </div>
     </div>
 </footer>
