@@ -8,23 +8,70 @@
 
 .header {
 	position: sticky;
-	top: rem(8);
+	top: 0;
 	z-index: 6;
+	padding: rem(6) 0;
+	border-radius: 0.5rem;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		border-radius: 0.5rem;
+		border: rem(1) solid #D2F5F2;
+		background: url("@img/header-bg-blur-mobile.svg") 0 0 / cover no-repeat, #FFF;
+
+		@media (min-width:$md4) {
+			background: url("@img/header-bg-blur.svg") 0 0 / cover no-repeat, #FFF;
+		}
+
+		@media (min-width:$md3) {
+			display: none;
+		}
+	}
+
+	@media (min-width:$md3) {
+		border-radius: none;
+		padding: 0;
+		top: rem(8);
+	}
+
+	.container {
+		@media (max-width:$md3) {
+			max-width: 100%;
+		}
+	}
 
 	// .header__wrapper
 	&__wrapper {
-		border-radius: 0.5rem;
-		border: rem(1) solid #D2F5F2;
-		background: url("@img/header-bg-blur.svg") 0 0 / cover no-repeat, #FFF;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		gap: rem(8);
-		padding: rem(5) rem(5) rem(5) rem(24);
+
+		@media (min-width:$md3) {
+			border-radius: 0.5rem;
+			border: rem(1) solid #D2F5F2;
+			background: url("@img/header-bg-blur.svg") 0 0 / cover no-repeat, #FFF;
+			padding: rem(5) rem(5) rem(5) rem(24);
+
+		}
 	}
 
 	// .header__logo
-	&__logo {}
+	&__logo {
+		position: relative;
+		z-index: 6;
+		margin-right: auto;
+
+		@media (min-width:$md4) {
+			margin-right: 0;
+		}
+	}
 
 	// .header__languages
 	&__languages {}
@@ -34,15 +81,42 @@
 		border-radius: 0.5rem;
 		border: rem(1) solid rgba(25, 214, 199, 0.10);
 		background: rgba(25, 214, 199, 0.05);
-		padding: rem(22) rem(14);
 		color: #192A3F;
-		min-height: rem(68);
 		font-size: 1.125rem;
 		font-weight: 700;
 		display: flex;
 		align-items: center;
-		gap: rem(8);
+		gap: rem(16);
 		transition: background-color 0.3s ease;
+		min-height: rem(68);
+		padding: rem(22) rem(12);
+		min-width: rem(196);
+
+		&::before {
+			margin-left: auto;
+			order: 1;
+			width: 1.5rem;
+			height: 1.5rem;
+			flex-shrink: 0;
+			font-size: 1.5rem;
+			transition: transform 0.3s ease;
+		}
+
+		@media (min-width:$md4) {
+			gap: rem(8);
+			min-height: rem(48);
+			padding: rem(10) rem(12);
+			min-width: 0;
+
+			&::before {
+				display: none;
+			}
+		}
+
+		@media (min-width:$md3) {
+			padding: rem(22) rem(14);
+			min-height: rem(68);
+		}
 
 		&:hover {
 			background: rgba(25, 214, 199, 0.10);
@@ -70,15 +144,82 @@
 	&__languages-text {}
 
 	// .header__btn
-	&__btn {}
+	&__btn {
+		@media (max-width:$md3) {
+			padding: 0.5rem;
+			min-height: rem(48);
+			width: rem(48);
+			height: rem(48);
+			flex-shrink: 0;
+		}
+
+		&::before {
+			font-size: 1.25rem;
+
+			@media (min-width:$md3) {
+				display: none;
+			}
+		}
+	}
+
+	// .header__btn-text
+	&__btn-text {
+		display: none;
+
+		@media (min-width:$md3) {
+			display: inline;
+		}
+	}
+
 }
 
 .menu {
-	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	gap: rem(8);
+	justify-content: space-between;
+
+	@media (max-width:$md4) {
+		position: fixed;
+		inset: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+		flex-direction: column;
+		background: #fff;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateX(100%);
+		padding: rem(114) 1rem 2rem;
+		transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+		scrollbar-width: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		.header.open-menu & {
+			opacity: 1;
+			visibility: visible;
+			transform: none;
+		}
+	}
+
+	@media (min-width:$md4) {
+		position: relative;
+		flex-direction: row;
+		flex: 1 1 auto;
+		z-index: 6;
+	}
 
 	@media (min-width:$md1) {
 		padding-left: rem(130);
+	}
 
+	// .menu__navbar
+	&__navbar {
+		@media (min-width:$md4) {
+			flex: 1 1 auto;
+		}
 	}
 
 	// .menu__list
@@ -86,8 +227,25 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		flex-wrap: wrap;
-		gap: rem(40);
+		gap: 2rem;
+		flex-direction: column;
+
+		@media (min-width:$md4) {
+			flex-wrap: wrap;
+			gap: 1rem;
+			row-gap: 0.5rem;
+			flex-direction: row;
+		}
+
+		@media (min-width:$md3) {
+			gap: rem(20);
+
+		}
+
+		@media (min-width:$md2) {
+			gap: rem(40);
+
+		}
 	}
 
 	// .menu__item
@@ -95,12 +253,20 @@
 
 	// .menu__link
 	&__link {
-		text-decoration: none;
 		color: #192a3f;
-		font-size: 0.875rem;
-		font-weight: 500;
-		letter-spacing: 0.0175rem;
 		transition: all 0.3s ease;
+		font-size: 1.75rem;
+		font-weight: 700;
+		letter-spacing: -0.035rem;
+		line-height: 1.175;
+
+		@media (min-width:$md4) {
+			font-size: 0.875rem;
+			font-weight: 500;
+			letter-spacing: 0.0175rem;
+			line-height: normal;
+
+		}
 
 		@media (any-hover: hover) {
 
@@ -109,6 +275,18 @@
 			}
 		}
 
+	}
+
+	// .menu__socials
+	&__socials {
+		&.socials {
+			font-size: 1.25rem;
+			gap: 1.5rem;
+
+			@media (min-width:$md4) {
+				display: none;
+			}
+		}
 	}
 }
 
@@ -119,27 +297,23 @@
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: flex-end;
-	padding: 0.62rem 0.3125rem;
-	color: #fff;
+	padding: rem(12);
+	color: #192A3F;
+	border-radius: 0.5rem;
+	border: rem(1) solid rgba(25, 214, 199, 0.10);
+	background: rgba(25, 214, 199, 0.05);
 	z-index: 11;
 	transition: all 0.3s ease;
-	min-width: rem(36);
-	height: rem(36);
-	margin-left: 0.75rem;
+	min-width: rem(48);
+	height: rem(48);
 
-	@media (min-width: $md3) {
-		min-width: 2.5rem;
-		height: 2.5rem;
-		margin-left: rem(16);
-	}
-
-	@media (min-width: $md2) {
+	@media (min-width: $md4) {
 		display: none;
 	}
 
 	& span {
 		display: block;
-		padding: rem(3.5) rem(0);
+		padding: rem(2) rem(0);
 		width: 100%;
 		transition:
 			transform 0.4s ease 0.4s,
@@ -149,22 +323,16 @@
 		&::before {
 			content: "";
 			display: block;
-			height: rem(2);
-			border-radius: rem(2);
+			height: rem(3);
+			border-radius: rem(3);
 			background: currentColor;
 			transition: transform 0.3s ease 0s;
 			will-change: transform;
 		}
 
-		&:last-child {
-			width: 77%;
-		}
 	}
 
-	&.active {
-		color: #8c8c8c;
-		background: transparent;
-		padding: 0.35rem;
+	.header.open-menu & {
 
 		& span {
 			transition:
@@ -178,7 +346,7 @@
 			}
 
 			&:first-child {
-				transform: translateY(rem(9));
+				transform: translateY(rem(7));
 
 				&::before {
 					transform: rotate(-135deg);
@@ -190,7 +358,7 @@
 			}
 
 			&:nth-child(3) {
-				transform: translateY(rem(-9));
+				transform: translateY(rem(-7));
 				width: 100%;
 
 				&::before {

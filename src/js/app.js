@@ -42,10 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
     $(document).on('click', (e) => {
         const $target = $(e.target);
 
-        if ($target.is('[data-calendly]')) {
+        // Calendly Widget
+        if ($target.closest('[data-calendly]')) {
             e.preventDefault();
 
-            const calendarUrl = $target.attr('href');
+            const calendarUrl = $target.closest('[data-calendly]').attr('href');
 
             if (typeof Calendly !== 'undefined' && calendarUrl) {
                 Calendly.initPopupWidget({
@@ -54,6 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (calendarUrl) {
                 window.open(calendarUrl, '_blank');
             }
+        }
+
+        // menu
+        if ($target.closest('.header__menu-toggler')) {
+            $(".header").toggleClass("open-menu");
+            $('body').toggleClass('lock-menu')
         }
 
 

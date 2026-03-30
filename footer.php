@@ -110,9 +110,9 @@ $footer_terms = [
                     </ul>
                 </nav>
 
-                <ul class="footer__socials">
+                <ul class="footer__socials socials">
                     <?php foreach ($footer_socials as $social) : ?>
-                        <li class="footer__social">
+                        <li class="socials__item">
                             <a href="<?php echo esc_url($social['url']); ?>" class="footer__social-link">
                                 <?php echo esc_html($social['name']); ?>
                             </a>

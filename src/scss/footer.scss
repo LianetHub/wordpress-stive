@@ -174,22 +174,6 @@
 	}
 
 	// .footer__socials
-	&__socials {
-		display: flex;
-		gap: 1rem;
-	}
+	&__socials {}
 
-	// .footer__social
-	&__social {}
-
-	// .footer__social-link
-	&__social-link {
-		color: #19D6C7;
-		font-size: 0.8125rem;
-		display: inline-block;
-		min-width: rem(27);
-		text-align: center;
-		padding-block: rem(1);
-		border-bottom: rem(1) solid rgba(#16eedc, 0.2);
-	}
 }
