@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const $target = $(e.target);
 
         // Calendly Widget
-        if ($target.closest('[data-calendly]')) {
+        if ($target.closest('[data-calendly]').length) {
             e.preventDefault();
 
             const calendarUrl = $target.closest('[data-calendly]').attr('href');
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // menu
-        if ($target.closest('.header__menu-toggler')) {
+        if ($target.closest('.header__menu-toggler').length) {
             $(".header").toggleClass("open-menu");
             $('body').toggleClass('lock-menu')
         }
