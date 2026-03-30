@@ -42,7 +42,7 @@ $why_cards = [
         'img_png'   => 'growth.png',
         'img_webp'  => 'growth.webp',
         'alt'       => 'Omnichannel marketing growth showing connections between media, video, and social icons',
-        'size'      => 'normal',
+        'size'      => 'wide-tablet',
         'color'     => 'default',
     ],
 ];

@@ -100,7 +100,8 @@ $hero_features = [
                                 type="image/webp">
                             <img
                                 src="<?php echo IMG_PATH . '/hero/' . $feature['img']; ?>.png"
-                                alt="<?php echo esc_attr($feature['alt']); ?>">
+                                alt="<?php echo esc_attr($feature['alt']); ?>"
+                                class="cover-image">
                         </picture>
                         <span class="hero__feature-text"><?php echo esc_html($feature['text']); ?></span>
                     </li>

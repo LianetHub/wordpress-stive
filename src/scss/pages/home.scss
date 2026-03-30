@@ -26,8 +26,14 @@
         align-items: flex-start;
         justify-content: flex-end;
         height: 100%;
-        padding: rem(82) rem(32);
-        min-height: rem(600);
+
+        min-height: rem(540);
+        padding: rem(68) rem(32);
+
+        @media (min-width:$md2) {
+            padding: rem(82) rem(32);
+            min-height: rem(600);
+        }
 
         @media (min-width:$md1) {
             padding: rem(120) rem(64) rem(108);
@@ -88,7 +94,12 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        min-height: rem(600);
+        min-height: rem(540);
+
+        @media (min-width:$md2) {
+            min-height: rem(600);
+
+        }
 
         @media (min-width:$md1) {
             min-height: rem(696);
@@ -109,10 +120,17 @@
         pointer-events: none;
 
         &.img-center {
-            top: 80px;
-            left: 160px;
-            width: 240px;
-            height: 240px;
+            top: 14px;
+            left: 120px;
+            width: 180px;
+            height: 180px;
+
+            @media (min-width:$md2) {
+                top: 80px;
+                left: 160px;
+                width: 240px;
+                height: 240px;
+            }
 
             @media (min-width:$md1) {
                 top: 130px;
@@ -123,10 +141,17 @@
         }
 
         &.img-top-left {
-            top: -40px;
-            left: 36px;
-            width: 180px;
-            height: 180px;
+            top: -30px;
+            left: 27px;
+            width: 135px;
+            height: 135px;
+
+            @media (min-width:$md2) {
+                top: -40px;
+                left: 36px;
+                width: 180px;
+                height: 180px;
+            }
 
             @media (min-width:$md1) {
                 width: 207px;
@@ -135,10 +160,17 @@
         }
 
         &.img-bottom-left {
-            top: 84px;
-            width: 279px;
-            height: 279px;
-            left: -116px;
+            top: 63px;
+            left: -87px;
+            width: 209px;
+            height: 209px;
+
+            @media (min-width:$md2) {
+                top: 84px;
+                width: 279px;
+                height: 279px;
+                left: -116px;
+            }
 
             @media (min-width:$md1) {
                 left: -189px;
@@ -148,10 +180,17 @@
         }
 
         &.img-top-right {
-            top: -11px;
-            right: -21px;
-            width: 211px;
-            height: 211px;
+            top: -8px;
+            right: -16px;
+            width: 158px;
+            height: 158px;
+
+            @media (min-width:$md2) {
+                top: -11px;
+                right: -21px;
+                width: 211px;
+                height: 211px;
+            }
 
             @media (min-width:$md1) {
                 width: 282px;
@@ -160,10 +199,17 @@
         }
 
         &.img-bottom-right {
-            top: 189px;
-            right: -68px;
-            width: 245px;
-            height: 245px;
+            top: 120px;
+            right: -51px;
+            width: 184px;
+            height: 184px;
+
+            @media (min-width:$md2) {
+                top: 189px;
+                right: -68px;
+                width: 245px;
+                height: 245px;
+            }
 
             @media (min-width:$md1) {
                 top: 227px;
@@ -219,13 +265,23 @@
     // .hero__form-row
     &__form-row {
         margin-top: rem(15);
-        position: relative;
+
         display: flex;
-        overflow: hidden;
-        position: relative;
+        flex-direction: column;
+        gap: 1rem;
+
+        @media (min-width:$md2) {
+            overflow: hidden;
+            position: relative;
+        }
 
         & .form__control {
-            padding: 1.63rem 13.44rem 1.63rem 1.5rem;
+            padding: 1.63rem 1.5rem;
+
+            @media (min-width:$md2) {
+                padding: 1.63rem 13.44rem 1.63rem 1.5rem;
+
+            }
 
             &::placeholder {
                 color: #BEBEBE;
@@ -235,11 +291,14 @@
 
     // .hero__form-submit
     &__form-submit {
-        flex-shrink: 0;
-        position: absolute;
-        top: rem(6);
-        bottom: rem(6);
-        right: rem(6);
+        @media (min-width:$md2) {
+            flex-shrink: 0;
+            position: absolute;
+            top: rem(6);
+            bottom: rem(6);
+            right: rem(6);
+
+        }
     }
 
     // .hero__features
@@ -247,7 +306,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: rem(16) rem(24) rem(30);
+        padding: rem(16) rem(19) rem(30);
+
+        @media (min-width:$md2) {
+            padding: rem(16) rem(24) rem(30);
+        }
 
         @media (min-width:$md1) {
             padding: rem(22) rem(32) rem(50);
@@ -259,26 +322,36 @@
     &__feature {
         display: flex;
         align-items: center;
-        gap: rem(8);
+        gap: rem(4);
+
+        @media (min-width:$md2) {
+            gap: rem(8);
+
+        }
 
     }
 
     // .hero__feature-icon
     &__feature-icon {
-        border-radius: 0.75rem;
-        border: 1px solid #FFEBDB;
+
+        border: rem(1) solid #FFEBDB;
         background: #FFF;
         overflow: hidden;
         flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 1.375rem;
+        height: 1.375rem;
+        border-radius: 0.5rem;
 
-        img {
-            width: 34px;
-            height: 34px;
-            object-fit: cover;
+        @media (min-width:$md2) {
+            border-radius: 0.75rem;
+            width: rem(34);
+            height: rem(34);
+
         }
+
 
 
     }
@@ -297,7 +370,11 @@
 }
 
 .testimonials {
-    padding: rem(8) 0 rem(48);
+    padding: rem(8) 0 rem(36);
+
+    @media (min-width:$md2) {
+        padding: rem(8) 0 rem(48);
+    }
 
     // .testimonials__slider
     &__slider {
@@ -397,7 +474,12 @@
 }
 
 .solutions {
-    padding: rem(48) 0;
+    padding: rem(36) 0;
+
+    @media (min-width:$md2) {
+        padding: rem(48) 0;
+
+    }
 
     // .solutions__container
     &__container {
@@ -606,7 +688,12 @@
 }
 
 .cases {
-    padding: rem(48) 0;
+    padding: rem(36) 0;
+
+    @media (min-width:$md2) {
+        padding: rem(48) 0;
+
+    }
 
     // .cases__title
     &__title {
@@ -768,7 +855,12 @@
 }
 
 .why {
-    padding: rem(64) 0 rem(48);
+    padding: rem(48) 0 rem(36);
+
+    @media (min-width:$md2) {
+        padding: rem(64) 0 rem(48);
+
+    }
 
     // .why__title
     &__title {
@@ -780,10 +872,17 @@
         margin-top: 2rem;
 
         .swiper-wrapper {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            grid-auto-rows: rem(280);
+            @media (min-width:$md4) {
+                display: grid;
+                gap: 1rem;
+                grid-auto-rows: rem(280);
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @media (min-width:$md2) {
+                grid-template-columns: repeat(4, 1fr);
+
+            }
 
             @media (min-width:$md1) {
                 grid-auto-rows: rem(344);
@@ -819,6 +918,15 @@
         &.why__card--wide {
             grid-column: span 2;
             justify-content: center;
+
+        }
+
+        &.why__card--wide-tablet {
+            grid-column: span 2;
+
+            @media (min-width:$md2) {
+                grid-column: auto;
+            }
 
         }
 
@@ -864,7 +972,11 @@
 }
 
 .industries {
-    padding: rem(48) 0;
+    padding: rem(36) 0;
+
+    @media (min-width:$md2) {
+        padding: rem(48) 0;
+    }
 
     // .industries__tabs
     &__tabs {
@@ -890,7 +1002,7 @@
         align-items: center;
         width: fit-content;
         color: #737F94;
-        font-size: 1.25rem;
+
         font-weight: 600;
         line-height: 100%;
         padding: em(1.5, 1.5) em(4, 1.5);
@@ -898,6 +1010,11 @@
         border: rem(1) solid rgba(216, 216, 216, 0.50);
         background: #FFF;
         transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+        font-size: 1rem;
+
+        @media (min-width:$md2) {
+            font-size: 1.25rem;
+        }
 
         @media (min-width:$md1) {
             font-size: 1.5rem;
@@ -938,8 +1055,13 @@
     &__slide {
         position: relative;
         background: radial-gradient(66.67% 66.67% at 50% 50%, #1F3445 0%, #303942 100%);
-        border-radius: 2rem;
         overflow: hidden;
+        border-radius: 1.5rem;
+
+        @media (min-width:$md2) {
+            border-radius: 2rem;
+
+        }
 
         @media (any-hover: hover) {
             &:hover {
@@ -985,9 +1107,6 @@
     // .industries__slide-content
     &__slide-content {
         color: #fff;
-        font-size: 2rem;
-        font-weight: 800;
-        line-height: 130%;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -999,29 +1118,45 @@
         gap: rem(107);
         padding: 1rem;
         z-index: 2;
+        font-size: 1.5rem;
+
+        @media (min-width:$md2) {
+            font-size: 2rem;
+
+        }
 
     }
 
     // .industries__slide-text
     &__slide-text {
-        font-size: 2rem;
         font-weight: 800;
         line-height: 130%;
-        max-width: rem(752);
+
+        @media (min-width:$md2) {
+            max-width: rem(752);
+
+
+        }
     }
 
     // .industries__slide-arrow
     &__slide-arrow {
-
         border: rem(1) solid #E6E6E6;
         background: #fff;
         flex-shrink: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 2rem;
-        width: 7.5rem;
-        height: 7.5rem;
+        border-radius: 1rem;
+        width: 5rem;
+        height: 5rem;
+
+        @media (min-width:$md2) {
+            border-radius: 2rem;
+            width: 7.5rem;
+            height: 7.5rem;
+
+        }
 
         @media (min-width:$md1) {
             width: 8.75rem;
@@ -1036,7 +1171,11 @@
 }
 
 .media {
-    padding: rem(48) 0;
+    padding: rem(36) 0;
+
+    @media (min-width:$md2) {
+        padding: rem(48) 0;
+    }
 
     // .media__container
     &__container {
@@ -1205,7 +1344,12 @@
 }
 
 .steps {
-    padding: rem(30) 0 rem(48);
+    padding: rem(24) 0 rem(36);
+
+    @media (min-width:$md2) {
+        padding: rem(30) 0 rem(48);
+
+    }
 
     // .steps__list
     &__list {
@@ -1222,10 +1366,16 @@
     // .steps__item
     &__item {
         flex: 1 1 auto;
-        width: 10rem;
-        max-width: 10rem;
         transition: max-width 0.8s cubic-bezier(0.16, 1, 0.3, 1), flex 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         touch-action: manipulation;
+        width: 8rem;
+        max-width: 8rem;
+
+        @media (min-width:$md2) {
+            width: 10rem;
+            max-width: 10rem;
+
+        }
 
         @media (min-width:$md1) {
             width: 13.9375rem;
@@ -1265,7 +1415,7 @@
 
     // .steps__item-wrapper
     &__item-wrapper {
-        height: 20rem;
+
         position: relative;
         background: #fff;
         border: 0.0625rem solid #f3f3f3;
@@ -1275,6 +1425,11 @@
         flex-direction: column;
         justify-content: flex-end;
         transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        height: 16rem;
+
+        @media (min-width:$md2) {
+            height: 20rem;
+        }
 
         @media (min-width:$md1) {
             height: 25rem;
@@ -1288,18 +1443,24 @@
         align-items: center;
         margin-top: rem(-148);
         margin-right: rem(15);
-
-        transform: scale(0);
         margin-left: auto;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(rem(40)) scale(0.95);
-        transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+
+        transition: all 0.15s ease;
         pointer-events: none;
         position: relative;
         z-index: 1;
-        width: rem(360);
-        height: rem(360);
+        width: rem(290);
+        height: rem(290);
+        transform: translateY(rem(20)) scale(0.75);
+
+        @media (min-width:$md2) {
+            transform: translateY(rem(40)) scale(0.95);
+            width: rem(360);
+            height: rem(360);
+
+        }
 
         @media (min-width:$md1) {
             width: rem(475);
@@ -1350,12 +1511,18 @@
     &__item-num {
         position: absolute;
         bottom: rem(11);
-        left: rem(20);
-        font-size: 5.5rem;
+
         font-weight: 800;
         line-height: 1;
         z-index: 1;
         pointer-events: none;
+        font-size: 4.5rem;
+        left: rem(16);
+
+        @media (min-width:$md2) {
+            left: rem(20);
+            font-size: 5.5rem;
+        }
 
         @media (min-width:$md1) {
             left: rem(27);
@@ -1379,6 +1546,35 @@
         flex-grow: 1;
         max-width: 33rem;
         line-height: 1.2;
+
+        .title {
+            font-size: 1.75rem;
+
+            @media (min-width:$md4) {
+                font-size: 2rem;
+            }
+
+            @media (min-width: $md2) {
+                font-size: 2.5rem;
+            }
+
+            @media (min-width: $md1) {
+                font-size: 3rem;
+            }
+        }
+
+        .title-sm {
+
+            font-size: 1.75rem;
+
+            @media (min-width: $md5) {
+                font-size: 2rem;
+            }
+
+            @media (min-width: $md1) {
+                font-size: 2.5rem;
+            }
+        }
     }
 
     // .steps__item-arrow
@@ -1390,11 +1586,25 @@
         border: rem(1) solid rgba(230, 230, 230, 0.35);
         backdrop-filter: blur(rem(4));
         -webkit-backdrop-filter: blur(rem(4));
-        width: 5.1875rem;
-        height: 5.1875rem;
+
         flex-shrink: 0;
         transition: background-color 0.3s ease;
-        border-radius: 1rem;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        width: 4rem;
+        height: 4rem;
+
+        @media (min-width:$md2) {
+            border-radius: 1rem;
+            width: 5rem;
+            height: 5rem;
+
+        }
+
+        @media (min-width:$md1) {
+            width: 5.1875rem;
+            height: 5.1875rem;
+        }
 
         @media (any-hover: hover) {
             &:hover {
@@ -1484,7 +1694,12 @@
 }
 
 .book {
-    padding: rem(42) 0 rem(64);
+    padding: rem(36) 0 rem(48);
+
+    @media (min-width:$md2) {
+        padding: rem(42) 0 rem(64);
+
+    }
 
     // .book__content
     &__content {
