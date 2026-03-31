@@ -1,9 +1,5 @@
 "use strict";
 
-// const { default: Swiper } = require("swiper");
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
     //  init Fancybox
@@ -146,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slidesPerView: 'auto',
             spaceBetween: 8,
             watchSlidesProgress: true,
-            freeMode: true,
+            slideToClickedSlide: true,
         });
 
         new Swiper('.industries__slider', {

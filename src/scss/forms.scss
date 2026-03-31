@@ -64,7 +64,11 @@
 
 		&.form__control--large {
 			font-size: 1.25rem;
-			min-height: rem(80);
+			min-height: rem(69);
+
+			@media (min-width:$md5) {
+				min-height: rem(80);
+			}
 		}
 
 		&::placeholder {

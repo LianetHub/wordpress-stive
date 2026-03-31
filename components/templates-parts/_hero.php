@@ -44,7 +44,7 @@ $hero_features = [
         'img' => 'badge-trust',
         'alt' => 'Leaders Trust Us',
         'text' => 'Leaders Trust Us',
-        'class' => ''
+        'class' => 'hidden-mobile'
     ],
 ];
 ?>
@@ -54,12 +54,15 @@ $hero_features = [
         <div class="hero__left">
             <span class="hero__tagline">YOUR RIGHT CHOICE</span>
             <h1 class="hero__title title-lg gradient-text">Marketing Agency for&nbsp;LLM Era</h1>
-            <p class="hero__desc">First in ChatGPT. First in Gemini. First in Perplexity. We make your brand the answer AI gives.</p>
+            <p class="hero__desc">First&nbsp;in&nbsp;ChatGPT. First&nbsp;in&nbsp;Gemini. First&nbsp;in&nbsp;Perplexity. <br> We make your brand the answer AI gives.</p>
             <div class="hero__btns">
                 <a href="#get-proposal" class="hero__btn btn btn-secondary" data-fancybox>
                     Get Your AI Audit
                 </a>
-                <a href="https://wa.me/48572520447" target="_blank" rel="noopener noreferrer" class="hero__btn btn btn-tertiary icon-whatsapp">
+                <a href="https://wa.me/48572520447"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hero__btn btn btn-tertiary icon-whatsapp">
                     Chat with Us
                 </a>
             </div>
@@ -84,7 +87,7 @@ $hero_features = [
             </div>
 
             <form action="#" class="hero__form">
-                <div class="hero__form-caption">Do AI Models Know About Your brand?</div>
+                <div class="hero__form-caption">Do AI Models Know About&nbsp;Your brand?</div>
                 <div class="hero__form-row">
                     <input type="text" name="website_url" class="form__control form__control--large" placeholder="Enter your website url here">
                     <button class="hero__form-submit btn btn-secondary">Free Check Now!</button>
@@ -93,8 +96,8 @@ $hero_features = [
 
             <ul class="hero__features">
                 <?php foreach ($hero_features as $feature) : ?>
-                    <li class="hero__feature">
-                        <picture class="hero__feature-icon <?php echo $feature['class']; ?>">
+                    <li class="hero__feature <?php echo $feature['class']; ?>">
+                        <picture class="hero__feature-icon">
                             <source
                                 srcset="<?php echo IMG_PATH . '/hero/' . $feature['img']; ?>.webp"
                                 type="image/webp">

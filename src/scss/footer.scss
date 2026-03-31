@@ -24,9 +24,12 @@
 	// .footer__header
 	&__header {
 		display: grid;
-		padding-bottom: 2.22rem;
-		border-bottom: rem(1) solid rgba(0, 0, 0, 0.05);
 		gap: 4rem;
+
+		@media (min-width:$md4) {
+			padding-bottom: 2.22rem;
+			border-bottom: rem(1) solid rgba(0, 0, 0, 0.05);
+		}
 
 		@media (min-width:$md3) {
 			grid-template-columns: 14.4375rem 4fr;
@@ -145,6 +148,12 @@
 		justify-content: space-between;
 		align-items: center;
 		padding-top: 1.5rem;
+		gap: 1rem;
+		flex-wrap: wrap;
+
+		@media (min-width:$md4) {
+			flex-wrap: nowrap;
+		}
 
 		@media (min-width:$md2) {
 			padding-top: 3rem;
@@ -155,13 +164,22 @@
 	// .footer__copyright
 	&__copyright {
 		font-size: 0.75rem;
-		font-weight: 400;
 		color: #7c8698;
+		flex: 0 0 5.8125rem;
+
+		@media (min-width:$md4) {
+			flex: 0 1 auto;
+		}
 
 	}
 
 	// .footer__terms
 	&__terms {
+		margin-left: auto;
+
+		@media (min-width:$md4) {
+			margin-left: 0;
+		}
 
 		@media (min-width:$md1) {
 			margin-right: auto;
@@ -170,7 +188,12 @@
 
 		& ul {
 			display: flex;
-			gap: 3rem;
+			gap: 1rem;
+
+			@media (min-width:$md4) {
+				gap: 3rem;
+
+			}
 
 			@media (min-width:$md1) {
 				gap: 6.9375rem;
@@ -195,6 +218,20 @@
 	}
 
 	// .footer__socials
-	&__socials {}
+	&__socials {
+		order: -1;
+		flex: 0 0 100%;
+		border-bottom: rem(1) solid rgba(0, 0, 0, 0.05);
+		padding-bottom: 1.5rem;
+		justify-content: center;
+
+		@media (min-width:$md4) {
+			border-bottom: 0;
+			padding-bottom: 0rem;
+			flex: 0 1 auto;
+			order: 0;
+
+		}
+	}
 
 }
