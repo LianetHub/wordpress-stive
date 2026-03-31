@@ -57,7 +57,7 @@ $hero_features = [
             <p class="hero__desc">First&nbsp;in&nbsp;ChatGPT. First&nbsp;in&nbsp;Gemini. First&nbsp;in&nbsp;Perplexity. <br> We make your brand the answer AI gives.</p>
             <div class="hero__btns">
                 <a href="#get-proposal" class="hero__btn btn btn-secondary" data-fancybox>
-                    Get Your AI Audit
+                    Get Your Proposal
                 </a>
                 <a href="https://wa.me/48572520447"
                     target="_blank"

@@ -46,9 +46,9 @@ $footer_menus = [
 ];
 
 $footer_socials = [
-    ['name' => 'Telegram', 'url' => '#'],
-    ['name' => 'X', 'url' => '#'],
-    ['name' => 'Facebook', 'url' => '#'],
+    ['name' => 'Linkedin', 'url' => 'https://www.linkedin.com/company/stive-ai/'],
+    ['name' => 'X', 'url' => 'https://x.com/stive_agency'],
+    ['name' => 'Facebook', 'url' => 'https://www.facebook.com/profile.php?id=61579433848077'],
 ];
 
 $footer_terms = [
@@ -68,9 +68,9 @@ $footer_terms = [
                             alt="<?php echo esc_attr($logotype['alt']) ?: 'logotype'; ?>">
                     </a>
                     <p class="footer__desc">
-                        Experienced software developer with a passion for creating innovative
-                        solutions. Proficient in various programming languages and dedicated to
-                        delivering high-quality results.
+                        We make brands visible to AI. A marketing agency built 
+						for the age of generative search — so that when AI is 
+						asked about your industry, it names you first.
                     </p>
                     <div class="footer__addresses">
                         <?php foreach ($footer_addresses as $address) : ?>

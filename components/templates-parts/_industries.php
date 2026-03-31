@@ -4,35 +4,35 @@ $industries = [
         'title' => 'SaaS',
         'img_jpg'   => 'saas.jpg',
         'img_webp'   => 'saas.webp',
-        'text'  => 'Artificial intelligence (AI) is rapidly transforming our world. It is being applied across various fields, from healthcare to finance.',
+        'text'  => '78% of B2B buyers now research tools through AI. We make sure your product ranks #1 in LLM recommendations across your category.',
         'link'  => '#'
     ],
     [
         'title' => 'FinTech',
         'img_jpg'   => 'fintech.jpg',
         'img_webp'   => 'fintech.webp',
-        'text'  => 'FinTech solutions are reshaping the future of banking and digital payments through secure AI algorithms.',
+        'text'  => 'AI-driven search in finance is growing 3x year-over-year. We ensure your brand is cited accurately and recommended in every relevant query.',
         'link'  => '#'
     ],
     [
         'title' => 'E-commerce',
         'img_jpg'   => 'ecommerce.jpg',
         'img_webp'   => 'ecommerce.webp',
-        'text'  => 'Personalized shopping experiences driven by machine learning to increase conversion and loyalty.',
+        'text'  => '1 in 4 shoppers already asks AI before purchasing. We turn ChatGPT, Perplexity, and Gemini into your highest-converting discovery channel.',
         'link'  => '#'
     ],
     [
         'title' => 'Healthcare',
         'img_jpg'   => 'healthcare.jpg',
         'img_webp'   => 'healthcare.webp',
-        'text'  => 'AI-powered diagnostics and patient data management for modern medical institutions.',
+        'text'  => '63% of patients check AI before choosing a provider. We make your brand the trusted answer LLMs give — with accurate, up-to-date citations.',
         'link'  => '#'
     ],
     [
         'title' => 'Real Estate',
         'img_jpg'   => 'realestate.jpg',
         'img_webp'   => 'realestate.webp',
-        'text'  => 'Smart property management and predictive analytics for the real estate market.',
+        'text'  => 'AI-powered property search is up 140% in the last year. We position your brand as the go-to recommendation when buyers and agents ask AI for help.',
         'link'  => '#'
     ],
 ];
