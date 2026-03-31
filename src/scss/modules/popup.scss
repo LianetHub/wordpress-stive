@@ -62,8 +62,13 @@
 	--f-close-border-radius: 0;
 	--f-close-button-color: #{rgba(#7C8698, 1)};
 	--f-close-button-hover-color: #000;
-	top: #{rem(36)};
+	top: #{rem(30)};
 	right: #{rem(32)};
+
+	@media (min-width:$md5) {
+		top: #{rem(36)};
+
+	}
 
 	& path {
 		stroke-linecap: square;

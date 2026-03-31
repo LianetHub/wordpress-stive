@@ -16,6 +16,19 @@ $classes = [
 
 <li class="<?php echo implode(' ', array_filter($classes)); ?>">
     <picture class="why__card-img">
+        <?php if (!empty($card['img_mobile_webp'])) : ?>
+            <source
+                srcset="<?php echo IMG_PATH . '/why/' . $card['img_mobile_webp']; ?>"
+                media="(max-width: 991.98px)"
+                type="image/webp">
+        <?php endif; ?>
+
+        <?php if (!empty($card['img_mobile_png'])) : ?>
+            <source
+                srcset="<?php echo IMG_PATH . '/why/' . $card['img_mobile_png']; ?>"
+                media="(max-width: 991.98px)"
+                type="image/png">
+        <?php endif; ?>
         <source srcset="<?php echo IMG_PATH . '/why/' . $card['img_webp']; ?>" type="image/webp">
         <img
             src="<?php echo IMG_PATH . '/why/' . $card['img_png']; ?>"

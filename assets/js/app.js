@@ -115,7 +115,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if ($(".testimonials__slider").length) {
         new Swiper('.testimonials__slider', {
             slidesPerView: "auto",
-            spaceBetween: 16
+            spaceBetween: 8,
+            breakpoints: {
+                767.98: {
+                    spaceBetween: 16,
+                }
+            }
         })
     }
 
