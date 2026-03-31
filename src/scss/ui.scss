@@ -67,6 +67,12 @@
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	width: fit-content;
+	padding-block: 0.125rem;
+
+	@media (min-width:$md4) {
+
+		padding-block: 0.25rem;
+	}
 }
 
 .socials {

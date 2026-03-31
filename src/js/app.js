@@ -232,5 +232,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    document.addEventListener('wpcf7mailsent', function (event) {
+        const form = event.target;
+        const submitLabel = form.querySelector('.form__submit');
+
+        if (submitLabel) {
+            submitLabel.outerHTML = '<button type="button" data-fancybox-close class="form__success-btn btn btn-primary">Applied Successfully!</button>';
+        }
+    });
 });
 

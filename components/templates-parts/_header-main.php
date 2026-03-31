@@ -50,7 +50,7 @@ $header_socials = [
                         aria-haspopup="true"
                         aria-expanded="false">
                         <span class="header__languages-icon">
-                            <img src="<?php echo IMG_PATH ?>/flags/en.svg" alt="icon">
+                            <img src="<?php echo IMG_PATH ?>/flags/us.svg" alt="icon">
                         </span>
                         <span class="header__languages-text">
                             En<span class="mobile-only" aria-hidden="true">glish</span>

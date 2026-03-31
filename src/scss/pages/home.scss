@@ -676,7 +676,8 @@
 }
 
 .solution-card {
-    @media (any-hover: none) {
+
+    @media (any-hover: hover) {
         @media (min-width:$md2) {
             min-height: rem(370);
         }
@@ -728,6 +729,7 @@
                 font-size: 1.25rem;
                 color: #19D6C7;
                 order: 1;
+                display: block;
                 align-self: flex-start;
                 margin-top: -3.2rem;
                 opacity: 0;
@@ -2239,7 +2241,6 @@
             gap: rem(43);
             border-radius: 1rem;
             padding: rem(47) rem(30) rem(60) 49.4%;
-            border: rem(1) solid #F2F2F2;
             background: url("@img/book-bottom-decor.svg") 0 0 / cover no-repeat, url("@img/book-pattern.png") 0 0 / cover no-repeat, radial-gradient(66.67% 66.67% at 50% 50%, #1F3445 0%, #303942 100%);
             color: #fff
         }
