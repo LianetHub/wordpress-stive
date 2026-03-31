@@ -87,7 +87,7 @@ $hero_features = [
             </div>
 
             <form action="#" class="hero__form">
-                <div class="hero__form-caption">Do AI Models Know About&nbsp;Your brand?</div>
+                <div class="hero__form-caption">Do AI Models Know About&nbsp;Your Brand?</div>
                 <div class="hero__form-row">
                     <input type="text" name="website_url" class="form__control form__control--large" placeholder="Enter your website url here">
                     <button class="hero__form-submit btn btn-secondary">Free Check Now!</button>
