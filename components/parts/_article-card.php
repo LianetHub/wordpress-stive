@@ -3,7 +3,7 @@ $date_timestamp = strtotime($article['date']);
 $datetime_attr = $date_timestamp ? date('Y-m-d', $date_timestamp) : '';
 ?>
 
-<a href="<?php echo esc_url($article['url']); ?>" class="article-card">
+<a href="<?php echo esc_url($article['url']); ?>" class="article-card <?php echo $article['class'] ?>">
     <picture class="article-card__image">
         <source
             srcset="<?php echo IMG_PATH . '/media/' . $article['img_webp']; ?>"

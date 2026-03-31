@@ -18,6 +18,7 @@ $upcoming_events = [
 
 $latest_articles = [
     [
+        'class'   => 'swiper-slide',
         'img_webp'   => 'article_image-1.webp',
         'img_jpg'    => 'article_image-1.jpg',
         'url'        => '#',
@@ -31,6 +32,7 @@ $latest_articles = [
         ]
     ],
     [
+        'class'   => 'swiper-slide',
         'img_webp'   => 'article_image-2.webp',
         'img_jpg'    => 'article_image-2.jpg',
         'url'        => '#',
@@ -44,6 +46,7 @@ $latest_articles = [
         ]
     ],
     [
+        'class'   => 'swiper-slide',
         'img_webp'   => 'article_image-3.webp',
         'img_jpg'    => 'article_image-3.jpg',
         'url'        => '#',
@@ -89,12 +92,14 @@ $latest_articles = [
                 <h2 class="media__block-title gradient-text">Latest Articles</h2>
                 <a href="/blog" class="media__block-all">All articles</a>
             </div>
-            <div class="media__block-articles">
-                <?php
-                foreach ($latest_articles as $article) {
-                    include(locate_template('components/parts/_article-card.php'));
-                }
-                ?>
+            <div class="media__block-articles swiper">
+                <div class="swiper-wrapper">
+                    <?php
+                    foreach ($latest_articles as $article) {
+                        include(locate_template('components/parts/_article-card.php'));
+                    }
+                    ?>
+                </div>
             </div>
         </div>
     </div>

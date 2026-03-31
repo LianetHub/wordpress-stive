@@ -98,6 +98,12 @@ document.addEventListener('DOMContentLoaded', () => {
             spaceBetween: 16
         })
     }
+    if ($(".media__block-articles").length) {
+        new MobileSwiper('.media__block-articles', {
+            slidesPerView: 1,
+            spaceBetween: 8
+        }, 767.98)
+    }
 
     if ($(".testimonials__slider").length) {
         new Swiper('.testimonials__slider', {
