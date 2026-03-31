@@ -2096,7 +2096,12 @@
 }
 
 .book {
-    padding: rem(36) 0 rem(48);
+    padding: rem(12) 0 rem(36);
+
+    @media (min-width:$md4) {
+        padding: rem(36) 0 rem(48);
+
+    }
 
     @media (min-width:$md2) {
         padding: rem(42) 0 rem(64);
@@ -2114,11 +2119,11 @@
 
     // .book__image
     &__image {
-        max-width: 16.35681rem;
+        max-width: 24rem;
         margin-inline: auto;
         display: block;
         position: relative;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
 
         &::before {
             content: '';
@@ -2190,18 +2195,27 @@
 
     // .book__title
     &__title {
-        margin-top: rem(26);
-        max-width: 38rem
+        max-width: 38rem;
+        margin-top: rem(24);
+
+        @media (min-width:$md4) {
+            margin-top: rem(26);
+
+        }
     }
 
     // .book__subtitle
     &__subtitle {
         margin-top: rem(16);
-        font-size: rem(20);
-        font-weight: 400;
         line-height: 130%;
         color: #7c8698;
         max-width: rem(458);
+        font-size: 1.125rem;
+
+        @media (min-width:$md4) {
+            font-size: rem(20);
+
+        }
 
 
     }
@@ -2213,9 +2227,10 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: rem(43);
+        gap: rem(32);
 
         @media (min-width:$md3) {
+            gap: rem(43);
             border-radius: 1rem;
             padding: rem(47) rem(30) rem(60) 49.4%;
             border: rem(1) solid #F2F2F2;
@@ -2228,26 +2243,54 @@
     &__features {
         display: flex;
         flex-direction: column;
-        gap: rem(20);
-        font-size: 1.25rem;
+        align-items: flex-start;
         font-weight: 500;
         line-height: 100%;
+        font-size: 1rem;
+        gap: rem(20);
+
+        @media (min-width:$md4) {
+            font-size: 1.25rem;
+
+        }
 
         li {
-            padding-left: 2.29rem;
             position: relative;
+
+            @media (max-width:$md4) {
+                display: flex;
+                text-align: left;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap: 1.5rem;
+                line-height: 1.1;
+
+                &:first-child {
+                    max-width: rem(272);
+                }
+            }
+
+            @media (min-width:$md4) {
+                padding-left: 2.29rem;
+
+            }
 
             &::before {
                 content: '';
-                position: absolute;
-                top: 0.5rem;
-                left: 0;
+
                 width: rem(13);
                 height: rem(4);
                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='4' viewBox='0 0 13 4' fill='none'%3E%3Cpath d='M1.7864 0H12.6282V3.85676H0L1.7864 0Z' fill='%23129E92'/%3E%3C/svg%3E");
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
+                flex-shrink: 0;
+
+                @media (min-width:$md4) {
+                    position: absolute;
+                    top: 0.5rem;
+                    left: 0;
+                }
             }
         }
 
@@ -2257,13 +2300,21 @@
     &__actions {
         display: flex;
         gap: rem(16);
-        padding-left: 2.4rem;
+
+        @media (min-width:$md5) {
+            padding-left: 2.4rem;
+        }
 
 
     }
 
     // .book__action
     &__action {
+        @media (max-width:$md5) {
+            flex: 1 1 auto;
+            padding-inline: 0.5rem;
+        }
+
         &.btn {
             &.btn-sm {
                 font-size: 1rem;

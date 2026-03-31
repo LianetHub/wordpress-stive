@@ -2589,15 +2589,15 @@ body {
 }
 
 .book {
-    padding: 2.25rem 0 3rem
+    padding: .75rem 0 2.25rem
 }
 
 .book__image {
-    max-width: 16.35681rem;
+    max-width: 24rem;
     margin-inline: auto;
     display: block;
     position: relative;
-    margin-bottom: 2rem
+    margin-bottom: 1.5rem
 }
 
 .book__image::before {
@@ -2636,17 +2636,16 @@ body {
 }
 
 .book__title {
-    margin-top: 1.625rem;
-    max-width: 38rem
+    max-width: 38rem;
+    margin-top: 1.5rem
 }
 
 .book__subtitle {
     margin-top: 1rem;
-    font-size: 1.25rem;
-    font-weight: 400;
     line-height: 130%;
     color: #7c8698;
-    max-width: 28.625rem
+    max-width: 28.625rem;
+    font-size: 1.125rem
 }
 
 .book__bottom {
@@ -2659,7 +2658,7 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 2.6875rem
+    gap: 2rem
 }
 
 .book__features {
@@ -2670,36 +2669,36 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 1.25rem;
-    font-size: 1.25rem;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
     font-weight: 500;
-    line-height: 100%
+    line-height: 100%;
+    font-size: 1rem;
+    gap: 1.25rem
 }
 
 .book__features li {
-    padding-left: 2.29rem;
     position: relative
 }
 
 .book__features li::before {
     content: "";
-    position: absolute;
-    top: .5rem;
-    left: 0;
     width: .8125rem;
     height: .25rem;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='4' viewBox='0 0 13 4' fill='none'%3E%3Cpath d='M1.7864 0H12.6282V3.85676H0L1.7864 0Z' fill='%23129E92'/%3E%3C/svg%3E");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center
+    background-position: center;
+    -ms-flex-negative: 0;
+    flex-shrink: 0
 }
 
 .book__actions {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 1rem;
-    padding-left: 2.4rem
+    gap: 1rem
 }
 
 .book__action.btn.btn-sm {
@@ -2884,6 +2883,10 @@ body {
 
     .ready__badges {
         display: none
+    }
+
+    .book__actions {
+        padding-left: 2.4rem
     }
 }
 
@@ -3152,6 +3155,32 @@ body {
         -ms-flex: 0 0 min(100vw, 120rem);
         flex: 0 0 min(100vw, 120rem)
     }
+
+    .book {
+        padding: 2.25rem 0 3rem
+    }
+
+    .book__title {
+        margin-top: 1.625rem
+    }
+
+    .book__subtitle {
+        font-size: 1.25rem
+    }
+
+    .book__features {
+        font-size: 1.25rem
+    }
+
+    .book__features li {
+        padding-left: 2.29rem
+    }
+
+    .book__features li::before {
+        position: absolute;
+        top: .5rem;
+        left: 0
+    }
 }
 
 @media (min-width:991.98px) {
@@ -3415,6 +3444,7 @@ body {
     }
 
     .book__bottom {
+        gap: 2.6875rem;
         border-radius: 1rem;
         padding: 2.9375rem 1.875rem 3.75rem 49.4%;
         border: .0625rem solid #f2f2f2;
@@ -4019,6 +4049,26 @@ body {
         -ms-transform: none;
         transform: none
     }
+
+    .book__features li {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        text-align: left;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 1.5rem;
+        line-height: 1.1
+    }
+
+    .book__features li:first-child {
+        max-width: 17rem
+    }
 }
 
 @media (max-width:575.98px) {
@@ -4031,6 +4081,13 @@ body {
     }
 
     .ready__btn {
+        padding-inline: .5rem
+    }
+
+    .book__action {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
         padding-inline: .5rem
     }
 }
