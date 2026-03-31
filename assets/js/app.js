@@ -122,12 +122,20 @@ document.addEventListener('DOMContentLoaded', () => {
         new Swiper('.cases__slider', {
             slidesPerView: 1,
             initialSlide: 1,
+            spaceBetween: 4,
             loop: true,
             slideToClickedSlide: true,
             watchSlidesVisibility: true,
             preventClicks: true,
             preventClicksPropagation: true,
-            spaceBetween: 32
+            breakpoints: {
+                575.98: {
+                    spaceBetween: 16,
+                },
+                767.98: {
+                    spaceBetween: 32,
+                }
+            }
         })
     }
 

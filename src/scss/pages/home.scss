@@ -451,7 +451,7 @@
 }
 
 .testimonials {
-    padding: rem(8) 0 rem(36);
+    padding: rem(8) 0 rem(32);
 
     @media (min-width:$md2) {
         padding: rem(8) 0 rem(48);
@@ -505,7 +505,6 @@
     }
 
 
-
     &__header {
         display: flex;
         justify-content: space-between;
@@ -543,19 +542,22 @@
         }
     }
 
-    &-text {
+    &__text {
         font-size: 0.875rem;
         font-weight: 300;
+        line-height: 120%;
         color: #6e6e6e;
 
-        @media (max-width: 87.5rem) {
-            line-height: 110%;
-        }
     }
 }
 
 .solutions {
-    padding: rem(36) 0;
+    padding: rem(32) 0 0;
+
+    @media (min-width:$md5) {
+        padding: rem(32) 0;
+
+    }
 
     @media (min-width:$md2) {
         padding: rem(48) 0;
@@ -586,10 +588,17 @@
     // .solutions__logotypes
     &__logotypes {
         order: 1;
-        display: flex;
-        align-items: center;
-        gap: 1.3125rem;
         margin-top: 0.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.25rem;
+
+        @media (min-width:$md5) {
+            gap: 1.3125rem;
+            display: flex;
+            align-items: center;
+
+        }
 
         @media (min-width:$md2) {
             margin-top: 0;
@@ -603,12 +612,23 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 13.75rem;
-        height: 5rem;
+        height: 3.875rem;
+
+
+        @media (min-width:$md5) {
+            height: 5rem;
+            width: 13.75rem;
+
+        }
 
         img {
-            height: 2.25rem;
             object-fit: contain;
+            height: 1.85rem;
+
+            @media (min-width:$md5) {
+                height: 2.25rem;
+
+            }
         }
 
 
@@ -639,7 +659,13 @@
 
     // .solutions__more
     &__more {
-        display: none;
+        margin-top: rem(40);
+        width: 100%;
+
+        @media (min-width:$md5) {
+            display: none;
+
+        }
     }
 }
 
@@ -883,11 +909,13 @@
 
     // .case-card__details
     &__details {
-        margin-top: rem(23);
         display: flex;
         gap: 2.5rem;
+        margin-top: rem(16);
 
-
+        @media (min-width:$md4) {
+            margin-top: rem(23);
+        }
     }
 
     // .case-card__arrow
@@ -926,7 +954,6 @@
         font-size: 1rem;
         font-weight: 700;
         color: #192a3f;
-        margin-bottom: 0.5rem;
     }
 
     // .case-card__desc
@@ -1153,12 +1180,17 @@
 
         font-weight: 600;
         line-height: 100%;
-        padding: em(1.5, 1.5) em(4, 1.5);
         border-radius: 62.4375rem;
         border: rem(1) solid rgba(216, 216, 216, 0.50);
         background: #FFF;
         transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
         font-size: 1rem;
+        padding: em(15) em(23);
+
+        @media (min-width:$md5) {
+            padding: em(1.5, 1.5) em(4, 1.5);
+
+        }
 
         @media (min-width:$md2) {
             font-size: 1.25rem;
@@ -1229,12 +1261,12 @@
         position: relative;
         height: 0;
         width: 100%;
-        padding-bottom: #{math.div(568, 1424) * 100%};
+        padding-bottom: #{math.div(150, 376) * 100%};
         z-index: 1;
         overflow: hidden;
         display: block;
         background: radial-gradient(66.67% 66.67% at 50% 50%, #1F3445 0%, #303942 100%);
-        border-radius: 1.5rem;
+        border-radius: 0.5rem;
 
         & img,
         & source {
@@ -1254,6 +1286,8 @@
         }
 
         @media (min-width:$md4) {
+            border-radius: 1.5rem;
+            padding-bottom: #{math.div(568, 1424) * 100%};
             background: transparent;
         }
 
@@ -1265,7 +1299,11 @@
     // .industries__slide-content
     &__slide-content {
         margin-top: 1rem;
-        font-size: 1.25rem;
+
+        @media (min-width:$md5) {
+            font-size: 1.25rem;
+
+        }
 
         @media (min-width:$md4) {
             font-size: 1.5rem;
@@ -1438,14 +1476,25 @@
     align-items: center;
     gap: 1rem;
 
+    flex-direction: column;
+
+    @media (min-width:$md5) {
+        flex-direction: row;
+    }
+
     // .article-card__image
     &__image {
         position: relative;
         flex-shrink: 0;
         overflow: hidden;
-        width: rem(280);
         aspect-ratio: math.div(280, 180);
         border-radius: 1rem;
+        width: 100%;
+
+        @media (min-width:$md5) {
+            width: rem(280);
+
+        }
 
         & img,
         & source {

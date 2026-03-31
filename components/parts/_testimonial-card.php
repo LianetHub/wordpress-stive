@@ -13,7 +13,7 @@
             <?php endfor; ?>
         </div>
     </div>
-    <blockquote class="testimonial-text">
+    <blockquote class="testimonial__text">
         <?php echo esc_html($testimonial['text']); ?>
     </blockquote>
 </li>

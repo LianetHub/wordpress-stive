@@ -99,7 +99,7 @@ $logotypes = [
                     <?php endforeach; ?>
                 </ul>
             </div>
-            <a href="" class="solutions__more btn btn-secondary">Explore All Solutions</a>
+            <a href="#" class="solutions__more btn btn-secondary">Explore All Solutions</a>
         </div>
     </section>
 <?php endif; ?>
