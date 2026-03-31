@@ -194,6 +194,7 @@
 		visibility: hidden;
 		transform: translateX(100%);
 		padding: rem(114) 1rem 2rem;
+		gap: rem(16);
 		transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 		scrollbar-width: none;
 
@@ -286,6 +287,7 @@
 		&.socials {
 			font-size: 1.25rem;
 			gap: 1.5rem;
+			display: flex;
 
 			@media (min-width:$md4) {
 				display: none;

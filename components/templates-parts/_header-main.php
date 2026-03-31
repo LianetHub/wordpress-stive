@@ -57,6 +57,16 @@ $header_socials = [
                         </span>
                     </button>
                 </div>
+
+                <ul class="menu__socials socials">
+                    <?php foreach ($header_socials as $social) : ?>
+                        <li class="socials__item">
+                            <a href="<?php echo esc_url($social['url']); ?>" class="social__link">
+                                <?php echo esc_html($social['name']); ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
 
             <a href="https://calendly.com/as-stive/30min"

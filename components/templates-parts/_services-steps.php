@@ -1,28 +1,28 @@
 <?php
 $steps = [
     [
-        'title'    => 'Audit & Research',
+        'title'    => 'Audit &&nbsp;Research',
         'img_webp' => 'audit-icon.webp',
         'img_png'  => 'audit-icon.png',
         'url'      => '#',
         'active'   => true,
     ],
     [
-        'title'    => 'Strategy & Planning',
+        'title'    => 'Strategy &&nbsp;Planning',
         'img_webp' => 'strategy-icon.webp',
         'img_png'  => 'strategy-icon.png',
         'url'      => '#',
         'active'   => false,
     ],
     [
-        'title'    => 'AI Optimization & Exeсution',
+        'title'    => 'AI Optimization &&nbsp;Exeсution',
         'img_webp' => 'optimization-icon.webp',
         'img_png'  => 'optimization-icon.png',
         'url'      => '#',
         'active'   => false,
     ],
     [
-        'title'    => 'Scale & Reporting',
+        'title'    => 'Scale &&nbsp;Reporting',
         'img_webp' => 'scale-icon.webp',
         'img_png'  => 'scale-icon.png',
         'url'      => '#',
