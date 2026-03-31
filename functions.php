@@ -105,6 +105,15 @@ add_action('wp_head', function () {
     }
 }, 100);
 
+add_action('wp_body_open', function () {
+    $body_scripts = get_field('body_scripts', 'options');
+
+    if (!empty($body_scripts)) {
+        echo "\n<!-- Global Body Scripts from ACF -->\n";
+        echo $body_scripts;
+        echo "\n<!-- End Global Body Scripts -->\n";
+    }
+}, 100);
 
 add_action('wp_footer', function () {
     $footer_scripts = get_field('footer_scripts', 'options');
