@@ -59,6 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
             $('body').toggleClass('lock-menu')
         }
 
+        if ($target.closest('.footer__menu-caption').length) {
+            if ($(window).width() < 575.98) {
+                $target.closest('.footer__menu-caption').toggleClass("active").next().slideToggle();
+            }
+
+        }
+
 
     });
 

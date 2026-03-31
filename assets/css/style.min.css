@@ -1189,33 +1189,28 @@ body {
     transform: rotate(-225deg)
 }
 
-.footer {
-    margin-bottom: .5rem
-}
-
-.footer__wrapper {
-    border-radius: 1rem 1rem 0 0;
-    background: #fff;
-    padding: 2rem 1.5rem
-}
-
 .footer__header {
     display: -ms-grid;
     display: grid;
-    gap: 4rem
+    gap: 2rem
+}
+
+.footer__header-main {
+    display: contents
 }
 
 .footer__logo {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
     display: block;
     max-width: 5.9375rem
 }
 
 .footer__desc {
-    margin-top: 2.875rem;
     color: #838383;
     font-size: .8125rem;
     font-weight: 300;
-    max-width: 17.875rem;
     line-height: 1.2
 }
 
@@ -1240,7 +1235,14 @@ body {
     display: -ms-grid;
     display: grid;
     gap: 1rem;
-    row-gap: 2rem
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1
+}
+
+.footer__menu-block:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: .0625rem solid rgba(0, 0, 0, .05)
 }
 
 .footer__menu-caption {
@@ -1254,30 +1256,40 @@ body {
     -ms-flex-align: center;
     align-items: center;
     font-size: .875rem;
-    font-weight: 500
+    font-weight: 500;
+    width: 100%
+}
+
+.footer__menu-caption.active::before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg)
 }
 
 .footer__menu-caption::before {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
     order: 1;
-    display: none
+    -webkit-transition: -webkit-transform .3s ease;
+    transition: -webkit-transform .3s ease;
+    transition: transform .3s ease;
+    transition: transform .3s ease, -webkit-transform .3s ease;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    color: #7c8698
 }
 
 .footer__menu-list {
-    margin-top: 3.1875rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    gap: .75rem
+    display: none;
+    margin-top: 1rem
 }
 
 .footer__menu-list li {
     line-height: 100%
+}
+
+.footer__menu-list li:not(:last-child) {
+    margin-bottom: .75rem
 }
 
 .footer__menu-list li a {
@@ -2735,9 +2747,52 @@ body {
         height: 5.9375rem
     }
 
+    .footer {
+        margin-bottom: .5rem
+    }
+
+    .footer__wrapper {
+        border-radius: 1rem 1rem 0 0;
+        background: #fff;
+        padding: 2rem 1.5rem
+    }
+
+    .footer__header-main {
+        display: block
+    }
+
+    .footer__desc {
+        max-width: 17.875rem;
+        margin-top: 2.875rem
+    }
+
     .footer__menu {
+        -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+        order: 0;
+        row-gap: 2rem;
         -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr)
+    }
+
+    .footer__menu-block:not(:last-child) {
+        padding-bottom: 0;
+        border-bottom: 0
+    }
+
+    .footer__menu-caption::before {
+        display: none
+    }
+
+    .footer__menu-list {
+        margin-top: 3.1875rem;
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column
     }
 
     .hero {
@@ -2983,6 +3038,7 @@ body {
     }
 
     .footer__header {
+        gap: 4rem;
         padding-bottom: 2.22rem;
         border-bottom: .0625rem solid rgba(0, 0, 0, .05)
     }
@@ -4072,6 +4128,12 @@ body {
 }
 
 @media (max-width:575.98px) {
+    .footer {
+        padding: 2rem 0 1.5rem;
+        border-radius: 1rem 1rem 0 0;
+        background: #fff
+    }
+
     .hero__btn.icon-whatsapp {
         display: none
     }
