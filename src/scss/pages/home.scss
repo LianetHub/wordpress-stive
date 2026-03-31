@@ -818,6 +818,12 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        padding-block: 0.125rem;
+
+        @media (min-width:$md4) {
+
+            padding-block: 0.25rem;
+        }
     }
 
     // .cases__slider

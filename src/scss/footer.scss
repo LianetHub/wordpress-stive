@@ -257,9 +257,8 @@
 
 			}
 
-			@media (min-width:$md1) {
-				gap: 6.9375rem;
-
+			@media (min-width:$md2) {
+				gap: rem(51);
 			}
 
 			a {
