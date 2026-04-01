@@ -27,36 +27,6 @@
   <link rel="manifest" href="<?php echo ASSETS_PATH ?>/site.webmanifest">
   <!-- favicon -->
 
-  <?php
-  $og_title = get_bloginfo('name');
-  $og_description = get_bloginfo('description');
-  $og_url = home_url(add_query_arg([], $wp->request));
-
-  if (is_singular()) {
-    $og_title = get_the_title();
-    $og_description = get_the_excerpt() ? strip_tags(get_the_excerpt()) : $og_description;
-    $og_url = get_permalink();
-  } elseif (is_category() || is_tax()) {
-    $term = get_queried_object();
-    $og_title = $term->name;
-    $og_description = $term->description ? strip_tags($term->description) : $og_description;
-    $og_url = get_term_link($term);
-  }
-  ?>
-
-  <!-- Open Graph  -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="<?php echo esc_attr($og_title); ?>">
-  <meta property="og:description" content="<?php echo esc_attr($og_description); ?>">
-  <meta property="og:url" content="<?php echo esc_url($og_url); ?>">
-  <meta property="og:image" content="<?php echo ASSETS_PATH ?>/og_image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
-  <meta property="og:locale" content="en_EN">
-  <!-- Open Graph  -->
-
-
   <?php wp_head(); ?>
 </head>
 

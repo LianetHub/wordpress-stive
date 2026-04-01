@@ -2,9 +2,9 @@
 $logotype = get_field('logotype_for_site', 'option');
 
 $header_socials = [
-    ['name' => 'Telegram', 'url' => '#'],
-    ['name' => 'X', 'url' => '#'],
-    ['name' => 'Facebook', 'url' => '#'],
+    ['name' => 'Linkedin', 'url' => 'https://www.linkedin.com/company/stive-ai/'],
+    ['name' => 'X', 'url' => 'https://x.com/stive_agency'],
+    ['name' => 'Facebook', 'url' => 'https://www.facebook.com/profile.php?id=61579433848077'],
 ];
 
 ?>
