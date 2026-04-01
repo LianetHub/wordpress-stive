@@ -1,4 +1,4 @@
-<section class="book">
+<section class="book" id="book">
     <div class="container">
         <div class="book__content">
             <picture class="book__image">
