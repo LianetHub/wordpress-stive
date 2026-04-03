@@ -1,0 +1,78 @@
+@use "sass:color";
+@use "sass:math";
+@use "mixins" as *;
+@use "variables" as *;
+@use "fonts";
+@use "icons";
+
+.case {
+    padding: 0.5rem 0;
+
+    // .case__container
+    &__container {
+        display: flex;
+        gap: rem(100);
+    }
+
+    // .case__main
+    &__main {
+        flex: 0 0 rem(500);
+    }
+
+    // .case__categories
+    &__categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    // .case__category
+    &__category {
+        color: #192A3F;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        line-height: 100%;
+        border-radius: 62.4375rem;
+        border: rem(1) solid #EAEAEA;
+        background: #F2F2F2;
+        transition: background-color 0.3s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: #ffc49f;
+            }
+        }
+    }
+
+    // .case__title
+    &__title {
+        margin-top: 2rem;
+    }
+
+    // .case__description
+    &__description {
+        margin-top: 1rem;
+        color: #7C8698;
+        font-size: 1.125rem;
+        font-weight: 300;
+        line-height: 120%;
+    }
+
+    // .case__actions
+    &__actions {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    // .case__btn
+    &__btn {}
+
+    // .case__image
+    &__image {
+        height: 100%;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+}
