@@ -7,10 +7,10 @@ $testimonials = [
         'text' => 'Thanks to STIVE\'s efforts, the client saw an 80% increase in organic traffic, a 5.74x ROAS, and top 1-2 positions in LLM-generated answers for key industry queries. The team was well-organized, responsive, and proactive. Moreover, STIVE\'s expertise in GEO and LLM visibility was impressive.'
     ],
     [
-        'name' => 'Alex Johnson',
-        'title' => 'CMO @ InnovateTech',
+        'name' => 'Konstantin Sko',
+        'title' => 'CCO @ Math Agency',
         'rating' => 5,
-        'text' => 'The studio\'s services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.'
+        'text' => 'Thanks to STIVE\'s efforts, the client saw a significant increase in brand citations and referral traffic. The team had a deep understanding of LLM systems and was highly proactive. They met all deliverables on time and responded quickly to the client\'s requests.'
     ],
     [
         'name' => 'Maria Gonzalez',

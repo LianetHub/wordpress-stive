@@ -8,6 +8,7 @@
 .breadcrumbs {
 	position: relative;
 	z-index: 3;
+	padding: rem(36) 0;
 
 	// .breadcrumbs__list
 	&__list {
@@ -16,7 +17,7 @@
 		flex-wrap: nowrap;
 		overflow: hidden;
 		white-space: nowrap;
-		gap: 0.25rem;
+		gap: rem(6);
 	}
 
 	// .breadcrumbs__item
@@ -27,23 +28,17 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		min-width: 0;
-		gap: 0.25rem;
-		text-transform: uppercase;
-		font-size: 0.78125rem;
-		letter-spacing: -0.02344rem;
+		gap: rem(6);
+		font-size: 0.875rem;
+		letter-spacing: 0.0175rem;
 
 		&:not(:last-child) {
 			flex-shrink: 1;
 
 			&::before {
-				content: "";
+				content: "–";
 				order: 1;
-				width: 1rem;
-				height: rem(1);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				background: #7C981E;
+				color: #7C8698;
 			}
 		}
 
@@ -56,8 +51,6 @@
 
 	// .breadcrumbs__link
 	&__link {
-		@extend .breadcrumbs__current;
-		color: #7C981E;
 
 		&:is(a) {
 			transition: color 0.3s ease;
@@ -75,9 +68,6 @@
 		word-break: break-all;
 		overflow: hidden;
 		text-overflow: ellipsis;
-
-		&[aria-current="page"] {
-			color: #717680;
-		}
+		color: #7C8698;
 	}
 }
