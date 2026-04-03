@@ -6,7 +6,7 @@
 @use "icons";
 
 .case {
-    padding: 0.5rem 0;
+    padding: 0.5rem 0 2rem;
 
     // .case__container
     &__container {
@@ -71,8 +71,52 @@
 
     // .case__image
     &__image {
-        height: 100%;
+        height: rem(305);
+        width: 100%;
         border-radius: 1rem;
         overflow: hidden;
+    }
+}
+
+.features {
+    padding: 2rem 0;
+
+    // .features__list
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    // .features__card
+    &__card {
+        border-radius: 0.5rem;
+        border: rem(1) solid #F2F2F2;
+        background: #FFF;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    // .features__card-caption
+    &__card-caption {
+        font-size: 0.875rem;
+        line-height: 100%;
+        letter-spacing: 0.0875rem;
+        text-transform: uppercase;
+    }
+
+    // .features__card-num
+    &__card-num {}
+
+    // .features__card-desc
+    &__card-desc {
+        color: #7C8698;
+        font-size: 1rem;
+        line-height: 100%;
+
     }
 }

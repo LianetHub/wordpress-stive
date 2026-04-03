@@ -37,4 +37,6 @@ Template Post Type: case
     </div>
 </section>
 
+<?php require_once(TEMPLATE_PATH . '_features.php'); ?>
+
 <?php get_footer(); ?>
