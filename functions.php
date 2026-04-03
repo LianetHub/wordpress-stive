@@ -10,6 +10,7 @@ define('IMG_PATH', get_stylesheet_directory_uri() . '/assets/img');
 define('JS_DIR', get_template_directory() . '/assets/js');
 define('STYLES_DIR', get_template_directory() . '/assets/css');
 
+require_once(FUNC_PATH . 'case-taxonomy.php');
 
 function r4_themestive_enqueue_style()
 {
