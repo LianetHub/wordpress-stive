@@ -1,4 +1,9 @@
-<li class="testimonial swiper-slide">
+<?php
+$card_tag = isset($testimonial['tag']) ? $testimonial['tag'] : 'div';
+$card_class = isset($testimonial['class']) ? ' ' . $testimonial['class'] : '';
+?>
+
+<<?php echo $card_tag; ?> class="testimonial<?php echo $card_class; ?>">
     <div class="testimonial__header">
         <div>
             <p class="testimonial-author-name"><?php echo esc_html($testimonial['name']); ?></p>
@@ -16,4 +21,4 @@
     <blockquote class="testimonial__text">
         <?php echo esc_html($testimonial['text']); ?>
     </blockquote>
-</li>
+</<?php echo $card_tag; ?>>

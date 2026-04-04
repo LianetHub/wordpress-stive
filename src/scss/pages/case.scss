@@ -256,6 +256,37 @@
     }
 }
 
+.conclusion {
+
+    // .conclusion__container
+    &__container {
+        max-width: rem(1200);
+    }
+
+    // .conclusion__main
+    &__main {}
+
+    // .conclusion__title
+    &__title {
+        color: #28D8CA;
+        font-size: 0.875rem;
+        font-weight: 500;
+        letter-spacing: 0.0875rem;
+    }
+
+    // .conclusion__qoute
+    &__qoute {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    // .conclusion__review
+    &__review {
+        max-width: 36.5rem;
+    }
+}
+
+
 
 .article {
     padding: 2rem 0;
