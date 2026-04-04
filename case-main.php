@@ -9,81 +9,10 @@ Template Post Type: case
 <?php get_header(); ?>
 
 <?php require_once(TEMPLATE_PATH . '_breadcrumbs.php'); ?>
-
-<section class="case">
-    <div class="case__container container">
-        <div class="case__main">
-            <div class="case__categories">
-                <a href="" class="case__category label-badge">Category</a>
-                <a href="" class="case__category label-badge">Category</a>
-                <a href="" class="case__category label-badge">Category</a>
-            </div>
-            <h1 class="case__title title-sm">Case Headline <br> Key Result + Client Name</h1>
-            <p class="case__description">Short case description – 2-3 sentences. What was done, for whom, main outcome. Collpases with +- toggle on mobile</p>
-            <div class="case__actions">
-                <a href="" class="case__btn btn btn-primary">Get Similar Results</a>
-                <a href="" class="case__btn btn btn-grey">See How We Did It</a>
-            </div>
-        </div>
-        <picture class="case__image">
-            <source
-                srcset="<?php echo IMG_PATH . '/cases/case_study-1.webp' ?>"
-                type="image/webp">
-            <img
-                src="<?php echo IMG_PATH . '/cases/case_study-1.jpg' ?>"
-                alt="case image"
-                class="cover-image">
-        </picture>
-    </div>
-</section>
-
+<?php require_once(TEMPLATE_PATH . '_case-header.php'); ?>
 <?php require_once(TEMPLATE_PATH . '_features.php'); ?>
-<section class="case-details">
-    <div class="case-details__container container">
-        <div class="case-details__card">
-            <div class="case-details__person">
-                <div class="case-details__person-thumb">
-                    <img src="<?php echo IMG_PATH ?>/user-thumb.png"
-                        class="cover-image"
-                        alt="person avatar">
-                </div>
-                <div class="case-details__person-info">
-                    <div class="case-details__person-name title-xs gradient-text">Client Name</div>
-                    <div class="case-details__person-position">industry / product type</div>
-                </div>
-            </div>
-            <ul class="case-details__list">
-                <li class="case-details__item">
-                    <div class="case-details__item-property">industry</div>
-                    <div class="case-details__item-value">industry</div>
-                </li>
-                <li class="case-details__item">
-                    <div class="case-details__item-property">duration</div>
-                    <div class="case-details__item-value">industry</div>
-                </li>
-                <li class="case-details__item">
-                    <div class="case-details__item-property">market</div>
-                    <div class="case-details__item-value">industry</div>
-                </li>
-                <li class="case-details__item">
-                    <div class="case-details__item-property">website</div>
-                    <div class="case-details__item-value">industry</div>
-                </li>
-            </ul>
-            <div class="case-details__categories">
-                <a href="" class="case-details__category label-badge label-badge--small">Category</a>
-                <a href="" class="case-details__category label-badge label-badge--small">Category</a>
-                <a href="" class="case-details__category label-badge label-badge--small">Category</a>
-            </div>
-        </div>
-        <div class="case-details__description typography-block">
-            <h2>Who is AtmaForce?</h2>
-            <p>AtmaForce is an innovative tech company that specializes in developing cutting-edge software solutions for businesses of all sizes. Founded in 2021, the company has quickly gained a reputation for its user-friendly platforms that enhance productivity and streamline operations.</p>
-            <p>With a focus on artificial intelligence and machine learning, AtmaForce aims to empower organizations to harness the power of data and make informed decisions.</p>
-            <img src="<?php echo IMG_PATH . '/cases/case_study-1.jpg' ?>" alt="case image">
-        </div>
-    </div>
-</section>
+<?php require_once(TEMPLATE_PATH . '_case-details.php'); ?>
+
 <?php require_once(TEMPLATE_PATH . '_goals.php'); ?>
 <article class="article">
     <div class="article__container container typography-block">
@@ -95,5 +24,50 @@ Template Post Type: case
     </div>
 </article>
 <?php require_once(TEMPLATE_PATH . '_results.php'); ?>
+<?php require_once(TEMPLATE_PATH . '_conclusion.php'); ?>
+
+<?php
+$case_studies = [
+    [
+        'name'     => 'How we fixed casino reviews',
+        'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
+        'img_webp' => 'case_study-1.webp',
+        'img_jpg'  => 'case_study-1.jpg',
+        'link'     => '#',
+    ],
+    [
+        'name'     => '80% Organic Traffic Growth',
+        'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
+        'img_webp' => 'case_study-2.webp',
+        'img_jpg'  => 'case_study-2.jpg',
+        'link'     => '#',
+    ],
+    [
+        'name'     => 'YouTube & Reddit strategy',
+        'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
+        'img_webp' => 'case_study-3.webp',
+        'img_jpg'  => 'case_study-3.jpg',
+        'link'     => '#',
+    ]
+];
+?>
+
+<?php if ($case_studies): ?>
+    <section class="cases">
+        <div class="container">
+            <div class="cases__header">
+                <h2 class="cases__title gradient-text title-xs">More Case Studies</h2>
+                <a href="" class="cases__more btn btn-grey">All Cases</a>
+            </div>
+            <div class="cases__slider swiper">
+                <ul class="swiper-wrapper">
+                    <?php foreach ($case_studies as $case): ?>
+                        <?php include(locate_template('components/parts/_case-slide.php')); ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
 
 <?php get_footer(); ?>

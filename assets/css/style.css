@@ -2181,8 +2181,25 @@ body {
   padding: 2.25rem 0;
 }
 
-.cases__title,
-.why__title {
+.cases__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cases__header .cases__title,
+.cases__header .why__title {
+  text-align: left;
+}
+
+.cases__title.title,
+.title.why__title {
   width: 100%;
   text-align: center;
   background: linear-gradient(92deg, #272727 41.3%, #2CDACC 73.65%);
@@ -3808,8 +3825,8 @@ body {
             order: 0;
   }
 
-  .cases__title,
-  .why__title {
+  .cases__title.title,
+  .title.why__title {
     padding-block: 0.25rem;
   }
 

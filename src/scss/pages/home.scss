@@ -810,19 +810,32 @@
 
     }
 
+    // .cases__header
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .cases__title {
+            text-align: left;
+        }
+    }
+
     // .cases__title
     &__title {
-        width: 100%;
-        text-align: center;
-        background: linear-gradient(92deg, #272727 41.3%, #2CDACC 73.65%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        padding-block: 0.125rem;
+        &.title {
+            width: 100%;
+            text-align: center;
 
-        @media (min-width:$md4) {
+            background: linear-gradient(92deg, #272727 41.3%, #2CDACC 73.65%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-block: 0.125rem;
 
-            padding-block: 0.25rem;
+            @media (min-width:$md4) {
+                padding-block: 0.25rem;
+            }
         }
     }
 
