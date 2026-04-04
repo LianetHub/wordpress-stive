@@ -3264,6 +3264,56 @@ body {
           flex: 1 1 auto;
 }
 
+.goals {
+  padding: 2rem 0;
+}
+
+.goals__list {
+  gap: 0.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.goals__card {
+  border-radius: 0.5rem;
+  border: 0.0625rem solid #F2F2F2;
+  background: #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.goals__card-num {
+  color: #16EEDC;
+  font-size: 0.875rem;
+  line-height: 100%;
+  letter-spacing: 0.0875rem;
+  text-transform: uppercase;
+}
+
+.goals__card-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 100%;
+}
+
+.goals__card-desc {
+  color: #7C8698;
+  font-size: 1rem;
+  line-height: 100%;
+}
+
 .article {
   padding: 2rem 0;
 }

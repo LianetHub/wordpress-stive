@@ -84,6 +84,7 @@ Template Post Type: case
         </div>
     </div>
 </section>
+<?php require_once(TEMPLATE_PATH . '_goals.php'); ?>
 <article class="article">
     <div class="article__container container typography-block">
         <h2>Approach</h2>
