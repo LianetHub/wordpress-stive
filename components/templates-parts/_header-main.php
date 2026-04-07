@@ -1,11 +1,6 @@
 <?php
 $logotype = get_field('logotype_for_site', 'option');
-
-$header_socials = [
-    ['name' => 'Linkedin', 'url' => 'https://www.linkedin.com/company/stive-ai/'],
-    ['name' => 'X', 'url' => 'https://x.com/stive_agency'],
-    ['name' => 'Facebook', 'url' => 'https://www.facebook.com/profile.php?id=61579433848077'],
-];
+$calendly = get_field('calendly_link', 'option');
 
 ?>
 <header class="header">
@@ -26,14 +21,12 @@ $header_socials = [
                                 if ($link):
                                     $link_url = $link['url'];
                                     $link_title = $link['title'];
-                                    $target = $link['target'];
+                                    $link_target = $link['target'] ? $link['target'] : '_self';
                             ?>
                                     <li class="menu__item">
                                         <a href="<?php echo esc_url($link_url); ?>"
-                                            class="menu__link"
-                                            <?php if ($target === '_blank'): ?>
-                                            target="_blank" rel="noopener"
-                                            <?php endif; ?>>
+                                            class="menu__link"                                           
+                                            target="<?php echo esc_attr( $link_target ); ?>" rel="noopener">
                                             <?php echo esc_html($link_title); ?>
                                         </a>
                                     </li>
@@ -59,21 +52,30 @@ $header_socials = [
                 </div>
 
                 <ul class="menu__socials socials">
-                    <?php foreach ($header_socials as $social) : ?>
+					<?php while (have_rows('socials_links', 'option')): the_row();
+                                $link = get_sub_field('link');
+                                if ($link):
+                                    $link_url = $link['url'];
+                                    $link_title = $link['title'];
+                                    $link_target = $link['target'] ? $link['target'] : '_self';
+                            ?>
                         <li class="socials__item">
-                            <a href="<?php echo esc_url($social['url']); ?>" class="social__link">
-                                <?php echo esc_html($social['name']); ?>
+						    <a href="<?php echo esc_url($link_url); ?>"
+							class="social__link"                                           
+                            target="<?php echo esc_attr( $link_target ); ?>" rel="noopener">
+                            <?php echo esc_html($link_title); ?>
                             </a>
                         </li>
-                    <?php endforeach; ?>
+					<?php endif;
+                         endwhile; ?>
                 </ul>
             </div>
 
-            <a href="https://calendly.com/as-stive/30min"
+            <a href="<?php echo $calendly['url']; ?>"
                 data-calendly
                 class="header__btn btn btn-primary icon-calendar"
                 aria-label="Book Intro Call on Calendly">
-                <span class="header__btn-text">Book Intro Call</span>
+                <span class="header__btn-text"><?php echo $calendly['title']; ?></span>
             </a>
 
             <button type="button"
