@@ -54,10 +54,10 @@ $case_studies = [
 
 <?php if ($case_studies): ?>
     <section class="cases">
-        <div class="container">
+        <div class="cases__container container">
             <div class="cases__header">
                 <h2 class="cases__title gradient-text title-xs">More Case Studies</h2>
-                <a href="" class="cases__more btn btn-grey">All Cases</a>
+                <a href="" class="cases__more btn btn-grey btn-md">All Cases</a>
             </div>
             <div class="cases__slider swiper">
                 <ul class="swiper-wrapper">
@@ -69,5 +69,6 @@ $case_studies = [
         </div>
     </section>
 <?php endif; ?>
+<?php require_once(TEMPLATE_PATH . '_contacts.php'); ?>
 
 <?php get_footer(); ?>

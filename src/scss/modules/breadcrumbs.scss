@@ -8,7 +8,12 @@
 .breadcrumbs {
 	position: relative;
 	z-index: 3;
-	padding: rem(36) 0;
+	padding: rem(22) 0;
+
+	@media (min-width:$md4) {
+		padding: rem(36) 0;
+
+	}
 
 	// .breadcrumbs__list
 	&__list {

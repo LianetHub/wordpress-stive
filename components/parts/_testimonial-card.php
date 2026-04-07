@@ -5,9 +5,9 @@ $card_class = isset($testimonial['class']) ? ' ' . $testimonial['class'] : '';
 
 <<?php echo $card_tag; ?> class="testimonial<?php echo $card_class; ?>">
     <div class="testimonial__header">
-        <div>
-            <p class="testimonial-author-name"><?php echo esc_html($testimonial['name']); ?></p>
-            <p class="testimonial-author-title"><?php echo esc_html($testimonial['title']); ?></p>
+        <div class="testimonial__author">
+            <p class="testimonial__author-name"><?php echo esc_html($testimonial['name']); ?></p>
+            <p class="testimonial__author-title"><?php echo esc_html($testimonial['title']); ?></p>
         </div>
         <div class="testimonial__rating">
             <?php

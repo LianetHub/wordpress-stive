@@ -478,6 +478,13 @@
 		}
 	}
 
+	&.btn-md {
+		@media (min-width: $md4) {
+			padding: rem(16) rem(30);
+			min-height: rem(54);
+		}
+	}
+
 	&:disabled,
 	&[aria-disabled="true"] {
 		cursor: default;
