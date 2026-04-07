@@ -1,10 +1,10 @@
 <?php
 $logotype = get_field('logotype_for_site', 'option');
+$footer_adresses = get_field('footer_adresses', 'option');
+$footer_menus = get_field('footer_menus', 'option');
+$footer_terms = get_field('footer_terms', 'option');
+$footer_desc = get_field('footer_desc', 'option');
 
-$footer_addresses = [
-    'Poland, Wrocław, 50-202, Księcia Witolda Street, No. 49, Apt. 15',
-    'United States, Bellevue, WA, 98004-6424, 35 112th Ave NE, Apt 420',
-];
 
 $footer_menus = [
     [
@@ -68,14 +68,12 @@ $footer_terms = [
                             alt="<?php echo esc_attr($logotype['alt']) ?: 'logotype'; ?>">
                     </a>
                     <p class="footer__desc">
-                        We make brands visible to AI. A marketing agency built 
-						for the age of generative search — so that when AI is 
-						asked about your industry, it names you first.
+                        <?php echo $footer_desc; ?>
                     </p>
                     <div class="footer__addresses">
-                        <?php foreach ($footer_addresses as $address) : ?>
-                            <address><?php echo esc_html($address); ?></address>
-                        <?php endforeach; ?>
+						<?php foreach ($footer_adresses as $item) : ?>
+                            <address><?php echo $item['footer_adress']; ?></address>
+						<?php endforeach; ?>
                     </div>
                 </div>
 
@@ -98,7 +96,7 @@ $footer_terms = [
             </div>
 
             <div class="footer__bottom">
-                <p class="footer__copyright">All rights reserved © <?php echo date('Y'); ?> — stive.ai</p>
+                <p class="footer__copyright">All rights reserved © <?php echo date('Y'); ?> — <?php echo str_replace(['http://', 'https://'], '', home_url()); ?></p>
 
                 <nav aria-label="Terms menu" class="footer__terms">
                     <ul class="footer__terms-list">
