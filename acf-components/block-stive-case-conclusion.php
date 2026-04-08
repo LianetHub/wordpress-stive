@@ -3,6 +3,7 @@ $case_conclusion_title = get_field('case_conclusion_title'); //text
 $case_conclusion_qoute = get_field('case_conclusion_qoute'); //text
 $case_conclusion_card_tag = get_field('case_conclusion_card_tag'); //select or text
 $case_conclusion_card_class = get_field('case_conclusion_card_class'); //select or text
+$case_conclusion_testimonial = get_field('case_conclusion_conclusion_testimonial'); //repeater
 $testimonial = [
     'class' => 'conclusion__review',
     'name' => 'Vladyslav Nykytenkov',
