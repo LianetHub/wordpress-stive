@@ -76,15 +76,6 @@ function r4_register_acf_blocks() {
 			'mode'              => 'edit',
             'category'          => 'stive-case',
         ));
-		
-		acf_register_block_type(array(
-            'name'              => 'Case Contact',
-            'title'             => __('Block Case Contact'),
-            'description'       => __('A custom block.'),
-            'render_template'   => 'acf-components/block-stive-case-contact.php',
-			'mode'              => 'edit',
-            'category'          => 'stive-case',
-        ));
     }
 }
 add_action( 'acf/init', 'r4_register_acf_blocks' );
