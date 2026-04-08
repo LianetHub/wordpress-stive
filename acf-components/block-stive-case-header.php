@@ -8,7 +8,7 @@ $case_image = get_field('case_image'); //img
 <section class="case">
     <div class="case__container container">
         <div class="case__main">
-		<?php echo display_case_categories(); ?>
+		<?php echo display_category_and_tag_terms(get_the_ID(), 'case-list', 'case__categories'); ?>
             <h1 class="case__title title-sm">Case Headline <br> Key Result +&nbsp;Client&nbsp;Name</h1>
             <p class="case__description">Short case description – 2-3 sentences. What was done, for whom, main outcome. Collpases with +- toggle on mobile</p>
             <div class="case__actions">

@@ -1,4 +1,5 @@
 <?php
+$case_features = get_field('case_features'); //repeater
 $features = [
     [
         'caption' => 'Result Title',
