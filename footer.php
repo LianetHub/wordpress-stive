@@ -4,57 +4,9 @@ $footer_adresses = get_field('footer_adresses', 'option');
 $footer_menus = get_field('footer_menus', 'option');
 $footer_terms = get_field('footer_terms', 'option');
 $footer_desc = get_field('footer_desc', 'option');
+$socials_links = get_field('socials_links', 'option');
 
 
-$footer_menus = [
-    [
-        'title' => 'Services',
-        'items' => [
-            ['text' => 'AI SEO & GEO Optimization', 'url' => '#'],
-            ['text' => 'LLM Analytics & Audit', 'url' => '#'],
-            ['text' => 'AI Content & Automation', 'url' => '#'],
-            ['text' => 'LLM Ads Management', 'url' => '#'],
-            ['text' => 'LLM Reputation Management', 'url' => '#'],
-            ['text' => 'LLM Brand Strategy', 'url' => '#'],
-        ]
-    ],
-    [
-        'title' => 'Industries',
-        'items' => [
-            ['text' => 'SaaS', 'url' => '#'],
-            ['text' => 'FinTech', 'url' => '#'],
-            ['text' => 'E-commerce', 'url' => '#'],
-            ['text' => 'Healthcare', 'url' => '#'],
-            ['text' => 'Real Estate', 'url' => '#'],
-        ]
-    ],
-    [
-        'title' => 'Company',
-        'items' => [
-            ['text' => 'About us', 'url' => '#'],
-            ['text' => 'Cases', 'url' => '#'],
-            ['text' => 'Events', 'url' => '#'],
-        ]
-    ],
-    [
-        'title' => 'Resources',
-        'items' => [
-            ['text' => 'Blog', 'url' => '#'],
-            ['text' => 'Book', 'url' => '#'],
-        ]
-    ],
-];
-
-$footer_socials = [
-    ['name' => 'Linkedin', 'url' => 'https://www.linkedin.com/company/stive-ai/'],
-    ['name' => 'X', 'url' => 'https://x.com/stive_agency'],
-    ['name' => 'Facebook', 'url' => 'https://www.facebook.com/profile.php?id=61579433848077'],
-];
-
-$footer_terms = [
-    ['text' => 'Privacy Policy', 'url' => '#'],
-    ['text' => 'Terms and Conditions', 'url' => '#'],
-];
 ?>
 </main>
 <footer class="footer">
@@ -78,21 +30,32 @@ $footer_terms = [
                 </div>
 
                 <nav aria-label="footer menu" class="footer__menu">
-                    <?php foreach ($footer_menus as $menu_block) : ?>
-                        <div class="footer__menu-block">
-                            <button
-                                type="button"
-                                class="footer__menu-caption icon-plus">
-                                <?php echo esc_html($menu_block['title']); ?>
-                            </button>
-                            <ul class="footer__menu-list">
-                                <?php foreach ($menu_block['items'] as $item) : ?>
-                                    <li><a href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['text']); ?></a></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    <?php endforeach; ?>
-                </nav>
+				<?php foreach ($footer_menus as $main_item) : ?>
+				    <?php if (!empty($main_item['main_link'])) : ?>
+					<div class="footer__menu-block">
+					<?php $first_iteration = true; ?>
+                        <?php foreach ($main_item['main_link'] as $item) : ?>
+						<?php if ($first_iteration) : ?>
+						<button type="button" class="footer__menu-caption icon-plus">
+                            <?php echo esc_html($item['link']['title']); ?>
+                        </button>
+                        <ul class="footer__menu-list">
+                        <?php $first_iteration = false; ?>
+						     <?php else : ?>
+							 <li>
+							 <?php $link_target = $item['link']['target'] ? $item['link']['target'] : '_self';?>
+							     <a href="<?php echo esc_url($item['link']['url']); ?>"
+								 target="<?php echo esc_attr($link_target); ?>">
+                                     <?php echo esc_html($item['link']['title']); ?>
+                                 </a>
+							 </li>
+                        <?php endif; ?>
+                        <?php endforeach; ?>
+                        </ul> 
+                    </div> 
+                    <?php endif; ?>
+		        <?php endforeach; ?>
+		        </nav>
             </div>
 
             <div class="footer__bottom">
@@ -100,19 +63,21 @@ $footer_terms = [
 
                 <nav aria-label="Terms menu" class="footer__terms">
                     <ul class="footer__terms-list">
-                        <?php foreach ($footer_terms as $term) : ?>
+                        <?php foreach ($footer_terms as $item) : ?>
+						<?php $link_target = $item['footer_term']['target'] ? $item['footer_term']['target'] : '_self';?>
                             <li>
-                                <a href="<?php echo esc_url($term['url']); ?>"><?php echo esc_html($term['text']); ?></a>
+                                <a href="<?php echo esc_url($item['footer_term']['url']); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($item['footer_term']['title']); ?></a>
                             </li>
                         <?php endforeach; ?>
                     </ul>
                 </nav>
 
                 <ul class="footer__socials socials">
-                    <?php foreach ($footer_socials as $social) : ?>
+                    <?php foreach ($socials_links as $item) : ?>
+					<?php $link_target = $item['link']['target'] ? $item['link']['target'] : '_self';?>
                         <li class="socials__item">
-                            <a href="<?php echo esc_url($social['url']); ?>" class="footer__social-link">
-                                <?php echo esc_html($social['name']); ?>
+                            <a href="<?php echo esc_url($item['link']['url']); ?>" target="<?php echo esc_attr($link_target); ?>" class="footer__social-link">
+                                <?php echo esc_html($item['link']['title']); ?>
                             </a>
                         </li>
                     <?php endforeach; ?>
