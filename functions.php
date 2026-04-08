@@ -11,6 +11,7 @@ define('JS_DIR', get_template_directory() . '/assets/js');
 define('STYLES_DIR', get_template_directory() . '/assets/css');
 
 require_once(FUNC_PATH . 'case-taxonomy.php');
+require_once(FUNC_PATH . 'blog-taxonomy.php');
 require_once(FUNC_PATH . 'acf-init.php');
 require_once(FUNC_PATH . 'display-case-category.php');
 
