@@ -11,7 +11,70 @@ function r4_register_acf_blocks() {
             'description'       => __('A custom block.'),
             'render_template'   => 'acf-components/block-stive-case-header.php',
 			'mode'              => 'edit',
-            'category'          => 'Stive Case',
+            'category'          => 'stive-case',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Case Features',
+            'title'             => __('Block Case Features'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-case-features.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-case',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Case Case Details',
+            'title'             => __('Block Case Case Details'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-case-case-details.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-case',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Case goals',
+            'title'             => __('Block Case Goals'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-case-goals.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-case',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Case results',
+            'title'             => __('Block Case Results'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-case-results.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-case',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Case conclusion',
+            'title'             => __('Block Case Conclusion'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-case-conclusion.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-case',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Case Slider',
+            'title'             => __('Block Case Slider'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-case-slider.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-case',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Case Contact',
+            'title'             => __('Block Case Contact'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-case-contact.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-case',
         ));
     }
 }
