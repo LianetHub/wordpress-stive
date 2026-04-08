@@ -3,7 +3,6 @@ $case_details_thumb = get_field('case_details_thumb'); //img
 $case_person_name = get_field('case_person_name'); //text
 $case_person_position = get_field('case_person_position'); //text
 $case_details_list = get_field('case_details_list'); //repeater
-$case_details_category = get_field('case_details_list'); //асоциации ?
 $case_details_h2 = get_field('case_details_h2'); //text
 $case_details_img = get_field('case_details_img'); //img
 ?>

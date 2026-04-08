@@ -1,4 +1,8 @@
 <?php
+$case_results_h2 = get_field('case_results_h2'); //text
+$case_results_items = get_field('case_results_items'); //repeater
+$case_results_card_title = get_field('case_results_card_title'); //text
+$case_results_card_image = get_field('case_results_card_image'); //img
 $results_items = [
     [
         'num'     => '292%',
@@ -54,7 +58,6 @@ $results_items = [
                             same result
                         </div>
                         <picture class="results__card-image">
-                            <source srcset="<?php echo IMG_PATH ?>/why/ai-collage-mobile.webp" type="image/webp">
                             <img
                                 src="<?php echo IMG_PATH ?>/why/ai-collage-mobile.png"
                                 alt="ai agents"

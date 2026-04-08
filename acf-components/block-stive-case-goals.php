@@ -1,4 +1,5 @@
 <?php
+$case_goals = get_field('case_goals'); //repeater
 $goals_items = [
     [
         'title' => 'Brand Awareness',

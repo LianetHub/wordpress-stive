@@ -1,3 +1,9 @@
+<?php
+$case_contact_title = get_field('case_contact_title'); //text
+$case_contact_subtitle = get_field('case_contact_subtitle'); //text
+$case_contact_btn_first = get_field('case_contact_btn_first'); //link
+$case_contact_btn_second = get_field('case_contact_btn_second'); //link
+?>
 <section class="contacts">
     <div class="contacts__container container">
         <div class="contacts__offer">
