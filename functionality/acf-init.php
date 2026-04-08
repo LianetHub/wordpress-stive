@@ -33,7 +33,7 @@ function r4_register_acf_blocks() {
         ));
 		
 		acf_register_block_type(array(
-            'name'              => 'Case goals',
+            'name'              => 'Case Goals',
             'title'             => __('Block Case Goals'),
             'description'       => __('A custom block.'),
             'render_template'   => 'acf-components/block-stive-case-goals.php',
@@ -42,7 +42,16 @@ function r4_register_acf_blocks() {
         ));
 		
 		acf_register_block_type(array(
-            'name'              => 'Case results',
+            'name'              => 'Case Article',
+            'title'             => __('Block Case Article'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-case-article.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-case',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Case Results',
             'title'             => __('Block Case Results'),
             'description'       => __('A custom block.'),
             'render_template'   => 'acf-components/block-stive-case-results.php',
@@ -51,7 +60,7 @@ function r4_register_acf_blocks() {
         ));
 		
 		acf_register_block_type(array(
-            'name'              => 'Case conclusion',
+            'name'              => 'Case Conclusion',
             'title'             => __('Block Case Conclusion'),
             'description'       => __('A custom block.'),
             'render_template'   => 'acf-components/block-stive-case-conclusion.php',
