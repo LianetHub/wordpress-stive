@@ -12,6 +12,8 @@ define('STYLES_DIR', get_template_directory() . '/assets/css');
 
 require_once(FUNC_PATH . 'case-taxonomy.php');
 require_once(FUNC_PATH . 'acf-init.php');
+require_once(FUNC_PATH . 'display-case-category.php');
+
 
 function r4_themestive_enqueue_style()
 {
