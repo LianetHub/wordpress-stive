@@ -6,11 +6,11 @@ function blog_taxonomy()
     register_post_type(
         'blog',
         array(
-            'label'               => __('blog'),
+            'label'               => __('Blog'),
             'labels'              => array(
-                'name'                => _x('blog', 'Post Type General Name'),
-                'singular_name'       => _x('blog', 'Post Type Singular Name'),
-                'menu_name'           => __('blogs'),
+                'name'                => _x('Blog', 'Post Type General Name'),
+                'singular_name'       => _x('Blog', 'Post Type Singular Name'),
+                'menu_name'           => __('Blogs'),
             ),
             'supports'            => array('title', 'author', 'thumbnail', 'revisions', 'editor', 'tags'), // Добавляем поддержку тегов
             'hierarchical'        => false,
