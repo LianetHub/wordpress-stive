@@ -76,6 +76,24 @@ function r4_register_acf_blocks() {
 			'mode'              => 'edit',
             'category'          => 'stive-case',
         ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Front Slider',
+            'title'             => __('Block Front Slider'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-front-slider.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-home',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Front Ready To Scale',
+            'title'             => __('Block Ready To Scale'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-front-ready-to-scale.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-home',
+        ));
     }
 }
 add_action( 'acf/init', 'r4_register_acf_blocks' );
@@ -89,8 +107,8 @@ function  r4_stive_add_custom_categories($categories, $post)
                 'title' => esc_html__('Stive Case'),
             ),
             array(
-                'slug'  => 'stive-other',
-                'title' => esc_html__('Stive Other'),
+                'slug'  => 'stive-home',
+                'title' => esc_html__('Stive Front'),
             ),
         ),
         $categories
