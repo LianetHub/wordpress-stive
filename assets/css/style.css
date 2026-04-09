@@ -25,14 +25,6 @@
 }
 
 @font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "SFProDisplay";
   font-display: swap;
   src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
@@ -43,8 +35,16 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -59,24 +59,16 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
   src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -96,6 +88,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+.faq__item.active .faq__item-question::before,
+.faq__item-question::before,
 .form__checkbox-input:checked + .form__checkbox-content::before,
 .form__checkbox-input:checked + .wpcf7-list-item-label::before,
 [class^=icon-]:before,
@@ -114,6 +116,16 @@
 [class^=icon-]:before,
 [class*=" icon-"]:before {
   display: block;
+}
+
+.icon-add:before,
+.faq__item-question:before {
+  content: "\e909";
+}
+
+.icon-minus:before,
+.faq__item.active .faq__item-question:before {
+  content: "\e90a";
 }
 
 .icon-chevron-down:before {
@@ -3719,6 +3731,66 @@ body {
   font-size: 1.75rem;
 }
 
+.faq__list {
+  margin-top: 1.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.faq__item {
+  border-radius: 0.5rem;
+  border: 0.0625rem solid #F2F2F2;
+  background: #FFF;
+}
+
+.faq__item.active .faq__item-question::before {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.faq__item-question {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 150%;
+  padding: 1.5rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  text-align: left;
+}
+
+.faq__item-question::before {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.5rem;
+  color: #7C8698;
+}
+
+.faq__item-answer {
+  color: #7C8698;
+  font-size: 1.125rem;
+  line-height: 120%;
+  padding: 0rem 2rem 1.5rem 2rem;
+}
+
 @media (min-width: 374.98px) {
   .cooming-soon__socials {
     gap: 3.2rem;
@@ -4625,6 +4697,16 @@ body {
   .why__card-title {
     font-size: 1.75rem;
     max-width: 13.75rem;
+  }
+
+  .media__block-slider .article-card .article-card__image {
+    aspect-ratio: 2.5777777778;
+  }
+
+  .media__block-slider .article-card .article-card__image img,
+  .media__block-slider .article-card .article-card__image source {
+    -o-object-position: center 37%;
+       object-position: center 37%;
   }
 
   .steps__list {

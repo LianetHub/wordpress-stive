@@ -1,0 +1,69 @@
+@use "sass:color";
+@use "sass:math";
+@use "mixins" as *;
+@use "variables" as *;
+@use "fonts";
+@use "icons";
+
+
+.faq {
+
+    // .faq__title
+    &__title {}
+
+    // .faq__list
+    &__list {
+        margin-top: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(8);
+    }
+
+    // .faq__item
+    &__item {
+        border-radius: 0.5rem;
+        border: rem(1) solid #F2F2F2;
+        background: #FFF;
+
+        &.active {
+            .faq__item-question {
+                &::before {
+                    transform: rotate(360deg);
+                    @extend %ic, .icon-minus;
+                }
+            }
+        }
+    }
+
+    // .faq__item-question
+    &__item-question {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 150%;
+        padding: 1.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+
+        &::before {
+            order: 1;
+            transition: transform 0.3s ease;
+            width: 1.5rem;
+            height: 1.5rem;
+            font-size: 1.5rem;
+            color: #7C8698;
+            @extend %ic, .icon-add;
+        }
+
+    }
+
+    // .faq__item-answer
+    &__item-answer {
+        color: #7C8698;
+        font-size: 1.125rem;
+        line-height: 120%;
+        padding: 0rem 2rem 1.5rem 2rem;
+    }
+}

@@ -1550,6 +1550,16 @@
 
             .article-card__image {
                 width: 100%;
+
+                @media (min-width:$md3) {
+                    aspect-ratio: math.div(464, 180);
+
+                    & img,
+                    & source {
+                        object-position: center 37%;
+                    }
+
+                }
             }
         }
     }

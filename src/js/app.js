@@ -66,6 +66,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
 
+        // faq
+        if ($target.closest('.faq__item-question').length) {
+            const $button = $target.closest('.faq__item-question');
+            const $answer = $button.next('.faq__item-answer');
+            const $item = $button.closest('.faq__item');
+            const isExpanded = $button.attr('aria-expanded') === 'true';
+
+            $button.attr('aria-expanded', !isExpanded);
+
+            $button.toggleClass('active');
+            $item.toggleClass('active');
+
+            if (isExpanded) {
+                $answer.slideUp(300, function () {
+                    $(this).attr('hidden', true);
+                });
+            } else {
+                $answer.removeAttr('hidden').hide().slideDown(300);
+            }
+        }
+
 
     });
 

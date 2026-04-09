@@ -10,6 +10,7 @@ Template Post Type: blog
 
 <?php require_once(TEMPLATE_PATH . '_breadcrumbs.php'); ?>
 
+<?php require_once(TEMPLATE_PATH . '_faq.php'); ?>
 <?php
 $latest_articles = [
     [
