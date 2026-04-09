@@ -66,6 +66,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
 
+        // faq
+        if ($target.closest('.faq__item-question').length) {
+            const $button = $target.closest('.faq__item-question');
+            const $answer = $button.next('.faq__item-answer');
+            const $item = $button.closest('.faq__item');
+            const isExpanded = $button.attr('aria-expanded') === 'true';
+
+            $button.attr('aria-expanded', !isExpanded);
+
+            $button.toggleClass('active');
+            $item.toggleClass('active');
+
+            if (isExpanded) {
+                $answer.slideUp(300, function () {
+                    $(this).attr('hidden', true);
+                });
+            } else {
+                $answer.removeAttr('hidden').hide().slideDown(300);
+            }
+        }
+
 
     });
 
@@ -152,6 +173,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 767.98: {
                     spaceBetween: 32,
+                }
+            }
+        })
+    }
+
+    if ($(".media__block-slider").length) {
+        new Swiper('.media__block-slider', {
+            slidesPerView: 1,
+            spaceBetween: 8,
+            loop: true,
+            breakpoints: {
+                575.98: {
+                    spaceBetween: 12,
+                    slidesPerView: 2,
+                },
+                767.98: {
+                    spaceBetween: 16,
+                    slidesPerView: 3,
                 }
             }
         })

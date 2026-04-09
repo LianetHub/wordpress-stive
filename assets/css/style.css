@@ -3,31 +3,7 @@
 @font-face {
   font-family: "HelveticaNeue";
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "HelveticaNeue";
-  font-display: swap;
   src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -37,6 +13,14 @@
   font-display: swap;
   src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -57,9 +41,9 @@
 }
 
 @font-face {
-  font-family: "SFProDisplay";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -83,8 +67,16 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -96,6 +88,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+.faq__item.active .faq__item-question::before,
+.faq__item-question::before,
 .form__checkbox-input:checked + .form__checkbox-content::before,
 .form__checkbox-input:checked + .wpcf7-list-item-label::before,
 [class^=icon-]:before,
@@ -114,6 +116,16 @@
 [class^=icon-]:before,
 [class*=" icon-"]:before {
   display: block;
+}
+
+.icon-add:before,
+.faq__item-question:before {
+  content: "\e909";
+}
+
+.icon-minus:before,
+.faq__item.active .faq__item-question:before {
+  content: "\e90a";
 }
 
 .icon-chevron-down:before {
@@ -2503,6 +2515,11 @@ body {
   max-width: 100%;
 }
 
+.media__block.media__block--large {
+  -ms-grid-column-span: 2;
+  grid-column: span 2;
+}
+
 .media__block-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2513,6 +2530,21 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.media__block-slider {
+  margin-top: 1.5rem;
+}
+
+.media__block-slider .article-card {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.media__block-slider .article-card .article-card__image {
+  width: 100%;
 }
 
 .media__block-title {
@@ -3548,7 +3580,7 @@ body {
   min-height: 100vh;
   color: #ffffff;
   padding: 2.8rem 0;
-  background: url("../img/cooming-soon/cooming-soon-blur-1-mobile.svg") 0 0/auto no-repeat, url("../img/cooming-soon/cooming-soon-blur-2-mobile.svg") 100% 100%/auto no-repeat, radial-gradient(50% 50% at 50% 50%, #1F2228 0%, #18191B 100%);
+  background: url("../img/cooming-soon/cooming-soon-blur-1-mobile.svg") 0 0/100% auto no-repeat, url("../img/cooming-soon/cooming-soon-blur-2-mobile.svg") 100% 100%/100% auto no-repeat, radial-gradient(50% 50% at 50% 50%, #1F2228 0%, #18191B 100%);
 }
 
 .cooming-soon__container {
@@ -3603,10 +3635,12 @@ body {
   font-size: 1rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
+  line-height: 1;
+  min-height: 2.9375rem;
   border-radius: 62.4375rem;
   border: 0.0625rem solid rgba(255, 255, 255, 0.16);
   background: rgba(25, 214, 199, 0.12);
-  padding: 1rem 1.5rem 0.75rem 1.5rem;
+  padding: 0.9375rem 1.375rem 0.8125rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -3626,6 +3660,7 @@ body {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   background: #19D684;
+  border-radius: 50%;
 }
 
 .cooming-soon__title {
@@ -3659,6 +3694,19 @@ body {
   padding: 1.5rem 2rem;
 }
 
+.cooming-soon__button.btn.btn-secondary {
+  border: 0.09375rem solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cooming-soon__button.btn.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.cooming-soon__button.btn.btn-secondary:active {
+  background: rgba(255, 255, 255, 0.0125);
+}
+
 .cooming-soon__socials {
   margin-top: 5rem;
   display: -webkit-box;
@@ -3668,11 +3716,11 @@ body {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  gap: 1rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
+  gap: 1.6rem;
 }
 
 .cooming-soon__socials-link {
@@ -3683,12 +3731,70 @@ body {
   font-size: 1.75rem;
 }
 
-.nojq {
-  display: none;
+.faq__list {
+  margin-top: 1.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
 }
 
-html {
-  margin-top: 0 !important;
+.faq__item {
+  border-radius: 0.5rem;
+  border: 0.0625rem solid #F2F2F2;
+  background: #FFF;
+}
+
+.faq__item.active .faq__item-question::before {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.faq__item-question {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 150%;
+  padding: 1.5rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  text-align: left;
+}
+
+.faq__item-question::before {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.5rem;
+  color: #7C8698;
+}
+
+.faq__item-answer {
+  color: #7C8698;
+  font-size: 1.125rem;
+  line-height: 120%;
+  padding: 0rem 2rem 1.5rem 2rem;
+}
+
+@media (min-width: 374.98px) {
+  .cooming-soon__socials {
+    gap: 3.2rem;
+  }
 }
 
 @media (min-width: 575.98px) {
@@ -3992,9 +4098,6 @@ html {
 
   .cooming-soon__socials {
     width: auto;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     gap: 7.5rem;
   }
 }
@@ -4402,8 +4505,9 @@ html {
   }
 
   .cooming-soon {
-    background: url("../img/cooming-soon/cooming-soon-blur-1.svg") 0 0/auto no-repeat, url("../img/cooming-soon/cooming-soon-blur-2.svg") 100% 100%/auto no-repeat, radial-gradient(50% 50% at 50% 50%, #1F2228 0%, #18191B 100%);
+    background: url("../img/cooming-soon/cooming-soon-blur-1.svg") 0 0/auto no-repeat, url("../img/cooming-soon/cooming-soon-blur-2.svg") 100% 100%/auto no-repeat, url("../img/cooming-soon/coomin-soon-bg.png") center bottom/cover no-repeat, radial-gradient(50% 50% at 50% 50%, #1F2228 0%, #18191B 100%);
     padding: 3rem 0;
+    background-blend-mode: multiply;
   }
 
   .cooming-soon__logo {
@@ -4593,6 +4697,16 @@ html {
   .why__card-title {
     font-size: 1.75rem;
     max-width: 13.75rem;
+  }
+
+  .media__block-slider .article-card .article-card__image {
+    aspect-ratio: 2.5777777778;
+  }
+
+  .media__block-slider .article-card .article-card__image img,
+  .media__block-slider .article-card .article-card__image source {
+    -o-object-position: center 37%;
+       object-position: center 37%;
   }
 
   .steps__list {
