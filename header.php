@@ -33,9 +33,5 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <div class="wrapper">
-    <?php
-    if (!is_page(190)) {
-      require_once(TEMPLATE_PATH . '_header-main.php');
-    }
-    ?>
+    <?php require_once(TEMPLATE_PATH . '_header-main.php'); ?>
     <main class="main">
