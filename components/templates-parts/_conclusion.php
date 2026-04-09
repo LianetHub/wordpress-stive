@@ -1,5 +1,6 @@
 <?php
 $testimonial = [
+    'class' => 'conclusion__review',
     'name' => 'Vladyslav Nykytenkov',
     'title' => 'CEO @ Bulls Agency',
     'rating' => 5,
