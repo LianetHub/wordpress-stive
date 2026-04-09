@@ -3,16 +3,16 @@
 @font-face {
   font-family: "HelveticaNeue";
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: "HelveticaNeue";
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -27,16 +27,24 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "HelveticaNeue";
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
@@ -51,8 +59,8 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -69,14 +77,6 @@
   font-display: swap;
   src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
   font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -3546,9 +3546,9 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100vh;
-  background: url("../img/cooming-soon-blur-1.svg") 0 0/auto no-repeat, url("../img/cooming-soon-blur-2.svg") 100% 100%/auto no-repeat, radial-gradient(50% 50% at 50% 50%, #1F2228 0%, #18191B 100%);
   color: #ffffff;
-  padding: 3rem 0;
+  padding: 2.8rem 0;
+  background: url("../img/cooming-soon/cooming-soon-blur-1-mobile.svg") 0 0/auto no-repeat, url("../img/cooming-soon/cooming-soon-blur-2-mobile.svg") 100% 100%/auto no-repeat, radial-gradient(50% 50% at 50% 50%, #1F2228 0%, #18191B 100%);
 }
 
 .cooming-soon__container {
@@ -3567,6 +3567,15 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+}
+
+.cooming-soon__logo {
+  max-width: 9.0625rem;
+}
+
+.cooming-soon__logo img {
+  width: 100%;
+  height: auto;
 }
 
 .cooming-soon__content {
@@ -3620,31 +3629,30 @@ body {
 }
 
 .cooming-soon__title {
-  margin-top: 1rem;
-  font-size: 4rem;
-  font-weight: 600;
+  margin-top: 2rem;
+  font-weight: 800;
+  font-size: 2.125rem;
 }
 
 .cooming-soon__description {
-  margin-top: 1rem;
+  margin-top: 2rem;
   color: #BEBEBE;
-  font-size: 1.5rem;
   line-height: 150%;
   max-width: 40rem;
+  font-size: 1.25rem;
 }
 
 .cooming-soon__actions {
+  margin-top: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 3rem;
   gap: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
 }
 
 .cooming-soon__button.btn {
@@ -3660,15 +3668,19 @@ body {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  gap: 7.5rem;
+  gap: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
 }
 
 .cooming-soon__socials-link {
   color: #D9D9D9;
-  font-size: 2rem;
   font-weight: 300;
   padding-bottom: 0.25rem;
   border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.14);
+  font-size: 1.75rem;
 }
 
 .nojq {
@@ -3956,6 +3968,34 @@ html {
 
   .case-details__categories {
     padding-top: 2rem;
+  }
+
+  .cooming-soon__title {
+    font-weight: 600;
+    font-size: 3rem;
+  }
+
+  .cooming-soon__actions {
+    width: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 3rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .cooming-soon__socials {
+    width: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 7.5rem;
   }
 }
 
@@ -4359,6 +4399,29 @@ html {
 
   .contacts {
     padding: 2rem 0;
+  }
+
+  .cooming-soon {
+    background: url("../img/cooming-soon/cooming-soon-blur-1.svg") 0 0/auto no-repeat, url("../img/cooming-soon/cooming-soon-blur-2.svg") 100% 100%/auto no-repeat, radial-gradient(50% 50% at 50% 50%, #1F2228 0%, #18191B 100%);
+    padding: 3rem 0;
+  }
+
+  .cooming-soon__logo {
+    max-width: 12.875rem;
+  }
+
+  .cooming-soon__title {
+    margin-top: 1rem;
+    font-size: 4rem;
+  }
+
+  .cooming-soon__description {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .cooming-soon__socials-link {
+    font-size: 2rem;
   }
 }
 

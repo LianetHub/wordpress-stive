@@ -1,7 +1,7 @@
 <?php
 /*
 Template Name: In develop
-Template Post Type: post, page, case, blog
+Template Post Type: any
 */
 get_header(); ?>
 
