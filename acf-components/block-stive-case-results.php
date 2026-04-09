@@ -1,44 +1,17 @@
 <?php
 $case_results_h2 = get_field('case_results_h2'); //text
 $case_results_items = get_field('case_results_items'); //repeater
-$case_results_card_title = get_field('case_results_card_title'); //text
+$case_results_card_title = get_field('case_results_card_title'); //link
 $case_results_card_image = get_field('case_results_card_image'); //img
-$results_items = [
-    [
-        'num'     => '292%',
-        'caption' => 'Traffic Growth',
-        'desc'    => 'Significant increase in organic search traffic following the implementation of LLM-optimized strategies.'
-    ],
-    [
-        'num'     => '45%',
-        'caption' => 'Conversion Rate',
-        'desc'    => 'Enhanced user engagement and streamlined funnels led to a steady rise in overall conversions.',
-    ],
-    [
-        'num'     => '-30%',
-        'caption' => 'CPA Reduction',
-        'desc'    => 'Strategic automation and precise targeting allowed us to lower the cost per acquisition effectively.',
-    ],
-    [
-        'num'     => '120k',
-        'caption' => 'New Users',
-        'desc'    => 'A record-breaking influx of unique visitors within the first quarter after the platform relaunch.',
-    ],
-    [
-        'num'     => '15/10',
-        'caption' => 'ROI Factor',
-        'desc'    => 'The return on investment exceeded initial projections, proving the efficiency of the new marketing mix.',
-    ],
-];
 ?>
 
 <section class="results">
     <div class="container">
-        <h2 class="results__title title-xs gradient-text">Results</h2>
+        <h2 class="results__title title-xs gradient-text"><?php echo $case_results_h2; ?></h2>
 
-        <?php if (!empty($results_items)) : ?>
+        <?php if (!empty($case_results_items)) : ?>
             <ul class="results__list">
-                <?php foreach ($results_items as $item) : ?>
+                <?php foreach ($case_results_items as $item) : ?>
                     <li class="results__card">
                         <div class="results__card-num title">
                             <?php echo esc_html($item['num']); ?>
@@ -52,18 +25,26 @@ $results_items = [
                     </li>
                 <?php endforeach; ?>
                 <li class="results__card results__card--button">
-                    <a href="" class="results__card-link">
+				<?php if ($case_results_card_title) {
+					$link_url = $case_results_card_title['url'];
+					$link_title = $case_results_card_title['title'];
+					$link_target = $case_results_card_title['target'] ? $case_results_card_title['target'] : '_self';					
+				?>
+				
+                    <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" class="results__card-link">
                         <div class="results__card-title">
-                            Bring me <br>
-                            same result
+						<?php echo esc_html( $link_title ); ?>
                         </div>
                         <picture class="results__card-image">
+						<?php if ($case_results_card_image) { ?>
                             <img
-                                src="<?php echo IMG_PATH ?>/why/ai-collage-mobile.png"
-                                alt="ai agents"
+                                src="<?php echo esc_url($case_results_card_image['url']); ?>"
+                                alt="<?php echo esc_attr($case_results_card_image['alt']); ?>"
                                 loading="lazy">
+						<?php } ?>
                         </picture>
                     </a>
+				<?php } ?>
                 </li>
             </ul>
         <?php endif; ?>
