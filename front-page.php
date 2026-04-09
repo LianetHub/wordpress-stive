@@ -29,15 +29,7 @@ defined('ABSPATH') || exit; //silence is gold
 
 <?php require_once(TEMPLATE_PATH . '_book.php'); ?>
 
-<dialog
-    class="popup"
-    id="get-proposal"
-    aria-labelledby="proposal-title">
-    <h2 class="popup__title title-sm gradient-text" id="proposal-title">Get Proposal</h2>
-    <div class="popup__form">
-        <?php echo do_shortcode('[contact-form-7 id="7c8db98" title="Get Proposal"]'); ?>
-    </div>
-</dialog>
+<?php require_once(TEMPLATE_PATH . '_modal-get-proposal.php'); ?>
 
 
 
