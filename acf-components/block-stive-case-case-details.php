@@ -4,6 +4,7 @@ $case_person_name = get_field('case_person_name'); //text
 $case_person_position = get_field('case_person_position'); //text
 $case_details_list = get_field('case_details_list'); //repeater
 $case_details_h2 = get_field('case_details_h2'); //text
+$case_details_desc = get_field('case_details_desc'); //wysywyng
 $case_details_img = get_field('case_details_img'); //img
 ?>
 <section class="case-details">
@@ -11,40 +12,35 @@ $case_details_img = get_field('case_details_img'); //img
         <div class="case-details__card">
             <div class="case-details__person">
                 <div class="case-details__person-thumb">
-                    <img src="<?php echo IMG_PATH ?>/user-thumb.png"
-                        class="cover-image"
-                        alt="person avatar">
+				<?php if( !empty($case_details_thumb) ) { ?>
+				<img class="cover-image"
+				src="<?php echo esc_url($case_details_thumb['url']); ?>"
+                alt="<?php echo esc_attr($case_details_thumb['alt']); ?>">
+				<?php } ?>
                 </div>
                 <div class="case-details__person-info">
-                    <div class="case-details__person-name title-xs gradient-text">Client Name</div>
-                    <div class="case-details__person-position">industry / product type</div>
+                    <div class="case-details__person-name title-xs gradient-text"><?php echo $case_person_name; ?></div>
+                    <div class="case-details__person-position"><?php echo $case_person_position; ?></div>
                 </div>
             </div>
             <ul class="case-details__list">
+			<?php foreach ($case_details_list as $list) { ?>
                 <li class="case-details__item">
-                    <div class="case-details__item-property">industry</div>
-                    <div class="case-details__item-value">industry</div>
+                    <div class="case-details__item-property"><?php echo $list['property']; ?></div>
+                    <div class="case-details__item-value"><?php echo $list['value']; ?></div>
                 </li>
-                <li class="case-details__item">
-                    <div class="case-details__item-property">duration</div>
-                    <div class="case-details__item-value">industry</div>
-                </li>
-                <li class="case-details__item">
-                    <div class="case-details__item-property">market</div>
-                    <div class="case-details__item-value">industry</div>
-                </li>
-                <li class="case-details__item">
-                    <div class="case-details__item-property">website</div>
-                    <div class="case-details__item-value">industry</div>
-                </li>
+			<?php } ?>
             </ul>
 			<?php echo display_category_and_tag_terms(get_the_ID(), 'case-tags', 'case-details__categories', 'case-details__category label-badge label-badge--small'); ?>
         </div>
         <div class="case-details__description typography-block">
-            <h2>Who is AtmaForce?</h2>
-            <p>AtmaForce is an innovative tech company that specializes in developing cutting-edge software solutions for businesses of all sizes. Founded in 2021, the company has quickly gained a reputation for its user-friendly platforms that enhance productivity and streamline operations.</p>
-            <p>With a focus on artificial intelligence and machine learning, AtmaForce aims to empower organizations to harness the power of data and make informed decisions.</p>
-            <img src="<?php echo IMG_PATH . '/cases/case_study-1.jpg' ?>" alt="case image">
+            <h2><?php echo $case_details_h2; ?></h2>
+			<?php echo $case_details_desc; ?>
+			<?php if( !empty($case_details_img) ) { ?>
+				<img class="case image"
+				src="<?php echo esc_url($case_details_img['url']); ?>"
+                alt="<?php echo esc_attr($case_details_img['alt']); ?>">
+			<?php } ?>
         </div>
     </div>
 </section>

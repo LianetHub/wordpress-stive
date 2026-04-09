@@ -1,29 +1,12 @@
 <?php
 $case_features = get_field('case_features'); //repeater
-$features = [
-    [
-        'caption' => 'Result Title',
-        'num'     => '292%',
-        'desc'    => '1-2 sentences with context for this number'
-    ],
-    [
-        'caption' => 'Result Title',
-        'num'     => '292%',
-        'desc'    => '1-2 sentences with context for this number'
-    ],
-    [
-        'caption' => 'Result Title',
-        'num'     => '292%',
-        'desc'    => '1-2 sentences with context for this number'
-    ],
-];
 ?>
 
-<?php if (!empty($features)) : ?>
+<?php if (!empty($case_features)) : ?>
     <div class="features">
         <div class="container">
             <ul class="features__list">
-                <?php foreach ($features as $feature) : ?>
+                <?php foreach ($case_features as $feature) : ?>
                     <li class="features__card">
                         <div class="features__card-caption">
                             <?php echo esc_html($feature['caption']); ?>
