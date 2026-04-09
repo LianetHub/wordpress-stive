@@ -157,6 +157,24 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    if ($(".media__block-slider").length) {
+        new Swiper('.media__block-slider', {
+            slidesPerView: 1,
+            spaceBetween: 8,
+            loop: true,
+            breakpoints: {
+                575.98: {
+                    spaceBetween: 12,
+                    slidesPerView: 2,
+                },
+                767.98: {
+                    spaceBetween: 16,
+                    slidesPerView: 3,
+                }
+            }
+        })
+    }
+
     if ($('.industries__tabs').length && $('.industries__slider').length) {
 
         const $tabsSlider = $('.industries__tabs');

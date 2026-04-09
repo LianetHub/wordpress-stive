@@ -1528,6 +1528,10 @@
     &__block {
         min-width: 0;
         max-width: 100%;
+
+        &.media__block--large {
+            grid-column: span 2;
+        }
     }
 
     // .media__block-header
@@ -1535,6 +1539,19 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    // .media__block-slider
+    &__block-slider {
+        margin-top: 1.5rem;
+
+        .article-card {
+            flex-direction: column;
+
+            .article-card__image {
+                width: 100%;
+            }
+        }
     }
 
     // .media__block-title
