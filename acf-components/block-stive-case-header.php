@@ -31,8 +31,8 @@ $case_image = get_field('case_image'); //img
         <picture class="case__image">
 		<?php if( !empty($case_image) ) { ?>
             <img
-                src="<?php echo esc_url($image['url']); ?>"
-                alt="<?php echo esc_attr($image['alt']); ?>">
+                src="<?php echo esc_url($case_image['url']); ?>"
+                alt="<?php echo esc_attr($case_image['alt']); ?>">
 		<?php } ?>
         </picture>
     </div>

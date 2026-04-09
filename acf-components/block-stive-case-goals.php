@@ -5,7 +5,7 @@ $case_goals = get_field('case_goals'); //repeater
 
 <div class="goals">
     <div class="container">
-        <?php if (!empty($goals_items)) : ?>
+        <?php if (!empty($case_goals)) : ?>
             <ul class="goals__list">
                 <?php foreach ($case_goals as $index => $goal) : ?>
                     <li class="goals__card">
