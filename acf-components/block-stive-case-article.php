@@ -5,6 +5,6 @@ $case_article_block = get_field('case_article_block'); //wysiwyg
 <article class="article">
     <div class="article__container container typography-block">
         <h2><?php echo $case_article_title; ?></h2>
-		<?php echo $case_article_block; ?>
-        </div>
+        <?php echo $case_article_block; ?>
+    </div>
 </article>

@@ -59,9 +59,10 @@
 
     // .heading__container
     &__container {
+        gap: 1.5rem;
+        display: grid;
+
         @media (min-width:$md3) {
-            gap: 1.5rem;
-            display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
 
@@ -159,6 +160,8 @@
         line-height: 120%;
         display: flex;
         gap: 0.5rem;
+
+        @media (min-width:$md4) {}
 
         &::before {
             width: 1rem;
