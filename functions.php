@@ -173,3 +173,14 @@ add_filter('rank_math/frontend/breadcrumb/settings', function ($settings) {
     $settings['separator'] = '';
     return $settings;
 });
+
+/*
+ * @param array $mimes Существующий список разрешенных MIME-типов.
+ * @return array Обновленный список MIME-типов.
+ */
+function add_markdown_mime_type($mimes) {
+    $mimes['md'] = 'text/markdown';
+    
+    return $mimes;
+}
+add_filter('upload_mimes', 'add_markdown_mime_type');
