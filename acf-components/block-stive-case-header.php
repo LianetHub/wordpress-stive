@@ -1,7 +1,6 @@
 <?php
 $case_title = get_field('case_title'); //text
 $case_description = get_field('case_description'); //text
-$case_btn_primary = get_field('case_btn_primary'); //link
 $case_btn_secondary = get_field('case_btn_secondary'); //link
 $case_image = get_field('case_image'); //img
 ?>
@@ -12,13 +11,7 @@ $case_image = get_field('case_image'); //img
 			<h1 class="heading__title title-sm"><?php echo $case_title; ?></h1>
 			<p class="heading__description"><?php echo $case_description; ?></p>
 			<div class="heading__actions">
-				<?php if ($case_btn_primary) {
-					$link_url = $case_btn_primary['url'];
-					$link_title = $case_btn_primary['title'];
-					$link_target = $case_btn_primary['target'] ? $case_btn_primary['target'] : '_self';
-				?>
-					<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="heading__btn btn btn-primary"><?php echo esc_html($link_title); ?></a>
-				<?php } ?>
+					<a data-fancybox href="#get-proposal" class="heading__btn btn btn-primary">Get Similar Results</a>
 				<?php if ($case_btn_secondary) {
 					$link_url = $case_btn_secondary['url'];
 					$link_title = $case_btn_secondary['title'];
