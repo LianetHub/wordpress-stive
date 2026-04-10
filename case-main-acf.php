@@ -10,4 +10,5 @@ Template Post Type: case
 
 <?php require_once(TEMPLATE_PATH . '_breadcrumbs.php'); ?>
 <?php the_content(); ?>
+<?php require_once(TEMPLATE_PATH . '_modal-get-proposal.php'); ?>
 <?php get_footer(); ?>
