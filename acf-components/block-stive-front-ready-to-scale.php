@@ -1,7 +1,5 @@
 <?php
 $front_rts_title = get_field('front_rts_title');
-$front_rts_btn_primary = get_field('front_rts_btn_primary');
-$front_rts_btn_secondary = get_field('front_rts_btn_secondary');
 
 $countries = [
     'us' => 'USA',
@@ -45,22 +43,9 @@ $countries = [
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
-				<?php if ($front_rts_btn_primary) {
-				$link_url = $front_rts_btn_primary['url'];
-				$link_title = $front_rts_btn_primary['title'];
-				$link_target = $front_rts_btn_primary['target'] ? $front_rts_btn_primary['target'] : '_self';          
-				} ?>
                 <div class="ready__actions">
-				<?php if ($front_rts_btn_primary) { ?>
-				<a class="ready__btn btn btn-primary" data-calendly href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-				<?php } ?>	
-						<?php if ($front_rts_btn_secondary) { 
-						$link_url = $front_rts_btn_secondary['url'];
-						$link_title = $front_rts_btn_secondary['title'];
-						$link_target = $front_rts_btn_secondary['target'] ? $front_rts_btn_secondary['target'] : '_self';          
-						?>
-						<a class="ready__btn btn btn-grey" data-fancybox href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-						<?php } ?>
+				<a class="ready__btn btn btn-primary" data-calendly href="https://calendly.com/as-stive/30min">Book Strategy Call</a>	
+						<a class="ready__btn btn btn-grey" data-fancybox href="#get-proposal">Get Proposal</a>
 				</div>
             </div>
         </div>
