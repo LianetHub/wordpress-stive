@@ -79,7 +79,7 @@ function r4_register_acf_blocks() {
 		
 		acf_register_block_type(array(
             'name'              => 'Front Hero',
-            'title'             => __('Block Hero'),
+            'title'             => __('Block Front Hero'),
             'description'       => __('A custom block.'),
             'render_template'   => 'acf-components/block-stive-front-hero.php',
 			'mode'              => 'edit',
@@ -88,7 +88,7 @@ function r4_register_acf_blocks() {
 		
 		acf_register_block_type(array(
             'name'              => 'Front Solutions',
-            'title'             => __('Block Solutions'),
+            'title'             => __('Block Front Solutions'),
             'description'       => __('A custom block.'),
             'render_template'   => 'acf-components/block-stive-front-solutions.php',
 			'mode'              => 'edit',
@@ -142,7 +142,7 @@ function r4_register_acf_blocks() {
 		
 		acf_register_block_type(array(
             'name'              => 'Front Ready To Scale',
-            'title'             => __('Block Ready To Scale'),
+            'title'             => __('Block Front Ready To Scale'),
             'description'       => __('A custom block.'),
             'render_template'   => 'acf-components/block-stive-front-ready-to-scale.php',
 			'mode'              => 'edit',
@@ -151,7 +151,7 @@ function r4_register_acf_blocks() {
 		
 		acf_register_block_type(array(
             'name'              => 'Front Book',
-            'title'             => __('Block Book'),
+            'title'             => __('Block Front Book'),
             'description'       => __('A custom block.'),
             'render_template'   => 'acf-components/block-stive-front-book.php',
 			'mode'              => 'edit',
