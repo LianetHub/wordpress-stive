@@ -158,6 +158,15 @@ function r4_register_acf_blocks() {
             'category'          => 'stive-home',
         ));
 		
+		acf_register_block_type(array(
+            'name'              => 'Front Testimonials',
+            'title'             => __('Block Front Testimonials'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-other-testimonials.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-home',
+        ));
+		
     }
 }
 add_action( 'acf/init', 'r4_register_acf_blocks' );
@@ -173,6 +182,10 @@ function  r4_stive_add_custom_categories($categories, $post)
             array(
                 'slug'  => 'stive-home',
                 'title' => esc_html__('Stive Front'),
+            ),
+			array(
+                'slug'  => 'stive-other',
+                'title' => esc_html__('Stive Other'),
             ),
         ),
         $categories
