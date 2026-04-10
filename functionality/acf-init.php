@@ -160,11 +160,11 @@ function r4_register_acf_blocks() {
 		
 		acf_register_block_type(array(
             'name'              => 'Front Testimonials',
-            'title'             => __('Block Front Testimonials'),
+            'title'             => __('Block Other Testimonials'),
             'description'       => __('A custom block.'),
             'render_template'   => 'acf-components/block-stive-other-testimonials.php',
 			'mode'              => 'edit',
-            'category'          => 'stive-home',
+            'category'          => 'stive-other',
         ));
 		
     }
