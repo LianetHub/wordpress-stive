@@ -5,14 +5,14 @@
 @use "fonts";
 @use "icons";
 
-.case {
+.heading {
     padding: 0.5rem 0 1rem;
 
     @media (min-width:$md4) {
         padding: 0.5rem 0 2rem;
     }
 
-    // .case__container
+    // .heading__container
     &__container {
         @media (min-width:$md3) {
             gap: 1.5rem;
@@ -27,22 +27,22 @@
         }
     }
 
-    // .case__main
+    // .heading__main
     &__main {
         flex: 0 0 rem(500);
     }
 
-    // .case__categories
+    // .heading__categories
     &__categories {
         display: flex;
         flex-wrap: wrap;
         gap: 0.25rem;
     }
 
-    // .case__category
+    // .heading__category
     &__category {}
 
-    // .case__title
+    // .heading__title
     &__title {
         margin-top: 2rem;
 
@@ -53,7 +53,7 @@
         }
     }
 
-    // .case__description
+    // .heading__description
     &__description {
         margin-top: 1rem;
         color: #7C8698;
@@ -62,7 +62,7 @@
         line-height: 120%;
     }
 
-    // .case__actions
+    // .heading__actions
     &__actions {
         margin-top: 2rem;
         display: flex;
@@ -75,10 +75,10 @@
         }
     }
 
-    // .case__btn
+    // .heading__btn
     &__btn {}
 
-    // .case__image
+    // .heading__image
     &__image {
         display: none;
 
