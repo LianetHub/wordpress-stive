@@ -9,7 +9,7 @@ $through_testimonials_sliders = get_field('through_testimonials_sliders', 'optio
                 <ul class="swiper-wrapper">
 				<?php if ($through_testimonials_sliders): ?>
 				<?php foreach ($through_testimonials_sliders as $testimonial_item): ?>
-				<<?php echo $case_conclusion_card_tag; ?> class="testimonial <?php echo esc_html($testimonial_item['class']); ?>">
+				<<?php echo $testimonial_item['tag']; ?> class="testimonial <?php echo esc_html($testimonial_item['class']); ?>">
 				<div class="testimonial__header">
 				<div class="testimonial__author">
 				<p class="testimonial__author-name">
@@ -29,7 +29,7 @@ $through_testimonials_sliders = get_field('through_testimonials_sliders', 'optio
 				<blockquote class="testimonial__text">
 				<?php echo esc_html($testimonial_item['text']); ?>
 				</blockquote>
-				</<?php echo $case_conclusion_card_tag; ?>>
+				</<?php echo $testimonial_item['tag']; ?>>
 				<?php endforeach; ?>
 				<?php endif; ?>
 				</ul>
