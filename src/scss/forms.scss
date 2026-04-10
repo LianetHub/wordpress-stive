@@ -442,6 +442,19 @@
 		}
 	}
 
+	&.btn-blue {
+		background: #224B79;
+		color: #ffffff;
+
+		&:hover {
+			background: color.adjust($color: #224B79, $lightness: -10%)
+		}
+
+		&:active {
+			background: color.adjust($color: #224B79, $lightness: -15%)
+		}
+	}
+
 	&.btn-tertiary {
 		background: rgba(255, 255, 255, 0.8);
 		color: #192a3f;

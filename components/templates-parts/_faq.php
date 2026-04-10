@@ -37,7 +37,7 @@ $faq_items = [
 
 <section class="faq" itemscope itemtype="https://schema.org/FAQPage">
     <div class="container">
-        <h2 class="faq__title title-xs">FAQ</h2>
+        <h2 class="faq__title title-xs">Frequently Asked Questions</h2>
         <ul class="faq__list">
             <?php foreach ($faq_items as $index => $item): ?>
                 <li class="faq__item" itemscope itemprop="mainEntity" typeof="Question">
