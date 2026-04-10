@@ -78,10 +78,64 @@ function r4_register_acf_blocks() {
         ));
 		
 		acf_register_block_type(array(
+            'name'              => 'Front Hero',
+            'title'             => __('Block Hero'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-front-hero.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-home',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Front Solutions',
+            'title'             => __('Block Solutions'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-front-solutions.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-home',
+        ));
+		
+		acf_register_block_type(array(
             'name'              => 'Front Slider',
             'title'             => __('Block Front Slider'),
             'description'       => __('A custom block.'),
             'render_template'   => 'acf-components/block-stive-front-slider.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-home',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Front Why',
+            'title'             => __('Block Front Why'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-front-why.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-home',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Front Industries',
+            'title'             => __('Block Front Industries'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-front-industries.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-home',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Front Events Articles',
+            'title'             => __('Block Front Events Articles'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-front-events-articles.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-home',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Front Services Steps',
+            'title'             => __('Block Front Services Steps'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-front-services-steps.php',
 			'mode'              => 'edit',
             'category'          => 'stive-home',
         ));
@@ -94,6 +148,16 @@ function r4_register_acf_blocks() {
 			'mode'              => 'edit',
             'category'          => 'stive-home',
         ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Front Book',
+            'title'             => __('Block Book'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-front-book.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-home',
+        ));
+		
     }
 }
 add_action( 'acf/init', 'r4_register_acf_blocks' );
