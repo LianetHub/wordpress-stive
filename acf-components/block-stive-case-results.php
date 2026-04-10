@@ -1,8 +1,8 @@
 <?php
 $case_results_h2 = get_field('case_results_h2'); //text
 $case_results_items = get_field('case_results_items'); //repeater
-$case_results_card_title = get_field('case_results_card_title'); //link
-$case_results_card_image = get_field('case_results_card_image'); //img
+$case_results_card_url = get_field('case_results_card_url'); //link
+
 ?>
 
 <section class="results">
@@ -25,23 +25,20 @@ $case_results_card_image = get_field('case_results_card_image'); //img
                     </li>
                 <?php endforeach; ?>
                 <li class="results__card results__card--button">
-				<?php if ($case_results_card_title) {
-					$link_url = $case_results_card_title['url'];
-					$link_title = $case_results_card_title['title'];
-					$link_target = $case_results_card_title['target'] ? $case_results_card_title['target'] : '_self';					
+				<?php if ($case_results_card_url) {
+					$link_url = $case_results_card_url['url'];
+					$link_target = $case_results_card_url['target'] ? $case_results_card_url['target'] : '_self';					
 				?>
 				
                     <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>" class="results__card-link">
                         <div class="results__card-title">
-						<?php echo esc_html( $link_title ); ?>
+						Bring me <br> same result
                         </div>
                         <picture class="results__card-image">
-						<?php if ($case_results_card_image) { ?>
                             <img
-                                src="<?php echo esc_url($case_results_card_image['url']); ?>"
-                                alt="<?php echo esc_attr($case_results_card_image['alt']); ?>"
+                                src="<?php echo IMG_PATH ?>/why/ai-collage-mobile.png"
+                                alt="ai agents"
                                 loading="lazy">
-						<?php } ?>
                         </picture>
                     </a>
 				<?php } ?>
