@@ -15,7 +15,7 @@ defined('ABSPATH') || exit; //silence is gold
 
 <?php require_once(TEMPLATE_PATH . '_solutions.php'); ?>
 
-<?php the_content(); ?>
+<?php require_once(TEMPLATE_PATH . '_cases.php'); ?>
 
 <?php require_once(TEMPLATE_PATH . '_why.php'); ?>
 

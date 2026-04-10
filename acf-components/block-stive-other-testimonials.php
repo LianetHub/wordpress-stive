@@ -1,58 +1,39 @@
 <?php
-$testimonials = [
-    [
-        "class" => 'swiper-slide',
-        "tag" => "li",
-        'name' => 'Vladyslav Nykytenkov',
-        'title' => 'CEO @ Bulls Agency',
-        'rating' => 5,
-        'text' => 'Thanks to STIVE\'s efforts, the client saw an 80% increase in organic traffic, a 5.74x ROAS, and top 1-2 positions in LLM-generated answers for key industry queries. The team was well-organized, responsive, and proactive. Moreover, STIVE\'s expertise in GEO and LLM visibility was impressive.'
-    ],
-    [
-        "class" => 'swiper-slide',
-        "tag" => "li",
-        'name' => 'Konstantin Sko',
-        'title' => 'CCO @ Math Agency',
-        'rating' => 5,
-        'text' => 'Thanks to STIVE\'s efforts, the client saw a significant increase in brand citations and referral traffic. The team had a deep understanding of LLM systems and was highly proactive. They met all deliverables on time and responded quickly to the client\'s requests.'
-    ],
-    [
-        "class" => 'swiper-slide',
-        "tag" => "li",
-        'name' => 'Maria Gonzalez',
-        'title' => 'CEO @ Visionary Solutions',
-        'rating' => 5,
-        'text' => 'The studio\'s services are top-notch, consistently delivering high-quality results that exceed expectations.'
-    ],
-    [
-        "class" => 'swiper-slide',
-        "tag" => "li",
-        'name' => 'David Smith',
-        'title' => 'COO @ Future Dynamics',
-        'rating' => 4,
-        'text' => 'High-quality results that exceed expectations. Their attention to detail and commitment truly set them apart.'
-    ],
-    [
-        "class" => 'swiper-slide',
-        "tag" => "li",
-        'name' => 'Sophia Lee',
-        'title' => 'CEO @ Apex Innovations',
-        'rating' => 5,
-        'text' => 'Consistency in delivering results is what I love about them.'
-    ],
-];
+$through_testimonials_sliders = get_field('through_testimonials_sliders', 'option'); //repeater
 ?>
 
-<?php if ($testimonials): ?>
+<?php if ($through_testimonials_sliders): ?>
     <div class="testimonials">
         <div class="container">
             <div class="testimonials__slider swiper">
                 <ul class="swiper-wrapper">
-                    <?php foreach ($testimonials as $testimonial): ?>
-                        <?php include(locate_template('components/parts/_testimonial-card.php')); ?>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        </div>
-    </div>
+				<?php if ($through_testimonials_sliders): ?>
+				<?php foreach ($through_testimonials_sliders as $testimonial_item): ?>
+				<<?php echo $case_conclusion_card_tag; ?> class="testimonial <?php echo esc_html($testimonial_item['class']); ?>">
+				<div class="testimonial__header">
+				<div class="testimonial__author">
+				<p class="testimonial__author-name">
+				<?php echo esc_html($testimonial_item['name']); ?>
+				</p>
+				<p class="testimonial__author-title">
+				<?php echo esc_html($testimonial_item['title']); ?>
+				</p>
+				</div>
+				<div class="testimonial__rating">
+				<?php $rating = intval($testimonial_item['rating']); ?>
+				<?php for ($i = 0; $i < $rating; $i++): ?>
+				<span class="icon-star"></span>
+				<?php endfor; ?>
+				</div>
+				</div>
+				<blockquote class="testimonial__text">
+				<?php echo esc_html($testimonial_item['text']); ?>
+				</blockquote>
+				</<?php echo $case_conclusion_card_tag; ?>>
+				<?php endforeach; ?>
+				<?php endif; ?>
+				</ul>
+		    </div>
+		</div>
+	</div>
 <?php endif; ?>
