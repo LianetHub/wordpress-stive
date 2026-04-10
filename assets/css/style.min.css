@@ -35,8 +35,8 @@
 @font-face {
     font-family: SFProDisplay;
     font-display: swap;
-    src: url(../fonts/SFProDisplay-Heavy.woff2) format("woff2"), url(../fonts/SFProDisplay-Heavy.woff) format("woff");
-    font-weight: 800;
+    src: url(../fonts/SFProDisplay-Bold.woff2) format("woff2"), url(../fonts/SFProDisplay-Bold.woff) format("woff");
+    font-weight: 700;
     font-style: normal
 }
 
@@ -51,6 +51,14 @@
 @font-face {
     font-family: SFProDisplay;
     font-display: swap;
+    src: url(../fonts/SFProDisplay-Heavy.woff2) format("woff2"), url(../fonts/SFProDisplay-Heavy.woff) format("woff");
+    font-weight: 800;
+    font-style: normal
+}
+
+@font-face {
+    font-family: SFProDisplay;
+    font-display: swap;
     src: url(../fonts/SFProDisplay-Light.woff2) format("woff2"), url(../fonts/SFProDisplay-Light.woff) format("woff");
     font-weight: 300;
     font-style: normal
@@ -59,24 +67,8 @@
 @font-face {
     font-family: SFProDisplay;
     font-display: swap;
-    src: url(../fonts/SFProDisplay-Medium.woff2) format("woff2"), url(../fonts/SFProDisplay-Medium.woff) format("woff");
-    font-weight: 500;
-    font-style: normal
-}
-
-@font-face {
-    font-family: SFProDisplay;
-    font-display: swap;
-    src: url(../fonts/SFProDisplay-Bold.woff2) format("woff2"), url(../fonts/SFProDisplay-Bold.woff) format("woff");
-    font-weight: 700;
-    font-style: normal
-}
-
-@font-face {
-    font-family: SFProDisplay;
-    font-display: swap;
-    src: url(../fonts/SFProDisplay-Regular.woff2) format("woff2"), url(../fonts/SFProDisplay-Regular.woff) format("woff");
-    font-weight: 400;
+    src: url(../fonts/SFProDisplay-Semibold.woff2) format("woff2"), url(../fonts/SFProDisplay-Semibold.woff) format("woff");
+    font-weight: 600;
     font-style: normal
 }
 
@@ -91,8 +83,16 @@
 @font-face {
     font-family: SFProDisplay;
     font-display: swap;
-    src: url(../fonts/SFProDisplay-Semibold.woff2) format("woff2"), url(../fonts/SFProDisplay-Semibold.woff) format("woff");
-    font-weight: 600;
+    src: url(../fonts/SFProDisplay-Medium.woff2) format("woff2"), url(../fonts/SFProDisplay-Medium.woff) format("woff");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: SFProDisplay;
+    font-display: swap;
+    src: url(../fonts/SFProDisplay-Regular.woff2) format("woff2"), url(../fonts/SFProDisplay-Regular.woff) format("woff");
+    font-weight: 400;
     font-style: normal
 }
 
@@ -3058,17 +3058,17 @@ body {
     background: rgba(234, 234, 234, .68)
 }
 
-.case {
+.heading {
     padding: .5rem 0 1rem
 }
 
-.case__main {
+.heading__main {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 31.25rem;
     flex: 0 0 31.25rem
 }
 
-.case__categories {
+.heading__categories {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3077,11 +3077,11 @@ body {
     gap: .25rem
 }
 
-.case__title {
+.heading__title {
     margin-top: 2rem
 }
 
-.case__description {
+.heading__description {
     margin-top: 1rem;
     color: #7c8698;
     font-size: 1.125rem;
@@ -3089,7 +3089,7 @@ body {
     line-height: 120%
 }
 
-.case__actions {
+.heading__actions {
     margin-top: 2rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3101,7 +3101,7 @@ body {
     flex-direction: column
 }
 
-.case__image {
+.heading__image {
     display: none
 }
 
@@ -3978,7 +3978,7 @@ body {
         padding-left: 2.4rem
     }
 
-    .case__actions {
+    .heading__actions {
         gap: 1rem;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
@@ -4366,7 +4366,7 @@ body {
         left: 0
     }
 
-    .case {
+    .heading {
         padding: .5rem 0 2rem
     }
 
@@ -4763,7 +4763,7 @@ body {
         background: rgba(255, 255, 255, .36)
     }
 
-    .case__container {
+    .heading__container {
         gap: 1.5rem;
         display: -ms-grid;
         display: grid;
@@ -4771,7 +4771,7 @@ body {
         grid-template-columns: repeat(2, 1fr)
     }
 
-    .case__image {
+    .heading__image {
         display: block;
         height: 19.0625rem;
         width: 100%;
@@ -5084,7 +5084,7 @@ body {
         width: 29.6875rem
     }
 
-    .case__container {
+    .heading__container {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -5444,7 +5444,7 @@ body {
         max-width: 17rem
     }
 
-    .case__title.title-sm {
+    .heading__title.title-sm {
         font-size: 2.125rem
     }
 }
