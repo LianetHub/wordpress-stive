@@ -18,6 +18,18 @@
 	}
 }
 
+.icon-clock:before {
+	content: "\e90b";
+}
+
+.icon-date:before {
+	content: "\e90c";
+}
+
+.icon-update:before {
+	content: "\e90d";
+}
+
 .icon-add:before {
 	content: "\e909";
 }

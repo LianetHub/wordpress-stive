@@ -9,7 +9,50 @@ Template Post Type: blog
 <?php get_header(); ?>
 
 <?php require_once(TEMPLATE_PATH . '_breadcrumbs.php'); ?>
-
+<section class="heading heading--blog">
+    <div class="heading__container container">
+        <div class="heading__main">
+            <div class="heading__categories">
+                <a href="" class="heading__category label-badge">Category</a>
+                <a href="" class="heading__category label-badge">Category</a>
+                <a href="" class="heading__category label-badge">Category</a>
+            </div>
+            <h1 class="heading__title title-sm">Case Headline <br> Key Result + Client Name</h1>
+            <p class="heading__description">Short case description – 2-3 sentences. What was done, for&nbsp;whom, main outcome. Collpases with +- toggle on mobile</p>
+            <div class="heading__stats">
+                <time datetime="2026-03-15" class="heading__stats-item icon-date">
+                    Published <br> March 15, 2026
+                </time>
+                <time datetime="2026-04-10" class="heading__stats-item icon-update">
+                    Updated <br> April 10, 2026
+                </time>
+                <div class="heading__stats-item icon-clock">
+                    5 minutes to read
+                </div>
+            </div>
+            <div class="heading__author">
+                <div class="heading__author-thumb">
+                    <img src="<?php echo IMG_PATH ?>/user-thumb.png"
+                        class="cover-image"
+                        alt="person avatar">
+                </div>
+                <div class="heading__author-details">
+                    <div class="heading__author-name">[Author Name]</div>
+                    <div class="heading__author-position">Title Role</div>
+                </div>
+            </div>
+        </div>
+        <picture class="heading__image ">
+            <source
+                srcset="<?php echo IMG_PATH . '/cases/case_study-1.webp' ?>"
+                type="image/webp">
+            <img
+                src="<?php echo IMG_PATH . '/cases/case_study-1.jpg' ?>"
+                alt="case image"
+                class="cover-image">
+        </picture>
+    </div>
+</section>
 <?php require_once(TEMPLATE_PATH . '_faq.php'); ?>
 <?php
 $latest_articles = [

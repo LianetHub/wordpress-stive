@@ -1049,6 +1049,7 @@
 
     // .case-card__details-main
     &__details-main {
+        flex: 1 1 auto;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
