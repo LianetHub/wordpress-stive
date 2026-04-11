@@ -45,5 +45,5 @@ if (!empty($standard_blocks_buffer)) {
 echo apply_filters('the_content', $output);
 ?>
 
-<?php require_once(TEMPLATE_PATH . '_modal-get-proposal.php'); ?>
+
 <?php get_footer(); ?>

@@ -89,6 +89,7 @@ $socials_links = get_field('socials_links', 'option');
     </footer>
 <?php endif; ?>
 </div>
+<?php require_once(TEMPLATE_PATH . '_modal-get-proposal.php'); ?>
 <?php wp_footer(); ?>
 </body>
 

@@ -10,7 +10,7 @@ defined('ABSPATH') || exit; //silence is gold
 
 <?php the_content(); ?>
 
-<?php require_once(TEMPLATE_PATH . '_modal-get-proposal.php'); ?>
+
 
 
 

@@ -66,5 +66,5 @@ $calendly = get_field('calendly_link', 'option');
     </div>
 </section>
 
-<?php require_once(TEMPLATE_PATH . '_modal-get-proposal.php'); ?>
+
 <?php get_footer(); ?>

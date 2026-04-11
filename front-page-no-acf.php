@@ -29,7 +29,7 @@ defined('ABSPATH') || exit; //silence is gold
 
 <?php require_once(TEMPLATE_PATH . '_book.php'); ?>
 
-<?php require_once(TEMPLATE_PATH . '_modal-get-proposal.php'); ?>
+
 
 
 
