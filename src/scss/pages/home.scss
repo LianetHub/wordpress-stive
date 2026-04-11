@@ -1506,6 +1506,12 @@
 .media {
     padding: rem(36) 0;
 
+    &.media--small {
+        padding: 1.5rem 0;
+
+
+    }
+
     @media (min-width:$md2) {
         padding: rem(48) 0;
     }
@@ -1532,6 +1538,7 @@
 
         &.media__block--large {
             grid-column: span 2;
+
         }
     }
 
@@ -1544,10 +1551,11 @@
 
     // .media__block-slider
     &__block-slider {
-        margin-top: 1.5rem;
+        margin-top: 1.2rem;
 
         .article-card {
             flex-direction: column;
+            gap: 2rem;
 
             .article-card__image {
                 width: 100%;

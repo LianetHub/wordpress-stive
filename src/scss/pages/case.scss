@@ -16,21 +16,22 @@
         }
 
         .heading__title {
-            margin-top: 2.5rem;
-            line-height: 120%;
+            margin-top: 1rem;
+            line-height: 100%;
         }
 
         .heading__container {
-            @media (min-width:$md2) {
-                gap: 2.5rem;
-            }
+            @media (min-width:$md2) {}
         }
 
         .heading__description {
-            color: #7C8698;
-            font-size: 1rem;
-            font-weight: 300;
-            line-height: 120%;
+            @media (max-width:$md4) {
+                color: #7C8698;
+                font-size: 1rem;
+                font-weight: 300;
+                line-height: 120%;
+
+            }
         }
 
         .heading__image {
@@ -42,15 +43,10 @@
             }
 
             @media (min-width:$md3) {
-                min-height: rem(364);
+                min-height: rem(362);
             }
         }
 
-        .heading__main {
-            @media (min-width:$md2) {
-                flex: 0 0 rem(477);
-            }
-        }
     }
 
     @media (min-width:$md4) {
@@ -146,7 +142,7 @@
 
     // .heading__stats
     &__stats {
-        margin-top: 2.5rem;
+        margin-top: 1.25rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         align-items: start;
@@ -187,7 +183,7 @@
 
     // .heading__author
     &__author {
-        margin-top: 2.5rem;
+        margin-top: 1.25rem;
         display: flex;
         gap: 1rem;
         align-items: center;
@@ -758,6 +754,29 @@
     // .article__body
     &__body {
         flex: 1 1 auto;
+        border-radius: 0.5rem;
+        border: rem(1) solid #F2F2F2;
+        background: #FFF;
+        padding: 2rem;
+
+        &.typography-block {
+
+            & h2,
+            & h3,
+            & h4,
+            & h5,
+            & h6 {
+                font-size: 1.25rem;
+                letter-spacing: 0.035rem;
+                font-weight: 700;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                margin: 2rem 0 1rem;
+            }
+        }
     }
 
     // .article__sidebar
@@ -862,40 +881,4 @@
         width: 100%;
     }
 
-    // .article__heading
-    &__heading {
-        border-radius: 0.5rem;
-        border: rem(1) solid #F2F2F2;
-        background: #FFF;
-        padding: 2rem;
-
-        &.typography-block {
-
-            & h2,
-            & h3,
-            & h4,
-            & h5,
-            & h6 {
-                font-size: 1.25rem;
-                letter-spacing: 0.035rem;
-                font-weight: 700;
-
-                &:first-child {
-                    margin-top: 0;
-                }
-
-                margin: 2.5rem 0 1rem;
-
-                @media (min-width:$md4) {
-                    margin: 2.5rem 0 1rem;
-
-                }
-            }
-        }
-    }
-
-    // .article__content
-    &__content {
-        margin-top: 2.81rem;
-    }
 }

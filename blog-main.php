@@ -4,7 +4,10 @@ Template Name: Main Blog
 Template Post Type: blog
 */
 ?>
-<?php $page_id = $post->ID; ?>
+<?php $page_id = $post->ID;
+
+$calendly = get_field('calendly_link', 'option');
+?>
 
 <?php get_header(); ?>
 
@@ -13,21 +16,21 @@ Template Post Type: blog
     <div class="heading__container container">
         <div class="heading__main">
             <div class="heading__categories">
-                <a href="" class="heading__category label-badge">Category</a>
-                <a href="" class="heading__category label-badge">Category</a>
-                <a href="" class="heading__category label-badge">Category</a>
+                <a href="" class="heading__category label-badge">GEO</a>
+                <a href="" class="heading__category label-badge">ChatGPT</a>
+                <a href="" class="heading__category label-badge">SEO</a>
             </div>
-            <h1 class="heading__title title-sm">Case Headline <br> Key Result + Client Name</h1>
-            <p class="heading__description">Short case description – 2-3 sentences. What was done, for&nbsp;whom, main outcome. Collpases with +- toggle on mobile</p>
+            <h1 class="heading__title title-sm">How to Rank in ChatGPT: The B2B Marketer's Complete Guide</h1>
+            <p class="heading__description">A practical GEO playbook covering how ChatGPT retrieves content, which prompts to target, how to structure pages for citation, and&nbsp;how to measure AI visibility</p>
             <div class="heading__stats">
                 <time datetime="2026-03-15" class="heading__stats-item icon-date">
-                    Published <br> March 15, 2026
+                    March 15, 2026
                 </time>
-                <time datetime="2026-04-10" class="heading__stats-item icon-update">
-                    Updated <br> April 10, 2026
+                <time datetime="2026-04-9" class="heading__stats-item icon-update">
+                    April 9, 2026
                 </time>
                 <div class="heading__stats-item icon-clock">
-                    5 minutes to read
+                    18 minutes to read
                 </div>
             </div>
             <div class="heading__author">
@@ -37,18 +40,18 @@ Template Post Type: blog
                         alt="person avatar">
                 </div>
                 <div class="heading__author-details">
-                    <div class="heading__author-name">[Author Name]</div>
-                    <div class="heading__author-position">Title Role</div>
+                    <div class="heading__author-name">Anastasia Shalepina</div>
+                    <div class="heading__author-position">Head of Growth</div>
                 </div>
             </div>
         </div>
         <picture class="heading__image ">
             <source
-                srcset="<?php echo IMG_PATH . '/cases/case_study-1.webp' ?>"
+                srcset="<?php echo IMG_PATH . '/stive-blog.webp' ?>"
                 type="image/webp">
             <img
-                src="<?php echo IMG_PATH . '/cases/case_study-1.jpg' ?>"
-                alt="case image"
+                src="<?php echo IMG_PATH . '/stive-blog.jpg' ?>"
+                alt="blog image"
                 class="cover-image">
         </picture>
     </div>
@@ -56,16 +59,8 @@ Template Post Type: blog
 <section class="article">
     <div class="article__container container">
         <div class="article__wrapper">
-            <div class="article__body">
-                <div class="article__heading typography-block">
-                    <h2>Article Headline</h2>
-                    <p>AtmaForce is an innovative tech company that specializes in developing cutting-edge software solutions for businesses of all sizes. Founded in 2021, the company has quickly gained a reputation for its user-friendly platforms that enhance productivity and streamline operations. With a focus on artificial intelligence and machine learning, AtmaForce aims to empower organizations to harness the power of data and make informed decisions.</p>
-                    <p>AtmaForce is an innovative tech company that specializes in developing cutting-edge software solutions for businesses of all sizes. Founded in 2021, the company has quickly gained a reputation for its user-friendly platforms that enhance productivity and streamline operations. With a focus on artificial intelligence and machine learning, AtmaForce aims to empower organizations to harness the power of data and make informed decisions.</p>
-                </div>
-                <div class="article__content typography-block">
-                    <h2>Comparison Table: [Title]</h2>
-                    <?php the_content() ?>
-                </div>
+            <div class="article__body typography-block">
+                <?php the_content() ?>
             </div>
             <aside class="article__sidebar">
                 <nav aria-label="article toc" class="article__toc">
@@ -89,7 +84,7 @@ Template Post Type: blog
                         </li>
                         <li class="article__toc-item">
                             <div class="article__toc-num">05</div>
-                            <a href="" class="article__toc-link">FAQ</a>
+                            <a href="#faq" class="article__toc-link">FAQ</a>
                         </li>
                     </ol>
                 </nav>
@@ -97,7 +92,9 @@ Template Post Type: blog
                     <div class="article__banner-caption">Have a question?</div>
                     <div class="article__banner-title gradient-text">[Widget CTA Headline 1-2 lines]</div>
                     <p class="article__banner-description">Short case description – 2-3 sentences. What was done, for whom, main outcome. Collpases with +- toggle on mobile</p>
-                    <a href="" class="article__banner-btn btn btn-blue">Book Intro Call</a>
+                    <a href="<?php echo $calendly['url']; ?>"
+                        data-calendly
+                        class="article__banner-btn btn btn-blue">Book Intro Call</a>
                 </div>
             </aside>
         </div>
@@ -150,7 +147,7 @@ $latest_articles = [
     ],
 ];
 ?>
-<section class="media">
+<section class="media media--small">
     <div class="media__container container">
         <div class="media__block media__block--large">
             <div class="media__block-header">
