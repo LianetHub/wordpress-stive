@@ -11,16 +11,16 @@
 @font-face {
   font-family: "HelveticaNeue";
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: "HelveticaNeue";
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
-  font-weight: 100;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -29,14 +29,6 @@
   font-display: swap;
   src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
   font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
-  font-weight: 800;
   font-style: normal;
 }
 
@@ -51,16 +43,8 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -75,8 +59,8 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -85,6 +69,22 @@
   font-display: swap;
   src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -3703,6 +3703,62 @@ body {
   gap: 0.5rem;
 }
 
+.cases-heading {
+  padding: 1.7rem 0;
+}
+
+.cases-heading__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cases-heading__title {
+  font-size: 2.125rem;
+  line-height: 120%;
+}
+
+.cases-heading__description {
+  margin-top: 0.875rem;
+  color: #7C8698;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 120%;
+}
+
+.cases-heading__logotypes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.25rem;
+  opacity: 0.5;
+}
+
+.cases-heading__logotype {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 3.875rem;
+}
+
+.cases-heading__logotype img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 1.85rem;
+}
+
 .cooming-soon {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4343,6 +4399,14 @@ body {
     padding-top: 2rem;
   }
 
+  .cases-heading__logotype {
+    height: 5rem;
+  }
+
+  .cases-heading__logotype img {
+    height: 2.25rem;
+  }
+
   .cooming-soon__title {
     font-weight: 600;
     font-size: 3rem;
@@ -4806,6 +4870,16 @@ body {
 
   .contacts {
     padding: 2rem 0;
+  }
+
+  .cases-heading {
+    padding: 1rem 0;
+  }
+
+  .cases-heading__logotypes {
+    gap: 1.3125rem;
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .cooming-soon {
@@ -5553,6 +5627,34 @@ body {
 
   .contacts__container.container {
     max-width: 73.75rem;
+  }
+
+  .cases-heading__container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .cases-heading__offer {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 31.25rem;
+            flex: 0 0 31.25rem;
+  }
+
+  .cases-heading__title {
+    line-height: 100%;
+    font-size: 2.5rem;
+  }
+
+  .cases-heading__logotypes {
+    gap: 2rem;
   }
 }
 

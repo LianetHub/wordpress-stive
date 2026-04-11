@@ -5,6 +5,8 @@
 @use "fonts";
 @use "icons";
 
+// case
+
 .heading {
     padding: 0.5rem 0 1rem;
 
@@ -740,4 +742,98 @@
 
     // .contacts__btn
     &__btn {}
+}
+
+// cases page
+
+.cases-heading {
+    padding: 1.7rem 0;
+
+    @media (min-width:$md4) {
+        padding: 1rem 0;
+
+    }
+
+    // .cases-heading__container
+    &__container {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+
+        @media (min-width:$md2) {
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+    }
+
+    // .cases-heading__offer
+    &__offer {
+        @media (min-width:$md2) {
+            flex: 0 0 rem(500);
+
+        }
+    }
+
+    // .cases-heading__title
+    &__title {
+        font-size: rem(34);
+        line-height: 120%;
+
+        @media (min-width: $md2) {
+            line-height: 100%;
+            font-size: 2.5rem;
+        }
+    }
+
+    // .cases-heading__description
+    &__description {
+        margin-top: 0.875rem;
+        color: #7C8698;
+        font-size: 1.125rem;
+        font-weight: 300;
+        line-height: 120%;
+    }
+
+    // .cases-heading__logotypes
+    &__logotypes {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.25rem;
+        opacity: 0.5;
+
+        @media (min-width:$md4) {
+            gap: 1.3125rem;
+            grid-template-columns: repeat(4, 1fr);
+
+        }
+
+        @media (min-width:$md2) {
+            gap: 2rem;
+        }
+    }
+
+    // .cases-heading__logotype
+    &__logotype {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3.875rem;
+
+
+        @media (min-width:$md5) {
+            height: 5rem;
+        }
+
+        img {
+            object-fit: contain;
+            height: 1.85rem;
+
+            @media (min-width:$md5) {
+                height: 2.25rem;
+
+            }
+        }
+    }
 }
