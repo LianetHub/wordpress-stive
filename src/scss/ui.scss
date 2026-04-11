@@ -138,8 +138,13 @@
 	}
 
 	&.label-badge--medium {
-		padding: 0.6rem 1rem;
 		font-size: 0.875rem;
+		padding: 0.8rem 1rem;
+
+		@media (min-width:$md5) {
+			padding: 0.6rem 1rem;
+
+		}
 	}
 
 	@media (any-hover: hover) {
@@ -245,11 +250,15 @@
 	}
 }
 
-
 .metrics {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 1.5rem;
+	gap: 1rem;
+
+	@media (min-width:$md4) {
+		gap: 1.5rem;
+		grid-template-columns: repeat(2, 1fr);
+
+	}
 
 	// .metrics__item
 	&__item {
@@ -260,6 +269,11 @@
 		line-height: 100%;
 		letter-spacing: 0.0875rem;
 		text-transform: uppercase;
+		justify-content: space-between;
+
+		@media (min-width:$md4) {
+			justify-content: flex-start;
+		}
 	}
 
 	// .metrics__item-label
@@ -268,7 +282,9 @@
 	}
 
 	// .metrics__item-value
-	&__item-value {}
+	&__item-value {
+		font-weight: 700;
+	}
 }
 
 
