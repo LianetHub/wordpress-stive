@@ -85,20 +85,20 @@ $logotypes = [
                 </div>
             </div>
             <p class="main-case__description">Short case description – 2-3 sentences. What was done, for whom, main outcome. Collpases with +- toggle on mobile</p>
-            <ul class="main-case__list metrics">
+            <ul class="main-case__metrics metrics">
                 <li class="metrics__item">
                     <div class="metrics__item-label">METRIC LABEL</div>
                     <div class="metrics__item-value">[+X%]</div>
                 </li>
-                <li class="main-case__item">
+                <li class="metrics__item">
                     <div class="metrics__item-label">METRIC LABEL</div>
                     <div class="metrics__item-value">[+X%]</div>
                 </li>
-                <li class="main-case__item">
+                <li class="metrics__item">
                     <div class="metrics__item-label">METRIC LABEL</div>
                     <div class="metrics__item-value">[+X%]</div>
                 </li>
-                <li class="main-case__item">
+                <li class="metrics__item">
                     <div class="metrics__item-label">METRIC LABEL</div>
                     <div class="metrics__item-value">[+X%]</div>
                 </li>
@@ -119,6 +119,7 @@ $logotypes = [
 <?php
 $case_studies = [
     [
+        'class'    => 'case-card--white',
         'name'     => 'How we fixed casino reviews',
         'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
         'img_webp' => 'case_study-1.webp',
@@ -126,6 +127,7 @@ $case_studies = [
         'link'     => '#',
     ],
     [
+        'class'    => 'case-card--white',
         'name'     => '80% Organic Traffic Growth',
         'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
         'img_webp' => 'case_study-2.webp',
@@ -133,6 +135,15 @@ $case_studies = [
         'link'     => '#',
     ],
     [
+        'class'    => 'case-card--white',
+        'name'     => '80% Organic Traffic Growth',
+        'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
+        'img_webp' => 'case_study-2.webp',
+        'img_jpg'  => 'case_study-2.jpg',
+        'link'     => '#',
+    ],
+    [
+        'class'    => 'case-card--white',
         'name'     => 'YouTube & Reddit strategy',
         'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
         'img_webp' => 'case_study-3.webp',
@@ -145,14 +156,67 @@ $case_studies = [
 <?php if ($case_studies): ?>
     <section class="cases">
         <div class="container">
-            <h2 class="cases__title title">Case Studies</h2>
-            <div class="cases__slider swiper">
-                <ul class="swiper-wrapper">
-                    <?php foreach ($case_studies as $case): ?>
-                        <?php include(locate_template('components/parts/_case-slide.php')); ?>
-                    <?php endforeach; ?>
-                </ul>
+            <div class="cases__header">
+                <h2 class="cases__title title-xs">Case Studies</h2>
             </div>
+            <ul class="cases__grid">
+                <?php foreach ($case_studies as $case): ?>
+                    <li class="case-card <?php echo esc_attr($case['class'] ?? ''); ?>">
+                        <a
+                            href="<?php echo esc_url($case['link']); ?>"
+                            class="case-card__link-wrapper">
+                            <picture class="case-card__image">
+                                <source
+                                    srcset="<?php echo IMG_PATH . '/cases/' . $case['img_webp']; ?>"
+                                    type="image/webp">
+                                <img
+                                    src="<?php echo IMG_PATH . '/cases/' . $case['img_jpg']; ?>"
+                                    alt="<?php echo esc_attr($case['name']); ?>"
+                                    class="cover-image"
+                                    loading="lazy">
+                            </picture>
+                            <div class="case-card__details">
+                                <div class="case-card__details-main">
+                                    <div class="case-card__name">
+                                        <?php echo esc_html($case['name']); ?>
+                                    </div>
+                                    <p class="case-card__desc">
+                                        <?php echo esc_html($case['desc']); ?>
+                                    </p>
+                                    <ul class="case-card__metrics metrics">
+                                        <li class="metrics__item">
+                                            <div class="metrics__item-label">METRIC LABEL</div>
+                                            <div class="metrics__item-value">[+X%]</div>
+                                        </li>
+                                        <li class="metrics__item">
+                                            <div class="metrics__item-label">METRIC LABEL</div>
+                                            <div class="metrics__item-value">[+X%]</div>
+                                        </li>
+                                        <li class="metrics__item">
+                                            <div class="metrics__item-label">METRIC LABEL</div>
+                                            <div class="metrics__item-value">[+X%]</div>
+                                        </li>
+                                        <li class="metrics__item">
+                                            <div class="metrics__item-label">METRIC LABEL</div>
+                                            <div class="metrics__item-value">[+X%]</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+
+            <nav aria-label="pagination" class="cases__pagination pagination">
+                <a class="pagination__prev btn btn-sm btn-secondary" href=""><span>Prev</span></a>
+                <span class="pagination__item current">1</span>
+                <a class="pagination__item" href="">2</a>
+                <a class="pagination__item" href="">3</a>
+                <span class="pagination__item dots">…</span>
+                <a class="pagination__item" href="">10</a>
+                <a class="pagination__next btn btn-sm btn-secondary" href=""><span>Next</span></a>
+            </nav>
         </div>
     </section>
 <?php endif; ?>
