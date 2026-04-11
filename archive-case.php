@@ -55,6 +55,67 @@ $logotypes = [
     </div>
 </section>
 
+<section class="main-case">
+    <div class="main-case__container container">
+        <a href="" class="main-case__offer">
+            <picture class="main-case__poster">
+                <source
+                    srcset="<?php echo IMG_PATH . '/cases/case_study-2.webp'  ?>"
+                    type="image/webp">
+                <img
+                    src="<?php echo IMG_PATH . '/cases/case_study-2.jpg'  ?>"
+                    alt="Case Poster"
+                    class="cover-image">
+            </picture>
+            <h1 class="main-case__caption title-sm">
+                Case Headline <br>
+                Key Result + Client Name
+            </h1>
+        </a>
+        <div class="main-case__details">
+            <div class="main-case__person person">
+                <div class="person__thumb">
+                    <img src="<?php echo IMG_PATH ?>/user-thumb.png"
+                        class="cover-image"
+                        alt="person avatar">
+                </div>
+                <div class="person__info">
+                    <div class="person__name title-xs gradient-text">Client Name</div>
+                    <div class="person__position">industry / product type</div>
+                </div>
+            </div>
+            <p class="main-case__description">Short case description – 2-3 sentences. What was done, for whom, main outcome. Collpases with +- toggle on mobile</p>
+            <ul class="main-case__list metrics">
+                <li class="metrics__item">
+                    <div class="metrics__item-label">METRIC LABEL</div>
+                    <div class="metrics__item-value">[+X%]</div>
+                </li>
+                <li class="main-case__item">
+                    <div class="metrics__item-label">METRIC LABEL</div>
+                    <div class="metrics__item-value">[+X%]</div>
+                </li>
+                <li class="main-case__item">
+                    <div class="metrics__item-label">METRIC LABEL</div>
+                    <div class="metrics__item-value">[+X%]</div>
+                </li>
+                <li class="main-case__item">
+                    <div class="metrics__item-label">METRIC LABEL</div>
+                    <div class="metrics__item-value">[+X%]</div>
+                </li>
+            </ul>
+            <div class="main-case__footer">
+                <div class="main-case__categories">
+                    <a href="" class="main-case__category label-badge label-badge--medium">Service 1</a>
+                    <a href="" class="main-case__category label-badge label-badge--medium">Service 2</a>
+                    <a href="" class="main-case__category label-badge label-badge--medium">Service 3</a>
+                </div>
+                <a href="" class="main-case__btn btn btn-primary">Read Full Case</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <?php
 $case_studies = [
     [

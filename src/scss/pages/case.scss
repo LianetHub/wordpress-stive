@@ -180,7 +180,7 @@
 
         &::before {
             width: 1rem;
-            height: 1.3rem;
+            height: 1.1rem;
             font-size: 1rem;
             align-content: center;
             flex-shrink: 0;
@@ -323,66 +323,6 @@
             width: 29rem;
             position: sticky;
             top: rem(100);
-        }
-    }
-
-    // .case-details__person
-    &__person {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        flex-direction: column;
-        text-align: center;
-
-        @media (min-width:$md5) {
-            gap: 2rem;
-            text-align: left;
-            flex-direction: row;
-            gap: 1rem;
-        }
-    }
-
-    // .case-details__person-thumb
-    &__person-thumb {
-        width: 8rem;
-        height: 8rem;
-        flex-shrink: 0;
-        border-radius: 50%;
-        overflow: hidden;
-    }
-
-    // .case-details__person-info
-    &__person-info {
-        flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        @media (min-width:$md5) {
-            align-items: flex-start;
-        }
-    }
-
-    // .case-details__person-name
-    &__person-name {
-        @media (max-width:$md5) {
-            font-size: 2.125rem;
-            letter-spacing: normal;
-        }
-    }
-
-    // .case-details__person-position
-    &__person-position {
-        color: #7C8698;
-        font-size: 0.875rem;
-        line-height: 100%;
-        letter-spacing: 0.0875rem;
-        text-transform: uppercase;
-        margin-top: 0.4rem;
-
-        @media (min-width:$md5) {
-            margin-top: 1rem;
-
         }
     }
 
@@ -771,7 +711,6 @@
     &__offer {
         @media (min-width:$md2) {
             flex: 0 0 rem(500);
-
         }
     }
 
@@ -826,6 +765,10 @@
             height: 5rem;
         }
 
+        @media (min-width:$md1) {
+            width: 11.25rem;
+        }
+
         img {
             object-fit: contain;
             height: 1.85rem;
@@ -834,6 +777,125 @@
                 height: 2.25rem;
 
             }
+        }
+    }
+}
+
+.main-case {
+    padding: 2rem 0;
+
+    // .main-case__container
+    &__container {
+        display: flex;
+        gap: 1rem;
+    }
+
+    // .main-case__offer
+    &__offer {
+        position: relative;
+        flex: 1 1 auto;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    // .main-case__poster
+    &__poster {
+        position: relative;
+        min-height: 28.5rem;
+        display: block;
+        height: 100%;
+
+        & img,
+        & source {
+            position: absolute;
+            inset: 0;
+        }
+    }
+
+    // .main-case__caption
+    &__caption {
+        position: absolute;
+        inset: 0;
+        align-content: end;
+        padding: 2.5rem 3rem;
+        color: #fff;
+        border-radius: 1rem;
+        background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    }
+
+    // .main-case__details
+    &__details {
+        flex: 0 0 rem(584);
+        border-radius: 0.5rem;
+        border: rem(1) solid #F2F2F2;
+        background: #FFF;
+        padding: 2rem;
+    }
+
+    // .main-case__person
+    &__person {
+        &.person {
+            gap: 2rem;
+
+            .person__position {
+                margin-top: 0.75rem;
+            }
+        }
+    }
+
+    // .main-case__description
+    &__description {
+        margin-top: 2rem;
+        color: #7C8698;
+        font-size: 1.125rem;
+        font-weight: 300;
+        line-height: 120%;
+    }
+
+    // .main-case__list
+    &__list {
+        margin-top: 2rem;
+
+    }
+
+    // .main-case__item
+    &__item {}
+
+    // .main-case__item-label
+    &__item-label {}
+
+    // .main-case__item-value
+    &__item-value {
+        font-weight: 700;
+        text-align: right;
+    }
+
+    // .main-case__footer
+    &__footer {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: rem(1) solid #F2F2F2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    // .main-case__categories
+    &__categories {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    // .main-case__category
+    &__category {}
+
+    // .main-case__btn
+    &__btn {
+        &.btn {
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            min-height: rem(40);
+            border-radius: 62.4375rem;
         }
     }
 }

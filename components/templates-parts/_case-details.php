@@ -1,15 +1,15 @@
 <section class="case-details">
     <div class="case-details__container container">
         <div class="case-details__card">
-            <div class="case-details__person">
-                <div class="case-details__person-thumb">
+            <div class="case-details__person person">
+                <div class="person__thumb">
                     <img src="<?php echo IMG_PATH ?>/user-thumb.png"
                         class="cover-image"
                         alt="person avatar">
                 </div>
-                <div class="case-details__person-info">
-                    <div class="case-details__person-name title-xs gradient-text">Client Name</div>
-                    <div class="case-details__person-position">industry / product type</div>
+                <div class="person__info">
+                    <div class="person__name title-xs gradient-text">Client Name</div>
+                    <div class="person__position">industry / product type</div>
                 </div>
             </div>
             <ul class="case-details__list">
