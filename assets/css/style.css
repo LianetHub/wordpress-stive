@@ -3,6 +3,14 @@
 @font-face {
   font-family: "HelveticaNeue";
   font-display: swap;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  font-display: swap;
   src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -17,10 +25,10 @@
 }
 
 @font-face {
-  font-family: "HelveticaNeue";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -29,14 +37,6 @@
   font-display: swap;
   src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
   font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -51,16 +51,16 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -75,8 +75,8 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -685,30 +685,24 @@ body {
 
 .typography-block ul li,
 .typography-block ol li {
-  position: relative;
-  padding-left: 1.1rem;
   font-size: 1rem;
-  line-height: 200%;
+  line-height: 130%;
 }
 
-.typography-block ul li::before,
-.typography-block ol li::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  color: #16eedc;
-}
-
-.typography-block ul li {
-  padding-left: 0.875rem;
+.typography-block ul li:not(:last-child),
+.typography-block ol li:not(:last-child) {
+  margin-bottom: 1.35rem;
 }
 
 .typography-block ul li::before {
+  content: "";
+  display: inline-block;
+  min-width: 0.25rem;
   width: 0.25rem;
   height: 0.25rem;
-  top: 0.7em;
-  background: currentColor;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+  background: #16eedc;
   border-radius: 50%;
 }
 
@@ -716,15 +710,11 @@ body {
   counter-reset: i;
 }
 
-.typography-block ol:has(:nth-child(10)) li {
-  padding-left: 1.5rem;
-}
-
 .typography-block ol li::before {
   counter-increment: i;
   content: counter(i) ".";
-  left: 0;
-  top: 0;
+  color: #16eedc;
+  margin-right: 0.25rem;
 }
 
 .typography-block a:not(.article__more, .btn) {
@@ -2577,6 +2567,7 @@ body {
 
 .media__block-slider {
   margin-top: 1.2rem;
+  overflow: visible;
 }
 
 .media__block-slider .article-card {
@@ -3168,8 +3159,8 @@ body {
 }
 
 .heading.heading--blog .heading__title {
-  margin-top: 1rem;
-  line-height: 100%;
+  margin-top: 2.5rem;
+  line-height: 120%;
 }
 
 .heading.heading--blog .heading__image {
@@ -3720,10 +3711,11 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  gap: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  gap: 1.375rem;
 }
 
 .article__body {
@@ -3734,6 +3726,7 @@ body {
   border: 0.0625rem solid #F2F2F2;
   background: #FFF;
   padding: 2rem;
+  margin-inline: -1rem;
 }
 
 .article__body.typography-block h2,
@@ -3763,9 +3756,6 @@ body {
 }
 
 .article__sidebar {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 21.5rem;
-          flex: 0 0 21.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3821,13 +3811,7 @@ body {
 }
 
 .article__banner {
-  border-radius: 0.5rem;
-  background: #16EEDC;
-  color: #192A3F;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 130%;
-  padding: 1rem;
+  display: none;
 }
 
 .article__banner-title {
@@ -4019,8 +4003,6 @@ body {
   margin-top: 1.5rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
 }
 
@@ -4040,7 +4022,6 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 150%;
-  padding: 1.5rem 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4050,10 +4031,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 1rem;
   width: 100%;
   text-align: left;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  padding: 1rem;
 }
 
 .faq__item-question::before {
@@ -4074,7 +4055,7 @@ body {
   color: #7C8698;
   font-size: 1.125rem;
   line-height: 120%;
-  padding: 0rem 2rem 1.5rem;
+  padding: 0rem 1rem 1rem;
 }
 
 @media (min-width: 374.98px) {
@@ -4362,6 +4343,16 @@ body {
     padding-top: 2rem;
   }
 
+  .article__banner {
+    border-radius: 0.5rem;
+    background: #16EEDC;
+    color: #192A3F;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 130%;
+    padding: 1rem;
+  }
+
   .cooming-soon__title {
     font-weight: 600;
     font-size: 3rem;
@@ -4443,6 +4434,16 @@ body {
   .typography-block h5,
   .typography-block h6 {
     margin: 2.5rem 0 1.5rem;
+  }
+
+  .typography-block ul li:not(:last-child),
+  .typography-block ol li:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .typography-block ul li,
+  .typography-block ol li {
+    line-height: 200%;
   }
 
   .btn.btn-sm {
@@ -4731,6 +4732,11 @@ body {
     padding: 1rem 0 1rem;
   }
 
+  .heading.heading--blog .heading__title {
+    line-height: 100%;
+    margin-top: 1rem;
+  }
+
   .heading {
     padding: 0.5rem 0 2rem;
   }
@@ -4827,6 +4833,14 @@ body {
 
   .cooming-soon__socials-link {
     font-size: 2rem;
+  }
+
+  .faq__item-question {
+    padding: 1.5rem 2rem;
+  }
+
+  .faq__item-answer {
+    padding: 0rem 2rem 1.5rem;
   }
 }
 
@@ -5172,9 +5186,32 @@ body {
     top: 6.25rem;
   }
 
+  .article__wrapper {
+    gap: 1rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .article__body {
+    margin-inline: 0;
+  }
+
   .article__sidebar {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 21.5rem;
+            flex: 0 0 21.5rem;
     position: sticky;
     top: 6.25rem;
+  }
+
+  .faq__list {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

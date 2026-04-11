@@ -16,8 +16,11 @@
     &__list {
         margin-top: 1.5rem;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
         gap: rem(8);
+
+        @media (min-width:$md3) {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     // .faq__item
@@ -45,13 +48,18 @@
         font-size: 1.25rem;
         font-weight: 700;
         line-height: 150%;
-        padding: 1.5rem 2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 1rem;
         width: 100%;
         text-align: left;
-        transition: all 0.3s ease;
+        padding: 1rem;
+
+        @media (min-width:$md4) {
+            padding: 1.5rem 2rem;
+
+        }
 
         &::before {
             order: 1;
@@ -70,6 +78,11 @@
         color: #7C8698;
         font-size: 1.125rem;
         line-height: 120%;
-        padding: 0rem 2rem 1.5rem;
+        padding: 0rem 1rem 1rem;
+
+        @media (min-width:$md4) {
+            padding: 0rem 2rem 1.5rem;
+
+        }
     }
 }

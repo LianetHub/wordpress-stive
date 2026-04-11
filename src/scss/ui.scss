@@ -350,18 +350,21 @@
 		}
 
 		li {
-			position: relative;
-			padding-left: 1.1rem;
 			font-size: 1rem;
-			line-height: 200%;
+			line-height: 130%;
 
+			&:not(:last-child) {
+				margin-bottom: 1.35rem;
 
-			&::before {
-				content: "";
-				display: block;
-				position: absolute;
-				left: 0;
-				color: $accent;
+				@media (min-width:$md4) {
+					margin-bottom: 0;
+
+				}
+			}
+
+			@media (min-width:$md4) {
+				line-height: 200%;
+
 			}
 		}
 
@@ -370,13 +373,17 @@
 	ul {
 
 		li {
-			padding-left: 0.875rem;
+
 
 			&::before {
+				content: "";
+				display: inline-block;
+				min-width: 0.25rem;
 				width: 0.25rem;
 				height: 0.25rem;
-				top: 0.7em;
-				background: currentColor;
+				margin-right: 0.25rem;
+				vertical-align: middle;
+				background: $accent;
 				border-radius: 50%;
 			}
 		}
@@ -386,19 +393,12 @@
 	ol {
 		counter-reset: i;
 
-		&:has(:nth-child(10)) {
-			li {
-
-				padding-left: 1.5rem;
-			}
-		}
-
 		li {
 			&::before {
 				counter-increment: i;
 				content: counter(i) ".";
-				left: 0;
-				top: 0;
+				color: $accent;
+				margin-right: 0.25rem;
 			}
 		}
 	}

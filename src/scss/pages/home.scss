@@ -1552,6 +1552,7 @@
     // .media__block-slider
     &__block-slider {
         margin-top: 1.2rem;
+        overflow: visible;
 
         .article-card {
             flex-direction: column;
