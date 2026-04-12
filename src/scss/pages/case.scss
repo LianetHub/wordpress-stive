@@ -10,7 +10,7 @@
 .heading {
     padding: 0.5rem 0 1rem;
 
-    &.heading--blog {
+    &.heading--blog-post {
         padding: 1.75rem 0 1rem;
 
         @media (min-width:$md4) {
@@ -55,6 +55,26 @@
             }
         }
 
+    }
+
+    &.heading--blog {
+        .heading__title {
+            line-height: 120%;
+
+            @media (min-width:$md4) {
+                line-height: 100%;
+            }
+        }
+
+        .heading__description {
+            @media (max-width:$md4) {
+                color: #7C8698;
+                font-size: 1rem;
+                font-weight: 300;
+                line-height: 120%;
+
+            }
+        }
     }
 
     @media (min-width:$md4) {

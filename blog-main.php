@@ -12,7 +12,7 @@ $calendly = get_field('calendly_link', 'option');
 <?php get_header(); ?>
 
 <?php require_once(TEMPLATE_PATH . '_breadcrumbs.php'); ?>
-<section class="heading heading--blog">
+<section class="heading heading--blog-post">
     <div class="heading__container container">
         <div class="heading__main">
             <div class="heading__categories">

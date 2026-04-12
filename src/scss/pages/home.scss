@@ -1261,6 +1261,11 @@
     // .media__container
     &__container {}
 
+    //.media__filters
+    &__filters {
+        overflow: visible;
+    }
+
     // .media__block
     &__blocks {
         display: grid;
@@ -1316,10 +1321,20 @@
 
     // .media___block-grid
     &__block-grid {
-        margin-top: 2.3rem;
+
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
+        gap: 2.5rem;
+
+        @media (min-width:$md4) {
+            margin-top: 1rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        @media (min-width:$md2) {
+            grid-template-columns: repeat(3, 1fr);
+
+        }
 
         .article-card {
             flex-direction: column;
@@ -1327,6 +1342,10 @@
 
             .article-card__image {
                 width: 100%;
+
+                @media (max-width:$md3) {
+                    border-radius: 0.5rem;
+                }
 
                 @media (min-width:$md3) {
                     aspect-ratio: math.div(464, 180);

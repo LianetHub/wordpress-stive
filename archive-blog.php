@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 <?php require_once(TEMPLATE_PATH . '_breadcrumbs.php'); ?>
-<section class="heading">
+<section class="heading heading--blog">
     <div class="heading__container container">
         <div class="heading__main">
             <h1 class="heading__title title-sm">Blog Title - e.g. <br> “Insights & Guides”</h1>
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <h2 class="post-main__title title-sm">
-                <a href="">
+                <a href="" class="post-main__title">
                     Case Headline <br>
                     Key Result + Client Name
                 </a>

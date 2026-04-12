@@ -231,9 +231,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if ($('.media__filters').length) {
 
+        const activeIndex = $('.media__filters').find('.filter-btn.active').index();
+
+
         new Swiper('.media__filters', {
             slidesPerView: 'auto',
             spaceBetween: 8,
+            initialSlide: activeIndex >= 0 ? activeIndex : 0,
             watchSlidesProgress: true,
             slideToClickedSlide: true,
         });
