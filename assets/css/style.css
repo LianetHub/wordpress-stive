@@ -3,14 +3,6 @@
 @font-face {
   font-family: "HelveticaNeue";
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "HelveticaNeue";
-  font-display: swap;
   src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
@@ -19,8 +11,8 @@
 @font-face {
   font-family: "HelveticaNeue";
   font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -29,6 +21,22 @@
   font-display: swap;
   src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  font-display: swap;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -43,24 +51,16 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
+  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
   src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
   font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
-  font-weight: 600;
   font-style: normal;
 }
 
@@ -75,16 +75,16 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -1169,7 +1169,14 @@ body {
 }
 
 .form__checkbox-input._error + .form__checkbox-content::before,
-.form__checkbox .form__checkbox-input._error + .wpcf7-list-item-label::before {
+.form__checkbox .form__checkbox-input._error + .wpcf7-list-item-label::before,
+.form__checkbox-input[aria-invalid=true] + .form__checkbox-content::before,
+.form__checkbox .form__checkbox-input[aria-invalid=true] + .wpcf7-list-item-label::before {
+  border-color: #FF3F3F;
+}
+
+.form__checkbox-input._error + .wpcf7-list-item-label::before,
+.form__checkbox-input[aria-invalid=true] + .wpcf7-list-item-label::before {
   border-color: #FF3F3F;
 }
 
@@ -2712,6 +2719,10 @@ body {
   margin-top: 1.3rem;
 }
 
+.hero {
+  padding: 0rem 0 0.5rem;
+}
+
 .hero__container {
   display: -ms-grid;
   display: grid;
@@ -2779,7 +2790,6 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
-  clip-path: inset(0 -1000% 0 -1000%);
   border-radius: 1rem;
   border: 0.0625rem solid #FFEBDB;
   background: radial-gradient(66.67% 66.67% at 50% 50%, #F9F2EE 0%, #FEF5EE 100%);
@@ -2881,12 +2891,11 @@ body {
 .hero__form-caption {
   text-align: center;
   font-size: 1.5rem;
-  line-height: 100%;
   font-weight: 500;
 }
 
 .hero__form-row {
-  margin-top: 0.9375rem;
+  margin-top: 1.375rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2899,6 +2908,7 @@ body {
 
 .hero__form-row .form__control {
   text-align: center;
+  border-color: #F2F2F2;
 }
 
 .hero__form-row .form__control::-webkit-input-placeholder {
@@ -5334,6 +5344,7 @@ body {
   }
 
   .hero__right {
+    clip-path: inset(0 -1000% 0 -1000%);
     min-height: 33.75rem;
   }
 
@@ -5807,6 +5818,7 @@ body {
   }
 
   .hero__form-row {
+    margin-top: 0.9375rem;
     overflow: hidden;
     position: relative;
   }

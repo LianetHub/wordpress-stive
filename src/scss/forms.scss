@@ -173,8 +173,15 @@
 			}
 		}
 
-		&._error {
+		&._error,
+		&[aria-invalid="true"] {
 			&+.form__checkbox-content {
+				&::before {
+					border-color: #FF3F3F;
+				}
+			}
+
+			&+.wpcf7-list-item-label {
 				&::before {
 					border-color: #FF3F3F;
 				}
