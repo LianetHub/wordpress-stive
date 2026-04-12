@@ -1,4 +1,4 @@
-<li class="case-card <?php echo esc_attr($case['class'] ?? ''); ?>">
+<li class="case-card<?php echo !empty($case['class']) ? ' ' . esc_attr($case['class']) : ''; ?>">
     <a
         href="<?php echo esc_url($case['link']); ?>"
         class="case-card__link-wrapper">

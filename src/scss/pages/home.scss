@@ -1316,14 +1316,14 @@
 
     // .media___block-grid
     &__block-grid {
-        margin-top: 1.2rem;
+        margin-top: 2.3rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        gap: 1rem;
 
         .article-card {
             flex-direction: column;
-            gap: 2rem;
+            gap: 1rem;
 
             .article-card__image {
                 width: 100%;
@@ -1414,7 +1414,7 @@
 
     // .media__pagination
     &__pagination {
-        margin-top: 2.5rem;
+        margin-top: 3rem;
     }
 }
 

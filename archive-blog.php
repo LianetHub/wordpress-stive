@@ -14,7 +14,57 @@
         </div>
     </div>
 </section>
-
+<section class="post-main">
+    <div class="post-main__container container">
+        <a href="" class="post-main__poster">
+            <picture class="post-main__poster-image">
+                <source
+                    srcset="<?php echo IMG_PATH . '/cases/case_study-2.webp'  ?>"
+                    type="image/webp">
+                <img
+                    src="<?php echo IMG_PATH . '/cases/case_study-2.jpg'  ?>"
+                    alt="Case Poster"
+                    class="cover-image">
+            </picture>
+        </a>
+        <div class="post-main__details">
+            <div class="post-main__stats stats-block">
+                <time datetime="2026-03-15" class="stats-block__item icon-date">
+                    March 15, 2026
+                </time>
+                <time datetime="2026-04-9" class="stats-block__item icon-update">
+                    April 9, 2026
+                </time>
+                <div class="stats-block__item icon-clock">
+                    18 minutes to read
+                </div>
+            </div>
+            <h2 class="post-main__title title-sm">
+                <a href="">
+                    Case Headline <br>
+                    Key Result + Client Name
+                </a>
+            </h2>
+            <p class="post-main__description">Short case description – 2-3 sentences. What was done, for&nbsp;whom, main outcome. Collpases with +- toggle on mobile</p>
+            <div class="post-main__categories">
+                <a href="" class="post-main__category label-badge">Category</a>
+                <a href="" class="post-main__category label-badge">Category</a>
+                <a href="" class="post-main__category label-badge">Category</a>
+            </div>
+            <div class="post-main__author author">
+                <div class="author__thumb">
+                    <img src="<?php echo IMG_PATH ?>/user-thumb.png"
+                        class="cover-image"
+                        alt="person avatar">
+                </div>
+                <div class="author__details">
+                    <div class="author__name">Anastasia Shalepina</div>
+                    <div class="author__position">Head of Growth</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php
 $latest_articles = [
@@ -103,10 +153,6 @@ $media_filters = [
         'active' => false
     ],
     [
-        'title' => 'SaaS',
-        'active' => false
-    ],
-    [
         'title' => 'FinTech',
         'active' => false
     ],
@@ -123,7 +169,7 @@ $media_filters = [
         'active' => false
     ],
 ];
-?>
+
 ?>
 
 <div class="media media--small">
