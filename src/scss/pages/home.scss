@@ -1078,47 +1078,7 @@
     }
 
     // .industries__tab
-    &__tab {
-        display: flex;
-        align-items: center;
-        width: fit-content;
-        color: #737F94;
-
-        font-weight: 600;
-        line-height: 100%;
-        border-radius: 62.4375rem;
-        border: rem(1) solid rgba(216, 216, 216, 0.50);
-        background: #FFF;
-        transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
-        font-size: 1rem;
-        padding: em(15) em(23);
-
-        @media (min-width:$md5) {
-            padding: em(1.5, 1.5) em(4, 1.5);
-
-        }
-
-        @media (min-width:$md2) {
-            font-size: 1.25rem;
-        }
-
-        @media (min-width:$md1) {
-            font-size: 1.5rem;
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                color: #192A3F;
-            }
-        }
-
-        &.swiper-slide-thumb-active {
-            border: rem(1) solid #00E5D2;
-            background: #16EEDC;
-            color: #192A3F;
-        }
-
-    }
+    &__tab {}
 
     // .industries__slider
     &__slider {
@@ -1292,8 +1252,6 @@
 
     &.media--small {
         padding: 1.5rem 0;
-
-
     }
 
     @media (min-width:$md2) {
@@ -1301,7 +1259,10 @@
     }
 
     // .media__container
-    &__container {
+    &__container {}
+
+    // .media__block
+    &__blocks {
         display: grid;
         gap: 2rem;
 
@@ -1319,11 +1280,6 @@
     &__block {
         min-width: 0;
         max-width: 100%;
-
-        &.media__block--large {
-            grid-column: span 2;
-
-        }
     }
 
     // .media__block-header
@@ -1337,6 +1293,33 @@
     &__block-slider {
         margin-top: 1.2rem;
         overflow: visible;
+
+        .article-card {
+            flex-direction: column;
+            gap: 2rem;
+
+            .article-card__image {
+                width: 100%;
+
+                @media (min-width:$md3) {
+                    aspect-ratio: math.div(464, 180);
+
+                    & img,
+                    & source {
+                        object-position: center 37%;
+                    }
+
+                }
+            }
+        }
+    }
+
+    // .media___block-grid
+    &__block-grid {
+        margin-top: 1.2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
 
         .article-card {
             flex-direction: column;
@@ -1427,6 +1410,11 @@
             margin-top: 1.3rem;
 
         }
+    }
+
+    // .media__pagination
+    &__pagination {
+        margin-top: 2.5rem;
     }
 }
 

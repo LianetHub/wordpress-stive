@@ -43,7 +43,7 @@ $industries = [
         <div class="industries__tabs swiper">
             <div class="swiper-wrapper">
                 <?php foreach ($industries as $item) : ?>
-                    <button class="industries__tab swiper-slide">
+                    <button class="industries__tab swiper-slide filter-btn">
                         <?php echo $item['title']; ?>
                     </button>
                 <?php endforeach; ?>

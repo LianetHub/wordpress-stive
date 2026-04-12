@@ -6,38 +6,49 @@
 @use "icons";
 
 .pagination {
-	padding: 0.75rem 0 1rem;
+	padding: 0.625rem 0;
 	display: flex;
 	align-items: center;
-	gap: rem(2);
+	justify-content: center;
+	gap: rem(8);
 
 
 	// .pagination__item
 	&__item {
-		width: rem(40);
-		height: rem(40);
-		text-align: center;
-		font-size: 1rem;
-		font-weight: 600;
-		line-height: 150%;
-		border-radius: 50%;
+		width: 4rem;
+		height: 4rem;
+		border-radius: 0.375rem;
+		font-weight: 800;
+		border: rem(1) solid #F2F2F2;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		transition:
 			background-color 0.3s ease,
 			color 0.3s ease;
-		color: #717680;
+		color: #BEBEBE;
+
+		@media (max-width:$md5) {
+			&:not(.current, .dotts, .last) {
+				display: none;
+			}
+		}
+
+		@media (min-width:$md5) {
+			&.dotts {
+				display: none;
+			}
+		}
 
 		&.current {
-			color: #192a3f;
+			color: #fff;
 			background: $accent;
 		}
 
 		&:is(a) {
 			@media (any-hover: hover) {
 				&:hover {
-					color: #192a3f;
+					color: #fff;
 					background: $accent;
 				}
 			}
@@ -47,49 +58,31 @@
 	// .pagination__next
 	&__next,
 	&__prev {
-		&.btn {
-			min-height: auto;
+		border-radius: 0.375rem;
+		border: rem(1) solid #F2F2F2;
+		background: #F2F2F2;
+		color: #192A3F;
+		width: 4rem;
+		height: 4rem;
+		font-size: 1.5rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: background-color 0.3s ease;
 
-			@media (max-width:$md4) {
-				width: rem(40);
-				height: rem(40);
-				padding: rem(5);
-
-				&::before {
-
-					font-size: 0.75rem;
-				}
-			}
-
-			&::before {
-				font-size: 1rem;
-				@extend %ic, .icon-arrow-right;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: color.adjust($color: #F2F2F2, $lightness: -10%);
 			}
 		}
 
-		& span {
-			display: none;
-
-			@media (min-width: $md4) {
-				display: inline;
-			}
-		}
-
-	}
-
-	&__prev {
-		margin-right: auto;
-
-		&::before {
-			transform: rotate(180deg);
+		&[aria-disabled="true"] {
+			color: #D6D6D6;
+			pointer-events: none;
 		}
 	}
 
-	&__next {
-		margin-left: auto;
+	&__prev {}
 
-		&::before {
-			order: 1;
-		}
-	}
+	&__next {}
 }

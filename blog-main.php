@@ -149,19 +149,17 @@ $latest_articles = [
 ?>
 <section class="media media--small">
     <div class="media__container container">
-        <div class="media__block media__block--large">
-            <div class="media__block-header">
-                <h2 class="media__block-title gradient-text">Latest Articles</h2>
-                <a href="/blog" class="media__block-all">All articles</a>
-            </div>
-            <div class="media__block-slider swiper">
-                <div class="swiper-wrapper">
-                    <?php
-                    foreach ($latest_articles as $article) {
-                        include(locate_template('components/parts/_article-card.php'));
-                    }
-                    ?>
-                </div>
+        <div class="media__block-header">
+            <h2 class="media__block-title gradient-text">Latest Articles</h2>
+            <a href="/blog" class="media__block-all">All articles</a>
+        </div>
+        <div class="media__block-slider swiper">
+            <div class="swiper-wrapper">
+                <?php
+                foreach ($latest_articles as $article) {
+                    include(locate_template('components/parts/_article-card.php'));
+                }
+                ?>
             </div>
         </div>
     </div>

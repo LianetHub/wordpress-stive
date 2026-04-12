@@ -99,7 +99,10 @@
 
     // .heading__title
     &__title {
-        margin-top: 2rem;
+        &:not(:first-child) {
+            margin-top: 2rem;
+
+        }
 
         &.title-sm {
             @media (max-width:$md4) {

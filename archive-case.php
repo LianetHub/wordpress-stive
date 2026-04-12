@@ -209,13 +209,14 @@ $case_studies = [
             </ul>
 
             <nav aria-label="pagination" class="cases__pagination pagination">
-                <a class="pagination__prev btn btn-sm btn-secondary" href=""><span>Prev</span></a>
+                <a class="pagination__prev icon-prev" href="" aria-disabled="true" aria-label="Prev"></a>
                 <span class="pagination__item current">1</span>
+                <span class="pagination__item dotts">...</span>
                 <a class="pagination__item" href="">2</a>
                 <a class="pagination__item" href="">3</a>
-                <span class="pagination__item dots">…</span>
-                <a class="pagination__item" href="">10</a>
-                <a class="pagination__next btn btn-sm btn-secondary" href=""><span>Next</span></a>
+                <a class="pagination__item" href="">4</a>
+                <a class="pagination__item last" href="">5</a>
+                <a class="pagination__next icon-next" href="" aria-label="Next"></a>
             </nav>
         </div>
     </section>

@@ -229,6 +229,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    if ($('.media__filters').length) {
+
+        new Swiper('.media__filters', {
+            slidesPerView: 'auto',
+            spaceBetween: 8,
+            watchSlidesProgress: true,
+            slideToClickedSlide: true,
+        });
+
+
+    }
+
 
     // Steps Animation
     if ($('.steps__item').length) {
