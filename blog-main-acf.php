@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Main Blog
+Template Name: Main Blog with ACF
 Template Post Type: blog
 */
 ?>
