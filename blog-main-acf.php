@@ -32,11 +32,27 @@ if ($module_ids)
 	foreach ($module_ids as $module_id) 
 	{
 		$post = get_post($module_id);
-		if ($post) 
+		if ($post)			
 		{
-			setup_postdata($post);
+			if (get_field('is_faq', $module_id))
+			{ ?>
+			<section class="faq" id="faq" itemscope itemtype="https://schema.org/FAQPage">
+            <div class="container">
+            <h2 class="faq__title title-xs">Frequently Asked Questions</h2>
+			<?php
+			setup_postdata($post); 
 			echo apply_filters('the_content', $post->post_content);
 			wp_reset_postdata();
+			?>
+			</div>
+            </section>
+			<?php
+			} else {
+			setup_postdata($post); 
+			echo apply_filters('the_content', $post->post_content);
+			wp_reset_postdata();
+			}
+				
 		}
 	}
 }
