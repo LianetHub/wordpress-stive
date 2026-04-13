@@ -22,7 +22,7 @@ function register_dynamic_sidebar_select_field() {
         $sidebar_choices = get_all_registered_sidebars();
         
         acf_add_local_field_group(array(
-            'key' => 'group_dynamic_sidebar_select',
+            'key' => 'dynamic_sidebar_select',
             'title' => 'Настройки сайдбара',
             'fields' => array(
                 array(
@@ -31,7 +31,6 @@ function register_dynamic_sidebar_select_field() {
                     'name' => 'custom_sidebar',
                     'type' => 'select',
                     'choices' => $sidebar_choices,
-                    'default_value' => 'default-sidebar',
                     'return_format' => 'value',
                     'allow_null' => false,
                     'ui' => true,
