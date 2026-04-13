@@ -44,7 +44,7 @@ $blog_sliders = $blog_sliders_query->posts; // Получаем массив п�
     </picture>
     <div class="article-card__content">
         <div class="article-card__categories">
-           <?php echo display_category_and_tag_terms($post_id=$blog->ID, $taxonomy='blog-list', tag='span' $class='article-card__category'); ?>
+           <?php echo display_category_and_tag_terms($post_id=$blog->ID, $taxonomy='blog-list', $tag='span', $class='article-card__category'); ?>
         </div>
           <p class="article-card__desc">
             <?php echo get_the_title($blog->ID); ?>
