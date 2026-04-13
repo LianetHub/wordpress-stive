@@ -58,7 +58,23 @@ $calendly = get_field('calendly_link', 'option');
     </div>
 </section>
 
-<?php require_once(TEMPLATE_PATH . '_faq.php'); ?>
+<?php
+
+$module_ids = get_field('blog_after_main_content',get_queried_object());
+if ($module_ids) 
+{
+	foreach ($module_ids as $module_id) 
+	{
+		$post = get_post($module_id);
+		if ($post) 
+		{
+			setup_postdata($post);
+			echo apply_filters('the_content', $post->post_content);
+			wp_reset_postdata();
+		}
+	}
+}
+?>
 
 
 <?php get_footer(); ?>
