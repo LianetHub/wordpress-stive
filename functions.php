@@ -15,7 +15,9 @@ require_once(FUNC_PATH . 'blog-taxonomy.php');
 require_once(FUNC_PATH . 'acf-init.php');
 require_once(FUNC_PATH . 'display-case-category.php');
 require_once(FUNC_PATH . 'module-for-block-after-main-content.php');
-
+require_once(FUNC_PATH . 'sidebar-selector.php');
+require_once(FUNC_PATH . 'display-universal-sidebar.php');
+require_once(FUNC_PATH . 'register-sidebar.php');
 
 
 function r4_themestive_enqueue_style()
