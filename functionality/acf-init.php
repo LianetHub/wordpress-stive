@@ -167,6 +167,24 @@ function r4_register_acf_blocks() {
             'category'          => 'stive-other',
         ));
 		
+		acf_register_block_type(array(
+            'name'              => 'Blog Header Post',
+            'title'             => __('Block Blog Header Post'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-blog-header-post.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-blog',
+        ));
+		
+		acf_register_block_type(array(
+            'name'              => 'Blog Latest Article Slider',
+            'title'             => __('Block Blog Latest Article Slider'),
+            'description'       => __('A custom block.'),
+            'render_template'   => 'acf-components/block-stive-blog-latest-article-slider.php',
+			'mode'              => 'edit',
+            'category'          => 'stive-blog',
+        ));
+		
     }
 }
 add_action( 'acf/init', 'r4_register_acf_blocks' );
@@ -186,6 +204,10 @@ function  r4_stive_add_custom_categories($categories, $post)
 			array(
                 'slug'  => 'stive-other',
                 'title' => esc_html__('Stive Other'),
+            ),
+			array(
+                'slug'  => 'stive-blog',
+                'title' => esc_html__('Stive Blog'),
             ),
         ),
         $categories

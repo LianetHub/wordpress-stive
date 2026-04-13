@@ -1,12 +1,10 @@
 <?php
-function display_category_and_tag_terms($post_id = null, $taxonomy = 'category', $div_class= 'case__categories', $a_class = 'case__category label-badge') {
+function display_category_and_tag_terms($post_id = null, $taxonomy = 'category', $a_class = 'case__category label-badge') {
     if (empty($post_id)) {
         $post_id = get_the_ID();
     }
     
     $terms = get_the_terms($post_id, $taxonomy);
-    
-    $output = sprintf('<div class="%s">', esc_attr($div_class));
     
     if (!empty($terms) && !is_wp_error($terms)) {
         foreach ($terms as $term) {
@@ -21,7 +19,6 @@ function display_category_and_tag_terms($post_id = null, $taxonomy = 'category',
         $output .= '<span class="no-terms label-badge">No terms</span>';
     }
     
-    $output .= '</div>';
     return $output;
 }
 

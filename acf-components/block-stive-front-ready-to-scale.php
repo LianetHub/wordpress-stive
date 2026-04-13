@@ -1,6 +1,6 @@
 <?php
 $front_rts_title = get_field('front_rts_title');
-$calendly_link = get_field('calendly_link','option');
+$calendly_link = get_field('calendly_link', 'option');
 
 $countries = [
     'us' => 'USA',
@@ -45,7 +45,7 @@ $countries = [
                     </div>
                 <?php endif; ?>
                 <div class="ready__actions">
-				<a class="ready__btn btn btn-primary" data-calendly href="<?php echo esc_url($calendly_link['link']); ?>">Book Strategy Call</a>	
+				<a class="ready__btn btn btn-primary" data-calendly href="<?php echo esc_url($calendly_link['url']); ?>">Book Strategy Call</a>	
 						<a class="ready__btn btn btn-grey" data-fancybox href="#get-proposal">Get Proposal</a>
 				</div>
             </div>

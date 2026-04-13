@@ -184,3 +184,25 @@ function add_markdown_mime_type($mimes) {
     return $mimes;
 }
 add_filter('upload_mimes', 'add_markdown_mime_type');
+
+function r4_get_reading_time($post_id = null, $wpm = 10, $seconds_per_image = 5)
+{
+  $post_id = $post_id ?: get_the_ID();
+  $html = apply_filters('the_content', get_post_field('post_content', $post_id));
+  $words = str_word_count(wp_strip_all_tags($html));
+  preg_match_all('/<img\b[^>]*>/i', $html, $matches);
+  $images = count($matches[0]);
+  $words += ($images * $seconds_per_image) * $wpm / 60;
+
+  return max(1, (int) ceil($words / $wpm));
+}
+
+function r4_get_the_reading_time($before = '', $after = ' мин. читать')
+{
+  printf(
+    '%s%d%s',
+    $before,
+    r4_get_reading_time(),
+    $after
+  );
+}

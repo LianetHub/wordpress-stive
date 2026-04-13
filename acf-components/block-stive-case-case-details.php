@@ -31,8 +31,10 @@ $case_details_img = get_field('case_details_img'); //img
                     </li>
                 <?php } ?>
             </ul>
-            <?php echo display_category_and_tag_terms(get_the_ID(), 'case-tags', 'case-details__categories', 'case-details__category label-badge label-badge--small'); ?>
-        </div>
+			<div class="case-details__categories">
+            <?php echo display_category_and_tag_terms($post_id=get_the_ID(), $taxonomy='case-tags', $a_class='case-details__category label-badge label-badge--small'); ?>
+            </div>
+		</div>
         <div class="case-details__description typography-block">
             <h2><?php echo $case_details_h2; ?></h2>
             <?php echo $case_details_desc; ?>
