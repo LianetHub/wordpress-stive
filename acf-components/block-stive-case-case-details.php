@@ -32,7 +32,7 @@ $case_details_img = get_field('case_details_img'); //img
                 <?php } ?>
             </ul>
 			<div class="case-details__categories">
-            <?php echo display_category_and_tag_terms($post_id=get_the_ID(), $taxonomy='case-tags', $a_class='case-details__category label-badge label-badge--small'); ?>
+            <?php echo display_category_and_tag_terms($post_id=get_the_ID(), $taxonomy='case-tags', $tag='a', $class='case-details__category label-badge label-badge--small'); ?>
             </div>
 		</div>
         <div class="case-details__description typography-block">

@@ -7,8 +7,8 @@ $case_image = get_field('case_image'); //img
 <section class="heading">
 	<div class="heading__container container">
 		<div class="heading__main">
-		<div class="case__categories">
-			<?php echo display_category_and_tag_terms($post_id=get_the_ID(), $taxonomy='case-list', $a_class='heading__categories'); ?>
+		<div class="heading__categories">
+			<?php echo display_category_and_tag_terms($post_id=get_the_ID(), $taxonomy='case-list', $tag='a', $class='heading__categories label-badge'); ?>
 		</div>
 			<h1 class="heading__title title-sm"><?php echo $case_title; ?></h1>
 			<p class="heading__description"><?php echo $case_description; ?></p>
