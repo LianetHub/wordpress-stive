@@ -313,6 +313,34 @@
     // .faq__title
     &__title {}
 
+    .saswp-faq-block-section {
+        & ol {
+            @extend .faq__list;
+
+            & li {
+                @extend .faq__item;
+
+                &.active {
+                    .saswp-faq-question-title {
+                        &::before {
+                            transform: rotate(360deg);
+                            @extend %ic, .icon-minus;
+                        }
+                    }
+                }
+            }
+        }
+
+        .saswp-faq-question-title {
+            cursor: pointer;
+            @extend .faq__item-question;
+        }
+
+        .saswp-faq-answer-text {
+            @extend .faq__item-answer;
+        }
+    }
+
     // .faq__list
     &__list {
         margin-top: 1.5rem;
@@ -380,6 +408,7 @@
         font-size: 1.125rem;
         line-height: 120%;
         padding: 0rem 1rem 1rem;
+        display: none;
 
         @media (min-width:$md4) {
             padding: 0rem 2rem 1.5rem;

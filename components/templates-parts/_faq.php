@@ -54,8 +54,7 @@ $faq_items = [
                         itemscope
                         itemprop="acceptedAnswer"
                         typeof="Answer"
-                        role="region"
-                        hidden>
+                        role="region">
                         <div itemprop="text">
                             <?php echo htmlspecialchars($item['answer']); ?>
                         </div>

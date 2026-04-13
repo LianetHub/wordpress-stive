@@ -41,17 +41,9 @@
 }
 
 @font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons.woff2?v=1775985077885") format("woff2"), url("../fonts/icons.woff?v=1775985077885") format("woff");
+  src: url("../fonts/icons.woff2?v=1776109063355") format("woff2"), url("../fonts/icons.woff?v=1776109063355") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -59,16 +51,8 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -91,13 +75,32 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
+  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
   src: url("../fonts/SFProDisplay-Thin.woff2") format("woff2"), url("../fonts/SFProDisplay-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
 }
 
+.faq .saswp-faq-block-section ol li.active .saswp-faq-question-title::before,
 .faq__item.active .faq__item-question::before,
+.faq .saswp-faq-block-section ol li.active .faq__item-question::before,
 .faq__item-question::before,
+.faq .saswp-faq-block-section .saswp-faq-question-title::before,
 .form__checkbox-input:checked + .form__checkbox-content::before,
 .form__checkbox-input:checked + .wpcf7-list-item-label::before,
 [class^=icon-]:before,
@@ -139,12 +142,17 @@
 }
 
 .icon-add:before,
-.faq__item-question:before {
+.faq__item-question:before,
+.faq .saswp-faq-block-section .saswp-faq-question-title:before {
   content: "\e909";
 }
 
 .icon-minus:before,
-.faq__item.active .faq__item-question:before {
+.faq .saswp-faq-block-section ol li.active .saswp-faq-question-title:before,
+.faq__item.active .faq__item-question:before,
+.faq .saswp-faq-block-section ol li.active .faq__item-question:before,
+.faq__item.active .faq .saswp-faq-block-section .saswp-faq-question-title:before,
+.faq .saswp-faq-block-section .faq__item.active .saswp-faq-question-title:before {
   content: "\e90a";
 }
 
@@ -4417,26 +4425,43 @@ body {
   padding: 2rem 0;
 }
 
-.faq__list {
+.faq .saswp-faq-block-section ol li.active .saswp-faq-question-title::before {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.faq .saswp-faq-block-section .saswp-faq-question-title {
+  cursor: pointer;
+}
+
+.faq__list,
+.faq .saswp-faq-block-section ol {
   margin-top: 1.5rem;
   display: -ms-grid;
   display: grid;
   gap: 0.5rem;
 }
 
-.faq__item {
+.faq__item,
+.faq .saswp-faq-block-section ol li {
   border-radius: 0.5rem;
   border: 0.0625rem solid #F2F2F2;
   background: #FFF;
 }
 
-.faq__item.active .faq__item-question::before {
+.faq__item.active .faq__item-question::before,
+.faq .saswp-faq-block-section ol li.active .faq__item-question::before,
+.faq__item.active .faq .saswp-faq-block-section .saswp-faq-question-title::before,
+.faq .saswp-faq-block-section .faq__item.active .saswp-faq-question-title::before,
+.faq .saswp-faq-block-section ol li.active .saswp-faq-question-title::before {
   -webkit-transform: rotate(360deg);
       -ms-transform: rotate(360deg);
           transform: rotate(360deg);
 }
 
-.faq__item-question {
+.faq__item-question,
+.faq .saswp-faq-block-section .saswp-faq-question-title {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 150%;
@@ -4455,7 +4480,8 @@ body {
   padding: 1rem;
 }
 
-.faq__item-question::before {
+.faq__item-question::before,
+.faq .saswp-faq-block-section .saswp-faq-question-title::before {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
@@ -4469,11 +4495,13 @@ body {
   color: #7C8698;
 }
 
-.faq__item-answer {
+.faq__item-answer,
+.faq .saswp-faq-block-section .saswp-faq-answer-text {
   color: #7C8698;
   font-size: 1.125rem;
   line-height: 120%;
   padding: 0rem 1rem 1rem;
+  display: none;
 }
 
 @media (min-width: 374.98px) {
@@ -5353,11 +5381,13 @@ body {
     padding: 2rem 0;
   }
 
-  .faq__item-question {
+  .faq__item-question,
+  .faq .saswp-faq-block-section .saswp-faq-question-title {
     padding: 1.5rem 2rem;
   }
 
-  .faq__item-answer {
+  .faq__item-answer,
+  .faq .saswp-faq-block-section .saswp-faq-answer-text {
     padding: 0rem 2rem 1.5rem;
   }
 }
@@ -5798,7 +5828,8 @@ body {
     top: 6.25rem;
   }
 
-  .faq__list {
+  .faq__list,
+  .faq .saswp-faq-block-section ol {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
   }

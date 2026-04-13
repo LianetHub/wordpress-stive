@@ -67,15 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // faq
-        if ($target.closest('.faq__item-question').length) {
-            const $button = $target.closest('.faq__item-question');
-            const $answer = $button.next('.faq__item-answer');
-            const $item = $button.closest('.faq__item');
-            const isExpanded = $button.attr('aria-expanded') === 'true';
+        const $faqButton = $target.closest('.faq__item-question, .saswp-faq-question-title');
+        if ($faqButton.length) {
+            const $item = $faqButton.closest('.faq__item, li');
+            const $answer = $faqButton.next('.faq__item-answer, .saswp-faq-answer-text');
+            const isExpanded = $faqButton.hasClass('active') || $faqButton.attr('aria-expanded') === 'true';
 
-            $button.attr('aria-expanded', !isExpanded);
-
-            $button.toggleClass('active');
+            $faqButton.attr('aria-expanded', !isExpanded);
+            $faqButton.toggleClass('active');
             $item.toggleClass('active');
 
             if (isExpanded) {
