@@ -168,15 +168,6 @@ function r4_register_acf_blocks() {
         ));
 		
 		acf_register_block_type(array(
-            'name'              => 'Blog Header Post',
-            'title'             => __('Block Blog Header Post'),
-            'description'       => __('A custom block.'),
-            'render_template'   => 'acf-components/block-stive-blog-header-post.php',
-			'mode'              => 'edit',
-            'category'          => 'stive-blog',
-        ));
-		
-		acf_register_block_type(array(
             'name'              => 'Blog Latest Article Slider',
             'title'             => __('Block Blog Latest Article Slider'),
             'description'       => __('A custom block.'),
