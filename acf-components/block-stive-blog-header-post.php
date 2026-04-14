@@ -1,44 +1,42 @@
 <?php
+$blog_header_description = get_field('blog_header_description'); //text
 ?>
 <section class="heading heading--blog-post">
     <div class="heading__container container">
         <div class="heading__main">
             <div class="heading__categories">
-                <a href="" class="heading__category label-badge">GEO</a>
-                <a href="" class="heading__category label-badge">ChatGPT</a>
-                <a href="" class="heading__category label-badge">SEO</a>
+				<?php echo display_category_and_tag_terms($post_id=get_the_ID(), $taxonomy='blog-list', $tag='a', $class='heading__categories label-badge'); ?>
             </div>
-            <h1 class="heading__title title-sm">How to Rank in ChatGPT: The B2B Marketer's Complete Guide</h1>
+            <h1 class="heading__title title-sm"><?php the_title(); ?></h1>
             <p class="heading__description">A practical GEO playbook covering how ChatGPT retrieves content, which prompts to target, how to structure pages for citation, and&nbsp;how to measure AI visibility</p>
             <div class="heading__stats stats-block">
-                <time datetime="2026-03-15" class="stats-block__item icon-date">
-                    March 15, 2026
-                </time>
-                <time datetime="2026-04-9" class="stats-block__item icon-update">
-                    April 9, 2026
-                </time>
+                <time datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>" class="stats-block__item icon-date">
+				<?php echo esc_html( get_the_date( 'F j, Y' ) ); ?>
+				</time>
+				<time datetime="<?php echo esc_attr( get_the_modified_date( 'Y-m-d' ) ); ?>" class="stats-block__item icon-update">
+				<?php echo esc_html( get_the_modified_date( 'F j, Y' ) ); ?>
+				</time>
                 <div class="stats-block__item icon-clock">
-                    18 minutes to read
+                    <?php r4_get_the_reading_time($before = '', $after = ' min read'); ?>
                 </div>
             </div>
             <div class="heading__author author">
                 <div class="author__thumb">
-                    <img src="<?php echo IMG_PATH ?>/user-thumb.png"
-                        class="cover-image"
-                        alt="person avatar">
+                    <?php echo get_avatar( get_the_author_meta( 'ID' ), 60, '', 'person avatar', array( 'class' => 'cover-image' ) ); ?>
                 </div>
-                <div class="author__details">
-                    <div class="author__name">Anastasia Shalepina</div>
-                    <div class="author__position">Head of Growth</div>
-                </div>
+				<div class="author__details">
+				<div class="author__name">
+				<?php echo esc_html( get_the_author() ); ?>
+				</div>
+				<div class="author__position">
+				<?php echo esc_html( get_the_author_meta( 'description' ) ); ?>
+				</div>
+				</div>
             </div>
         </div>
         <picture class="heading__image ">
-            <source
-                srcset="<?php echo IMG_PATH . '/stive-blog.webp' ?>"
-                type="image/webp">
             <img
-                src="<?php echo IMG_PATH . '/stive-blog.jpg' ?>"
+                src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>"
                 alt="blog image"
                 class="cover-image">
         </picture>
