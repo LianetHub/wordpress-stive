@@ -62,8 +62,9 @@ class CTA_Banner_Widget extends WP_Widget {
         $caption     = get_field('widget_cta_caption', 'widget_' . $widget_id);
         $headline    = get_field('widget_cta_headline', 'widget_' . $widget_id);
         $description = get_field('widget_cta_description', 'widget_' . $widget_id);
-        $button_text = get_field('widget_cta_button_text', 'widget_' . $widget_id);
-        $calendly_url = get_field('widget_cta_calendly_url', 'widget_' . $widget_id);
+		$link = get_field('calendly_link','option');
+        $button_text = $link['title'];
+        $calendly_url = $link['url'];
         
         // Если нет обязательных полей, не выводим виджет
         if (empty($headline) && empty($calendly_url)) {
