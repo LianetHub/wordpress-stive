@@ -191,7 +191,7 @@ function add_markdown_mime_type($mimes) {
 }
 add_filter('upload_mimes', 'add_markdown_mime_type');
 
-function r4_get_reading_time($post_id = null, $wpm = 10, $seconds_per_image = 5)
+function r4_get_reading_time($post_id = null, $wpm = 200, $seconds_per_image = 5)
 {
   $post_id = $post_id ?: get_the_ID();
   $html = apply_filters('the_content', get_post_field('post_content', $post_id));
