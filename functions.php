@@ -20,6 +20,7 @@ require_once(FUNC_PATH . 'sidebar-selector.php');
 require_once(FUNC_PATH . 'display-universal-sidebar.php');
 require_once(FUNC_PATH . 'register-sidebar.php');
 require_once(WIDGET_PATH . 'cta-banner-widget.php');
+require_once(WIDGET_PATH . 'custom-toc-widget.php');
 
 function r4_themestive_enqueue_style()
 {
