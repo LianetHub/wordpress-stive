@@ -8,7 +8,7 @@ $blog_header_description = get_field('blog_header_description'); //text
 				<?php echo display_category_and_tag_terms($post_id=get_the_ID(), $taxonomy='blog-list', $tag='a', $class='heading__categories label-badge'); ?>
             </div>
             <h1 class="heading__title title-sm"><?php the_title(); ?></h1>
-            <p class="heading__description">A practical GEO playbook covering how ChatGPT retrieves content, which prompts to target, how to structure pages for citation, and&nbsp;how to measure AI visibility</p>
+            <p class="heading__description"><?php echo $blog_header_description; ?></p>
             <div class="heading__stats stats-block">
                 <time datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>" class="stats-block__item icon-date">
 				<?php echo esc_html( get_the_date( 'F j, Y' ) ); ?>
