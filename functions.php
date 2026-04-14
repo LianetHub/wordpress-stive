@@ -1,6 +1,7 @@
 <?php
 define('COMPONENTS_PATH', dirname(__FILE__) . '/components/');
 define('FUNC_PATH', dirname(__FILE__) . '/functionality/');
+define('WIDGET_PATH', dirname(__FILE__) . '/widget/');
 define('TEMPLATE_PATH', dirname(__FILE__) . '/components/templates-parts/');
 define('ASSETS_PATH', get_stylesheet_directory_uri() . '/assets');
 define('JS_PATH', get_stylesheet_directory_uri() . '/assets/js');
@@ -18,7 +19,7 @@ require_once(FUNC_PATH . 'module-for-block-after-main-content.php');
 require_once(FUNC_PATH . 'sidebar-selector.php');
 require_once(FUNC_PATH . 'display-universal-sidebar.php');
 require_once(FUNC_PATH . 'register-sidebar.php');
-
+require_once(WIDGET_PATH . 'cta-banner-widget.php');
 
 function r4_themestive_enqueue_style()
 {
