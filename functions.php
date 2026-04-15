@@ -212,3 +212,15 @@ function r4_get_the_reading_time($before = '', $after = ' мин. читать')
     $after
   );
 }
+
+add_action('pre_get_posts', function($query) {
+    if (
+        !is_admin() &&
+        $query->is_main_query() &&
+        is_post_type_archive('case')
+    ) {
+        $query->set('posts_per_page', 5);
+        $query->set('orderby', 'date');
+        $query->set('order', 'DESC');
+    }
+});
