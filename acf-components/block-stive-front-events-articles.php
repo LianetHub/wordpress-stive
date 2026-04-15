@@ -5,13 +5,13 @@ $upcoming_events = [
         'img_webp' => 'event_item-1.webp',
         'img_jpg'  => 'event_item-1.jpg',
         'alt'      => 'Blockchain Life 2026 Event',
-        'url'      => '#'
+        'url'      => '/coming-soon/'
     ],
     [
         'img_webp' => 'event_item-2.webp',
         'img_jpg'  => 'event_item-2.jpg',
         'alt'      => 'Crypto Event of the Year',
-        'url'      => '#'
+        'url'      => '/coming-soon/'
     ],
 ];
 
@@ -21,7 +21,7 @@ $latest_articles = [
         'class'   => 'swiper-slide',
         'img_webp'   => 'article_image-1.webp',
         'img_jpg'    => 'article_image-1.jpg',
-        'url'        => '#',
+        'url'        => '/coming-soon/',
         'text'       => 'Artificial Intelligence (AI) is rapidly transforming our world. It is being applied across various fields, from healthcare and finance.',
         'author'     => 'Anastasia Shalepina',
         'date'       => 'March 1, 2026',
@@ -35,7 +35,7 @@ $latest_articles = [
         'class'   => 'swiper-slide',
         'img_webp'   => 'article_image-2.webp',
         'img_jpg'    => 'article_image-2.jpg',
-        'url'        => '#',
+        'url'        => '/coming-soon/',
         'text'       => 'From smart homes to personalized healthcare, AI is paving the way for a better tomorrow',
         'author'     => 'Anastasia Shalepina',
         'date'       => 'March 5, 2026',
@@ -49,7 +49,7 @@ $latest_articles = [
         'class'   => 'swiper-slide',
         'img_webp'   => 'article_image-3.webp',
         'img_jpg'    => 'article_image-3.jpg',
-        'url'        => '#',
+        'url'        => '/coming-soon/',
         'text'       => 'The rise of artificial intelligence (AI) is reshaping industries at an unprecedented pace',
         'author'     => 'Anastasia Shalepina',
         'date'       => 'March 10, 2026',
@@ -68,7 +68,7 @@ $latest_articles = [
             <div class="media__block">
                 <div class="media__block-header">
                     <h2 class="media__block-title gradient-text">UPCOMING EVENTS</h2>
-                    <a href="/events" class="media__block-all">ALL EVENTS</a>
+                    <a href="/coming-soon/" class="media__block-all">ALL EVENTS</a>
                 </div>
                 <div class="media__block-events">
                     <?php foreach ($upcoming_events as $event): ?>
