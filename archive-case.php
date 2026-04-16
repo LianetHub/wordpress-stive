@@ -155,7 +155,7 @@ $logotypes = [
                                     <?php the_title(); ?>
                                 </div>
                                 <p class="case-card__desc">
-                                    <?php the_excerpt(); ?>
+                                    <?php echo get_the_excerpt(); ?>
                                 </p>
 
                                 <?php $case_metrics = get_field('case_metrics', $case_id); ?>
