@@ -10,7 +10,7 @@ function blog_taxonomy()
             'labels'              => array(
                 'name'                => _x('Blog', 'Post Type General Name'),
                 'singular_name'       => _x('Blog', 'Post Type Singular Name'),
-                'menu_name'           => __('Blogs'),
+                'menu_name'           => __('Blog'),
             ),
             'supports'            => array('title', 'author', 'thumbnail', 'revisions', 'editor', 'tags'), // Добавляем поддержку тегов
             'hierarchical'        => false,

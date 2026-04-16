@@ -10,7 +10,7 @@ function case_taxonomy()
             'labels'              => array(
                 'name'                => _x('Case', 'Post Type General Name'),
                 'singular_name'       => _x('Case', 'Post Type Singular Name'),
-                'menu_name'           => __('Cases'),
+                'menu_name'           => __('Case'),
             ),
             'supports'            => array('title', 'author', 'thumbnail', 'revisions', 'editor', 'tags'), // Добавляем поддержку тегов
             'hierarchical'        => false,
