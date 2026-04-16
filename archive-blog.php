@@ -22,8 +22,8 @@ $current_cat = $_GET['category'] ?? '';
 <section class="heading heading--blog">
   <div class="heading__container container">
     <div class="heading__main">
-      <h1 class="heading__title title-sm">Blog Title</h1>
-      <p class="heading__description">Short description</p>
+      <h1 class="heading__title title-sm">Blog</h1>
+      <p class="heading__description">Guides, research, and case breakdowns on getting brands cited in AI search — for any brand that needs to be found.</p>
     </div>
   </div>
 </section>
