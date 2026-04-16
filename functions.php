@@ -91,6 +91,15 @@ function r4_themestive_enqueue_scripts()
         'in_footer' => true,
         'strategy'  => 'defer',
     ]);
+	
+	wp_enqueue_script('jquery', JS_PATH . '/blog-filter.js', array(), filemtime(JS_DIR . '/blog-filter.js'), [
+        'in_footer' => true,
+        'strategy'  => 'defer',
+    ]);
+
+    wp_localize_script('blog-filter', 'blog_ajax', [
+        'url' => admin_url('admin-ajax.php')
+    ]);
 }
 add_action('wp_enqueue_scripts', 'r4_themestive_enqueue_scripts');
 
@@ -213,6 +222,7 @@ function r4_get_the_reading_time($before = '', $after = ' мин. читать')
   );
 }
 
+// Настройки для страницы архивов case start
 add_action('pre_get_posts', function($query) {
     if (
         !is_admin() &&
@@ -224,3 +234,113 @@ add_action('pre_get_posts', function($query) {
         $query->set('order', 'DESC');
     }
 });
+// Настройки для страницы архивов case end
+
+// Настройки для страницы архивов blog start
+add_action('pre_get_posts', function($query) {
+
+    if (
+        !is_admin() &&
+        $query->is_main_query() &&
+        is_post_type_archive('blog')
+    ) {
+
+        $query->set('posts_per_page', 6);
+        $query->set('orderby', 'date');
+        $query->set('order', 'DESC');
+
+        // ИСКЛЮЧАЕМ HERO
+        $hero = get_posts([
+            'post_type' => 'blog',
+            'posts_per_page' => 1
+        ]);
+
+        if ($hero) {
+            $query->set('post__not_in', [$hero[0]->ID]);
+        }
+
+        // ФИЛЬТР
+        if (!empty($_GET['category'])) {
+            $query->set('tax_query', [
+                [
+                    'taxonomy' => 'blog-list',
+                    'field'    => 'slug',
+                    'terms'    => sanitize_text_field($_GET['category']),
+                ]
+            ]);
+        }
+    }
+});
+
+add_action('wp_ajax_filter_blog', 'filter_blog');
+add_action('wp_ajax_nopriv_filter_blog', 'filter_blog');
+
+function filter_blog() {
+
+    $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
+
+    $args = [
+        'post_type' => 'blog',
+        'posts_per_page' => 6,
+        'orderby' => 'date',
+        'order' => 'DESC'
+    ];
+
+    $hero = get_posts([
+        'post_type' => 'blog',
+        'posts_per_page' => 1
+    ]);
+
+    if ($hero) {
+        $args['post__not_in'] = [$hero[0]->ID];
+    }
+
+    // ФИЛЬТР
+    if ($category) {
+        $args['tax_query'] = [
+            [
+                'taxonomy' => 'blog-list',
+                'field'    => 'slug',
+                'terms'    => $category,
+            ]
+        ];
+    }
+
+    $query = new WP_Query($args);
+
+    ob_start();
+
+    if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post(); ?>
+
+            <a href="<?php the_permalink(); ?>" class="article-card">
+                <picture class="article-card__image">
+                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" class="cover-image">
+                </picture>
+
+                <div class="article-card__content">
+                    <div class="article-card__categories">
+                        <?php echo display_category_and_tag_terms(get_the_ID(), 'blog-list', 'span', 'article-card__category', 'true'); ?>
+                    </div>
+
+                    <p class="article-card__desc"><?php the_excerpt(); ?></p>
+
+                    <div class="article-card__meta">
+                        <div class="article-card__author"><?php the_author(); ?></div>
+                        <time datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                            <?php echo get_the_date('F j, Y'); ?>
+                        </time>
+                    </div>
+                </div>
+            </a>
+
+        <?php endwhile;
+    endif;
+
+    wp_reset_postdata();
+
+    echo ob_get_clean();
+    wp_die();
+}
+
+// Настройки для страницы архивов blog end
