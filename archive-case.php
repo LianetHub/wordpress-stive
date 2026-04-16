@@ -128,10 +128,7 @@ $logotypes = [
 <?php if (have_posts()) : ?>
 <section class="cases">
     <div class="container">
-        <div class="cases__header">
-            <h2 class="cases__title title-xs">Case Studies</h2>
-        </div>
-
+        <h2 class="cases__title title-xs">Case Studies</h2>
         <ul class="cases__grid">
             <?php while (have_posts()) : the_post(); ?>
 

@@ -17,6 +17,14 @@
 }
 
 @font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff2?v=1776345711370") format("woff2"), url("../fonts/icons.woff?v=1776345711370") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "SFProDisplay";
   font-display: swap;
   src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
@@ -25,18 +33,18 @@
 }
 
 @font-face {
-  font-family: "icons";
-  font-display: swap;
-  src: url("../fonts/icons.woff2?v=1776338012541") format("woff2"), url("../fonts/icons.woff?v=1776338012541") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "HelveticaNeue";
   font-display: swap;
   src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -53,14 +61,6 @@
   font-display: swap;
   src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
   font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
-  font-weight: 300;
   font-style: normal;
 }
 
@@ -453,8 +453,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .pagination__next[aria-disabled=true],
@@ -1998,7 +1998,7 @@ body {
 }
 
 .heading.heading--blog-post {
-  padding: 1.75rem 0 1rem;
+  padding: 1.75rem 0 0rem;
 }
 
 .heading.heading--blog-post .heading__title {
@@ -2655,8 +2655,7 @@ body {
   margin-top: 2rem;
   display: -ms-grid;
   display: grid;
-  gap: 1.25rem;
-  row-gap: 2rem;
+  gap: 1.5rem;
 }
 
 .cases__pagination {
@@ -5193,7 +5192,7 @@ body {
   }
 
   .case-card.case-card--white .case-card__desc {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
 
   .case-card__details {
@@ -5500,6 +5499,7 @@ body {
   }
 
   .cases__grid {
+    gap: 2rem;
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
   }
@@ -6543,6 +6543,12 @@ body {
     font-size: 2.125rem;
     line-height: 120%;
   }
+
+  .article__toc {
+    border: 0.0625rem solid #F2F2F2;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -6636,13 +6642,13 @@ body {
   .book__features li:first-child {
     max-width: 17rem;
   }
+
+  .article.article--post {
+    padding-top: 0;
+  }
 }
 
 @media (max-width: 575.98px) {
-  .pagination__item:not(.current, .dotts, .last) {
-    display: none;
-  }
-
   .person__name {
     font-size: 2.125rem;
     letter-spacing: normal;
@@ -6652,6 +6658,18 @@ body {
     padding: 2rem 0 1.5rem;
     border-radius: 1rem 1rem 0 0;
     background: #FFF;
+  }
+
+  .cases__title.title-xs,
+  .title-xs.why__title {
+    font-size: 2.125rem;
+    background: linear-gradient(112.24deg, #272727 12.75%, #2CDACC 190.37%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 
   .hero__btn.icon-whatsapp {
@@ -6722,6 +6740,7 @@ body {
   .pagination .prev:hover,
   .pagination .next:hover {
     background-color: rgb(216.5, 216.5, 216.5);
+    border-color: rgb(216.5, 216.5, 216.5);
   }
 
   .label-badge:hover {

@@ -11,7 +11,7 @@
     padding: 0.5rem 0 1rem;
 
     &.heading--blog-post {
-        padding: 1.75rem 0 1rem;
+        padding: 1.75rem 0 0rem;
 
         @media (min-width:$md4) {
             padding: 1rem 0 1rem;
@@ -961,6 +961,17 @@
 
     // .cases__title
     &__title {
+        &.title-xs {
+            @media (max-width:$md5) {
+                font-size: rem(34);
+                background: linear-gradient(112.24deg, #272727 12.75%, #2CDACC 190.37%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                width: fit-content;
+            }
+        }
+
         &.title {
             width: 100%;
             text-align: center;
@@ -1021,10 +1032,10 @@
     &__grid {
         margin-top: 2rem;
         display: grid;
-        gap: 1.25rem;
-        row-gap: 2rem;
+        gap: 1.5rem;
 
         @media (min-width:$md3) {
+            gap: 2rem;
             grid-template-columns: repeat(2, 1fr);
         }
     }
@@ -1106,7 +1117,7 @@
             padding: 2rem;
 
             .case-card__desc {
-                margin-top: 2rem;
+                margin-top: rem(24);
             }
 
         }

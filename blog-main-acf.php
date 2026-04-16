@@ -13,15 +13,15 @@ $calendly = get_field('calendly_link', 'option');
 <?php require_once(TEMPLATE_PATH . '_breadcrumbs.php'); ?>
 <?php require_once(TEMPLATE_PATH . '_stive-blog-header-post.php'); ?>
 
-<section class="article">
+<section class="article article--post">
     <div class="article__container container">
         <div class="article__wrapper">
             <div class="article__body typography-block">
-                <?php 
+                <?php
                 the_content();
                 ?>
             </div>
-                <?php display_universal_sidebar(); ?>
+            <?php display_universal_sidebar(); ?>
         </div>
     </div>
 </section>
@@ -43,7 +43,7 @@ if ($module_ids) {
                         ?>
                     </div>
                 </section>
-            <?php } else {
+<?php } else {
                 setup_postdata($post);
                 the_content();
                 wp_reset_postdata();

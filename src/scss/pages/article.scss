@@ -145,6 +145,12 @@
 .article {
     padding: 1.25rem 0;
 
+    &.article--post {
+        @media (max-width:$md4) {
+            padding-top: 0;
+        }
+    }
+
     @media (min-width:$md4) {
         padding: 2rem 0;
 
@@ -215,6 +221,12 @@
     &__toc {
         background: #FFFFFF;
         padding: 1.25rem 1.5rem;
+
+        @media (max-width:$md3) {
+            border: rem(1) solid #F2F2F2;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
     }
 
     // .article__toc-caption
