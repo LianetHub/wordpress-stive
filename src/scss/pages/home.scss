@@ -1339,6 +1339,7 @@
 
         .article-card {
             flex-direction: column;
+            align-items: stretch;
             gap: 1rem;
 
             .article-card__image {
@@ -1480,7 +1481,6 @@
 
         @media (min-width:$md4) {
             gap: 1.2rem;
-            ;
         }
     }
 

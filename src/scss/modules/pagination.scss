@@ -57,7 +57,9 @@
 
 	// .pagination__next
 	&__next,
-	&__prev {
+	&__prev,
+	.prev,
+	.next {
 		border-radius: 0.375rem;
 		border: rem(1) solid #F2F2F2;
 		background: #F2F2F2;
@@ -82,7 +84,5 @@
 		}
 	}
 
-	&__prev {}
 
-	&__next {}
 }
