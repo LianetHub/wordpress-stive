@@ -946,6 +946,12 @@
 
         .cases__title {
             text-align: center;
+
+            &.title-xs {
+                @media (max-width:$md5) {
+                    width: 100%;
+                }
+            }
         }
 
         @media (min-width:$md5) {

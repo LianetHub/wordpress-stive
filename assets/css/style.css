@@ -6660,6 +6660,11 @@ body {
     background: #FFF;
   }
 
+  .cases__header .cases__title.title-xs,
+  .cases__header .title-xs.why__title {
+    width: 100%;
+  }
+
   .cases__title.title-xs,
   .title-xs.why__title {
     font-size: 2.125rem;
