@@ -55,9 +55,8 @@ $current_cat = $_GET['category'] ?? '';
             <?php echo get_the_title($hero_id); ?>
           </a>
         </h2>
-
         <p class="post-main__description">
-          <?php echo get_the_excerpt($hero_id); ?>
+           <?php echo get_field('blog_header_description', $hero_id); ?>
         </p>
 
         <div class="post-main__categories">

@@ -98,7 +98,7 @@ $logotypes = [
                 </div>
             </div>
 
-            <p class="main-case__description"><?php echo get_the_excerpt($first_case_id); ?></p>
+            <p class="main-case__description"><?php echo esc_html(get_field('case_related_subtitle', $first_case_id)); ?></p>
 
             <?php $case_metrics = get_field('case_metrics', $first_case_id); ?>
             <?php if ($case_metrics) : ?>
@@ -152,7 +152,7 @@ $logotypes = [
                                     <?php the_title(); ?>
                                 </div>
                                 <p class="case-card__desc">
-                                    <?php echo get_the_excerpt(); ?>
+                                    <?php echo esc_html(get_field('case_related_subtitle')); ?>
                                 </p>
 
                                 <?php $case_metrics = get_field('case_metrics', $case_id); ?>
