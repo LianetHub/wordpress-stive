@@ -1,30 +1,30 @@
 <?php
 $results_items = [
-    [
-        'num'     => '292%',
-        'caption' => 'Traffic Growth',
-        'desc'    => 'Significant increase in organic search traffic following the implementation of LLM-optimized strategies.'
-    ],
-    [
-        'num'     => '45%',
-        'caption' => 'Conversion Rate',
-        'desc'    => 'Enhanced user engagement and streamlined funnels led to a steady rise in overall conversions.',
-    ],
-    [
-        'num'     => '-30%',
-        'caption' => 'CPA Reduction',
-        'desc'    => 'Strategic automation and precise targeting allowed us to lower the cost per acquisition effectively.',
-    ],
-    [
-        'num'     => '120k',
-        'caption' => 'New Users',
-        'desc'    => 'A record-breaking influx of unique visitors within the first quarter after the platform relaunch.',
-    ],
-    [
-        'num'     => '15/10',
-        'caption' => 'ROI Factor',
-        'desc'    => 'The return on investment exceeded initial projections, proving the efficiency of the new marketing mix.',
-    ],
+        [
+                'num' => '292%',
+                'caption' => 'Traffic Growth',
+                'desc' => 'Significant increase in organic search traffic following the implementation of LLM-optimized strategies.'
+        ],
+        [
+                'num' => '45%',
+                'caption' => 'Conversion Rate',
+                'desc' => 'Enhanced user engagement and streamlined funnels led to a steady rise in overall conversions.',
+        ],
+        [
+                'num' => '-30%',
+                'caption' => 'CPA Reduction',
+                'desc' => 'Strategic automation and precise targeting allowed us to lower the cost per acquisition effectively.',
+        ],
+        [
+                'num' => '120k',
+                'caption' => 'New Users',
+                'desc' => 'A record-breaking influx of unique visitors within the first quarter after the platform relaunch.',
+        ],
+        [
+                'num' => '15/10',
+                'caption' => 'ROI Factor',
+                'desc' => 'The return on investment exceeded initial projections, proving the efficiency of the new marketing mix.',
+        ],
 ];
 ?>
 
@@ -56,9 +56,9 @@ $results_items = [
                         <picture class="results__card-image">
                             <source srcset="<?php echo IMG_PATH ?>/why/ai-collage-mobile.webp" type="image/webp">
                             <img
-                                src="<?php echo IMG_PATH ?>/why/ai-collage-mobile.png"
-                                alt="ai agents"
-                                loading="lazy">
+                                    src="<?php echo IMG_PATH ?>/why/ai-collage-mobile.png"
+                                    alt="ai agents"
+                                    loading="lazy">
                         </picture>
                     </a>
                 </li>

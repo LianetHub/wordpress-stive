@@ -11,7 +11,4 @@ defined('ABSPATH') || exit; //silence is gold
 <?php the_content(); ?>
 
 
-
-
-
 <?php get_footer(); ?>

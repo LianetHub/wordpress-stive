@@ -1,13 +1,13 @@
 <?php
 $args = array(
-    'post_type'      => 'case',
-    'posts_per_page' => 10,
-    'orderby'        => 'date',
-    'order'          => 'DESC',
-    'post_status'    => 'publish',
+        'post_type' => 'case',
+        'posts_per_page' => 10,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_status' => 'publish',
 );
 
-$case_studies_query = new WP_Query( $args );
+$case_studies_query = new WP_Query($args);
 $case_studies = $case_studies_query->posts;
 
 
@@ -19,15 +19,15 @@ $case_studies = $case_studies_query->posts;
             <h2 class="cases__title title"><?php echo get_field('front_slider_h2'); ?></h2>
             <div class="cases__slider swiper">
                 <ul class="swiper-wrapper">
-                    <?php foreach ($case_studies as $case) : 
+                    <?php foreach ($case_studies as $case) :
                         $thumbnail_url = get_the_post_thumbnail_url($case->ID, 'full');
-                    ?>
+                        ?>
                         <li class="case-card swiper-slide">
                             <a href="<?php echo esc_url(get_permalink($case->ID)); ?>" class="case-card__link-wrapper">
                                 <picture class="case-card__image">
-                                    <img src="<?php echo esc_url($thumbnail_url); ?>" 
-                                         alt="<?php echo esc_attr(get_the_title($case->ID)); ?>" 
-                                         class="cover-image" 
+                                    <img src="<?php echo esc_url($thumbnail_url); ?>"
+                                         alt="<?php echo esc_attr(get_the_title($case->ID)); ?>"
+                                         class="cover-image"
                                          loading="lazy">
                                 </picture>
                                 <div class="case-card__details">
@@ -48,6 +48,6 @@ $case_studies = $case_studies_query->posts;
             </div>
         </div>
     </section>
-<?php endif; 
+<?php endif;
 wp_reset_postdata();
 ?>

@@ -1,19 +1,19 @@
 <?php
 $countries = [
-    'us' => 'USA',
-    've' => 'Venezuela',
-    'pl' => 'Poland',
-    'de' => 'Germany',
-    'ch' => 'Swiss',
-    'it' => 'Italy',
-    'tr' => 'Turkey',
-    'me' => 'Montenegro',
-    'eg' => 'Egypt',
-    'pa' => 'Panama',
-    'th' => 'Thailand',
-    'id' => 'Indonesia',
-    'cn' => 'China',
-    'jp' => 'Japan'
+        'us' => 'USA',
+        've' => 'Venezuela',
+        'pl' => 'Poland',
+        'de' => 'Germany',
+        'ch' => 'Swiss',
+        'it' => 'Italy',
+        'tr' => 'Turkey',
+        'me' => 'Montenegro',
+        'eg' => 'Egypt',
+        'pa' => 'Panama',
+        'th' => 'Thailand',
+        'id' => 'Indonesia',
+        'cn' => 'China',
+        'jp' => 'Japan'
 ];
 ?>
 
@@ -34,8 +34,8 @@ $countries = [
                             <div class="ready__badge">
                                 <div class="ready__badge-icon">
                                     <img
-                                        src="<?php echo IMG_PATH ?>/flags/<?php echo esc_attr($code); ?>.svg"
-                                        alt="<?php echo esc_attr($name); ?> flag">
+                                            src="<?php echo IMG_PATH ?>/flags/<?php echo esc_attr($code); ?>.svg"
+                                            alt="<?php echo esc_attr($name); ?> flag">
                                 </div>
                                 <div class="ready__badge-text"><?php echo esc_html($name); ?></div>
                             </div>
@@ -45,12 +45,12 @@ $countries = [
 
                 <div class="ready__actions">
                     <a href="https://calendly.com/as-stive/30min"
-                        data-calendly
-                        class="ready__btn btn btn-primary">Book Strategy Call</a>
+                       data-calendly
+                       class="ready__btn btn btn-primary">Book Strategy Call</a>
 
                     <a href="#get-proposal"
-                        data-fancybox
-                        class="ready__btn btn btn-grey">Get Proposal</a>
+                       data-fancybox
+                       class="ready__btn btn btn-grey">Get Proposal</a>
                 </div>
             </div>
         </div>

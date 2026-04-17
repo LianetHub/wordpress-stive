@@ -1,17 +1,17 @@
 <?php
 $goals_items = [
-    [
-        'title' => 'Brand Awareness',
-        'desc'  => 'Increase overall visibility in the digital landscape and establish a strong presence among the target audience.'
-    ],
-    [
-        'title' => 'Lead Generation',
-        'desc'  => 'Implement high-converting strategies to attract qualified prospects and grow the customer database.'
-    ],
-    [
-        'title' => 'Market Expansion',
-        'desc'  => 'Scale operations into new regions and demographics while maintaining consistent brand messaging.'
-    ],
+        [
+                'title' => 'Brand Awareness',
+                'desc' => 'Increase overall visibility in the digital landscape and establish a strong presence among the target audience.'
+        ],
+        [
+                'title' => 'Lead Generation',
+                'desc' => 'Implement high-converting strategies to attract qualified prospects and grow the customer database.'
+        ],
+        [
+                'title' => 'Market Expansion',
+                'desc' => 'Scale operations into new regions and demographics while maintaining consistent brand messaging.'
+        ],
 ];
 ?>
 

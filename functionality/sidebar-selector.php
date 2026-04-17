@@ -1,26 +1,28 @@
 <?php
-function get_all_registered_sidebars() {
+function get_all_registered_sidebars()
+{
     global $wp_registered_sidebars;
-    
+
     $sidebars = array();
-    
-    if(!empty($wp_registered_sidebars)) {
-        foreach($wp_registered_sidebars as $sidebar) {
+
+    if (!empty($wp_registered_sidebars)) {
+        foreach ($wp_registered_sidebars as $sidebar) {
             $sidebars[$sidebar['id']] = $sidebar['name'];
         }
     }
-    
+
     return $sidebars;
 }
 
 // Создаем поле ACF динамически через PHP
 add_action('acf/init', 'register_dynamic_sidebar_select_field');
-function register_dynamic_sidebar_select_field() {
-    if(function_exists('acf_add_local_field_group')) {
-        
+function register_dynamic_sidebar_select_field()
+{
+    if (function_exists('acf_add_local_field_group')) {
+
         // Получаем все сайдбары динамически
         $sidebar_choices = get_all_registered_sidebars();
-        
+
         acf_add_local_field_group(array(
             'key' => 'dynamic_sidebar_select',
             'title' => 'Настройки сайдбара',
@@ -51,4 +53,5 @@ function register_dynamic_sidebar_select_field() {
         ));
     }
 }
+
 ?>

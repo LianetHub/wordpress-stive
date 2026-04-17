@@ -33,6 +33,7 @@ function r4_themestive_enqueue_style()
     wp_enqueue_style('reset', STYLES_PATH . '/reset.min.css', array(), filemtime(STYLES_DIR . '/reset.min.css'));
     wp_enqueue_style('main-style', STYLES_PATH . '/style.min.css', array(), filemtime(STYLES_DIR . '/style.min.css'));
 }
+
 add_action('wp_enqueue_scripts', 'r4_themestive_enqueue_style');
 
 function r4_make_styles_async($tag, $handle, $src)
@@ -41,10 +42,10 @@ function r4_make_styles_async($tag, $handle, $src)
     if (is_admin() || is_user_logged_in()) return $tag;
 
     $async_styles = [
-        'swiper',
-        'fancybox',
-        'intlTelInput',
-        'calendly'
+            'swiper',
+            'fancybox',
+            'intlTelInput',
+            'calendly'
     ];
 
     if (in_array($handle, $async_styles)) {
@@ -62,45 +63,46 @@ function r4_themestive_enqueue_scripts()
 
 
     wp_enqueue_script('jquery', JS_PATH . '/libs/jquery-4.0.0.min.js', array(), filemtime(JS_DIR . '/libs/jquery-4.0.0.min.js'), [
-        'in_footer' => true,
-        'strategy'  => 'defer',
+            'in_footer' => true,
+            'strategy' => 'defer',
     ]);
 
     wp_enqueue_script('calendly-js', 'https://assets.calendly.com/assets/external/widget.js', array(), null, [
-        'in_footer' => true,
-        'strategy'  => 'async',
+            'in_footer' => true,
+            'strategy' => 'async',
     ]);
 
     wp_enqueue_script('swiper-js', JS_PATH . '/libs/swiper-bundle.min.js', array(), filemtime(JS_DIR . '/libs/swiper-bundle.min.js'), [
-        'in_footer' => true,
-        'strategy'  => 'defer',
+            'in_footer' => true,
+            'strategy' => 'defer',
     ]);
 
     wp_enqueue_script('fancybox-js', JS_PATH . '/libs/fancybox.umd.js', array(), filemtime(JS_DIR . '/libs/fancybox.umd.js'), [
-        'in_footer' => true,
-        'strategy'  => 'defer',
+            'in_footer' => true,
+            'strategy' => 'defer',
     ]);
 
 
     wp_enqueue_script('intlTelInput-js', JS_PATH . '/libs/intlTelInput.min.js', array(), filemtime(JS_DIR . '/libs/intlTelInput.min.js'), [
-        'in_footer' => true,
-        'strategy'  => 'defer',
+            'in_footer' => true,
+            'strategy' => 'defer',
     ]);
 
     wp_enqueue_script('app-js', JS_PATH . '/app.min.js', array('jquery', 'intlTelInput-js'), filemtime(JS_DIR . '/app.min.js'), [
-        'in_footer' => true,
-        'strategy'  => 'defer',
+            'in_footer' => true,
+            'strategy' => 'defer',
     ]);
-	
-	wp_enqueue_script('jquery', JS_PATH . '/blog-filter.js', array(), filemtime(JS_DIR . '/blog-filter.js'), [
-        'in_footer' => true,
-        'strategy'  => 'defer',
+
+    wp_enqueue_script('jquery', JS_PATH . '/blog-filter.js', array(), filemtime(JS_DIR . '/blog-filter.js'), [
+            'in_footer' => true,
+            'strategy' => 'defer',
     ]);
 
     wp_localize_script('blog-filter', 'blog_ajax', [
-        'url' => admin_url('admin-ajax.php')
+            'url' => admin_url('admin-ajax.php')
     ]);
 }
+
 add_action('wp_enqueue_scripts', 'r4_themestive_enqueue_scripts');
 
 // mark recaptcha js deferred
@@ -112,6 +114,7 @@ function defer_js($url)
     }
     return $url;
 }
+
 add_filter('script_loader_tag', 'defer_js', 11);
 
 
@@ -151,6 +154,7 @@ function allow_svg_uploads($mimes)
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
 }
+
 add_filter('upload_mimes', 'allow_svg_uploads');
 
 
@@ -193,41 +197,43 @@ add_filter('rank_math/frontend/breadcrumb/settings', function ($settings) {
  * @param array $mimes Существующий список разрешенных MIME-типов.
  * @return array Обновленный список MIME-типов.
  */
-function add_markdown_mime_type($mimes) {
+function add_markdown_mime_type($mimes)
+{
     // Добавляем MIME-тип для файлов .md
-	$mimes['md'] = 'text/plain';
+    $mimes['md'] = 'text/plain';
     return $mimes;
 }
+
 add_filter('upload_mimes', 'add_markdown_mime_type');
 
 function r4_get_reading_time($post_id = null, $wpm = 200, $seconds_per_image = 5)
 {
-  $post_id = $post_id ?: get_the_ID();
-  $html = apply_filters('the_content', get_post_field('post_content', $post_id));
-  $words = str_word_count(wp_strip_all_tags($html));
-  preg_match_all('/<img\b[^>]*>/i', $html, $matches);
-  $images = count($matches[0]);
-  $words += ($images * $seconds_per_image) * $wpm / 60;
+    $post_id = $post_id ?: get_the_ID();
+    $html = apply_filters('the_content', get_post_field('post_content', $post_id));
+    $words = str_word_count(wp_strip_all_tags($html));
+    preg_match_all('/<img\b[^>]*>/i', $html, $matches);
+    $images = count($matches[0]);
+    $words += ($images * $seconds_per_image) * $wpm / 60;
 
-  return max(1, (int) ceil($words / $wpm));
+    return max(1, (int)ceil($words / $wpm));
 }
 
 function r4_get_the_reading_time($before = '', $after = ' мин. читать')
 {
-  printf(
-    '%s%d%s',
-    $before,
-    r4_get_reading_time(),
-    $after
-  );
+    printf(
+            '%s%d%s',
+            $before,
+            r4_get_reading_time(),
+            $after
+    );
 }
 
 // Настройки для страницы архивов case start
-add_action('pre_get_posts', function($query) {
+add_action('pre_get_posts', function ($query) {
     if (
-        !is_admin() &&
-        $query->is_main_query() &&
-        is_post_type_archive('case')
+            !is_admin() &&
+            $query->is_main_query() &&
+            is_post_type_archive('case')
     ) {
         $query->set('posts_per_page', 5);
         $query->set('orderby', 'date');
@@ -237,12 +243,12 @@ add_action('pre_get_posts', function($query) {
 // Настройки для страницы архивов case end
 
 // Настройки для страницы архивов blog start
-add_action('pre_get_posts', function($query) {
+add_action('pre_get_posts', function ($query) {
 
     if (
-        !is_admin() &&
-        $query->is_main_query() &&
-        is_post_type_archive('blog')
+            !is_admin() &&
+            $query->is_main_query() &&
+            is_post_type_archive('blog')
     ) {
 
         $query->set('posts_per_page', 6);
@@ -251,8 +257,8 @@ add_action('pre_get_posts', function($query) {
 
         // ИСКЛЮЧАЕМ HERO
         $hero = get_posts([
-            'post_type' => 'blog',
-            'posts_per_page' => 1
+                'post_type' => 'blog',
+                'posts_per_page' => 1
         ]);
 
         if ($hero) {
@@ -262,11 +268,11 @@ add_action('pre_get_posts', function($query) {
         // ФИЛЬТР
         if (!empty($_GET['category'])) {
             $query->set('tax_query', [
-                [
-                    'taxonomy' => 'blog-list',
-                    'field'    => 'slug',
-                    'terms'    => sanitize_text_field($_GET['category']),
-                ]
+                    [
+                            'taxonomy' => 'blog-list',
+                            'field' => 'slug',
+                            'terms' => sanitize_text_field($_GET['category']),
+                    ]
             ]);
         }
     }
@@ -275,20 +281,21 @@ add_action('pre_get_posts', function($query) {
 add_action('wp_ajax_filter_blog', 'filter_blog');
 add_action('wp_ajax_nopriv_filter_blog', 'filter_blog');
 
-function filter_blog() {
+function filter_blog()
+{
 
     $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
 
     $args = [
-        'post_type' => 'blog',
-        'posts_per_page' => 6,
-        'orderby' => 'date',
-        'order' => 'DESC'
+            'post_type' => 'blog',
+            'posts_per_page' => 6,
+            'orderby' => 'date',
+            'order' => 'DESC'
     ];
 
     $hero = get_posts([
-        'post_type' => 'blog',
-        'posts_per_page' => 1
+            'post_type' => 'blog',
+            'posts_per_page' => 1
     ]);
 
     if ($hero) {
@@ -298,11 +305,11 @@ function filter_blog() {
     // ФИЛЬТР
     if ($category) {
         $args['tax_query'] = [
-            [
-                'taxonomy' => 'blog-list',
-                'field'    => 'slug',
-                'terms'    => $category,
-            ]
+                [
+                        'taxonomy' => 'blog-list',
+                        'field' => 'slug',
+                        'terms' => $category,
+                ]
         ];
     }
 

@@ -1,20 +1,20 @@
 <?php
 $features = [
-    [
-        'caption' => 'Result Title',
-        'num'     => '292%',
-        'desc'    => '1-2 sentences with context for this number'
-    ],
-    [
-        'caption' => 'Result Title',
-        'num'     => '292%',
-        'desc'    => '1-2 sentences with context for this number'
-    ],
-    [
-        'caption' => 'Result Title',
-        'num'     => '292%',
-        'desc'    => '1-2 sentences with context for this number'
-    ],
+        [
+                'caption' => 'Result Title',
+                'num' => '292%',
+                'desc' => '1-2 sentences with context for this number'
+        ],
+        [
+                'caption' => 'Result Title',
+                'num' => '292%',
+                'desc' => '1-2 sentences with context for this number'
+        ],
+        [
+                'caption' => 'Result Title',
+                'num' => '292%',
+                'desc' => '1-2 sentences with context for this number'
+        ],
 ];
 ?>
 

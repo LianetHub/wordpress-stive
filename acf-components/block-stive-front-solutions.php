@@ -1,75 +1,74 @@
 <?php
 $solutions = [
-    [
-        'title' => 'AI SEO &&nbsp;GEO Optimization',
-        'img_webp' => 'optimization.webp',
-        'img_jpg'  => 'optimization.jpg',
-        'link'     => '#'
-    ],
-    [
-        'title' => 'LLM Analytics &&nbsp;Audit',
-        'img_webp' => 'analytics.webp',
-        'img_jpg'  => 'analytics.jpg',
-        'link'     => '#'
-    ],
-    [
-        'title' => 'Ai Content &&nbsp;Automation',
-        'img_webp' => 'automation.webp',
-        'img_jpg'  => 'automation.jpg',
-        'link'     => '#'
-    ],
-    [
-        'title' => 'LLM Ads Management',
-        'img_webp' => 'ads.webp',
-        'img_jpg'  => 'ads.jpg',
-        'link'     => '#'
-    ],
-    [
-        'title' => 'LLM Reputation Management',
-        'img_webp' => 'reputation.webp',
-        'img_jpg'  => 'reputation.jpg',
-        'link'     => '#'
-    ],
-    [
-        'title' => 'LLM Brand Strategy',
-        'img_webp' => 'strategy.webp',
-        'img_jpg'  => 'strategy.jpg',
-        'link'     => '#'
-    ],
+        [
+                'title' => 'AI SEO &&nbsp;GEO Optimization',
+                'img_webp' => 'optimization.webp',
+                'img_jpg' => 'optimization.jpg',
+                'link' => '#'
+        ],
+        [
+                'title' => 'LLM Analytics &&nbsp;Audit',
+                'img_webp' => 'analytics.webp',
+                'img_jpg' => 'analytics.jpg',
+                'link' => '#'
+        ],
+        [
+                'title' => 'Ai Content &&nbsp;Automation',
+                'img_webp' => 'automation.webp',
+                'img_jpg' => 'automation.jpg',
+                'link' => '#'
+        ],
+        [
+                'title' => 'LLM Ads Management',
+                'img_webp' => 'ads.webp',
+                'img_jpg' => 'ads.jpg',
+                'link' => '#'
+        ],
+        [
+                'title' => 'LLM Reputation Management',
+                'img_webp' => 'reputation.webp',
+                'img_jpg' => 'reputation.jpg',
+                'link' => '#'
+        ],
+        [
+                'title' => 'LLM Brand Strategy',
+                'img_webp' => 'strategy.webp',
+                'img_jpg' => 'strategy.jpg',
+                'link' => '#'
+        ],
 ];
 
 $logotypes = [
-    [
-        'img_webp' => 'logo-clutch.webp',
-        'img_jpg'  => 'logo-clutch.jpg',
-        'alt'      => 'Clutch logo'
-    ],
-    [
-        'img_webp' => 'logo-techreviewer.webp',
-        'img_jpg'  => 'logo-techreviewer.jpg',
-        'alt'      => 'Techreviewer logo'
-    ],
-    [
-        'img_webp' => 'logo-trustpilot.webp',
-        'img_jpg'  => 'logo-trustpilot.jpg',
-        'alt'      => 'Trustpilot logo'
-    ],
-    [
-        'img_webp' => 'logo-marketinghub.webp',
-        'img_jpg'  => 'logo-marketinghub.jpg',
-        'alt'      => 'Marketinghub logo'
-    ],
+        [
+                'img_webp' => 'logo-clutch.webp',
+                'img_jpg' => 'logo-clutch.jpg',
+                'alt' => 'Clutch logo'
+        ],
+        [
+                'img_webp' => 'logo-techreviewer.webp',
+                'img_jpg' => 'logo-techreviewer.jpg',
+                'alt' => 'Techreviewer logo'
+        ],
+        [
+                'img_webp' => 'logo-trustpilot.webp',
+                'img_jpg' => 'logo-trustpilot.jpg',
+                'alt' => 'Trustpilot logo'
+        ],
+        [
+                'img_webp' => 'logo-marketinghub.webp',
+                'img_jpg' => 'logo-marketinghub.jpg',
+                'alt' => 'Marketinghub logo'
+        ],
 ];
 
 
 $logotypes = [
-    ['img' => 'logo-clutch.webp', 'alt' => 'Clutch logo'],
-    ['img' => 'logo-techreviewer.webp', 'alt' => 'Techreviewer logo'],
-    ['img' => 'logo-trustpilot.webp', 'alt' => 'Trustpilot logo'],
-    ['img' => 'logo-marketinghub.webp', 'alt' => 'Marketinghub logo'],
+        ['img' => 'logo-clutch.webp', 'alt' => 'Clutch logo'],
+        ['img' => 'logo-techreviewer.webp', 'alt' => 'Techreviewer logo'],
+        ['img' => 'logo-trustpilot.webp', 'alt' => 'Trustpilot logo'],
+        ['img' => 'logo-marketinghub.webp', 'alt' => 'Marketinghub logo'],
 ];
 ?>
-
 
 
 <?php if ($solutions): ?>
@@ -85,8 +84,8 @@ $logotypes = [
                         <?php foreach ($logotypes as $logo): ?>
                             <div class="solutions__logotype">
                                 <img
-                                    src="<?php echo IMG_PATH . '/solutions/' . $logo['img']; ?>"
-                                    alt="<?php echo esc_attr($logo['alt']); ?>">
+                                        src="<?php echo IMG_PATH . '/solutions/' . $logo['img']; ?>"
+                                        alt="<?php echo esc_attr($logo['alt']); ?>">
                             </div>
                         <?php endforeach; ?>
                     </div>

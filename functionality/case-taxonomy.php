@@ -6,24 +6,24 @@ function case_taxonomy()
     register_post_type(
         'case',
         array(
-            'label'               => __('case'),
-            'labels'              => array(
-                'name'                => _x('Case', 'Post Type General Name'),
-                'singular_name'       => _x('Case', 'Post Type Singular Name'),
-                'menu_name'           => __('Case'),
+            'label' => __('case'),
+            'labels' => array(
+                'name' => _x('Case', 'Post Type General Name'),
+                'singular_name' => _x('Case', 'Post Type Singular Name'),
+                'menu_name' => __('Case'),
             ),
-            'supports'            => array('title', 'author', 'thumbnail', 'revisions', 'editor', 'tags'), // Добавляем поддержку тегов
-            'hierarchical'        => false,
-            'public'              => true,
-            'show_ui'             => true,
-            'show_in_menu'        => true,
-            'show_in_nav_menus'   => true,
-            'can_export'          => true,
-            'has_archive'         => true,
+            'supports' => array('title', 'author', 'thumbnail', 'revisions', 'editor', 'tags'), // Добавляем поддержку тегов
+            'hierarchical' => false,
+            'public' => true,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'show_in_nav_menus' => true,
+            'can_export' => true,
+            'has_archive' => true,
             'exclude_from_search' => false,
-            'publicly_queryable'  => true,
-            'capability_type'     => 'post_case',
-            'map_meta_cap'      => true,
+            'publicly_queryable' => true,
+            'capability_type' => 'post_case',
+            'map_meta_cap' => true,
             'show_in_rest' => true,
         )
     );
@@ -43,12 +43,12 @@ function case_taxonomy()
             'show_in_rest' => true,
             'show_admin_column' => true,
             'query_var' => true,
-			'capabilities' => array(
-			'manage_terms'	=>	'manage_case-list',
-			'edit_terms'	=>	'edit_case-list',
-			'delete_terms'	=>	'delete_case-list',
-			'assign_terms'	=>	'assign_case-list',
-		),
+            'capabilities' => array(
+                'manage_terms' => 'manage_case-list',
+                'edit_terms' => 'edit_case-list',
+                'delete_terms' => 'delete_case-list',
+                'assign_terms' => 'assign_case-list',
+            ),
             'rewrite' => true
         )
     );
@@ -68,12 +68,12 @@ function case_taxonomy()
             'show_in_rest' => true,
             'show_admin_column' => true,
             'query_var' => true,
-			'capabilities' => array(
-			'manage_terms'	=>	'manage_case-tags',
-			'edit_terms'	=>	'edit_case-tags',
-			'delete_terms'	=>	'delete_case-tags',
-			'assign_terms'	=>	'assign_case-tags',
-		),
+            'capabilities' => array(
+                'manage_terms' => 'manage_case-tags',
+                'edit_terms' => 'edit_case-tags',
+                'delete_terms' => 'delete_case-tags',
+                'assign_terms' => 'assign_case-tags',
+            ),
             'rewrite' => true
         )
     );

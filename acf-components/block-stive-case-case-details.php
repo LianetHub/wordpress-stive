@@ -14,8 +14,8 @@ $case_details_img = get_field('case_details_img'); //img
                 <div class="person__thumb">
                     <?php if (!empty($case_details_thumb)) { ?>
                         <img class="cover-image"
-                            src="<?php echo esc_url($case_details_thumb['url']); ?>"
-                            alt="<?php echo esc_attr($case_details_thumb['alt']); ?>">
+                             src="<?php echo esc_url($case_details_thumb['url']); ?>"
+                             alt="<?php echo esc_attr($case_details_thumb['alt']); ?>">
                     <?php } ?>
                 </div>
                 <div class="person__info">
@@ -31,17 +31,17 @@ $case_details_img = get_field('case_details_img'); //img
                     </li>
                 <?php } ?>
             </ul>
-			<div class="case-details__categories">
-            <?php echo display_category_and_tag_terms($post_id=get_the_ID(), $taxonomy='case-tags', $tag='a', $class='case-details__category label-badge label-badge--small'); ?>
+            <div class="case-details__categories">
+                <?php echo display_category_and_tag_terms($post_id = get_the_ID(), $taxonomy = 'case-tags', $tag = 'a', $class = 'case-details__category label-badge label-badge--small'); ?>
             </div>
-		</div>
+        </div>
         <div class="case-details__description typography-block">
             <h2><?php echo $case_details_h2; ?></h2>
             <?php echo $case_details_desc; ?>
             <?php if (!empty($case_details_img)) { ?>
                 <img class="case image"
-                    src="<?php echo esc_url($case_details_img['url']); ?>"
-                    alt="<?php echo esc_attr($case_details_img['alt']); ?>">
+                     src="<?php echo esc_url($case_details_img['url']); ?>"
+                     alt="<?php echo esc_attr($case_details_img['alt']); ?>">
             <?php } ?>
         </div>
     </div>

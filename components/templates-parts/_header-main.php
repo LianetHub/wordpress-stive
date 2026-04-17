@@ -8,8 +8,8 @@ $calendly = get_field('calendly_link', 'option');
         <div class="header__wrapper">
             <a href="<?php echo home_url(); ?>" class="header__logo">
                 <img
-                    src="<?php echo esc_url($logotype['url']); ?>"
-                    alt="Stive.ai - AI Marketing Agency">
+                        src="<?php echo esc_url($logotype['url']); ?>"
+                        alt="Stive.ai - AI Marketing Agency">
             </a>
 
             <div class="menu" id="primary-menu">
@@ -22,15 +22,15 @@ $calendly = get_field('calendly_link', 'option');
                                     $link_url = $link['url'];
                                     $link_title = $link['title'];
                                     $link_target = $link['target'] ? $link['target'] : '_self';
-                            ?>
+                                    ?>
                                     <li class="menu__item">
                                         <a href="<?php echo esc_url($link_url); ?>"
-                                            class="menu__link"                                           
-                                            target="<?php echo esc_attr( $link_target ); ?>" rel="noopener">
+                                           class="menu__link"
+                                           target="<?php echo esc_attr($link_target); ?>" rel="noopener">
                                             <?php echo esc_html($link_title); ?>
                                         </a>
                                     </li>
-                            <?php endif;
+                                <?php endif;
                             endwhile; ?>
                         </ul>
                     <?php endif; ?>
@@ -38,10 +38,10 @@ $calendly = get_field('calendly_link', 'option');
 
                 <div class="header__languages">
                     <button type="button"
-                        class="header__languages-toggler icon-chevron-down"
-                        aria-label="Select language"
-                        aria-haspopup="true"
-                        aria-expanded="false">
+                            class="header__languages-toggler icon-chevron-down"
+                            aria-label="Select language"
+                            aria-haspopup="true"
+                            aria-expanded="false">
                         <span class="header__languages-icon">
                             <img src="<?php echo IMG_PATH ?>/flags/us.svg" alt="icon">
                         </span>
@@ -52,37 +52,37 @@ $calendly = get_field('calendly_link', 'option');
                 </div>
 
                 <ul class="menu__socials socials">
-					<?php while (have_rows('socials_links', 'option')): the_row();
-                                $link = get_sub_field('link');
-                                if ($link):
-                                    $link_url = $link['url'];
-                                    $link_title = $link['title'];
-                                    $link_target = $link['target'] ? $link['target'] : '_self';
+                    <?php while (have_rows('socials_links', 'option')): the_row();
+                        $link = get_sub_field('link');
+                        if ($link):
+                            $link_url = $link['url'];
+                            $link_title = $link['title'];
+                            $link_target = $link['target'] ? $link['target'] : '_self';
                             ?>
-                        <li class="socials__item">
-						    <a href="<?php echo esc_url($link_url); ?>"
-							class="social__link"                                           
-                            target="<?php echo esc_attr( $link_target ); ?>" rel="noopener">
-                            <?php echo esc_html($link_title); ?>
-                            </a>
-                        </li>
-					<?php endif;
-                         endwhile; ?>
+                            <li class="socials__item">
+                                <a href="<?php echo esc_url($link_url); ?>"
+                                   class="social__link"
+                                   target="<?php echo esc_attr($link_target); ?>" rel="noopener">
+                                    <?php echo esc_html($link_title); ?>
+                                </a>
+                            </li>
+                        <?php endif;
+                    endwhile; ?>
                 </ul>
             </div>
 
             <a href="<?php echo $calendly['url']; ?>"
-                data-calendly
-                class="header__btn btn btn-primary icon-calendar"
-                aria-label="Book Intro Call on Calendly">
+               data-calendly
+               class="header__btn btn btn-primary icon-calendar"
+               aria-label="Book Intro Call on Calendly">
                 <span class="header__btn-text"><?php echo $calendly['title']; ?></span>
             </a>
 
             <button type="button"
-                aria-label="Toggle navigation"
-                aria-controls="primary-menu"
-                aria-expanded="false"
-                class="header__menu-toggler icon-menu">
+                    aria-label="Toggle navigation"
+                    aria-controls="primary-menu"
+                    aria-expanded="false"
+                    class="header__menu-toggler icon-menu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>

@@ -1,29 +1,29 @@
 <?php
 $case_studies = [
-    [
-        'class'    => 'swiper-slide',
-        'name'     => 'How we fixed casino reviews',
-        'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
-        'img_webp' => 'case_study-1.webp',
-        'img_jpg'  => 'case_study-1.jpg',
-        'link'     => '#',
-    ],
-    [
-        'class'    => 'swiper-slide',
-        'name'     => '80% Organic Traffic Growth',
-        'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
-        'img_webp' => 'case_study-2.webp',
-        'img_jpg'  => 'case_study-2.jpg',
-        'link'     => '#',
-    ],
-    [
-        'class'    => 'swiper-slide',
-        'name'     => 'YouTube & Reddit strategy',
-        'desc'     => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
-        'img_webp' => 'case_study-3.webp',
-        'img_jpg'  => 'case_study-3.jpg',
-        'link'     => '#',
-    ]
+        [
+                'class' => 'swiper-slide',
+                'name' => 'How we fixed casino reviews',
+                'desc' => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
+                'img_webp' => 'case_study-1.webp',
+                'img_jpg' => 'case_study-1.jpg',
+                'link' => '#',
+        ],
+        [
+                'class' => 'swiper-slide',
+                'name' => '80% Organic Traffic Growth',
+                'desc' => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
+                'img_webp' => 'case_study-2.webp',
+                'img_jpg' => 'case_study-2.jpg',
+                'link' => '#',
+        ],
+        [
+                'class' => 'swiper-slide',
+                'name' => 'YouTube & Reddit strategy',
+                'desc' => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
+                'img_webp' => 'case_study-3.webp',
+                'img_jpg' => 'case_study-3.jpg',
+                'link' => '#',
+        ]
 ];
 ?>
 

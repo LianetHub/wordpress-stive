@@ -3,13 +3,13 @@
         <div class="book__content">
             <picture class="book__image">
                 <source
-                    srcset="<?php echo IMG_PATH ?>/book.webp"
-                    type="image/webp">
+                        srcset="<?php echo IMG_PATH ?>/book.webp"
+                        type="image/webp">
                 <img src="<?php echo IMG_PATH ?>/book.png"
-                    alt="HackGPT Book"
-                    width="525"
-                    height="692"
-                    loading="lazy">
+                     alt="HackGPT Book"
+                     width="525"
+                     height="692"
+                     loading="lazy">
             </picture>
             <div class="book__header">
                 <p class="book__tagline">Proved Methodology with own book</p>
