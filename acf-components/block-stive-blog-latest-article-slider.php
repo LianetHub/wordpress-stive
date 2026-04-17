@@ -23,7 +23,8 @@ $blog_sliders = $blog_sliders_query->posts; // Получаем массив п�
 	if( $blog_las_link ): 
     $link_url = $blog_las_link['url'];
     $link_title = $blog_las_link['title'];
-    $link_target = $blog_las_link['target'] ? $blog_las_link['target'] : '_self';
+        /** @noinspection PhpTernaryExpressionCanBeReducedToShortVersionInspection */
+        $link_target = $blog_las_link['target'] ? $blog_las_link['target'] : '_self';
     ?>
     <a class="media__block-all" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 <?php endif; ?>
