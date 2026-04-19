@@ -9,26 +9,18 @@
 }
 
 @font-face {
-  font-family: "HelveticaNeue";
-  font-display: swap;
-  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons.woff2?v=1776345711370") format("woff2"), url("../fonts/icons.woff?v=1776345711370") format("woff");
+  src: url("../fonts/icons.woff2?v=1776586535781") format("woff2"), url("../fonts/icons.woff?v=1776586535781") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "SFProDisplay";
+  font-family: "HelveticaNeue";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -43,14 +35,6 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
   src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -59,8 +43,16 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
-  font-weight: 800;
+  src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -69,6 +61,14 @@
   font-display: swap;
   src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -985,6 +985,10 @@ body {
 
 .typography-block ol {
   counter-reset: i;
+}
+
+.typography-block ol:has(li:nth-child(10)) li {
+  padding-left: 1.5em;
 }
 
 .typography-block ol li::before {
@@ -2082,7 +2086,7 @@ body {
 }
 
 .features {
-  padding: 1rem 0 2.5rem;
+  padding: 1rem 0 1.125rem;
 }
 
 .features__list {
@@ -2124,7 +2128,7 @@ body {
 }
 
 .case-details {
-  padding: 2.5rem 0 1.25rem;
+  padding: 1.125rem 0 1.25rem;
 }
 
 .case-details__container {
@@ -2321,6 +2325,11 @@ body {
   background: transparent;
   border: 0;
   padding: 0;
+  min-height: 12.3125rem;
+}
+
+.results__card-num.title {
+  line-height: normal;
 }
 
 .results__card-caption {
@@ -3738,23 +3747,6 @@ body {
   z-index: 2;
 }
 
-.steps__item-image::before {
-  content: "";
-  position: absolute;
-  top: 6.25rem;
-  right: 3.5rem;
-  width: 10rem;
-  height: 10rem;
-  -webkit-transform: rotate(13.47deg);
-      -ms-transform: rotate(13.47deg);
-          transform: rotate(13.47deg);
-  border-radius: 19.9375rem;
-  background: rgba(178, 178, 178, 0.5);
-  -webkit-filter: blur(2rem);
-          filter: blur(2rem);
-  z-index: -1;
-}
-
 .steps__item-bottom {
   margin-top: auto;
   display: -webkit-box;
@@ -4322,8 +4314,8 @@ body {
   border-radius: 0.5rem;
   border: 0.0625rem solid #F2F2F2;
   background: #FFF;
-  padding: 2rem;
   margin-inline: -1rem;
+  padding: 2rem 1rem;
 }
 
 .article__body.typography-block h2,
@@ -4958,6 +4950,23 @@ body {
     line-height: 200%;
   }
 
+  .typography-block ul li,
+  .typography-block ol li {
+    position: relative;
+    padding-left: 1em;
+  }
+
+  .typography-block ul li::before,
+  .typography-block ol li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .typography-block ul li::before {
+    top: 0.85rem;
+  }
+
   .btn.btn-sm {
     padding: 0.9375rem 1.375rem;
   }
@@ -5300,6 +5309,7 @@ body {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    row-gap: 2.5rem;
   }
 
   .media__block-events {
@@ -5359,9 +5369,22 @@ body {
   }
 
   .cooming-soon {
-    background: url("../img/cooming-soon/cooming-soon-blur-1.svg") 0 0/auto no-repeat, url("../img/cooming-soon/cooming-soon-blur-2.svg") 100% 100%/auto no-repeat, url("../img/cooming-soon/coomin-soon-bg.png") center bottom/cover no-repeat, radial-gradient(50% 50% at 50% 50%, #1F2228 0%, #18191B 100%);
+    position: relative;
+    z-index: 1;
+    background: url("../img/cooming-soon/cooming-soon-blur-1.svg") 0 0/auto no-repeat, url("../img/cooming-soon/cooming-soon-blur-2.svg") 100% 100%/auto no-repeat, radial-gradient(50% 50% at 50% 50%, #1F2228 0%, #18191B 100%);
     padding: 3rem 0;
-    background-blend-mode: multiply;
+  }
+
+  .cooming-soon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../img/cooming-soon/coomin-soon-bg.png") center bottom/cover no-repeat;
+    mix-blend-mode: multiply;
+    z-index: -1;
   }
 
   .cooming-soon__logo {
@@ -5828,6 +5851,7 @@ body {
 
   .article__body {
     margin-inline: 0;
+    padding: 2rem;
   }
 
   .article__sidebar {
@@ -6221,11 +6245,6 @@ body {
     height: 22.5rem;
   }
 
-  .steps__item-image::before {
-    width: 14.6875rem;
-    height: 19.9375rem;
-  }
-
   .steps__item-num {
     left: 1.25rem;
     font-size: 5.5rem;
@@ -6305,6 +6324,10 @@ body {
   .footer__terms {
     margin-right: auto;
     margin-left: 9.8rem;
+  }
+
+  .conclusion__container.container {
+    max-width: 75.875rem;
   }
 
   .cases-heading__logotype {

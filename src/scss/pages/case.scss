@@ -189,7 +189,7 @@
 }
 
 .features {
-    padding: 1rem 0 rem(40);
+    padding: 1rem 0 rem(18);
 
     @media (min-width:$md2) {
         padding: 2rem 0 rem(40);
@@ -240,7 +240,7 @@
 }
 
 .case-details {
-    padding: rem(40) 0 1.25rem;
+    padding: rem(18) 0 1.25rem;
 
     @media (min-width:$md4) {
         padding: rem(40) 0 2rem;
@@ -417,6 +417,10 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 3rem;
             }
+
+            @media (min-width:$md1) {
+                max-width: rem(1214);
+            }
         }
     }
 
@@ -513,11 +517,16 @@
             background: transparent;
             border: 0;
             padding: 0;
+            min-height: rem(197);
         }
     }
 
     // .results__card-num
-    &__card-num {}
+    &__card-num {
+        &.title {
+            line-height: normal;
+        }
+    }
 
     // .results__card-caption
     &__card-caption {

@@ -567,13 +567,24 @@
 
 				@media (min-width:$md4) {
 					margin-bottom: 0;
-
 				}
 			}
 
 			@media (min-width:$md4) {
 				line-height: 200%;
+			}
 
+			@media (min-width:$md4) {
+				position: relative;
+				padding-left: 1em;
+
+				&::before {
+
+					position: absolute;
+					top: 0;
+					left: 0;
+
+				}
 			}
 		}
 
@@ -594,6 +605,10 @@
 				vertical-align: middle;
 				background: $accent;
 				border-radius: 50%;
+
+				@media (min-width:$md4) {
+					top: 0.85rem;
+				}
 			}
 		}
 
@@ -601,6 +616,12 @@
 
 	ol {
 		counter-reset: i;
+
+		&:has(li:nth-child(10)) {
+			li {
+				padding-left: 1.5em;
+			}
+		}
 
 		li {
 			&::before {

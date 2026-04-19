@@ -1,4 +1,4 @@
-<section class="case">
+<section class="heading">
     <div class="heading__container container">
         <div class="heading__main">
             <div class="heading__categories">
@@ -16,12 +16,12 @@
         </div>
         <picture class="heading__image">
             <source
-                    srcset="<?php echo IMG_PATH . '/cases/case_study-1.webp' ?>"
-                    type="image/webp">
+                srcset="<?php echo IMG_PATH . '/cases/case_study-1.webp' ?>"
+                type="image/webp">
             <img
-                    src="<?php echo IMG_PATH . '/cases/case_study-1.jpg' ?>"
-                    alt="case image"
-                    class="cover-image">
+                src="<?php echo IMG_PATH . '/cases/case_study-1.jpg' ?>"
+                alt="case image"
+                class="cover-image">
         </picture>
     </div>
 </section>

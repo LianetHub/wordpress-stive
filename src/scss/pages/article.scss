@@ -175,11 +175,12 @@
         border-radius: 0.5rem;
         border: rem(1) solid #F2F2F2;
         background: #FFF;
-        padding: 2rem;
         margin-inline: -1rem;
+        padding: 2rem 1rem;
 
         @media (min-width:$md3) {
             margin-inline: 0;
+            padding: 2rem;
         }
 
         &.typography-block {

@@ -6,24 +6,17 @@
                                 font-style: normal;
                             }
 @font-face {
-                                font-family: 'HelveticaNeue';
-                                font-display: swap;
-                                src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
-                                font-weight: 500;
-                                font-style: normal;
-                            }
-@font-face {
                                 font-family: 'icons';
                                 font-display: swap;
-                                src: url("../fonts/icons.woff2?v=1776345711370") format("woff2"), url("../fonts/icons.woff?v=1776345711370") format("woff");
+                                src: url("../fonts/icons.woff2?v=1776586535781") format("woff2"), url("../fonts/icons.woff?v=1776586535781") format("woff");
                                 font-weight: 400;
                                 font-style: normal;
                             }
 @font-face {
-                                font-family: 'SFProDisplay';
+                                font-family: 'HelveticaNeue';
                                 font-display: swap;
-                                src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
-                                font-weight: 900;
+                                src: url("../fonts/HelveticaNeue-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeue-Medium.woff") format("woff");
+                                font-weight: 500;
                                 font-style: normal;
                             }
 @font-face {
@@ -36,13 +29,6 @@
 @font-face {
                                 font-family: 'SFProDisplay';
                                 font-display: swap;
-                                src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
-                                font-weight: 300;
-                                font-style: normal;
-                            }
-@font-face {
-                                font-family: 'SFProDisplay';
-                                font-display: swap;
                                 src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
                                 font-weight: 700;
                                 font-style: normal;
@@ -50,8 +36,15 @@
 @font-face {
                                 font-family: 'SFProDisplay';
                                 font-display: swap;
-                                src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
-                                font-weight: 800;
+                                src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
+                                font-weight: 900;
+                                font-style: normal;
+                            }
+@font-face {
+                                font-family: 'SFProDisplay';
+                                font-display: swap;
+                                src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
+                                font-weight: 300;
                                 font-style: normal;
                             }
 @font-face {
@@ -59,6 +52,13 @@
                                 font-display: swap;
                                 src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
                                 font-weight: 500;
+                                font-style: normal;
+                            }
+@font-face {
+                                font-family: 'SFProDisplay';
+                                font-display: swap;
+                                src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
+                                font-weight: 800;
                                 font-style: normal;
                             }
 @font-face {
