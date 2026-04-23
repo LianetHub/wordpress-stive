@@ -1,7 +1,6 @@
 <?php
 $case_results_h2 = get_field('case_results_h2'); //text
 $case_results_items = get_field('case_results_items'); //repeater
-$case_results_card_url = get_field('case_results_card_url'); //link
 
 ?>
 
@@ -25,10 +24,7 @@ $case_results_card_url = get_field('case_results_card_url'); //link
                     </li>
                 <?php endforeach; ?>
                 <li class="results__card results__card--button">
-                    <?php if ($case_results_card_url) {
-                        $link_url = $case_results_card_url['url'];
-                        $link_target = $case_results_card_url['target'] ? $case_results_card_url['target'] : '_self'; ?>
-                        <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"
+                        <a href="#get-proposal" data-fancybox
                             class="results__card-link">
                             <div class="results__card-title">
                                 Bring me <br> same result
@@ -40,7 +36,6 @@ $case_results_card_url = get_field('case_results_card_url'); //link
                                     loading="lazy">
                             </picture>
                         </a>
-                    <?php } ?>
                 </li>
             </ul>
         <?php endif; ?>
