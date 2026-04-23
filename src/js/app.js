@@ -194,6 +194,28 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    if ($(".stats-slider").length) {
+        new Swiper('.stats-slider', {
+            slidesPerView: 1,
+            loop: true,
+            watchOverflow: true,
+            autoplay: {
+                speed: 5000,
+                stopOnLastSlide: true
+            },
+            breakpoints: {
+                575.98: {
+                    slidesPerView: 2,
+                },
+                991.98: {
+                    slidesPerView: 4,
+                }
+            }
+        })
+    }
+
+
+
     if ($('.industries__tabs').length && $('.industries__slider').length) {
 
         const $tabsSlider = $('.industries__tabs');

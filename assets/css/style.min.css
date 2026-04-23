@@ -2011,6 +2011,34 @@ body {
     height: 100%
 }
 
+.heading__side {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.heading__side .heading__image {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto
+}
+
+.heading__side .stats-slider {
+    position: absolute;
+    bottom: 0;
+    left: -.0625rem;
+    right: -.0625rem;
+    width: 100%
+}
+
 .heading__stats {
     margin-top: 1.25rem;
     -webkit-box-ordinal-group: 2;
@@ -2020,6 +2048,44 @@ body {
 
 .heading__author {
     margin-top: 1.25rem
+}
+
+.stats-slider {
+    min-width: 0;
+    max-width: 100%;
+    padding: 1.5rem 0;
+    background: rgba(255, 255, 255, .02);
+    backdrop-filter: blur(.5rem);
+    -webkit-backdrop-filter: blur(.5rem)
+}
+
+.stats-slider__slide {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: .75rem;
+    padding: 0 1rem;
+    border-right: .0625rem solid #7c8698
+}
+
+.stats-slider__slide-caption {
+    color: #7c8698;
+    font-size: .875rem
+}
+
+.stats-slider__slide-value {
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #fff
 }
 
 .features {
@@ -4526,6 +4592,13 @@ body {
         flex-direction: row
     }
 
+    .stats-slider:not(.swiper-initialized) .swiper-wrapper {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr)
+    }
+
     .case-details__container {
         gap: 1.5rem
     }
@@ -5800,6 +5873,11 @@ body {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 31.25rem;
         flex: 0 0 31.25rem
+    }
+
+    .stats-slider:not(.swiper-initialized) .swiper-wrapper {
+        -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr)
     }
 
     .features {

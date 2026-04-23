@@ -46,6 +46,26 @@ $calendly = get_field('calendly_link', 'option');
             </div>
         </div>
         <div class="heading__side">
+            <div class="stats-slider swiper">
+                <div class="swiper-wrapper">
+                    <div class="stats-slider__slide swiper-slide">
+                        <div class="stats-slider__slide-caption">ChatGPT referral traffic</div>
+                        <div class="stats-slider__slide-value">+688%</div>
+                    </div>
+                    <div class="stats-slider__slide swiper-slide">
+                        <div class="stats-slider__slide-caption">Perplexity referral traffic</div>
+                        <div class="stats-slider__slide-value">+268%</div>
+                    </div>
+                    <div class="stats-slider__slide swiper-slide">
+                        <div class="stats-slider__slide-caption">Bing organic traffic </div>
+                        <div class="stats-slider__slide-value">+726%</div>
+                    </div>
+                    <div class="stats-slider__slide swiper-slide">
+                        <div class="stats-slider__slide-caption">Citations</div>
+                        <div class="stats-slider__slide-value">780+</div>
+                    </div>
+                </div>
+            </div>
             <picture class="heading__image">
                 <source
                     srcset="<?php echo IMG_PATH . '/stive-blog-new.webp' ?>"
