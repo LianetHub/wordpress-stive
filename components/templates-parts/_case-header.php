@@ -11,7 +11,7 @@
                 outcome. Collpases with +- toggle on mobile</p>
             <div class="heading__actions">
                 <a href="" class="heading__btn btn btn-primary">Get Similar Results</a>
-                <a href="" class="heading__btn btn btn-grey">See How We Did It</a>
+                <a href="#case-content" class="heading__btn btn btn-grey">See How We Did It</a>
             </div>
         </div>
         <picture class="heading__image">

@@ -19,7 +19,7 @@ $standard_blocks_buffer = '';
 function wrap_standard_content($content)
 {
     if (empty(trim($content))) return '';
-    return '<article class="article">
+    return '<article id="case-content" class="article">
                 <div class="article__container container typography-block">'
         . $content .
         '</div>

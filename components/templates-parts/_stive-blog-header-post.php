@@ -14,7 +14,7 @@ $blog_header_description = get_field('blog_header_description'); //text
                     <?php echo esc_html(get_the_date('F j, Y')); ?>
                 </time>
                 <time datetime="<?php echo esc_attr(get_the_modified_date('Y-m-d')); ?>"
-                      class="stats-block__item icon-update">
+                    class="stats-block__item icon-update">
                     <?php echo esc_html(get_the_modified_date('F j, Y')); ?>
                 </time>
                 <div class="stats-block__item icon-clock">
@@ -37,9 +37,9 @@ $blog_header_description = get_field('blog_header_description'); //text
         </div>
         <picture class="heading__image ">
             <img
-                    src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
-                    alt="blog image"
-                    class="cover-image">
+                src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>"
+                alt="blog image"
+                class="cover-image">
         </picture>
     </div>
 </section>

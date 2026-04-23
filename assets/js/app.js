@@ -159,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if ($(".cases__slider").length) {
         new Swiper('.cases__slider', {
             slidesPerView: 1,
-            initialSlide: 1,
             spaceBetween: 4,
             loop: true,
             slideToClickedSlide: true,

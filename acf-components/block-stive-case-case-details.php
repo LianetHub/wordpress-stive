@@ -14,8 +14,12 @@ $case_details_img = get_field('case_details_img'); //img
                 <div class="person__thumb">
                     <?php if (!empty($case_details_thumb)) { ?>
                         <img class="cover-image"
-                             src="<?php echo esc_url($case_details_thumb['url']); ?>"
-                             alt="<?php echo esc_attr($case_details_thumb['alt']); ?>">
+                            src="<?php echo esc_url($case_details_thumb['url']); ?>"
+                            alt="<?php echo esc_attr($case_details_thumb['alt']); ?>">
+                    <?php } else { ?>
+                        <img class="cover-image"
+                            src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/person-placeholder.jpg'); ?>"
+                            alt="Placeholder">
                     <?php } ?>
                 </div>
                 <div class="person__info">
@@ -40,8 +44,8 @@ $case_details_img = get_field('case_details_img'); //img
             <?php echo $case_details_desc; ?>
             <?php if (!empty($case_details_img)) { ?>
                 <img class="case image"
-                     src="<?php echo esc_url($case_details_img['url']); ?>"
-                     alt="<?php echo esc_attr($case_details_img['alt']); ?>">
+                    src="<?php echo esc_url($case_details_img['url']); ?>"
+                    alt="<?php echo esc_attr($case_details_img['alt']); ?>">
             <?php } ?>
         </div>
     </div>
