@@ -13,24 +13,17 @@
                                 font-style: normal;
                             }
 @font-face {
-                                font-family: 'icons';
-                                font-display: swap;
-                                src: url("../fonts/icons.woff2?v=1776944387271") format("woff2"), url("../fonts/icons.woff?v=1776944387271") format("woff");
-                                font-weight: 400;
-                                font-style: normal;
-                            }
-@font-face {
-                                font-family: 'SFProDisplay';
-                                font-display: swap;
-                                src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
-                                font-weight: 700;
-                                font-style: normal;
-                            }
-@font-face {
                                 font-family: 'HelveticaNeue';
                                 font-display: swap;
                                 src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
                                 font-weight: 100;
+                                font-style: normal;
+                            }
+@font-face {
+                                font-family: 'icons';
+                                font-display: swap;
+                                src: url("../fonts/icons.woff2?v=1776954490809") format("woff2"), url("../fonts/icons.woff?v=1776954490809") format("woff");
+                                font-weight: 400;
                                 font-style: normal;
                             }
 @font-face {
@@ -43,6 +36,13 @@
 @font-face {
                                 font-family: 'SFProDisplay';
                                 font-display: swap;
+                                src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
+                                font-weight: 700;
+                                font-style: normal;
+                            }
+@font-face {
+                                font-family: 'SFProDisplay';
+                                font-display: swap;
                                 src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
                                 font-weight: 800;
                                 font-style: normal;
@@ -50,15 +50,15 @@
 @font-face {
                                 font-family: 'SFProDisplay';
                                 font-display: swap;
-                                src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
-                                font-weight: 500;
+                                src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
+                                font-weight: 300;
                                 font-style: normal;
                             }
 @font-face {
                                 font-family: 'SFProDisplay';
                                 font-display: swap;
-                                src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
-                                font-weight: 300;
+                                src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
+                                font-weight: 500;
                                 font-style: normal;
                             }
 @font-face {
