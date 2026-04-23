@@ -2,36 +2,36 @@
 $industries = [
         [
                 'title' => 'SaaS',
-                'img_jpg' => 'saas.jpg',
-                'img_webp' => 'saas.webp',
+                'img_jpg' => 'saas_banner.png',
+                'img_webp' => 'saas_banner.png',
                 'text' => '78% of B2B buyers now research tools through AI. We make sure your product ranks #1 in LLM recommendations across your category.',
                 'link' => '/coming-soon/'
         ],
         [
                 'title' => 'FinTech',
-                'img_jpg' => 'fintech.jpg',
-                'img_webp' => 'fintech.webp',
+                'img_jpg' => 'fintech_banner.png',
+                'img_webp' => 'fintech_banner.png',
                 'text' => 'AI-driven search in finance is growing 3x year-over-year. We ensure your brand is cited accurately and recommended in every relevant query.',
                 'link' => '/coming-soon/'
         ],
         [
                 'title' => 'E-commerce',
-                'img_jpg' => 'ecommerce.jpg',
-                'img_webp' => 'ecommerce.webp',
+                'img_jpg' => 'ecommerce_banner.png',
+                'img_webp' => 'ecommerce_banner.png',
                 'text' => '1 in 4 shoppers already asks AI before purchasing. We turn ChatGPT, Perplexity, and Gemini into your highest-converting discovery channel.',
                 'link' => '/coming-soon/'
         ],
         [
                 'title' => 'Healthcare',
-                'img_jpg' => 'healthcare.jpg',
-                'img_webp' => 'healthcare.webp',
+                'img_jpg' => 'healthcare_banner.png',
+                'img_webp' => 'healthcare_banner.png',
                 'text' => '63% of patients check AI before choosing a provider. We make your brand the trusted answer LLMs give — with accurate, up-to-date citations.',
                 'link' => '/coming-soon/'
         ],
         [
                 'title' => 'Real Estate',
-                'img_jpg' => 'realestate.jpg',
-                'img_webp' => 'realestate.webp',
+                'img_jpg' => 'realestate_banner.png',
+                'img_webp' => 'realestate_banner.png',
                 'text' => 'AI-powered property search is up 140% in the last year. We position your brand as the go-to recommendation when buyers and agents ask AI for help.',
                 'link' => '/coming-soon/'
         ],

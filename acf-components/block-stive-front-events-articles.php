@@ -2,14 +2,14 @@
 
 $upcoming_events = [
         [
-                'img_webp' => 'event_item-1.webp',
-                'img_jpg' => 'event_item-1.jpg',
+                'img_webp' => 'stive-conf-seo.png',
+                'img_jpg' => 'stive-conf-seo.png',
                 'alt' => 'Blockchain Life 2026 Event',
                 'url' => '/coming-soon/'
         ],
         [
-                'img_webp' => 'event_item-2.webp',
-                'img_jpg' => 'event_item-2.jpg',
+                'img_webp' => 'stive-conf.png',
+                'img_jpg' => 'stive-conf.png',
                 'alt' => 'Crypto Event of the Year',
                 'url' => '/coming-soon/'
         ],
@@ -19,8 +19,8 @@ $upcoming_events = [
 $latest_articles = [
         [
                 'class' => 'swiper-slide',
-                'img_webp' => 'article_image-1.webp',
-                'img_jpg' => 'article_image-1.jpg',
+                'img_webp' => 'IMG_6946.png',
+                'img_jpg' => 'IMG_6946.png',
                 'url' => '/coming-soon/',
                 'text' => 'Artificial Intelligence (AI) is rapidly transforming our world. It is being applied across various fields, from healthcare and finance.',
                 'author' => 'Anastasia Shalepina',
@@ -33,8 +33,8 @@ $latest_articles = [
         ],
         [
                 'class' => 'swiper-slide',
-                'img_webp' => 'article_image-2.webp',
-                'img_jpg' => 'article_image-2.jpg',
+                'img_webp' => 'IMG_6943.png',
+                'img_jpg' => 'IMG_6943.png',
                 'url' => '/coming-soon/',
                 'text' => 'From smart homes to personalized healthcare, AI is paving the way for a better tomorrow',
                 'author' => 'Anastasia Shalepina',
@@ -47,8 +47,8 @@ $latest_articles = [
         ],
         [
                 'class' => 'swiper-slide',
-                'img_webp' => 'article_image-3.webp',
-                'img_jpg' => 'article_image-3.jpg',
+                'img_webp' => 'IMG_6945.png',
+                'img_jpg' => 'IMG_6945.png',
                 'url' => '/coming-soon/',
                 'text' => 'The rise of artificial intelligence (AI) is reshaping industries at an unprecedented pace',
                 'author' => 'Anastasia Shalepina',
