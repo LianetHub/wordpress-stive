@@ -4,37 +4,37 @@ $solutions = [
                 'title' => 'AI SEO &&nbsp;GEO Optimization',
                 'img_webp' => 'optimization.webp',
                 'img_jpg' => 'optimization.jpg',
-                'link' => '#'
+                'link' => '/coming-soon/'
         ],
         [
                 'title' => 'LLM Analytics &&nbsp;Audit',
                 'img_webp' => 'analytics.webp',
                 'img_jpg' => 'analytics.jpg',
-                'link' => '#'
+                'link' => '/coming-soon/'
         ],
         [
                 'title' => 'Ai Content &&nbsp;Automation',
                 'img_webp' => 'automation.webp',
                 'img_jpg' => 'automation.jpg',
-                'link' => '#'
+                'link' => '/coming-soon/'
         ],
         [
                 'title' => 'LLM Ads Management',
                 'img_webp' => 'ads.webp',
                 'img_jpg' => 'ads.jpg',
-                'link' => '#'
+                'link' => '/coming-soon/'
         ],
         [
                 'title' => 'LLM Reputation Management',
                 'img_webp' => 'reputation.webp',
                 'img_jpg' => 'reputation.jpg',
-                'link' => '#'
+                'link' => '/coming-soon/'
         ],
         [
                 'title' => 'LLM Brand Strategy',
                 'img_webp' => 'strategy.webp',
                 'img_jpg' => 'strategy.jpg',
-                'link' => '#'
+                'link' => '/coming-soon/'
         ],
 ];
 

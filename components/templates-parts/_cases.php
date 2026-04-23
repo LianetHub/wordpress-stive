@@ -6,7 +6,7 @@ $case_studies = [
                 'desc' => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
                 'img_webp' => 'case_study-1.webp',
                 'img_jpg' => 'case_study-1.jpg',
-                'link' => '#',
+                'link' => '/coming-soon/',
         ],
         [
                 'class' => 'swiper-slide',
@@ -14,7 +14,7 @@ $case_studies = [
                 'desc' => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
                 'img_webp' => 'case_study-2.webp',
                 'img_jpg' => 'case_study-2.jpg',
-                'link' => '#',
+                'link' => '/coming-soon/',
         ],
         [
                 'class' => 'swiper-slide',
@@ -22,7 +22,7 @@ $case_studies = [
                 'desc' => "The studio's services are top-notch, consistently delivering high-quality results that exceed expectations. Their attention to detail and commitment to client satisfaction truly set them apart.",
                 'img_webp' => 'case_study-3.webp',
                 'img_jpg' => 'case_study-3.jpg',
-                'link' => '#',
+                'link' => '/coming-soon/',
         ]
 ];
 ?>
