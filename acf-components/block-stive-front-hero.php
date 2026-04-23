@@ -53,9 +53,8 @@ $hero_features = [
     <div class="hero__container container">
         <div class="hero__left">
             <span class="hero__tagline">YOUR RIGHT CHOICE</span>
-            <h1 class="hero__title title-lg gradient-text">Marketing Agency for&nbsp;LLM Era</h1>
-            <p class="hero__desc">First&nbsp;in&nbsp;ChatGPT. First&nbsp;in&nbsp;Gemini. First&nbsp;in&nbsp;Perplexity.
-                <br> We make your brand the answer AI gives.</p>
+            <h1 class="hero__title title-lg gradient-text">AI Integration in Marketing & Sales</h1>
+            <p class="hero__desc">We help founders turn AI from a buzzword into measurable revenue — with real workflows, not slideware.</p>
             <div class="hero__btns">
                 <a href="#get-proposal" class="hero__btn btn btn-secondary" data-fancybox>
                     Get Your Proposal
