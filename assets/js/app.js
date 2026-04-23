@@ -196,13 +196,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if ($(".stats-slider").length) {
         new Swiper('.stats-slider', {
-            slidesPerView: 1,
+            slidesPerView: 1.5,
             loop: true,
             watchOverflow: true,
-            autoplay: {
-                speed: 5000,
-                stopOnLastSlide: true
-            },
+
             breakpoints: {
                 575.98: {
                     slidesPerView: 2,
