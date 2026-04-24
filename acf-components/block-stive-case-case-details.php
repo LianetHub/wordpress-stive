@@ -35,9 +35,13 @@ $case_details_img = get_field('case_details_img'); //img
                     </li>
                 <?php } ?>
             </ul>
-            <div class="case-details__categories">
-                <?php echo display_category_and_tag_terms($post_id = get_the_ID(), $taxonomy = 'case-tags', $tag = 'a', $class = 'case-details__category label-badge label-badge--small'); ?>
-            </div>
+            <?php
+            $categories_html = display_category_and_tag_terms(get_the_ID(), 'case-tags', 'a', 'case-details__category label-badge label-badge--small');
+            if (!empty($categories_html)) { ?>
+                <div class="case-details__categories">
+                    <?php echo $categories_html; ?>
+                </div>
+            <?php } ?>
         </div>
         <div class="case-details__description typography-block">
             <h2><?php echo $case_details_h2; ?></h2>
