@@ -2047,7 +2047,11 @@ body {
 }
 
 .heading__title:not(:first-child) {
-  margin-top: 2rem;
+  margin-top: 1rem;
+}
+
+.heading__title.title-xs {
+  letter-spacing: normal;
 }
 
 .heading__description {
@@ -6003,8 +6007,12 @@ body {
 
   .heading__main {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 31.25rem;
-            flex: 0 0 31.25rem;
+        -ms-flex: 0 0 38.75rem;
+            flex: 0 0 38.75rem;
+  }
+
+  .heading__title.title-xs {
+    font-size: 2rem;
   }
 
   .stats-slider:not(.swiper-initialized) .swiper-wrapper {
