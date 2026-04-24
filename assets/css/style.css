@@ -27,22 +27,6 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
-  src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SFProDisplay";
-  font-display: swap;
   src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -51,7 +35,7 @@
 @font-face {
   font-family: "icons";
   font-display: swap;
-  src: url("../fonts/icons.woff2?v=1777014811431") format("woff2"), url("../fonts/icons.woff?v=1777014811431") format("woff");
+  src: url("../fonts/icons.woff2?v=1777046302599") format("woff2"), url("../fonts/icons.woff?v=1777046302599") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -59,16 +43,16 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
-  font-weight: 600;
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -83,8 +67,24 @@
 @font-face {
   font-family: "SFProDisplay";
   font-display: swap;
-  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Heavy.woff2") format("woff2"), url("../fonts/SFProDisplay-Heavy.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-display: swap;
+  src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -2253,6 +2253,7 @@ body {
 
 .case-details__item-value {
   font-weight: 500;
+  text-align: right;
 }
 
 .case-details__categories {
@@ -2348,7 +2349,7 @@ body {
 .conclusion__qoute {
   margin-top: 2.5rem;
   font-weight: 500;
-  max-width: 27rem;
+  max-width: 31rem;
   position: relative;
   font-size: 1.75rem;
 }
@@ -5633,6 +5634,7 @@ body {
 
   .testimonial.testimonial--large .testimonial__author-name {
     font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .testimonial.testimonial--large .testimonial__text {
@@ -6034,10 +6036,6 @@ body {
     gap: 8.5rem;
   }
 
-  .conclusion__qoute {
-    font-size: 2rem;
-  }
-
   .results__list {
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
@@ -6418,7 +6416,8 @@ body {
   }
 
   .conclusion__container.container {
-    max-width: 75.875rem;
+    gap: 5rem;
+    max-width: 78rem;
   }
 
   .cases-heading__logotype {
