@@ -235,7 +235,7 @@ add_action('pre_get_posts', function ($query) {
             $query->is_main_query() &&
             is_post_type_archive('case')
     ) {
-        $query->set('posts_per_page', 5);
+        $query->set('posts_per_page', 9);
         $query->set('orderby', 'date');
         $query->set('order', 'DESC');
     }

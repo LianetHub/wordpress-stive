@@ -120,8 +120,7 @@ $logotypes = [
                         echo display_category_and_tag_terms($first_case_id, 'case-list', 'a', 'main-case__category label-badge label-badge--medium', 'false');
                         ?>
                     </div>
-                    <a href="<?php echo get_permalink($first_case_id); ?>" class="main-case__btn btn btn-primary">Read
-                        Full Case</a>
+                    <a href="<?php echo get_permalink($first_case_id); ?>" class="main-case__btn btn btn-primary">Read Full Case</a>
                 </div>
             </div>
         </div>
