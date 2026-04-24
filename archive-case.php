@@ -78,7 +78,7 @@ $logotypes = [
                             alt="<?php echo esc_attr(get_the_title($first_case_id)); ?>"
                             class="cover-image">
                 </picture>
-                <?php if (!get_field('case_archive_title_hide', $first_case_id)) : ?>
+                <?php if (get_field('case_archive_title_show', $first_case_id)) : ?>
                     <div class="main-case__caption title-sm">
                         <?php echo get_the_title($first_case_id); ?>
                     </div>
@@ -152,9 +152,9 @@ $logotypes = [
 
                             <div class="case-card__details">
                                 <div class="case-card__details-main">
-                                    <?php if (!get_field('case_archive_title_hide')) : ?>
+                                    <?php if (get_field('case_archive_title_show', $case_id)) : ?>
                                         <div class="case-card__name">
-                                            <?php the_title(); ?>
+                                            <?php echo get_the_title($case_id); ?>
                                         </div>
                                     <?php endif; ?>
                                     <p class="case-card__desc">
