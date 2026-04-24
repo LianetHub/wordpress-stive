@@ -437,7 +437,7 @@
         display: grid;
 
         @media (min-width:$md4) {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
 
         }
     }
@@ -465,9 +465,10 @@
 
     // .goals__card-title
     &__card-title {
-        font-size: 1.75rem;
-        font-weight: 800;
+        font-size: 1.5rem;
+        font-weight: 700;
         line-height: 100%;
+        letter-spacing: -0.03rem;
     }
 
     // .goals__card-desc
