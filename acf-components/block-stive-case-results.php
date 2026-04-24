@@ -25,10 +25,7 @@ $case_results_items = get_field('case_results_items'); //repeater
                 <?php endforeach; ?>
                 <li class="results__card results__card--button">
                         <a href="#get-proposal" data-fancybox
-                            class="results__card-link">
-                            <div class="results__card-title">
-                                Bring me <br> same result
-                            </div>
+                            class="results__card-link"><div class="results__card-title">Bring me <br> same result</div>
                             <picture class="results__card-image">
                                 <img
                                     src="<?php echo IMG_PATH ?>/why/ai-collage-mobile.png"

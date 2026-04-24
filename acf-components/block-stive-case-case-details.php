@@ -24,10 +24,7 @@ $case_details_img = get_field('case_details_img'); //img
                 </div>
                 <div class="person__info">
                     <div class="person__name title-xs gradient-text"><?php echo $case_person_name; ?></div>
-                    <div class="person__position"><?php echo $case_person_position; ?></div>
-                </div>
-            </div>
-            <ul class="case-details__list">
+                    <div class="person__position"><?php echo $case_person_position; ?></div></div></div><ul class="case-details__list">
                 <?php foreach ($case_details_list as $list) { ?>
                     <li class="case-details__item">
                         <div class="case-details__item-property"><?php echo $list['property']; ?></div>
@@ -50,7 +47,5 @@ $case_details_img = get_field('case_details_img'); //img
                 <img class="case image"
                     src="<?php echo esc_url($case_details_img['url']); ?>"
                     alt="<?php echo esc_attr($case_details_img['alt']); ?>">
-            <?php } ?>
-        </div>
-    </div>
+            <?php } ?></div></div>
 </section>

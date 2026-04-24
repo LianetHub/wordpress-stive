@@ -7,10 +7,7 @@ $through_testimonials_sliders = get_field('through_testimonials_sliders', 'optio
         <div class="container">
             <div class="testimonials__slider swiper">
                 <ul class="swiper-wrapper">
-                    <?php if ($through_testimonials_sliders): ?>
-                    <?php foreach ($through_testimonials_sliders
-
-                    as $testimonial_item): ?>
+                    <?php foreach ($through_testimonials_sliders as $testimonial_item): ?>
                     <<?php echo $testimonial_item['tag']; ?>
                     class="testimonial <?php echo esc_html($testimonial_item['class']); ?>">
                     <div class="testimonial__header">
@@ -20,23 +17,18 @@ $through_testimonials_sliders = get_field('through_testimonials_sliders', 'optio
                             </p>
                             <p class="testimonial__author-title">
                                 <?php echo esc_html($testimonial_item['title']); ?>
-                            </p>
-                        </div>
-                        <div class="testimonial__rating">
+                            </p></div><div class="testimonial__rating">
                             <?php $rating = intval($testimonial_item['rating']); ?>
                             <?php for ($i = 0; $i < $rating; $i++): ?>
                                 <span class="icon-star"></span>
-                            <?php endfor; ?>
-                        </div>
+                            <?php endfor; ?></div>
                     </div>
                     <blockquote class="testimonial__text">
                         <?php echo esc_html($testimonial_item['text']); ?>
                     </blockquote>
                 </<?php echo $testimonial_item['tag']; ?>>
                 <?php endforeach; ?>
-                <?php endif; ?>
                 </ul>
             </div>
-        </div>
-    </div>
+        </div></div>
 <?php endif; ?>

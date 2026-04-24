@@ -26,8 +26,7 @@ $countries = [
             <div class="ready__header">
                 <div class="ready__map">
                     <img src="<?php echo IMG_PATH ?>/map.svg" alt="Global Coverage Map">
-                </div>
-            </div>
+                </div></div>
             <div class="ready__main">
                 <h2 class="ready__title title-lg gradient-text"><?php echo $front_rts_title; ?></h2>
                 <?php if (!empty($countries)): ?>
@@ -39,17 +38,14 @@ $countries = [
                                             src="<?php echo IMG_PATH ?>/flags/<?php echo esc_attr($code); ?>.svg"
                                             alt="<?php echo esc_attr($name); ?> flag">
                                 </div>
-                                <div class="ready__badge-text"><?php echo esc_html($name); ?></div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
+                                <div class="ready__badge-text"><?php echo esc_html($name); ?></div></div>
+                        <?php endforeach; ?></div>
                 <?php endif; ?>
                 <div class="ready__actions">
                     <a class="ready__btn btn btn-primary" data-calendly
                        href="<?php echo esc_url($calendly_link['url']); ?>">Book Strategy Call</a>
                     <a class="ready__btn btn btn-grey" data-fancybox href="#get-proposal">Get Proposal</a>
-                </div>
-            </div>
+                </div></div>
         </div>
     </div>
 </section>

@@ -20,6 +20,5 @@ $case_features = get_field('case_features'); //repeater
                     </li>
                 <?php endforeach; ?>
             </ul>
-        </div>
-    </div>
+        </div></div>
 <?php endif; ?>
