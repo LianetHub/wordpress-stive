@@ -25,9 +25,7 @@ $case_image = get_field('case_image'); //img
                 ?>
                     <a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"
                         class="heading__btn btn btn-grey"><?php echo esc_html($link_title); ?></a>
-                <?php } ?>
-            </div>
-        </div>
+                <?php } ?></div></div>
         <picture class="heading__image">
             <?php if (!empty($case_image)) { ?>
                 <img
