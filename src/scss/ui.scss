@@ -682,8 +682,9 @@
 		& figcaption {
 			margin-top: 1rem;
 			margin-bottom: 0;
-			font-size: 0.875rem;
-			line-height: 142.857%;
+			font-size: 0.75rem;
+			color: #192A3F;
+			line-height: 130%;
 		}
 	}
 
@@ -695,11 +696,6 @@
 			display: flex;
 			flex-direction: column;
 
-			&:last-child {
-				& figcaption {
-					text-align: right;
-				}
-			}
 
 			& figure {
 				flex: 1 1 auto;
