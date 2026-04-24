@@ -53,8 +53,8 @@ $logotypes = [
     <section class="cases-heading">
         <div class="cases-heading__container container">
             <div class="cases-heading__offer">
-                <h1 class="cases-heading__title title-sm">Headline for&nbsp;Cases&nbsp;Page</h1>
-                <p class="cases-heading__description">Short case description – 2-3 sentences.</p>
+                <h1 class="cases-heading__title title-sm">AI Marketing & Sales Cases</h1>
+                <p class="cases-heading__description">Real workflows, real clients, real numbers. See how we help founders make AI work — not just look good in a pitch deck.</p>
             </div>
             <div class="cases-heading__logotypes">
                 <?php foreach ($logotypes as $logo): ?>
