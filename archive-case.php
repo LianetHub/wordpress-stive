@@ -7,11 +7,11 @@ $first_case_id = null;
 
 if ($paged === 1) {
     $first_case = get_posts([
-            'post_type' => 'case',
-            'posts_per_page' => 1,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_status' => 'publish',
+        'post_type' => 'case',
+        'posts_per_page' => 1,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_status' => 'publish',
     ]);
 
     if (!empty($first_case)) {
@@ -27,46 +27,46 @@ if ($paged === 1) {
 
 <?php
 $logotypes = [
-        [
-                'img_webp' => 'logo-clutch.webp',
-                'img_jpg' => 'logo-clutch.jpg',
-                'alt' => 'Clutch logo'
-        ],
-        [
-                'img_webp' => 'logo-techreviewer.webp',
-                'img_jpg' => 'logo-techreviewer.jpg',
-                'alt' => 'Techreviewer logo'
-        ],
-        [
-                'img_webp' => 'logo-trustpilot.webp',
-                'img_jpg' => 'logo-trustpilot.jpg',
-                'alt' => 'Trustpilot logo'
-        ],
-        [
-                'img_webp' => 'logo-marketinghub.webp',
-                'img_jpg' => 'logo-marketinghub.jpg',
-                'alt' => 'Marketinghub logo'
-        ],
+    [
+        'img_webp' => 'logo-clutch.webp',
+        'img_jpg' => 'logo-clutch.jpg',
+        'alt' => 'Clutch logo'
+    ],
+    [
+        'img_webp' => 'logo-techreviewer.webp',
+        'img_jpg' => 'logo-techreviewer.jpg',
+        'alt' => 'Techreviewer logo'
+    ],
+    [
+        'img_webp' => 'logo-trustpilot.webp',
+        'img_jpg' => 'logo-trustpilot.jpg',
+        'alt' => 'Trustpilot logo'
+    ],
+    [
+        'img_webp' => 'logo-marketinghub.webp',
+        'img_jpg' => 'logo-marketinghub.jpg',
+        'alt' => 'Marketinghub logo'
+    ],
 ];
 ?>
 
-    <section class="cases-heading">
-        <div class="cases-heading__container container">
-            <div class="cases-heading__offer">
-                <h1 class="cases-heading__title title-sm">Headline for&nbsp;Cases&nbsp;Page</h1>
-                <p class="cases-heading__description">Short case description – 2-3 sentences.</p>
-            </div>
-            <div class="cases-heading__logotypes">
-                <?php foreach ($logotypes as $logo): ?>
-                    <picture class="cases-heading__logotype">
-                        <source srcset="<?php echo IMG_PATH . '/solutions/' . $logo['img_webp']; ?>" type="image/webp">
-                        <img src="<?php echo IMG_PATH . '/solutions/' . $logo['img_jpg']; ?>"
-                             alt="<?php echo $logo['alt']; ?>" loading="lazy">
-                    </picture>
-                <?php endforeach; ?>
-            </div>
+<section class="cases-heading">
+    <div class="cases-heading__container container">
+        <div class="cases-heading__offer">
+            <h1 class="cases-heading__title title-sm">Headline for&nbsp;Cases&nbsp;Page</h1>
+            <p class="cases-heading__description">Short case description – 2-3 sentences.</p>
         </div>
-    </section>
+        <div class="cases-heading__logotypes">
+            <?php foreach ($logotypes as $logo): ?>
+                <picture class="cases-heading__logotype">
+                    <source srcset="<?php echo IMG_PATH . '/solutions/' . $logo['img_webp']; ?>" type="image/webp">
+                    <img src="<?php echo IMG_PATH . '/solutions/' . $logo['img_jpg']; ?>"
+                        alt="<?php echo $logo['alt']; ?>" loading="lazy">
+                </picture>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
 
 <?php if ($first_case_id) : ?>
     <section class="main-case">
@@ -74,13 +74,13 @@ $logotypes = [
             <a href="<?php echo get_permalink($first_case_id); ?>" class="main-case__offer">
                 <picture class="main-case__poster">
                     <img
-                            src="<?php echo get_the_post_thumbnail_url($first_case_id, 'full'); ?>"
-                            alt="<?php echo esc_attr(get_the_title($first_case_id)); ?>"
-                            class="cover-image">
+                        src="<?php echo get_the_post_thumbnail_url($first_case_id, 'full'); ?>"
+                        alt="<?php echo esc_attr(get_the_title($first_case_id)); ?>"
+                        class="cover-image">
                 </picture>
-                <h1 class="main-case__caption title-sm">
+                <div class="main-case__caption title-sm">
                     <?php echo get_the_title($first_case_id); ?>
-                </h1>
+                </div>
             </a>
 
             <div class="main-case__details">
@@ -88,7 +88,7 @@ $logotypes = [
                     <div class="person__thumb">
                         <?php $case_details_thumb = get_field('case_metric_img', $first_case_id); ?>
                         <img src="<?php echo esc_url($case_details_thumb['url']); ?>"
-                             alt="<?php echo esc_attr($case_details_thumb['alt']); ?>">
+                            alt="<?php echo esc_attr($case_details_thumb['alt']); ?>">
                     </div>
                     <div class="person__info">
                         <div class="person__name title-xs gradient-text">
@@ -143,10 +143,10 @@ $logotypes = [
                         <a href="<?php the_permalink(); ?>" class="case-card__link-wrapper">
                             <picture class="case-card__image">
                                 <img
-                                        src="<?php echo get_the_post_thumbnail_url($case_id, 'full'); ?>"
-                                        alt="<?php the_title_attribute(); ?>"
-                                        class="cover-image"
-                                        loading="lazy">
+                                    src="<?php echo get_the_post_thumbnail_url($case_id, 'full'); ?>"
+                                    alt="<?php the_title_attribute(); ?>"
+                                    class="cover-image"
+                                    loading="lazy">
                             </picture>
 
                             <div class="case-card__details">
@@ -182,11 +182,11 @@ $logotypes = [
                 <nav aria-label="pagination" class="cases__pagination pagination">
                     <?php
                     $links = paginate_links([
-                            'current' => $paged,
-                            'total' => $wp_query->max_num_pages,
-                            'type' => 'array',
-                            'prev_text' => '<span class="pagination__prev icon-prev"></span>',
-                            'next_text' => '<span class="pagination__next icon-next"></span>',
+                        'current' => $paged,
+                        'total' => $wp_query->max_num_pages,
+                        'type' => 'array',
+                        'prev_text' => '<span class="pagination__prev icon-prev"></span>',
+                        'next_text' => '<span class="pagination__next icon-next"></span>',
                     ]);
 
                     foreach ($links as $link) {

@@ -4,9 +4,13 @@ $blog_header_description = get_field('blog_header_description'); //text
 <section class="heading heading--blog-post">
     <div class="heading__container container">
         <div class="heading__main">
-            <div class="heading__categories">
-                <?php echo display_category_and_tag_terms($post_id = get_the_ID(), $taxonomy = 'blog-list', $tag = 'a', $class = 'heading__categories label-badge'); ?>
-            </div>
+            <?php
+            $blog_categories = display_category_and_tag_terms(get_the_ID(), 'blog-list', 'a', 'heading__categories label-badge');
+            if (!empty($blog_categories)) { ?>
+                <div class="heading__categories">
+                    <?php echo $blog_categories; ?>
+                </div>
+            <?php } ?>
             <h1 class="heading__title title-sm"><?php the_title(); ?></h1>
             <p class="heading__description"><?php echo $blog_header_description; ?></p>
             <div class="heading__stats stats-block">
