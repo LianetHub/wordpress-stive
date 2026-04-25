@@ -351,3 +351,29 @@ function filter_blog()
 }
 
 // Настройки для страницы архивов blog end
+
+//add_filter('wpcf7_validate_text*', 'r4_custom_validate_empty_fields', 20, 2);
+//add_filter('wpcf7_validate_email*', 'r4_custom_validate_empty_fields', 20, 2);
+//add_filter('wpcf7_validate_tel*', 'r4_custom_validate_empty_fields', 20, 2);
+
+
+
+function r4_custom_validate_empty_fields($result, $tag) {
+    $target_form_ids = [4];
+    
+    $form_id = isset($_POST['_wpcf7']) ? intval($_POST['_wpcf7']) : 0;
+    
+    if (!in_array($form_id, $target_form_ids, true)) {
+        return $result;
+    }
+    
+    $field_name = $tag->name;
+    
+    $field_value = isset($_POST[$field_name]) ? trim($_POST[$field_name]) : '';
+    
+    if ($tag->is_required() && empty($field_value)) {
+        $result->invalidate($tag, "Поле обязательно для заполнения");
+    }
+    
+    return $result;
+}
