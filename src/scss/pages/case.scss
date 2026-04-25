@@ -149,6 +149,7 @@
     // .heading__actions
     &__actions {
         margin-top: auto;
+        padding-top: 1rem;
         display: flex;
         gap: 0.5rem;
         flex-direction: column;
@@ -1064,7 +1065,6 @@
     &__title {
         &.title-xs {
             @media (max-width:$md5) {
-                font-size: rem(34);
                 background: linear-gradient(112.24deg, #272727 12.75%, #2CDACC 190.37%);
                 background-clip: text;
                 -webkit-background-clip: text;
@@ -1332,9 +1332,16 @@
     &__metrics {
         margin-top: 1.3rem;
 
+        &.metrics {
+            @media (min-width:$md4) {
+                column-gap: 3rem;
+            }
+        }
+
         .metrics__item {
             display: grid;
-            grid-template-columns: repeat(2, 1fr)
+            grid-template-columns: repeat(2, 1fr);
+
         }
 
     }

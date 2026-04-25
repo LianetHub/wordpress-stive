@@ -549,9 +549,17 @@
 
 		margin: 2rem 0 1rem;
 		@extend .gradient-text;
+
+		&+.wp-block-heading {
+			margin-top: 0;
+		}
 	}
 
 	& h2 {
+		font-size: rem(28);
+	}
+
+	& h3 {
 		font-size: 1.25rem;
 	}
 
@@ -714,7 +722,6 @@
 
 
 			& figure {
-				flex: 1 1 auto;
 				display: flex;
 				flex-direction: column;
 				margin: 0;
