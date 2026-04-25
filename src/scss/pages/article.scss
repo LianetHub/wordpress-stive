@@ -145,6 +145,14 @@
 .article {
     padding: 1.25rem 0;
 
+    &.article--case {
+        .container {
+            @media (min-width:$md2) {
+                max-width: 73rem;
+            }
+        }
+    }
+
     &.article--post {
         @media (max-width:$md4) {
             padding-top: 0;
@@ -181,29 +189,6 @@
         @media (min-width:$md3) {
             margin-inline: 0;
             padding: 2rem;
-        }
-
-        &.typography-block {
-
-            & h2,
-            & h3,
-            & h4,
-            & h5,
-            & h6 {
-                font-size: 1rem;
-                letter-spacing: 0.035rem;
-                font-weight: 700;
-
-                &:first-child {
-                    margin-top: 0;
-                }
-
-                margin: 2rem 0 1rem;
-            }
-
-            & h2 {
-                font-size: 1.25rem;
-            }
         }
     }
 
