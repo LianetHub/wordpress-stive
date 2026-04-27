@@ -23,8 +23,8 @@ function display_category_and_tag_terms($post_id = null, $taxonomy = 'category',
 
             if ($tag === 'a') {
                 $output .= sprintf(
-                    '<a href="%s" class="%s">%s</a>',
-                    esc_url(get_term_link($term)),
+                    '<a href="#" class="%s">%s</a>',
+                    //esc_url(get_term_link($term)),
                     esc_attr($term_class),
                     esc_html($term->name)
                 );
