@@ -41,15 +41,15 @@ $current_cat = $_GET['category'] ?? '';
 
             <div class="post-main__details">
                 <div class="heading__stats stats-block">
-                    <time datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>" class="stats-block__item icon-date">
-                        <?php echo esc_html(get_the_date('F j, Y')); ?>
+                    <time datetime="<?php echo esc_attr(get_the_date('Y-m-d', $hero_id)); ?>" class="stats-block__item icon-date">
+                        <?php echo esc_html(get_the_date('F j, Y', $hero_id)); ?>
                     </time>
-                    <time datetime="<?php echo esc_attr(get_the_modified_date('Y-m-d')); ?>"
+                    <time datetime="<?php echo esc_attr(get_the_modified_date('Y-m-d', $hero_id)); ?>"
                           class="stats-block__item icon-update">
-                        <?php echo esc_html(get_the_modified_date('F j, Y')); ?>
+                        <?php echo esc_html(get_the_modified_date('F j, Y', $hero_id)); ?>
                     </time>
                     <div class="stats-block__item icon-clock">
-                        <?php r4_get_the_reading_time($before = '', $after = ' min read'); ?>
+                        <?php r4_get_the_reading_time($hero_id, $before = '', $after = ' min read'); ?>
                     </div>
                 </div>
                 <h2 class="post-main__title title-sm">
@@ -64,14 +64,15 @@ $current_cat = $_GET['category'] ?? '';
                 <div class="post-main__categories">
                     <?php echo display_category_and_tag_terms($hero_id, 'blog-list', 'a', 'post-main__category label-badge'); ?>
                 </div>
+				<?php $post = get_post($hero_id); ?>
                 <div class="post-main__author author">
                     <div class="author__thumb">
                         <img src="<?php echo get_avatar_url($hero_id, 'full'); ?>" class="cover-image"
                              alt="person avatar">
                     </div>
                     <div class="author__details">
-                        <div class="author__name"><?php echo esc_html(get_the_author($hero_id)); ?></div>
-                        <div class="author__position"><?php echo get_the_author_meta('description'); ?></div>
+                        <div class="author__name"><?php echo get_the_author_meta('display_name', $post->post_author ); ?></div>
+                        <div class="author__position"><?php echo get_the_author_meta('user_description', $post->post_author ); ?></div>
                     </div>
                 </div>
             </div>
