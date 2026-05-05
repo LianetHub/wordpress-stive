@@ -2,6 +2,7 @@
 declare(strict_types=1);
 /*
  * Template Name: Landing 1
+ * Template Post Type:page
 */
 get_header('landing-1');
 ?>
