@@ -5,6 +5,7 @@ declare(strict_types=1);
  * Template Post Type: page
 */
 locate_template('landing/landing-1/header-landing-1.php', true);
+$calendly = get_field('calendly_link', 'option');
 ?>
 
     <div class="progress">
@@ -21,7 +22,7 @@ locate_template('landing/landing-1/header-landing-1.php', true);
         <div class="glow tl"></div>
         <div class="glow br"></div>
         <div class="nav">
-            <div class="brand" aria-label="<?php echo esc_attr__('STIVE', 'stive'); ?>">STIVE</div>
+			<a href="<?php echo home_url(); ?>" class="brand" aria-label="<?php echo esc_attr__('STIVE', 'stive'); ?>">STIVE</a>
             <div class="nav__right">
                 <div class="nav__status"><span class="nav__dot"></span>Booking Q2 / 2026</div>
             </div>
@@ -34,7 +35,12 @@ locate_template('landing/landing-1/header-landing-1.php', true);
                 do not exist.</p>
             <div class="hero__cta">
                 <a class="btn btn--primary btn--lg" href="#solution">Get Your Visibility Audit</a>
-                <a class="btn btn--secondary btn--lg" href="#solution">Book Intro Call</a>
+				<a href="<?php echo $calendly['url']; ?>"
+               data-calendly
+               class="btn btn--secondary btn--lg"
+               aria-label="Book Intro Call on Calendly">
+                <?php echo $calendly['title']; ?>
+            </a>
             </div>
             <div class="hero__meta">
                 <span>No retainer - Audit delivered in 7 days</span>
@@ -123,8 +129,13 @@ locate_template('landing/landing-1/header-landing-1.php', true);
             <p class="final__sub">Audit your current LLM visibility this week. We send a 12-page report with the prompts
                 where you are missing and where you can win.</p>
             <div class="final__cta">
-                <a class="btn btn--primary btn--lg" href="#">Get Your Proposal</a>
-                <a class="btn btn--secondary btn--lg" href="#">Book Intro Call</a>
+                <a class="btn btn--primary btn--lg" href="#get-proposal" data-fancybox>Get Your Proposal</a>
+                <a href="<?php echo $calendly['url']; ?>"
+               data-calendly
+               class="btn btn--secondary btn--lg"
+               aria-label="Book Intro Call on Calendly">
+                <?php echo $calendly['title']; ?>
+            </a>
             </div>
             <div class="final__meta">
                 <span>No commitment</span><span class="sep"></span>
@@ -133,7 +144,7 @@ locate_template('landing/landing-1/header-landing-1.php', true);
             </div>
         </div>
         <div class="foot">
-            <div class="brand brand--small">STIVE</div>
+            <a href="<?php echo home_url(); ?>" class="brand brand--small">STIVE</a>
             <div class="foot__right">
                 <a href="mailto:stive@stive.ai">stive@stive.ai</a>
                 <a href="https://stive.ai" target="_blank" rel="noopener">stive.ai</a>

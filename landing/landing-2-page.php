@@ -53,7 +53,7 @@ locate_template('landing/landing-2/header-landing-2.php', true);
                 <p><?php esc_html_e('First in ChatGPT. First in Gemini. First in Perplexity. We make your brand the answer AI gives.', 'stive-2026'); ?></p>
                 <div class="stive-row">
                     <a class="btn btn-dark" href="#"><?php esc_html_e('Get Your AI Audit', 'stive-2026'); ?></a>
-                    <a class="btn btn-ghost-light" href="#"><?php esc_html_e('Chat with Us', 'stive-2026'); ?></a>
+                    <a class="btn btn-ghost-light" href="https://wa.me/48572520447"><?php esc_html_e('Chat with Us', 'stive-2026'); ?></a>
                 </div>
             </article>
             <article class="stive-hero-right">

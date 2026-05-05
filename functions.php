@@ -37,6 +37,9 @@ function r4_themestive_enqueue_style()
                     [],
                     null
             );
+			
+			wp_enqueue_style('fancybox', STYLES_PATH . '/libs/fancybox.css', array(), filemtime(STYLES_DIR . '/libs/fancybox.css'));
+			wp_enqueue_style('calendly', 'https://assets.calendly.com/assets/external/widget.css', array(), null);
 
             wp_enqueue_style(
                     'stive-landing-1-main',
@@ -53,6 +56,9 @@ function r4_themestive_enqueue_style()
                     null,
                     filemtime(get_template_directory() . '/landing/landing-2/assets/css/tokens.css')
             );
+			
+			wp_enqueue_style('fancybox', STYLES_PATH . '/libs/fancybox.css', array(), filemtime(STYLES_DIR . '/libs/fancybox.css'));
+			wp_enqueue_style('calendly', 'https://assets.calendly.com/assets/external/widget.css', array(), null);
 
             wp_enqueue_style(
                     'stive-landing-2-site',
@@ -112,9 +118,29 @@ function r4_themestive_enqueue_scripts()
                     'in_footer' => true,
                     'strategy' => 'defer',
             ]);
+			
+			wp_enqueue_script('calendly-js', 'https://assets.calendly.com/assets/external/widget.js', array(), null, [
+                    'in_footer' => true,
+                    'strategy' => 'async',
+            ]);
+			
+			wp_enqueue_script('fancybox-js', JS_PATH . '/libs/fancybox.umd.js', array(), filemtime(JS_DIR . '/libs/fancybox.umd.js'), [
+                    'in_footer' => true,
+                    'strategy' => 'defer',
+            ]);
             break;
 
         case 'landing/landing-2-page.php':
+			
+			wp_enqueue_script('calendly-js', 'https://assets.calendly.com/assets/external/widget.js', array(), null, [
+                    'in_footer' => true,
+                    'strategy' => 'async',
+            ]);
+			
+			wp_enqueue_script('fancybox-js', JS_PATH . '/libs/fancybox.umd.js', array(), filemtime(JS_DIR . '/libs/fancybox.umd.js'), [
+                    'in_footer' => true,
+                    'strategy' => 'defer',
+            ]);
 
             break;
 
