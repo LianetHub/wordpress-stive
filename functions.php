@@ -22,39 +22,42 @@ require_once(FUNC_PATH . 'register-sidebar.php');
 require_once(WIDGET_PATH . 'cta-banner-widget.php');
 require_once(WIDGET_PATH . 'custom-toc-widget.php');
 
+get_template_part( 'landing/landing-1/landing-1-page.php');
+get_template_part( 'landing/landing-2/landing-2-page.php');
+
 function r4_themestive_enqueue_style()
 {
     $page_template = get_page_template_slug();
     switch ($page_template) {
 
-        case 'landing-1-page.php':
+        case 'landing/landing-1-page.php':
             wp_enqueue_style(
-                    'stive-landin-1-google-fonts',
+                    'stive-landing-1-google-fonts',
                     'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap',
                     [],
                     null
             );
 
             wp_enqueue_style(
-                    'stive-landin-1-main',
+                    'stive-landing-1-main',
                     get_template_directory_uri() . '/landing/landing-1/assets/css/main.css',
-                    ['stive-style'],
+                    null,
                     filemtime(get_template_directory() . '/landing/landing-1/assets/css/main.css')
             );
             break;
 
-        case 'landing-2-page.php':
+        case 'landing/landing-2-page.php':
             wp_enqueue_style(
-                    'stive-landin-2-tokens',
+                    'stive-landing-2-tokens',
                     get_template_directory_uri() . '/landing/landing-2/assets/css/tokens.css',
-                    ['stive-style'],
+                    null,
                     filemtime(get_template_directory() . '/landing/landing-2/assets/css/tokens.css')
             );
 
             wp_enqueue_style(
-                    'stive-landin-2-site',
+                    'stive-landing-2-site',
                     get_template_directory_uri() . '/landing/landing-2/assets/css/site.css',
-                    ['stive-style'],
+                    null,
                     filemtime(get_template_directory() . '/landing/landing-2/assets/css/site.css')
             );
 
@@ -100,9 +103,9 @@ function r4_themestive_enqueue_scripts()
 {
     $page_template = get_page_template_slug();
     switch ($page_template) {
-        case 'landing-1-page.php':
+        case 'landing/landing-1-page.php':
             wp_enqueue_script(
-                    'stive-landin-1-main',
+                    'stive-landing-1-main',
                     get_template_directory_uri() . '/landing/landing-1/assets/js/main.js',
                     [],
                     filemtime(get_template_directory() . '/landing/landing-1/assets/js/main.js'),[
@@ -111,7 +114,7 @@ function r4_themestive_enqueue_scripts()
             ]);
             break;
 
-        case 'landing-2-page.php':
+        case 'landing/landing-2-page.php':
 
             break;
 

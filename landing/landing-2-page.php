@@ -28,7 +28,7 @@ function stive_steps(): Generator
     yield ['n' => '04', 'title' => 'Launch & Iterate', 'desc' => 'We ship AI-first campaigns, workflows and content. Weekly reporting, monthly reviews.'];
 }
 
-get_header('landing-2');
+locate_template('landing/landing-2/header-landing-2.php', true);
 ?>
     <main class="stive-page">
         <header class="stive-header">
@@ -110,4 +110,4 @@ get_header('landing-2');
         </section>
     </main>
 <?php
-get_footer('landing-2');
+locate_template('landing/landing-2/footer-landing-2.php', true);

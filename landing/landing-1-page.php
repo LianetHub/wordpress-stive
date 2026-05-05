@@ -2,10 +2,11 @@
 declare(strict_types=1);
 /*
  * Template Name: Landing 1
- * Template Post Type:page
+ * Template Post Type: page
 */
-get_header('landing-1');
+locate_template('landing/landing-1/header-landing-1.php', true);
 ?>
+
     <div class="progress">
         <div class="progress__bar" id="progressBar"></div>
     </div>
@@ -143,4 +144,4 @@ get_header('landing-1');
         </div>
     </section>
 <?php
-get_footer('landing-1');
+locate_template('landing/landing-1/footer-landing-1.php', true);
