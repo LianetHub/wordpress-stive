@@ -4,7 +4,9 @@
  * Template Post Type: case
  */
 
-
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 get_header();
 

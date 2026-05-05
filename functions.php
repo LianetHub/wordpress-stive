@@ -218,12 +218,12 @@ function r4_get_reading_time($post_id = null, $wpm = 200, $seconds_per_image = 5
     return max(1, (int)ceil($words / $wpm));
 }
 
-function r4_get_the_reading_time($before = '', $after = ' мин. читать')
+function r4_get_the_reading_time($post_id = null, $before = '', $after = ' мин. читать')
 {
     printf(
             '%s%d%s',
             $before,
-            r4_get_reading_time(),
+            r4_get_reading_time($post_id),
             $after
     );
 }
@@ -235,7 +235,7 @@ add_action('pre_get_posts', function ($query) {
             $query->is_main_query() &&
             is_post_type_archive('case')
     ) {
-        $query->set('posts_per_page', 9);
+        $query->set('posts_per_page', 5);
         $query->set('orderby', 'date');
         $query->set('order', 'DESC');
     }
@@ -351,6 +351,7 @@ function filter_blog()
 }
 
 // Настройки для страницы архивов blog end
+
 
 //add_filter('wpcf7_validate_text*', 'r4_custom_validate_empty_fields', 20, 2);
 //add_filter('wpcf7_validate_email*', 'r4_custom_validate_empty_fields', 20, 2);

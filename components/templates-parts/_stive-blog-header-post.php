@@ -22,7 +22,7 @@ $blog_header_description = get_field('blog_header_description'); //text
                     <?php echo esc_html(get_the_modified_date('F j, Y')); ?>
                 </time>
                 <div class="stats-block__item icon-clock">
-                    <?php r4_get_the_reading_time($before = '', $after = ' min read'); ?>
+                    <?php r4_get_the_reading_time(null, $before = '', $after = ' min read'); ?>
                 </div>
             </div>
             <div class="heading__author author">
