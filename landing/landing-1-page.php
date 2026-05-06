@@ -217,6 +217,7 @@ $calendlyTitle = (is_array($calendly) && !empty($calendly['title']))
     </div>
 
     <div class="foot">
+	<a href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php esc_attr_e('Home', 'stive'); ?>">
         <img class="foot__logo" src="<?php echo esc_url($logoUri); ?>" alt="<?php esc_attr_e('STIVE', 'stive'); ?>">
         <div class="foot__right">
             <a href="mailto:stive@stive.ai">stive@stive.ai</a>

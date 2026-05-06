@@ -131,7 +131,7 @@ locate_template('landing/landing-3/header-landing-3.php', true);
     <section class="aip-band">
         <div class="aip-wrap center">
             <div class="label dark">Our Positioning</div>
-            <h2>#1 Agency for AI Integration in Business, Sales & Marketing</h2>
+            <h2>#1 Agency for <span class="italic">AI Integration</span> in Business, Sales & Marketing</h2>
             <p>For the past year, we've focused exclusively on one thing: helping businesses grow revenue through AI. 300+ projects, real cases, measurable results.</p>
         </div>
     </section>
@@ -139,8 +139,9 @@ locate_template('landing/landing-3/header-landing-3.php', true);
     <section class="aip-section">
         <div class="aip-wrap">
             <div class="label">The Problem</div>
-            <h2>Most businesses talk about AI. Few actually use it to grow revenue.</h2>
+            <h2>Most businesses talk about AI.<br><span class="italic">Few actually use it</span> to grow revenue.</h2>
             <p class="sub">You hear AI everywhere — webinars, LinkedIn posts, vendor pitches. But when you ask "how exactly will this bring me more paying customers next month?" — nobody has a straight answer.</p>
+            <p class="sub strong">We do. For the past year, Stive has been the #1 agency focused exclusively on AI-driven revenue growth.</p>
         </div>
     </section>
 
@@ -204,7 +205,8 @@ locate_template('landing/landing-3/header-landing-3.php', true);
     <section class="aip-section">
         <div class="aip-wrap">
             <div class="label">Real Cases, Real Numbers</div>
-            <h2>Results across industries.</h2>
+            <h2>Results across<br><span class="italic">industries.</span></h2>
+            <p class="sub">These are real clients with real outcomes. No fluff, no stock metrics.</p>
             <div class="cases">
                 <?php foreach ($cases as $case) : ?>
                     <article class="case-card">
@@ -223,7 +225,7 @@ locate_template('landing/landing-3/header-landing-3.php', true);
     <section class="aip-section light">
         <div class="aip-wrap">
             <div class="label">What Clients Say</div>
-            <h2>Direct quotes. Real companies.</h2>
+            <h2>Direct quotes.<br><span class="italic">Real companies.</span></h2>
             <div class="testimonials">
                 <?php foreach ($testimonials as $item) : ?>
                     <article class="test-card">
@@ -239,6 +241,7 @@ locate_template('landing/landing-3/header-landing-3.php', true);
         <div class="aip-wrap">
             <div class="label">Pricing</div>
             <h2>Three ways to<br><span class="italic">work with us.</span></h2>
+            <p class="sub">Choose based on how much you want us in the trenches with you.</p>
             <div class="pricing">
                 <?php foreach ($plans as $plan) : ?>
                     <article class="plan <?php echo $plan['featured'] ? 'featured' : ''; ?>">
@@ -262,6 +265,7 @@ locate_template('landing/landing-3/header-landing-3.php', true);
         <div class="aip-wrap">
             <div class="label teal">Who This Is For</div>
             <h2>Not for everyone.<br><span class="italic">Probably not even most.</span></h2>
+            <p class="sub">This program is built for a specific kind of business owner. If this sounds like you — we should talk.</p>
             <div class="whofor">
                 <article><b>01</b><div><h4>SaaS & FinTech founders in EU</h4><p>B2B products with a clear paying customer base.</p></div></article>
                 <article><b>02</b><div><h4>Teams with marketing budget to optimize</h4><p>You already spend on ads and content. We make it work harder.</p></div></article>
@@ -295,6 +299,7 @@ locate_template('landing/landing-3/header-landing-3.php', true);
 
     <section class="aip-cta">
         <div class="aip-wrap center">
+            <div class="label">Let's Talk</div>
             <h2>Let's Talk About Your Business.</h2>
             <p>30-minute strategy call with our Marketing Strategist. We look at your business, tell you exactly what AI can do for you — and whether this program is the right fit.</p>
             <div class="hero-cta">
