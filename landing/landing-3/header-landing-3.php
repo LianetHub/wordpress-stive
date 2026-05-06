@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 defined('ABSPATH') || exit;
@@ -12,3 +11,4 @@ defined('ABSPATH') || exit;
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+

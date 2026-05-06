@@ -22,8 +22,6 @@ require_once(FUNC_PATH . 'register-sidebar.php');
 require_once(WIDGET_PATH . 'cta-banner-widget.php');
 require_once(WIDGET_PATH . 'custom-toc-widget.php');
 
-get_template_part( 'landing/landing-1/landing-1-page.php');
-get_template_part( 'landing/landing-2/landing-2-page.php');
 
 function r4_themestive_enqueue_style()
 {
@@ -39,6 +37,7 @@ function r4_themestive_enqueue_style()
             );
 			
 			wp_enqueue_style('fancybox', STYLES_PATH . '/libs/fancybox.css', array(), filemtime(STYLES_DIR . '/libs/fancybox.css'));
+			wp_enqueue_style('intlTelInput', STYLES_PATH . '/libs/intlTelInput.css', array(), filemtime(STYLES_DIR . '/libs/intlTelInput.css'));
 			wp_enqueue_style('calendly', 'https://assets.calendly.com/assets/external/widget.css', array(), null);
 
             wp_enqueue_style(
@@ -49,22 +48,21 @@ function r4_themestive_enqueue_style()
             );
             break;
 
-        case 'landing/landing-2-page.php':
+        case 'landing/landing-3-page.php':
             wp_enqueue_style(
-                    'stive-landing-2-tokens',
-                    get_template_directory_uri() . '/landing/landing-2/assets/css/tokens.css',
-                    null,
-                    filemtime(get_template_directory() . '/landing/landing-2/assets/css/tokens.css')
+                    'stive-landing-3-google-fonts',
+                    'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap',
+                    [],
+                    null
             );
-			
-			wp_enqueue_style('fancybox', STYLES_PATH . '/libs/fancybox.css', array(), filemtime(STYLES_DIR . '/libs/fancybox.css'));
-			wp_enqueue_style('calendly', 'https://assets.calendly.com/assets/external/widget.css', array(), null);
-
+            wp_enqueue_style('fancybox', STYLES_PATH . '/libs/fancybox.css', array(), filemtime(STYLES_DIR . '/libs/fancybox.css'));
+            wp_enqueue_style('intlTelInput', STYLES_PATH . '/libs/intlTelInput.css', array(), filemtime(STYLES_DIR . '/libs/intlTelInput.css'));
+            wp_enqueue_style('calendly', 'https://assets.calendly.com/assets/external/widget.css', array(), null);
             wp_enqueue_style(
-                    'stive-landing-2-site',
-                    get_template_directory_uri() . '/landing/landing-2/assets/css/site.css',
+                    'stive-landing-3-site',
+                    get_template_directory_uri() . '/landing/landing-3/assets/css/site.css',
                     null,
-                    filemtime(get_template_directory() . '/landing/landing-2/assets/css/site.css')
+                    filemtime(get_template_directory() . '/landing/landing-3/assets/css/site.css')
             );
 
             break;
@@ -128,20 +126,25 @@ function r4_themestive_enqueue_scripts()
                     'in_footer' => true,
                     'strategy' => 'defer',
             ]);
-            break;
-
-        case 'landing/landing-2-page.php':
-			
-			wp_enqueue_script('calendly-js', 'https://assets.calendly.com/assets/external/widget.js', array(), null, [
-                    'in_footer' => true,
-                    'strategy' => 'async',
-            ]);
-			
-			wp_enqueue_script('fancybox-js', JS_PATH . '/libs/fancybox.umd.js', array(), filemtime(JS_DIR . '/libs/fancybox.umd.js'), [
+			wp_enqueue_script('intlTelInput-js', JS_PATH . '/libs/intlTelInput.min.js', array(), filemtime(JS_DIR . '/libs/intlTelInput.min.js'), [
                     'in_footer' => true,
                     'strategy' => 'defer',
             ]);
+            break;
 
+        case 'landing/landing-3-page.php':
+            wp_enqueue_script('calendly-js', 'https://assets.calendly.com/assets/external/widget.js', array(), null, [
+                    'in_footer' => true,
+                    'strategy' => 'async',
+            ]);
+            wp_enqueue_script('fancybox-js', JS_PATH . '/libs/fancybox.umd.js', array(), filemtime(JS_DIR . '/libs/fancybox.umd.js'), [
+                    'in_footer' => true,
+                    'strategy' => 'defer',
+            ]);
+            wp_enqueue_script('intlTelInput-js', JS_PATH . '/libs/intlTelInput.min.js', array(), filemtime(JS_DIR . '/libs/intlTelInput.min.js'), [
+                    'in_footer' => true,
+                    'strategy' => 'defer',
+            ]);
             break;
 
         default:
