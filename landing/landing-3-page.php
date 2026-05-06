@@ -11,7 +11,9 @@ $socials = get_field('socials_links', 'option');
 $calendlyUrl = (is_array($calendly) && !empty($calendly['url']) && filter_var($calendly['url'], FILTER_VALIDATE_URL)) ? (string)$calendly['url'] : '#';
 $calendlyTitle = (is_array($calendly) && !empty($calendly['title'])) ? (string)$calendly['title'] : 'Book a Strategy Call';
 $logoDark = get_template_directory_uri() . '/landing/landing-3/assets/img/stive-dark.png';
-$teamPhoto = get_template_directory_uri() . '/assets/img/person-placeholder.jpg';
+$vladPhoto = get_template_directory_uri() . '/landing/landing-3/assets/img/team-vlad.jpg';
+$nastyaPhoto = get_template_directory_uri() . '/landing/landing-3/assets/img/team-nastya.jpg';
+$sergPhoto = get_template_directory_uri() . '/landing/landing-3/assets/img/team-serg.jpg';
 
 $modules = [
     ['n' => '01', 'title' => 'LLM Visibility (GEO)', 'desc' => 'Win a new customer acquisition channel. Rank in ChatGPT, Gemini, Claude — where buyers research before they buy.', 'bullets' => ['AI crawler audit & technical fixes', 'Content restructured to win LLM citations', 'Brand signals across trust platforms', 'Tracking across 5 major LLMs']],
@@ -32,7 +34,7 @@ $outcomes = [
 
 $steps = [
     ['n' => '01', 'title' => 'Discovery', 'desc' => 'Free AI audit of your business. We identify where AI creates the biggest impact for you.'],
-    ['n' => '02', 'title' => 'Strategy', 'desc' => 'We pick modules based on your stage, industry, and revenue goals. Clear roadmap, clear deliverables.'],
+    ['n' => '02', 'title' => 'Strategy', 'desc' => 'We pick 4 modules based on your stage, industry, and revenue goals. Clear roadmap, clear deliverables.'],
     ['n' => '03', 'title' => 'Implementation', 'desc' => 'Four live sessions with our team. We implement together — not give you a deck and disappear.'],
     ['n' => '04', 'title' => 'Support', 'desc' => 'One month of support after delivery. WhatsApp / Slack, weekly calls, implementation reviews.'],
 ];
@@ -44,9 +46,9 @@ $cases = [
 ];
 
 $testimonials = [
-    ['q' => "Stive's work directly translated into new customers for us. Brand citations and referral traffic went up significantly.", 'name' => 'Konstantin Sko', 'role' => 'CCO, Math Agency', 'initial' => 'KS'],
-    ['q' => "Thanks to Stive, our client saw 5.74× ROAS, 80% more organic traffic, and top positions in LLM-generated answers.", 'name' => 'Vladyslav Nykytenkov', 'role' => 'CEO, Bulls Agency', 'initial' => 'VN'],
-    ['q' => "By month three, we were ranking #1 in ChatGPT and Perplexity for the keywords that bring paying customers.", 'name' => 'Gennadii Isaev', 'role' => 'Founder, Math Agency', 'initial' => 'GI'],
+    ['q' => "Stive's work directly translated into new customers for us. Brand citations and referral traffic went up significantly — which meant more qualified leads landing on our site and converting. The team understands LLM systems deeply and moves fast.", 'name' => 'Konstantin Sko', 'role' => 'CCO, Math Agency', 'initial' => 'KS'],
+    ['q' => "Thanks to Stive, our client saw 5.74× ROAS, 80% more organic traffic, and top 1–2 positions in LLM-generated answers for the queries that actually drive sales. This isn't about rankings — it's about revenue.", 'name' => 'Vladyslav Nykytenkov', 'role' => 'CEO, Bulls Agency', 'initial' => 'VN'],
+    ['q' => "We started three months ago and the results surprised us. By month three, we were ranking #1 in ChatGPT and Perplexity for the keywords that bring us paying customers. The team is communicative, sets realistic expectations, and delivers.", 'name' => 'Gennadii Isaev', 'role' => 'Founder, Math Agency', 'initial' => 'GI'],
 ];
 
 $plans = [
@@ -56,9 +58,9 @@ $plans = [
 ];
 
 $teamMembers = [
-    ['name' => 'Vlad Pivnev', 'role' => 'Revenue Growth with AI', 'bio' => 'Builds AI-driven growth systems for EU brands. Performance-marketing background, now revenue-first AI integration.', 'skills' => ['Growth strategy', 'Paid & lifecycle', 'AI-assisted CRO'], 'featured' => true],
-    ['name' => 'Anastasia Sh.', 'role' => 'GEO Specialist', 'bio' => 'Generative Engine Optimization — getting brands cited inside ChatGPT, Perplexity and Gemini answers.', 'skills' => ['GEO audits', 'AI-search content', 'Citation strategy'], 'featured' => false],
-    ['name' => 'Serg N.', 'role' => 'Automation & Agents', 'bio' => 'Ships production AI agents and workflow automations. n8n, Make, custom Python — whatever fits the job.', 'skills' => ['AI agents', 'Workflow automation', 'API & integrations'], 'featured' => false],
+    ['name' => 'Vlad Pivnev', 'role' => 'Revenue Growth with AI', 'bio' => 'Builds AI-driven growth systems for EU brands. Performance-marketing background, now revenue-first AI integration.', 'skills' => ['Growth strategy', 'Paid & lifecycle', 'AI-assisted CRO'], 'featured' => true, 'photo' => $vladPhoto],
+    ['name' => 'Anastasia Sh.', 'role' => 'GEO Specialist', 'bio' => 'Generative Engine Optimization — getting brands cited inside ChatGPT, Perplexity and Gemini answers.', 'skills' => ['GEO audits', 'AI-search content', 'Citation strategy'], 'featured' => false, 'photo' => $nastyaPhoto],
+    ['name' => 'Serg N.', 'role' => 'Automation & Agents', 'bio' => 'Ships production AI agents and workflow automations. n8n, Make, custom Python — whatever fits the job.', 'skills' => ['AI agents', 'Workflow automation', 'API & integrations'], 'featured' => false, 'photo' => $sergPhoto],
 ];
 
 locate_template('landing/landing-3/header-landing-3.php', true);
@@ -113,7 +115,7 @@ locate_template('landing/landing-3/header-landing-3.php', true);
                 <h2>What we do,<br><span class="italic">in 2 minutes.</span></h2>
                 <p class="sub">A quick walkthrough of how the program works, who it's for, and what you actually get — straight from the founder.</p>
                 <div class="aip-founder-card">
-                    <img src="<?php echo esc_url($teamPhoto); ?>" alt="Vlad Pivnev">
+                    <img src="<?php echo esc_url($vladPhoto); ?>" alt="Vlad Pivnev">
                     <div>
                         <strong>Vlad Pivnev</strong>
                         <span>Founder, Stive</span>
@@ -284,7 +286,7 @@ locate_template('landing/landing-3/header-landing-3.php', true);
                 <?php foreach ($teamMembers as $member) : ?>
                     <article class="<?php echo $member['featured'] ? 'featured' : ''; ?>">
                         <div class="member-head">
-                            <img src="<?php echo esc_url($teamPhoto); ?>" alt="<?php echo esc_attr($member['name']); ?>">
+                            <img src="<?php echo esc_url((string)$member['photo']); ?>" alt="<?php echo esc_attr($member['name']); ?>">
                             <div><h4><?php echo esc_html($member['name']); ?></h4><span><?php echo esc_html($member['role']); ?></span></div>
                         </div>
                         <p><?php echo esc_html($member['bio']); ?></p>
