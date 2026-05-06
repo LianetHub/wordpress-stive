@@ -111,7 +111,7 @@ locate_template('landing/landing-3/header-landing-3.php', true);
 <!-- ================= POSITIONING ================= -->
 <section class="section bg-teal">
   <div class="inner" style="text-align:center;">
-    <h2 class="positioning-h2">#1 Agency for <span class="italic">AI Integration</span> in Business, Sales &amp; Marketing</h2>
+    <h2 class="positioning-h2">#1 Agency for <span class="italic">AI Integration</span> <br>in Business, Sales &amp; Marketing</h2>
     <p class="positioning-p">For the past year, we've focused exclusively on one thing: helping businesses grow revenue through AI. 300+ projects, real cases, measurable results.</p>
   </div>
 </section>
