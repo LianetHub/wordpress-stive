@@ -15,7 +15,7 @@ class CTA_Banner_Widget extends WP_Widget
                 'cta_banner_widget', // ID виджета
                 __('CTA Banner Widget', 'stive'), // Название
                 array(
-                        'description' => __('Виджет с CTA баннером, управляемый через ACF поля', 'stive'),
+                        'description' => __('Widget with CTA banner, controlled via ACF fields', 'stive'),
                         'classname' => 'widget-cta-banner'
                 )
         );
@@ -31,7 +31,7 @@ class CTA_Banner_Widget extends WP_Widget
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>">
-                <?php _e('Заголовок виджета (необязательно):', 'stive'); ?>
+                <?php _e('Widget Title (optional):', 'stive'); ?>
             </label>
             <input class="widefat"
                    id="<?php echo $this->get_field_id('title'); ?>"
@@ -46,7 +46,7 @@ class CTA_Banner_Widget extends WP_Widget
                        id="<?php echo $this->get_field_id('enable_override'); ?>"
                        name="<?php echo $this->get_field_name('enable_override'); ?>"
                        value="1" <?php checked($enable_override, 1); ?>>
-                <?php _e('Разрешить перезапись данных на отдельных статьях', 'stive'); ?>
+                <?php _e('Allow data overwriting on individual articles', 'stive'); ?>
             </label>
         </p>
 
