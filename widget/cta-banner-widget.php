@@ -27,6 +27,7 @@ class CTA_Banner_Widget extends WP_Widget
     public function form($instance)
     {
         $title = !empty($instance['title']) ? $instance['title'] : '';
+        $enable_override = !empty($instance['enable_override']) ? $instance['enable_override'] : false;
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>">
@@ -37,6 +38,16 @@ class CTA_Banner_Widget extends WP_Widget
                    name="<?php echo $this->get_field_name('title'); ?>"
                    type="text"
                    value="<?php echo esc_attr($title); ?>">
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id('enable_override'); ?>">
+                <input type="checkbox" 
+                       id="<?php echo $this->get_field_id('enable_override'); ?>"
+                       name="<?php echo $this->get_field_name('enable_override'); ?>"
+                       value="1" <?php checked($enable_override, 1); ?>>
+                <?php _e('Разрешить перезапись данных на отдельных статьях', 'stive'); ?>
+            </label>
         </p>
 
         <p class="description">
@@ -52,6 +63,7 @@ class CTA_Banner_Widget extends WP_Widget
     {
         $instance = array();
         $instance['title'] = (!empty($new_instance['title'])) ? strip_tags($new_instance['title']) : '';
+        $instance['enable_override'] = !empty($new_instance['enable_override']) ? 1 : 0;
         return $instance;
     }
 
@@ -60,16 +72,39 @@ class CTA_Banner_Widget extends WP_Widget
      */
     public function widget($args, $instance)
     {
+        global $post;
+        
         // Получаем ID текущего виджета для ACF
         $widget_id = $this->id;
-
-        // Получаем значения ACF полей
+        $enable_override = !empty($instance['enable_override']);
+        
+        // Получаем значения ACF полей из настроек виджета (глобальные)
         $caption = get_field('widget_cta_caption', 'widget_' . $widget_id);
         $headline = get_field('widget_cta_headline', 'widget_' . $widget_id);
         $description = get_field('widget_cta_description', 'widget_' . $widget_id);
         $link = get_field('calendly_link', 'option');
         $button_text = $link['title'];
         $calendly_url = $link['url'];
+        
+        // Перезапись данных для конкретной статьи (если включено)
+        if ($enable_override && is_singular() && !empty($post)) {
+            // Получаем переопределенные значения из ACF полей статьи
+            $post_caption = get_field('override_cta_caption', $post->ID);
+            $post_headline = get_field('override_cta_headline', $post->ID);
+            $post_description = get_field('override_cta_description', $post->ID);
+            $post_button_text = get_field('override_button_text', $post->ID);
+            $post_calendly_url = get_field('override_calendly_url', $post->ID);
+            $post_enable_custom = get_field('enable_custom_cta', $post->ID);
+            
+            // Если включена кастомная CTA для статьи, перезаписываем
+            if ($post_enable_custom) {
+                $caption = !empty($post_caption) ? $post_caption : $caption;
+                $headline = !empty($post_headline) ? $post_headline : $headline;
+                $description = !empty($post_description) ? $post_description : $description;
+                $button_text = !empty($post_button_text) ? $post_button_text : $button_text;
+                $calendly_url = !empty($post_calendly_url) ? $post_calendly_url : $calendly_url;
+            }
+        }
 
         // Если нет обязательных полей, не выводим виджет
         if (empty($headline) && empty($calendly_url)) {
