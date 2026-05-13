@@ -20,7 +20,7 @@ $countries = [
 ];
 ?>
 
-<section class="ready">
+<section class="ready" id="ready">
     <div class="container">
         <div class="ready__content">
             <div class="ready__header">

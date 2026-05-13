@@ -72,7 +72,7 @@ $logotypes = [
 
 
 <?php if ($solutions): ?>
-    <section class="solutions">
+    <section class="solutions" id="solutions">
         <div class="solutions__container container">
             <div class="solutions__header">
                 <h2 class="solutions__title title gradient-text">

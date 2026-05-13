@@ -58,7 +58,7 @@ $why_cards = [
 ];
 ?>
 
-<section class="why">
+<section class="why" id="why">
     <div class="container">
         <h2 class="why__title title">Why Choose Us?</h2>
         <div class="why__slider swiper">

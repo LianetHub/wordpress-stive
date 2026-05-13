@@ -62,7 +62,7 @@ $latest_articles = [
 ];
 
 ?>
-<section class="media">
+<section class="media" id="media">
     <div class="media__container container">
         <div class="media__blocks">
             <div class="media__block">

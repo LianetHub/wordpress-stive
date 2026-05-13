@@ -14,7 +14,7 @@ $case_studies = $case_studies_query->posts;
 ?>
 
 <?php if ($case_studies_query->have_posts()) : ?>
-    <section class="cases">
+    <section class="cases" id="cases">
         <div class="container">
             <h2 class="cases__title title"><?php echo get_field('front_slider_h2'); ?></h2>
             <div class="cases__slider swiper">

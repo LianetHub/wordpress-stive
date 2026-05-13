@@ -38,7 +38,7 @@ $industries = [
 ];
 ?>
 
-<div class="industries">
+<div class="industries" id="industries">
     <div class="container">
         <div class="industries__tabs swiper">
             <div class="swiper-wrapper">

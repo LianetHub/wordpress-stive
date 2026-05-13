@@ -3,7 +3,7 @@ $through_testimonials_sliders = get_field('through_testimonials_sliders', 'optio
 ?>
 
 <?php if ($through_testimonials_sliders): ?>
-    <div class="testimonials">
+    <div class="testimonials" id="testimonials">
         <div class="container">
             <div class="testimonials__slider swiper">
                 <ul class="swiper-wrapper">

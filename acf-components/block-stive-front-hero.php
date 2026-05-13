@@ -49,7 +49,7 @@ $hero_features = [
 ];
 ?>
 
-<section class="hero">
+<section class="hero" id="hero">
     <div class="hero__container container">
         <div class="hero__left">
             <span class="hero__tagline">YOUR RIGHT CHOICE</span>

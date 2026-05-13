@@ -41,7 +41,8 @@ $current_cat = $_GET['category'] ?? '';
 
             <div class="post-main__details">
                 <div class="heading__stats stats-block">
-                    <time datetime="<?php echo esc_attr(get_the_date('Y-m-d', $hero_id)); ?>" class="stats-block__item icon-date">
+                    <time datetime="<?php echo esc_attr(get_the_date('Y-m-d', $hero_id)); ?>"
+                          class="stats-block__item icon-date">
                         <?php echo esc_html(get_the_date('F j, Y', $hero_id)); ?>
                     </time>
                     <time datetime="<?php echo esc_attr(get_the_modified_date('Y-m-d', $hero_id)); ?>"
@@ -64,15 +65,18 @@ $current_cat = $_GET['category'] ?? '';
                 <div class="post-main__categories">
                     <?php echo display_category_and_tag_terms($hero_id, 'blog-list', 'a', 'post-main__category label-badge'); ?>
                 </div>
-				<?php $post = get_post($hero_id); ?>
+                <?php $post = get_post($hero_id); ?>
                 <div class="post-main__author author">
                     <div class="author__thumb">
-                        <img src="<?php echo get_avatar_url($hero_id, 'full'); ?>" class="cover-image"
-                             alt="person avatar">
+                        <?php
+                        $author_id = get_post_field('post_author', $hero_id);
+                        $avatar_url = get_avatar_url($author_id, ['size' => 96]);
+                        ?>
+                        <img src="<?php echo esc_url($avatar_url); ?>" class="cover-image" alt="person avatar">
                     </div>
                     <div class="author__details">
-                        <div class="author__name"><?php echo get_the_author_meta('display_name', $post->post_author ); ?></div>
-                        <div class="author__position"><?php echo get_the_author_meta('user_description', $post->post_author ); ?></div>
+                        <div class="author__name"><?php echo get_the_author_meta('display_name', $post->post_author); ?></div>
+                        <div class="author__position"><?php echo get_the_author_meta('user_description', $post->post_author); ?></div>
                     </div>
                 </div>
             </div>

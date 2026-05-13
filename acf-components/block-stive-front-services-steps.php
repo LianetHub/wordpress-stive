@@ -31,7 +31,7 @@ $steps = [
 ];
 ?>
 
-<div class="steps">
+<div class="steps" id="steps">
     <div class="container">
         <svg width="0" height="0" style="position:absolute;z-index:-1;">
             <defs>
