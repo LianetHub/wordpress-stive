@@ -83,33 +83,66 @@ $logotypes = [
     </div>
 </section>
 
+<?php
+if ($first_service_id) {
+    $first_service_card = stive_service_archive_card_get_context($first_service_id);
+}
+?>
+
 <?php if ($first_service_id) : ?>
     <section class="main-case">
         <div class="main-case__container container">
             <a href="<?php echo esc_url(get_permalink($first_service_id)); ?>" class="main-case__offer">
                 <picture class="main-case__poster">
                     <img
-                        src="<?php echo esc_url(get_the_post_thumbnail_url($first_service_id, 'full') ?: ''); ?>"
-                        alt="<?php echo esc_attr(get_the_title($first_service_id)); ?>"
+                        src="<?php echo esc_url($first_service_card['image']['url']); ?>"
+                        alt="<?php echo esc_attr($first_service_card['image']['alt'] ?: $first_service_card['title']); ?>"
                         class="cover-image"
                         loading="eager">
                 </picture>
                 <div class="main-case__caption title-sm">
-                    <?php echo esc_html(get_the_title($first_service_id)); ?>
+                    <?php echo esc_html($first_service_card['title']); ?>
                 </div>
             </a>
             <div class="main-case__details">
-                <p class="main-case__description"><?php echo esc_html(get_the_excerpt($first_service_id)); ?></p>
+                <?php
+                $first_service_categories = function_exists('display_category_and_tag_terms')
+                    ? display_category_and_tag_terms(
+                        $first_service_id,
+                        'service-list',
+                        'a',
+                        'main-case__category label-badge label-badge--medium',
+                        'false'
+                    )
+                    : '';
+                if ($first_service_categories !== '') :
+                ?>
+                    <div class="main-case__categories">
+                        <?php echo $first_service_categories; ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($first_service_card['description'] !== '') : ?>
+                    <p class="main-case__description"><?php echo wp_kses_post($first_service_card['description']); ?></p>
+                <?php endif; ?>
                 <div class="main-case__footer">
                     <a href="<?php echo esc_url(get_permalink($first_service_id)); ?>"
-                        class="main-case__btn btn btn-primary"><?php esc_html_e('Подробнее', 'stive'); ?></a>
+                        class="main-case__btn btn btn-primary"><?php esc_html_e('Read more details', 'stive'); ?></a>
                 </div>
             </div>
         </div>
     </section>
 <?php endif; ?>
 
-<?php if (have_posts()) : ?>
+<?php
+$show_services_grid = have_posts() && (
+    $paged > 1
+    || !$first_service_id
+    || (int) $wp_query->found_posts > 1
+);
+?>
+
+<?php if ($show_services_grid) : ?>
     <section class="cases">
         <div class="container">
             <h2 class="cases__title title-xs"><?php esc_html_e('All Services', 'stive'); ?></h2>
@@ -120,14 +153,17 @@ $logotypes = [
                         continue;
                     } ?>
 
-                    <?php $service_id = get_the_ID(); ?>
+                    <?php
+                    $service_id = get_the_ID();
+                    $service_card = stive_service_archive_card_get_context($service_id);
+                    ?>
 
                     <li class="case-card case-card--white">
                         <a href="<?php the_permalink(); ?>" class="case-card__link-wrapper">
                             <picture class="case-card__image">
                                 <img
-                                    src="<?php echo esc_url(get_the_post_thumbnail_url($service_id, 'full') ?: ''); ?>"
-                                    alt="<?php the_title_attribute(); ?>"
+                                    src="<?php echo esc_url($service_card['image']['url']); ?>"
+                                    alt="<?php echo esc_attr($service_card['image']['alt'] ?: $service_card['title']); ?>"
                                     class="cover-image"
                                     loading="lazy">
                             </picture>
@@ -135,11 +171,13 @@ $logotypes = [
                             <div class="case-card__details">
                                 <div class="case-card__details-main">
                                     <div class="case-card__name">
-                                        <?php echo esc_html(get_the_title($service_id)); ?>
+                                        <?php echo esc_html($service_card['title']); ?>
                                     </div>
-                                    <p class="case-card__desc">
-                                        <?php echo esc_html(get_the_excerpt($service_id)); ?>
-                                    </p>
+                                    <?php if ($service_card['description'] !== '') : ?>
+                                        <p class="case-card__desc">
+                                            <?php echo wp_kses_post($service_card['description']); ?>
+                                        </p>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </a>

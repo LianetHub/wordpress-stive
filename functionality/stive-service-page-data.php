@@ -253,6 +253,143 @@ function stive_service_header_get_trust_logos(): array
 }
 
 /**
+ * @param list<array<string, mixed>> $blocks
+ * @return array<string, mixed>|null
+ */
+function stive_service_find_header_block_in_blocks(array $blocks): ?array
+{
+    foreach ($blocks as $block) {
+        if (!is_array($block)) {
+            continue;
+        }
+
+        $name = isset($block['blockName']) ? (string) $block['blockName'] : '';
+        if ($name === 'acf/service-header') {
+            return $block;
+        }
+
+        if (!empty($block['innerBlocks']) && is_array($block['innerBlocks'])) {
+            $found = stive_service_find_header_block_in_blocks($block['innerBlocks']);
+            if ($found !== null) {
+                return $found;
+            }
+        }
+    }
+
+    return null;
+}
+
+/**
+ * @return array<string, mixed>|null
+ */
+function stive_service_find_header_block_for_post(int $post_id): ?array
+{
+    if ($post_id <= 0) {
+        return null;
+    }
+
+    $post = get_post($post_id);
+    if (!$post || $post->post_content === '') {
+        return null;
+    }
+
+    $blocks = parse_blocks($post->post_content);
+    if (!is_array($blocks)) {
+        return null;
+    }
+
+    return stive_service_find_header_block_in_blocks($blocks);
+}
+
+/**
+ * @template T
+ * @param callable(): T $callback
+ * @return T
+ */
+function stive_service_with_header_block_context(int $post_id, callable $callback)
+{
+    $block = stive_service_find_header_block_for_post($post_id);
+    if ($block === null) {
+        return $callback();
+    }
+
+    $GLOBALS['stive_rendering_acf_block'] = $block;
+
+    $block_id = !empty($block['id']) ? (string) $block['id'] : 'block_' . $post_id;
+    $block_data = array();
+    if (!empty($block['data']) && is_array($block['data'])) {
+        $block_data = $block['data'];
+    } elseif (!empty($block['attrs']['data']) && is_array($block['attrs']['data'])) {
+        $block_data = $block['attrs']['data'];
+    }
+
+    if ($block_data !== array() && function_exists('acf_setup_meta')) {
+        acf_setup_meta($block_data, $block_id, true);
+    }
+
+    try {
+        return $callback();
+    } finally {
+        if ($block_data !== array() && function_exists('acf_reset_meta')) {
+            acf_reset_meta($block_id);
+        }
+
+        unset($GLOBALS['stive_rendering_acf_block']);
+    }
+}
+
+/**
+ * Title, description, and image for service archive cards (main-case / grid).
+ *
+ * @return array{title:string,description:string,image:array{url:string,alt:string}}
+ */
+function stive_service_archive_card_get_context(int $post_id): array
+{
+    $empty_image = array('url' => '', 'alt' => '');
+
+    return stive_service_with_header_block_context($post_id, function () use ($post_id, $empty_image) {
+        if (!function_exists('stive_service_header_get_context')) {
+            return array(
+                'title' => (string) get_the_title($post_id),
+                'description' => (string) get_the_excerpt($post_id),
+                'image' => array(
+                    'url' => get_the_post_thumbnail_url($post_id, 'full') ?: '',
+                    'alt' => '',
+                ),
+            );
+        }
+
+        $header = stive_service_header_get_context($post_id);
+
+        $image = isset($header['service_image']) && is_array($header['service_image'])
+            ? $header['service_image']
+            : $empty_image;
+
+        if ($image['url'] === '') {
+            $thumb_url = get_the_post_thumbnail_url($post_id, 'full');
+            $thumb_id = (int) get_post_thumbnail_id($post_id);
+            $image = array(
+                'url' => $thumb_url ? (string) $thumb_url : '',
+                'alt' => $thumb_id > 0
+                    ? (string) get_post_meta($thumb_id, '_wp_attachment_image_alt', true)
+                    : '',
+            );
+        }
+
+        $description = (string) ($header['service_description'] ?? '');
+        if ($description === '') {
+            $description = (string) get_the_excerpt($post_id);
+        }
+
+        return array(
+            'title' => (string) ($header['service_title'] ?? get_the_title($post_id)),
+            'description' => $description,
+            'image' => $image,
+        );
+    });
+}
+
+/**
  * @return array{
  *     service_title:string,
  *     service_description:string,
