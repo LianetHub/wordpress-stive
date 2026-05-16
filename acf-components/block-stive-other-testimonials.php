@@ -1,6 +1,10 @@
 <?php
 if (!isset($through_testimonials_sliders) && function_exists('get_field')) {
-    $through_testimonials_sliders = get_field('through_testimonials_sliders', 'option');
+    $through_testimonials_sliders = get_field('through_testimonials_sliders');
+
+    if (empty($through_testimonials_sliders)) {
+        $through_testimonials_sliders = get_field('through_testimonials_sliders', 'option');
+    }
 }
 ?>
 

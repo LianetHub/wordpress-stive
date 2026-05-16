@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/stive-service-page-static.php';
-
 /**
  * @param array<string, mixed>|int|false $image
  * @return array<string, string>
@@ -63,93 +61,6 @@ function stive_service_page_acf_link($link): array
     $target = !empty($link['target']) ? (string) $link['target'] : '_self';
 
     return array('url' => $url, 'title' => $title, 'target' => $target);
-}
-
-/**
- * @return array<string, mixed>
- */
-function stive_service_page_default_context(): array
-{
-    $empty_link = array('url' => '', 'title' => '', 'target' => '_self');
-    $empty_img = array('url' => '', 'alt' => '');
-    return array(
-        'tags' => array(),
-        'heading' => '',
-        'lead' => '',
-        'cta_primary' => $empty_link,
-        'cta_secondary' => $empty_link,
-        'trust_logos' => array(),
-        'hero_visual' => $empty_img,
-        'hero_logo' => $empty_img,
-        'hero_metrics' => array(),
-        'llm_title' => '',
-        'llm_body' => '',
-        'cases' => array(),
-        'included_title' => '',
-        'included_items' => array(),
-        'process_steps' => array(),
-        'challenges_title' => '',
-        'challenges' => array(),
-        'testimonials_title' => '',
-        'testimonials' => array(),
-        'faq_title' => '',
-        'faq_items' => array(),
-        'contact_title' => '',
-        'contact_text' => '',
-        'contact_map' => $empty_img,
-        'contact_cta_primary' => $empty_link,
-        'contact_cta_secondary' => $empty_link,
-        'contact_trust' => array(),
-    );
-}
-
-/**
- * @return array<string, mixed>
- */
-function stive_service_page_get_context(?int $post_id = null): array
-{
-    if (!function_exists('get_field')) {
-        return stive_service_page_default_context();
-    }
-    $id = $post_id;
-    if ($id === null || $id < 1) {
-        $id = (int) get_the_ID();
-    }
-    if ($id < 1) {
-        $id = (int) get_queried_object_id();
-    }
-    if ($id < 1) {
-        return stive_service_page_default_context();
-    }
-    return array(
-        'tags' => get_field('service_page_tags', $id) ?: array(),
-        'heading' => get_field('service_page_heading', $id),
-        'lead' => get_field('service_page_lead', $id),
-        'cta_primary' => stive_service_page_acf_link(get_field('service_page_cta_primary', $id)),
-        'cta_secondary' => stive_service_page_acf_link(get_field('service_page_cta_secondary', $id)),
-        'trust_logos' => get_field('service_page_trust_logos', $id) ?: array(),
-        'hero_visual' => stive_service_page_acf_image_attrs(get_field('service_page_hero_visual', $id)),
-        'hero_logo' => stive_service_page_acf_image_attrs(get_field('service_page_hero_logo', $id)),
-        'hero_metrics' => get_field('service_page_hero_metrics', $id) ?: array(),
-        'llm_title' => get_field('service_page_llm_title', $id),
-        'llm_body' => get_field('service_page_llm_body', $id),
-        'cases' => get_field('service_page_cases', $id) ?: array(),
-        'included_title' => get_field('service_page_included_title', $id),
-        'included_items' => get_field('service_page_included_items', $id) ?: array(),
-        'process_steps' => get_field('service_page_process_steps', $id) ?: array(),
-        'challenges_title' => get_field('service_page_challenges_title', $id),
-        'challenges' => get_field('service_page_challenges', $id) ?: array(),
-        'testimonials_title' => get_field('service_page_testimonials_title', $id),
-        'testimonials' => get_field('service_page_testimonials', $id) ?: array(),
-        'faq_title' => get_field('service_page_faq_title', $id),
-        'faq_items' => get_field('service_page_faq_items', $id) ?: array(),
-        'contact_title' => get_field('service_page_contact_title', $id),
-        'contact_text' => get_field('service_page_contact_text', $id),
-        'contact_map' => stive_service_page_acf_image_attrs(get_field('service_page_contact_map', $id)),
-        'contact_cta_primary' => stive_service_page_acf_link(get_field('service_page_contact_cta_primary', $id)),
-        'contact_cta_secondary' => stive_service_page_acf_link(get_field('service_page_contact_cta_secondary', $id)),
-        'contact_trust' => get_field('service_page_contact_trust', $id) ?: array(),
-    );
 }
 
 /**
@@ -263,35 +174,25 @@ function stive_service_acf_value(string $field_name, $default = null)
 }
 
 /**
- * @param array<string, mixed> $page_context
  * @return list<array<string, mixed>>
  */
-function stive_service_header_get_metrics(array $page_context): array
+function stive_service_header_get_metrics(): array
 {
     $data = stive_service_get_block_field_data();
     $metrics = stive_service_parse_block_repeater($data, 'service_metrics', array('metric_label', 'metric_value'));
 
-    if ($metrics !== array()) {
-        return $metrics;
-    }
-
-    return is_array($page_context['hero_metrics'] ?? null) ? $page_context['hero_metrics'] : array();
+    return $metrics !== array() ? $metrics : array();
 }
 
 /**
- * @param array<string, mixed> $page_context
  * @return list<array<string, mixed>>
  */
-function stive_service_header_get_trust_logos(array $page_context): array
+function stive_service_header_get_trust_logos(): array
 {
     $data = stive_service_get_block_field_data();
     $trust = stive_service_parse_block_repeater($data, 'service_trust_logos', array('logo'));
 
-    if ($trust !== array()) {
-        return $trust;
-    }
-
-    return is_array($page_context['trust_logos'] ?? null) ? $page_context['trust_logos'] : array();
+    return $trust !== array() ? $trust : array();
 }
 
 /**
@@ -308,45 +209,31 @@ function stive_service_header_get_trust_logos(array $page_context): array
 function stive_service_header_get_context(?int $post_id = null): array
 {
     $post_id = $post_id ?: (int) get_the_ID();
-    $page = stive_service_page_get_context($post_id);
+    $empty_link = array('url' => '', 'title' => '', 'target' => '_self');
 
     $title = stive_service_acf_value('service_title', null);
-    if ($title === null || $title === '') {
-        $title = !empty($page['heading']) ? (string) $page['heading'] : get_the_title($post_id);
-    } else {
-        $title = (string) $title;
-    }
+    $title = ($title === null || $title === '') ? get_the_title($post_id) : (string) $title;
 
     $description = stive_service_acf_value('service_description', null);
-    if ($description === null || $description === '') {
-        $description = !empty($page['lead']) ? (string) $page['lead'] : '';
-    } else {
-        $description = (string) $description;
-    }
+    $description = ($description === null || $description === '') ? '' : (string) $description;
 
     $btn_primary_raw = stive_service_acf_value('service_btn_primary', null);
-    if ($btn_primary_raw === null || $btn_primary_raw === '') {
-        $btn_primary = $page['cta_primary'];
-    } else {
-        $btn_primary = stive_service_page_acf_link($btn_primary_raw);
-    }
+    $btn_primary = ($btn_primary_raw === null || $btn_primary_raw === '')
+        ? $empty_link
+        : stive_service_page_acf_link($btn_primary_raw);
 
     $btn_secondary_raw = stive_service_acf_value('service_btn_secondary', null);
-    if ($btn_secondary_raw === null || $btn_secondary_raw === '') {
-        $btn_secondary = $page['cta_secondary'];
-    } else {
-        $btn_secondary = stive_service_page_acf_link($btn_secondary_raw);
-    }
+    $btn_secondary = ($btn_secondary_raw === null || $btn_secondary_raw === '')
+        ? $empty_link
+        : stive_service_page_acf_link($btn_secondary_raw);
 
     $image_raw = stive_service_acf_value('service_image', null);
-    if ($image_raw === null || $image_raw === '') {
-        $service_image = $page['hero_visual'];
-    } else {
-        $service_image = stive_service_page_acf_image_attrs($image_raw);
-    }
+    $service_image = ($image_raw === null || $image_raw === '')
+        ? array('url' => '', 'alt' => '')
+        : stive_service_page_acf_image_attrs($image_raw);
 
-    $metrics = stive_service_header_get_metrics($page);
-    $trust = stive_service_header_get_trust_logos($page);
+    $metrics = stive_service_header_get_metrics();
+    $trust = stive_service_header_get_trust_logos();
 
     return array(
         'service_title' => $title,

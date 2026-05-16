@@ -11,24 +11,21 @@ if (!defined('ABSPATH')) {
 
 get_header();
 
-
-$page_id = $post->ID;
+global $post;
 
 $breadcrumbs_path = TEMPLATE_PATH . '_breadcrumbs.php';
 if (file_exists($breadcrumbs_path)) {
-    require_once($breadcrumbs_path);
+    require_once $breadcrumbs_path;
 }
 
 /**
- * Оборачивает стандартный контент в структуру статьи
- *
- * @param string $content Сырой контент
- * @return string Оформленный контент или пустая строка
+ * @param string $content
+ * @return string
  */
 function wrap_standard_content($content)
 {
     $content = trim($content);
-    if (empty($content)) {
+    if ($content === '') {
         return '';
     }
 
@@ -43,16 +40,13 @@ function wrap_standard_content($content)
 }
 
 /**
- * Обрабатывает контент с контролем autop
- *
- * @param string $content Контент для обработки
- * @return string Обработанный контент
+ * @param string $content
+ * @return string
  */
 function safe_render_content($content)
 {
     static $wpautop_removed = false;
 
-    // Удаляем wpautop только один раз для этого запроса
     if (!$wpautop_removed && has_filter('the_content', 'wpautop')) {
         remove_filter('the_content', 'wpautop');
         $wpautop_removed = true;
@@ -61,7 +55,6 @@ function safe_render_content($content)
     return apply_filters('the_content', $content);
 }
 
-// Получаем и парсим блоки
 $raw_content = get_the_content(null, false, $post);
 $blocks = parse_blocks($raw_content);
 
@@ -69,42 +62,44 @@ $output = '';
 $standard_blocks_buffer = '';
 
 foreach ($blocks as $block) {
-    // Проверяем, является ли блок ACF блоком
     $is_acf_block = isset($block['blockName']) && strpos($block['blockName'], 'acf/') === 0;
 
     if ($is_acf_block) {
-        // Закрываем буфер стандартных блоков перед ACF блоком
-        if (!empty($standard_blocks_buffer)) {
+        if ($standard_blocks_buffer !== '') {
             $output .= wrap_standard_content($standard_blocks_buffer);
             $standard_blocks_buffer = '';
         }
 
-        // Рендерим ACF блок
+        if (function_exists('stive_service_prepare_acf_block_context')) {
+            stive_service_prepare_acf_block_context($block);
+        }
+
         $rendered_block = render_block($block);
-        if (!empty(trim($rendered_block))) {
+
+        if (function_exists('stive_service_reset_acf_block_context')) {
+            stive_service_reset_acf_block_context($block);
+        }
+
+        if (trim($rendered_block) !== '') {
             $output .= $rendered_block;
         }
     } else {
-        // Добавляем в буфер стандартные блоки
         $rendered_block = render_block($block);
-        if (!empty(trim($rendered_block))) {
+        if (trim($rendered_block) !== '') {
             $standard_blocks_buffer .= $rendered_block;
         }
     }
 }
 
-// Обрабатываем остатки буфера
-if (!empty($standard_blocks_buffer)) {
+if ($standard_blocks_buffer !== '') {
     $output .= wrap_standard_content($standard_blocks_buffer);
 }
 
 // Очищаем финальный вывод
 $output = trim($output);
 
-// Безопасно выводим контент
-if (!empty($output)) {
-    // Используем безопасный рендеринг без wpautop
-    echo safe_render_content($output);
+if ($output !== '') {
+    echo $output;
 }
 
 get_footer();
