@@ -32,7 +32,25 @@ document.addEventListener('DOMContentLoaded', () => {
     getNavigator();
     $(window).on('resize', getNavigator);
 
+    const MOBILE_MENU_BREAKPOINT = 767.98;
 
+    function closeMobileMenu() {
+        if ($(window).width() >= MOBILE_MENU_BREAKPOINT) return;
+
+        $('.header').removeClass('open-menu');
+        $('body').removeClass('lock-menu');
+        $('.header__menu-toggler').attr('aria-expanded', 'false');
+    }
+
+    function isAnchorLink(href) {
+        if (!href || href === '#') return false;
+
+        try {
+            return Boolean(new URL(href, window.location.href).hash);
+        } catch {
+            return href.includes('#');
+        }
+    }
 
     // event handlers
     $(document).on('click', (e) => {
@@ -55,8 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // menu
         if ($target.closest('.header__menu-toggler').length) {
-            $(".header").toggleClass("open-menu");
-            $('body').toggleClass('lock-menu')
+            const isOpen = $('.header').toggleClass('open-menu').hasClass('open-menu');
+            $('body').toggleClass('lock-menu');
+            $('.header__menu-toggler').attr('aria-expanded', isOpen);
+        }
+
+        const $menuLink = $target.closest('.menu__link');
+        if ($menuLink.length && isAnchorLink($menuLink.attr('href'))) {
+            closeMobileMenu();
         }
 
         if ($target.closest('.footer__menu-caption').length) {
