@@ -174,6 +174,63 @@ function stive_service_acf_value(string $field_name, $default = null)
 }
 
 /**
+ * @param mixed $case_ref post_object value (post ID, WP_Post, or legacy row key).
+ */
+function stive_service_resolve_case_post_id($case_ref): int
+{
+    if ($case_ref instanceof WP_Post) {
+        $case_id = (int) $case_ref->ID;
+    } elseif (is_numeric($case_ref)) {
+        $case_id = (int) $case_ref;
+    } else {
+        return 0;
+    }
+
+    if ($case_id <= 0 || get_post_type($case_id) !== 'case') {
+        return 0;
+    }
+
+    return $case_id;
+}
+
+/**
+ * Case post IDs from Block Service Intro repeater (service_intro_cases → case_id).
+ *
+ * @return list<int>
+ */
+function stive_service_intro_get_case_ids(): array
+{
+    $data = stive_service_get_block_field_data();
+    $rows = stive_service_parse_block_repeater($data, 'service_intro_cases', array('case_id'));
+
+    if ($rows === array()) {
+        $rows = stive_service_parse_block_repeater($data, 'service_intro_cases', array('case'));
+    }
+
+    if ($rows === array() && function_exists('get_field')) {
+        $from_acf = get_field('service_intro_cases');
+        if (is_array($from_acf) && $from_acf !== array()) {
+            $rows = array_values($from_acf);
+        }
+    }
+
+    $ids = array();
+    foreach ($rows as $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+
+        $case_ref = $row['case_id'] ?? $row['case'] ?? null;
+        $case_id = stive_service_resolve_case_post_id($case_ref);
+        if ($case_id > 0) {
+            $ids[] = $case_id;
+        }
+    }
+
+    return array_values(array_unique($ids));
+}
+
+/**
  * @return list<array<string, mixed>>
  */
 function stive_service_header_get_metrics(): array

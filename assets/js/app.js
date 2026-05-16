@@ -200,6 +200,27 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    if ($(".service-intro__cases").length) {
+        new Swiper('.service-intro__cases', {
+            slidesPerView: 1,
+            spaceBetween: 4,
+            loop: true,
+            slideToClickedSlide: true,
+            watchSlidesVisibility: true,
+            preventClicks: true,
+            preventClicksPropagation: true,
+            breakpoints: {
+                575.98: {
+                    spaceBetween: 16,
+                },
+                767.98: {
+                    spaceBetween: 32,
+                    slidesPerView: 1.2,
+                }
+            }
+        })
+    }
+
     if ($(".media__block-slider").length) {
         new Swiper('.media__block-slider', {
             slidesPerView: 1,

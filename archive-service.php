@@ -112,7 +112,7 @@ $logotypes = [
 <?php if (have_posts()) : ?>
     <section class="cases">
         <div class="container">
-            <h2 class="cases__title title-xs"><?php esc_html_e('Все услуги', 'stive'); ?></h2>
+            <h2 class="cases__title title-xs"><?php esc_html_e('All Services', 'stive'); ?></h2>
             <ul class="cases__grid">
                 <?php while (have_posts()) : the_post(); ?>
 
