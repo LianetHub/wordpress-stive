@@ -7,23 +7,23 @@ if ($title === '' && $items === array()) {
     return;
 }
 ?>
-<section class="service-page__band service-page__section">
+<section class="stive-section service-included">
     <div class="container">
         <?php if ($title !== '') : ?>
-            <h2 class="service-page__section-title service-page__section-title--lg"><?php echo esc_html($title); ?></h2>
+            <h2 class="stive-section__title stive-section__title--lg"><?php echo esc_html($title); ?></h2>
         <?php endif; ?>
         <?php if ($items !== array()) : ?>
-            <div class="service-page__card-grid service-page__card-grid--included">
+            <div class="stive-cards stive-cards--grid-3">
                 <?php foreach ($items as $item) : ?>
                     <?php if (!is_array($item)) {
                         continue;
                     } ?>
-                    <article class="service-page__card">
+                    <article class="stive-card">
                         <?php if (!empty($item['title'])) : ?>
-                            <h3 class="service-page__card-title"><?php echo esc_html((string) $item['title']); ?></h3>
+                            <h3 class="stive-card__title"><?php echo esc_html((string) $item['title']); ?></h3>
                         <?php endif; ?>
                         <?php if (!empty($item['text'])) : ?>
-                            <p class="service-page__card-text"><?php echo esc_html((string) $item['text']); ?></p>
+                            <p class="stive-card__text"><?php echo esc_html((string) $item['text']); ?></p>
                         <?php endif; ?>
                     </article>
                 <?php endforeach; ?>

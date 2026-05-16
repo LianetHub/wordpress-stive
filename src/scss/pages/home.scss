@@ -457,8 +457,16 @@
 .testimonials {
     padding: rem(8) 0 rem(32);
 
+    &:is(section) {
+        padding: rem(32) 0;
+    }
+
     @media (min-width:$md2) {
         padding: rem(8) 0 rem(48);
+
+        &:is(section) {
+            padding: rem(48) 0;
+        }
     }
 
     // .testimonials__title

@@ -26,10 +26,7 @@ if (!isset($through_testimonials_section_title) && function_exists('get_field'))
 $has_testimonials_title = $through_testimonials_section_title !== '';
 $testimonials_wrapper_tag = $has_testimonials_title ? 'section' : 'div';
 
-$testimonials_title_class = 'testimonials__title title-xs gradient-text';
-if (defined('STIVE_SERVICE_POST_TYPE') && is_singular(STIVE_SERVICE_POST_TYPE)) {
-    $testimonials_title_class = 'testimonials__title title-xs gradient-text';
-}
+$testimonials_title_class = 'testimonials__title stive-section__title stive-section__title--md';
 ?>
 
 <?php if (!empty($through_testimonials_sliders)) : ?>

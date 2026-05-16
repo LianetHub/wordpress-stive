@@ -1,0 +1,168 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+$stive-border: #f2f2f2;
+
+.service-intro__row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: rem(16);
+}
+
+.service-intro__content {
+	flex: 1 1 100%;
+	background: $white;
+	border: 1px solid $stive-border;
+	border-radius: rem(8);
+	padding: rem(32);
+	box-sizing: border-box;
+
+	@media (min-width: $md2) {
+		flex: 0 1 rem(584);
+		max-width: rem(584);
+		min-height: rem(400);
+	}
+}
+
+.service-intro__title {
+	margin: 0 0 rem(16) 0;
+	font-size: rem(24);
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: rem(-0.48);
+	background: linear-gradient(126.95deg, $dark 16.08%, #2cdacc 95.41%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.service-intro__body {
+	font-size: rem(16);
+	font-weight: 400;
+	line-height: 1.3;
+	color: $text-muted;
+
+	p {
+		margin: 0 0 rem(12) 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.service-intro__cases-wrap {
+	flex: 1 1 100%;
+	min-width: 0;
+
+	@media (min-width: $md2) {
+		flex: 1 1 rem(700);
+	}
+}
+
+.service-intro__cases {
+	overflow: hidden;
+}
+
+.service-intro__cases-track {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.service-intro__case {
+	height: auto;
+	box-sizing: border-box;
+	background: $white;
+	border: 1px solid $stive-border;
+	border-radius: rem(16);
+	padding: rem(32);
+	width: 90%;
+
+	@media (min-width: $md4) {
+		width: rem(696);
+	}
+}
+
+.service-intro__case-thumb {
+	position: relative;
+	background: #f5f5f5;
+	border-radius: rem(16);
+	overflow: hidden;
+	height: rem(200);
+	margin-bottom: rem(23);
+
+	@media (min-width: $md4) {
+		height: rem(280);
+	}
+
+	@media (min-width: $md2) {
+		height: rem(336);
+	}
+}
+
+.service-intro__case-thumb-img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 104%;
+	height: 104%;
+	object-fit: cover;
+}
+
+.service-intro__case-body {
+	padding: 0;
+}
+
+.service-intro__case-title {
+	margin: 0 0 rem(16) 0;
+	font-size: rem(20);
+	font-weight: 700;
+	color: $text-primary;
+}
+
+.service-intro__case-desc {
+	margin: 0 0 rem(32) 0;
+	font-size: rem(16);
+	font-weight: 300;
+	line-height: 1.2;
+	color: $text-muted;
+
+	p {
+		margin: 0 0 rem(8) 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.service-intro__case-metrics {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: rem(24) rem(32);
+	font-size: rem(14);
+	line-height: 1;
+	letter-spacing: rem(1.4);
+	text-transform: uppercase;
+}
+
+.service-intro__case-metric {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: rem(8);
+}
+
+.service-intro__case-metric-label {
+	font-weight: 400;
+	color: $text-muted;
+}
+
+.service-intro__case-metric-value {
+	font-weight: 700;
+	color: $text-primary;
+}

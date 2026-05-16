@@ -17,37 +17,37 @@ if ($contact_title === '' && $contact_text === '' && $contact_map['url'] === '')
     return;
 }
 ?>
-<section class="service-page__contact service-page__section">
+<section class="service-contact">
     <?php if ($contact_map['url'] !== '') : ?>
-        <div class="service-page__contact-map" aria-hidden="true">
-            <img class="service-page__contact-map-img"
+        <div class="service-contact__map" aria-hidden="true">
+            <img class="service-contact__map-img"
                 src="<?php echo esc_url($contact_map['url']); ?>"
                 alt="">
         </div>
     <?php endif; ?>
-    <div class="container service-page__contact-inner">
+    <div class="container service-contact__inner">
         <?php if ($contact_title !== '') : ?>
-            <h2 class="service-page__contact-title"><?php echo esc_html($contact_title); ?></h2>
+            <h2 class="service-contact__title"><?php echo esc_html($contact_title); ?></h2>
         <?php endif; ?>
         <?php if ($contact_text !== '') : ?>
-            <div class="service-page__contact-text"><?php echo wp_kses_post($contact_text); ?></div>
+            <div class="service-contact__text"><?php echo wp_kses_post($contact_text); ?></div>
         <?php endif; ?>
         <?php if ($contact_cta_primary['url'] !== '' || $contact_cta_secondary['url'] !== '') : ?>
-            <div class="service-page__actions service-page__actions--contact">
+            <div class="stive-cta service-contact__cta">
                 <?php if ($contact_cta_primary['url'] !== '') : ?>
-                    <a class="service-page__btn service-page__btn--primary"
+                    <a class="stive-cta__btn stive-cta__btn--primary"
                         href="<?php echo esc_url($contact_cta_primary['url']); ?>"
                         target="<?php echo esc_attr($contact_cta_primary['target']); ?>"><?php echo esc_html($contact_cta_primary['title']); ?></a>
                 <?php endif; ?>
                 <?php if ($contact_cta_secondary['url'] !== '') : ?>
-                    <a class="service-page__btn service-page__btn--secondary"
+                    <a class="stive-cta__btn stive-cta__btn--secondary"
                         href="<?php echo esc_url($contact_cta_secondary['url']); ?>"
                         target="<?php echo esc_attr($contact_cta_secondary['target']); ?>"><?php echo esc_html($contact_cta_secondary['title']); ?></a>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
         <?php if ($contact_trust !== array()) : ?>
-            <div class="service-page__contact-trust">
+            <div class="service-contact__trust">
                 <?php foreach ($contact_trust as $crow) : ?>
                     <?php
                     if (!is_array($crow)) {
@@ -60,8 +60,8 @@ if ($contact_title === '' && $contact_text === '' && $contact_map['url'] === '')
                         continue;
                     }
                     ?>
-                    <div class="service-page__contact-trust-item">
-                        <img class="service-page__contact-trust-img"
+                    <div class="service-contact__trust-item">
+                        <img class="service-contact__trust-img"
                             src="<?php echo esc_url($cimg['url']); ?>"
                             alt="<?php echo esc_attr($cimg['alt']); ?>"
                             loading="lazy"

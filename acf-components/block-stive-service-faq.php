@@ -30,6 +30,6 @@ if (!$faq_tpl) {
     return;
 }
 ?>
-<div class="service-page__band service-page__section">
+<section class="stive-section service-faq">
     <?php require $faq_tpl; ?>
-</div>
+</section>

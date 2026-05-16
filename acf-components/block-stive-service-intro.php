@@ -8,60 +8,60 @@ if ($llm_title === '' && $llm_body === '' && $cases === array()) {
     return;
 }
 ?>
-<section class="service-page__band service-page__section">
+<section class="stive-section service-intro">
     <div class="container">
-        <div class="service-page__intro-row">
+        <div class="service-intro__row">
             <?php if ($llm_title !== '' || $llm_body !== '') : ?>
-                <div class="service-page__intro">
+                <div class="service-intro__content">
                     <?php if ($llm_title !== '') : ?>
-                        <h2 class="service-page__intro-title"><?php echo esc_html($llm_title); ?></h2>
+                        <h2 class="service-intro__title"><?php echo esc_html($llm_title); ?></h2>
                     <?php endif; ?>
                     <?php if ($llm_body !== '') : ?>
-                        <div class="service-page__intro-body"><?php echo wp_kses_post($llm_body); ?></div>
+                        <div class="service-intro__body"><?php echo wp_kses_post($llm_body); ?></div>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
             <?php if ($cases !== array()) : ?>
-                <div class="service-page__cases-wrap">
-                    <div class="service-page__cases swiper">
-                        <ul class="service-page__cases-track swiper-wrapper">
+                <div class="service-intro__cases-wrap">
+                    <div class="service-intro__cases swiper">
+                        <ul class="service-intro__cases-track swiper-wrapper">
                             <?php foreach ($cases as $case) : ?>
                                 <?php if (!is_array($case)) {
                                     continue;
                                 } ?>
-                                <li class="service-page__case swiper-slide">
+                                <li class="service-intro__case swiper-slide">
                                     <?php
                                     $cimg = isset($case['image']) && function_exists('stive_service_page_acf_image_attrs')
                                         ? stive_service_page_acf_image_attrs($case['image'])
                                         : array('url' => '', 'alt' => '');
                                     ?>
                                     <?php if ($cimg['url'] !== '') : ?>
-                                        <div class="service-page__case-thumb">
-                                            <img class="service-page__case-thumb-img"
+                                        <div class="service-intro__case-thumb">
+                                            <img class="service-intro__case-thumb-img"
                                                 src="<?php echo esc_url($cimg['url']); ?>"
                                                 alt="<?php echo esc_attr($cimg['alt']); ?>"
                                                 loading="lazy">
                                         </div>
                                     <?php endif; ?>
-                                    <div class="service-page__case-body">
+                                    <div class="service-intro__case-body">
                                         <?php if (!empty($case['title'])) : ?>
-                                            <h3 class="service-page__case-title"><?php echo esc_html((string) $case['title']); ?></h3>
+                                            <h3 class="service-intro__case-title"><?php echo esc_html((string) $case['title']); ?></h3>
                                         <?php endif; ?>
                                         <?php if (!empty($case['description'])) : ?>
-                                            <div class="service-page__case-desc"><?php echo wp_kses_post((string) $case['description']); ?></div>
+                                            <div class="service-intro__case-desc"><?php echo wp_kses_post((string) $case['description']); ?></div>
                                         <?php endif; ?>
                                         <?php if (!empty($case['metrics']) && is_array($case['metrics'])) : ?>
-                                            <div class="service-page__case-metrics">
+                                            <div class="service-intro__case-metrics">
                                                 <?php foreach ($case['metrics'] as $mrow) : ?>
                                                     <?php if (!is_array($mrow)) {
                                                         continue;
                                                     } ?>
-                                                    <div class="service-page__case-metric">
+                                                    <div class="service-intro__case-metric">
                                                         <?php if (!empty($mrow['metric_label'])) : ?>
-                                                            <span class="service-page__case-metric-label"><?php echo esc_html((string) $mrow['metric_label']); ?></span>
+                                                            <span class="service-intro__case-metric-label"><?php echo esc_html((string) $mrow['metric_label']); ?></span>
                                                         <?php endif; ?>
                                                         <?php if (!empty($mrow['metric_value'])) : ?>
-                                                            <span class="service-page__case-metric-value"><?php echo esc_html((string) $mrow['metric_value']); ?></span>
+                                                            <span class="service-intro__case-metric-value"><?php echo esc_html((string) $mrow['metric_value']); ?></span>
                                                         <?php endif; ?>
                                                     </div>
                                                 <?php endforeach; ?>

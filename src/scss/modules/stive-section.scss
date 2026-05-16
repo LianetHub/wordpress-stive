@@ -1,0 +1,112 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+$stive-line: #eaeaea;
+$stive-surface: #f2f2f2;
+$stive-border: #f2f2f2;
+$stive-btn-blue: #437ebf;
+$stive-btn-grey-bg: #eaeaea;
+$stive-btn-grey-border: #e3e3e3;
+
+// Reusable section spacing (any page / any Gutenberg block).
+.stive-section {
+	padding-block: rem(20);
+
+	@media (min-width: $md2) {
+		padding-block: rem(32);
+	}
+
+
+}
+
+.stive-section__title {
+	margin: 0 0 rem(24) 0;
+	font-weight: 800;
+	line-height: normal;
+	background: linear-gradient(149.36deg, $dark 2.21%, #2cdacc 25%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.stive-section__title--lg {
+	font-size: rem(28);
+	letter-spacing: rem(-0.56);
+}
+
+.stive-section__title--md {
+	font-size: rem(28);
+	letter-spacing: rem(-0.56);
+}
+
+// Reusable card grid.
+.stive-cards {
+	display: flex;
+	flex-direction: column;
+	gap: rem(8);
+}
+
+.stive-cards--grid-3 {
+	@media (min-width: $md3) {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: rem(8);
+	}
+}
+
+.stive-card {
+	background: $white;
+	border: 1px solid $stive-border;
+	border-radius: rem(8);
+	padding: rem(32);
+	box-sizing: border-box;
+}
+
+.stive-card__title {
+	margin: 0 0 rem(16) 0;
+	font-size: rem(22);
+	font-weight: 800;
+	line-height: 1;
+	color: $text-primary;
+}
+
+.stive-card__text {
+	margin: 0;
+	font-size: rem(16);
+	font-weight: 400;
+	line-height: 1.2;
+	color: $text-muted;
+}
+
+// Reusable CTA row + buttons.
+.stive-cta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(8);
+}
+
+.stive-cta__btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: rem(24);
+	border-radius: rem(8);
+	font-size: rem(18);
+	font-weight: 700;
+	line-height: normal;
+	text-decoration: none;
+	border: 1px solid transparent;
+	min-height: rem(52);
+	box-sizing: border-box;
+}
+
+.stive-cta__btn--primary {
+	background: $stive-btn-blue;
+	color: $white;
+}
+
+.stive-cta__btn--secondary {
+	background: $stive-btn-grey-bg;
+	border-color: $stive-btn-grey-border;
+	color: $text-primary;
+}

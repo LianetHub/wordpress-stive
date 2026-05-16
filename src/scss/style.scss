@@ -11,7 +11,9 @@
 @use "header";
 @use "footer";
 
-@use "modules/service-page";
+@use "modules/stive-section";
+@use "modules/service-intro";
+@use "pages/singular-service";
 
 @use "pages/home";
 @use "pages/case";

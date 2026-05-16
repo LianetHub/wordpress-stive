@@ -138,13 +138,14 @@ function stive_register_service_blocks_acf_fields()
 
     acf_add_local_field_group(array(
         'key' => 'group_stive_service_challenges',
-        'title' => 'Block Service Challenges',
+        'title' => 'Challenges We Solve',
         'fields' => array(
             array(
                 'key' => 'field_service_challenges_title',
                 'label' => 'Section title',
                 'name' => 'service_challenges_title',
                 'type' => 'text',
+                'default_value' => 'Challenges We Solve',
             ),
             array(
                 'key' => 'field_service_challenges_items',

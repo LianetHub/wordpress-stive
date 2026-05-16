@@ -33,7 +33,7 @@ function r4_register_acf_blocks()
     $service_blocks = array(
         'service-intro' => array('Block Service Intro', 'acf-components/block-stive-service-intro.php'),
         'service-included' => array('Block Service Included', 'acf-components/block-stive-service-included.php'),
-        'service-challenges' => array('Block Service Challenges', 'acf-components/block-stive-service-challenges.php'),
+        'service-challenges' => array('Challenges We Solve', 'acf-components/block-stive-service-challenges.php'),
         'service-faq' => array('Block Service FAQ', 'acf-components/block-stive-service-faq.php'),
         'service-contact' => array('Block Service Contact', 'acf-components/block-stive-service-contact.php'),
     );
