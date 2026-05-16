@@ -461,6 +461,17 @@
         padding: rem(8) 0 rem(48);
     }
 
+    // .testimonials__title
+    &__title {
+        margin-bottom: 1rem;
+
+        &.title-xs {
+            @media (min-width:$md4) {
+                font-size: rem(28);
+            }
+        }
+    }
+
     // .testimonials__slider
     &__slider {
         overflow: visible;

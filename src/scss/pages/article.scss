@@ -313,7 +313,13 @@
     padding: 2rem 0;
 
     // .faq__title
-    &__title {}
+    &__title {
+        &.title-xs {
+            @media (min-width:$md4) {
+                font-size: rem(28);
+            }
+        }
+    }
 
     .saswp-faq-block-section {
         & ol {
