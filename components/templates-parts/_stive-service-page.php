@@ -3,12 +3,6 @@ if (!function_exists('stive_service_page_static_context')) {
     return;
 }
 $sp = stive_service_page_static_context();
-$stive_service_page_heading = true;
-$case_header_tpl = locate_template('acf-components/block-stive-case-header.php');
-if ($case_header_tpl) {
-    require $case_header_tpl;
-}
-unset($stive_service_page_heading);
 ?>
 <?php if (!empty($sp['llm_title']) || !empty($sp['llm_body']) || !empty($sp['cases'])) : ?>
     <section class="service-page__band service-page__section">

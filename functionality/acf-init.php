@@ -7,12 +7,23 @@ function r4_register_acf_blocks()
 
         // Регистрируем блок 
         acf_register_block_type(array(
-            'name' => 'Case Header',
+            'name' => 'case-header',
             'title' => __('Block Case Header'),
             'description' => __('A custom block.'),
             'render_template' => 'acf-components/block-stive-case-header.php',
             'mode' => 'edit',
             'category' => 'stive-case',
+            'post_types' => array('case'),
+        ));
+
+        acf_register_block_type(array(
+            'name' => 'service-header',
+            'title' => __('Block Service Header'),
+            'description' => __('Service page hero heading.'),
+            'render_callback' => 'stive_render_service_header_block',
+            'mode' => 'edit',
+            'category' => 'stive-service',
+            'post_types' => array('service'),
         ));
 
         acf_register_block_type(array(
@@ -176,7 +187,6 @@ function r4_register_acf_blocks()
             'mode' => 'edit',
             'category' => 'stive-blog',
         ));
-
     }
 }
 
@@ -189,6 +199,10 @@ function r4_stive_add_custom_categories($categories, $post)
             array(
                 'slug' => 'stive-case',
                 'title' => esc_html__('Stive Case'),
+            ),
+            array(
+                'slug' => 'stive-service',
+                'title' => esc_html__('Stive Services'),
             ),
             array(
                 'slug' => 'stive-home',

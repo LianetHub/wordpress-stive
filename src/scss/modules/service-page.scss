@@ -139,35 +139,6 @@ $service-page-bg: #fafafa;
 	color: $text-primary;
 }
 
-.service-page__trust {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
-	gap: rem(12);
-	width: 100%;
-	max-width: rem(601);
-	opacity: 0.5;
-}
-
-.service-page__trust-item {
-	flex: 0 0 auto;
-	width: rem(88);
-	height: rem(48);
-	border-radius: rem(999);
-	overflow: hidden;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: $white;
-}
-
-.service-page__trust-img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-}
-
 .service-page__hero-aside {
 	flex: 1 1 100%;
 	min-width: 0;
@@ -269,13 +240,11 @@ $service-page-bg: #fafafa;
 	width: 1px;
 	align-self: stretch;
 	min-height: rem(54);
-	background: linear-gradient(
-		to bottom,
-		transparent,
-		rgba(255, 255, 255, 0.25) 20%,
-		rgba(255, 255, 255, 0.25) 80%,
-		transparent
-	);
+	background: linear-gradient(to bottom,
+			transparent,
+			rgba(255, 255, 255, 0.25) 20%,
+			rgba(255, 255, 255, 0.25) 80%,
+			transparent);
 }
 
 .service-page__band {

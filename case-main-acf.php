@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Main Case ACF Block
  * Template Post Type: case
@@ -24,12 +25,13 @@ if (file_exists($breadcrumbs_path)) {
  * @param string $content Сырой контент
  * @return string Оформленный контент или пустая строка
  */
-function wrap_standard_content($content) {
+function wrap_standard_content($content)
+{
     $content = trim($content);
     if (empty($content)) {
         return '';
     }
-    
+
     return sprintf(
         '<article id="case-content" class="article article--case">
             <div class="article__container container typography-block">
@@ -46,15 +48,16 @@ function wrap_standard_content($content) {
  * @param string $content Контент для обработки
  * @return string Обработанный контент
  */
-function safe_render_content($content) {
+function safe_render_content($content)
+{
     static $wpautop_removed = false;
-    
+
     // Удаляем wpautop только один раз для этого запроса
     if (!$wpautop_removed && has_filter('the_content', 'wpautop')) {
         remove_filter('the_content', 'wpautop');
         $wpautop_removed = true;
     }
-    
+
     return apply_filters('the_content', $content);
 }
 
@@ -68,14 +71,14 @@ $standard_blocks_buffer = '';
 foreach ($blocks as $block) {
     // Проверяем, является ли блок ACF блоком
     $is_acf_block = isset($block['blockName']) && strpos($block['blockName'], 'acf/') === 0;
-    
+
     if ($is_acf_block) {
         // Закрываем буфер стандартных блоков перед ACF блоком
         if (!empty($standard_blocks_buffer)) {
             $output .= wrap_standard_content($standard_blocks_buffer);
             $standard_blocks_buffer = '';
         }
-        
+
         // Рендерим ACF блок
         $rendered_block = render_block($block);
         if (!empty(trim($rendered_block))) {
@@ -105,4 +108,3 @@ if (!empty($output)) {
 }
 
 get_footer();
-?>
