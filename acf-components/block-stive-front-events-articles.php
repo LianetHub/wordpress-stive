@@ -5,61 +5,28 @@ $upcoming_events = [
                 'img_webp' => 'stive-conf-seo.png',
                 'img_jpg' => 'stive-conf-seo.png',
                 'alt' => 'Blockchain Life 2026 Event',
-                'url' => '/coming-soon/'
+                'url' => '/coming-soon/',
         ],
         [
                 'img_webp' => 'stive-conf.png',
                 'img_jpg' => 'stive-conf.png',
                 'alt' => 'Crypto Event of the Year',
-                'url' => '/coming-soon/'
+                'url' => '/coming-soon/',
         ],
 ];
 
+$blog_archive_url = get_post_type_archive_link('blog');
+if (! is_string($blog_archive_url) || $blog_archive_url === '') {
+    $blog_archive_url = home_url('/blog/');
+}
 
-$latest_articles = [
-        [
-                'class' => 'swiper-slide',
-                'img_webp' => 'IMG_6946.png',
-                'img_jpg' => 'IMG_6946.png',
-                'url' => '/coming-soon/',
-                'text' => 'Artificial Intelligence (AI) is rapidly transforming our world. It is being applied across various fields, from healthcare and finance.',
-                'author' => 'Anastasia Shalepina',
-                'date' => 'March 1, 2026',
-                'categories' => [
-                        ['name' => 'AI Search', 'is_main' => true],
-                        ['name' => 'AI SEO', 'is_main' => false],
-                        ['name' => 'AI Marketing', 'is_main' => false],
-                ]
-        ],
-        [
-                'class' => 'swiper-slide',
-                'img_webp' => 'IMG_6943.png',
-                'img_jpg' => 'IMG_6943.png',
-                'url' => '/coming-soon/',
-                'text' => 'From smart homes to personalized healthcare, AI is paving the way for a better tomorrow',
-                'author' => 'Anastasia Shalepina',
-                'date' => 'March 5, 2026',
-                'categories' => [
-                        ['name' => 'AI Search', 'is_main' => false],
-                        ['name' => 'AI SEO', 'is_main' => false],
-                        ['name' => 'AI Marketing', 'is_main' => false],
-                ]
-        ],
-        [
-                'class' => 'swiper-slide',
-                'img_webp' => 'IMG_6945.png',
-                'img_jpg' => 'IMG_6945.png',
-                'url' => '/coming-soon/',
-                'text' => 'The rise of artificial intelligence (AI) is reshaping industries at an unprecedented pace',
-                'author' => 'Anastasia Shalepina',
-                'date' => 'March 10, 2026',
-                'categories' => [
-                        ['name' => 'AI Search', 'is_main' => false],
-                        ['name' => 'AI SEO', 'is_main' => false],
-                        ['name' => 'AI Marketing', 'is_main' => false],
-                ]
-        ],
-];
+$latest_articles_query = new WP_Query([
+        'post_type' => 'blog',
+        'posts_per_page' => 9,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_status' => 'publish',
+]);
 
 ?>
 <section class="media" id="media">
@@ -71,16 +38,16 @@ $latest_articles = [
                     <a href="/coming-soon/" class="media__block-all">ALL EVENTS</a>
                 </div>
                 <div class="media__block-events">
-                    <?php foreach ($upcoming_events as $event): ?>
+                    <?php foreach ($upcoming_events as $event) : ?>
                         <a
                                 href="<?php echo esc_url($event['url']); ?>"
                                 class="media__block-event">
                             <picture class="media__block-image">
                                 <source
-                                        srcset="<?php echo IMG_PATH . '/media/' . $event['img_webp']; ?>"
+                                        srcset="<?php echo esc_url(IMG_PATH . '/media/' . $event['img_webp']); ?>"
                                         type="image/webp">
                                 <img
-                                        src="<?php echo IMG_PATH . '/media/' . $event['img_jpg']; ?>"
+                                        src="<?php echo esc_url(IMG_PATH . '/media/' . $event['img_jpg']); ?>"
                                         alt="<?php echo esc_attr($event['alt']); ?>"
                                         loading="lazy">
                             </picture>
@@ -91,17 +58,63 @@ $latest_articles = [
             <div class="media__block">
                 <div class="media__block-header">
                     <h2 class="media__block-title gradient-text">Latest Articles</h2>
-                    <a href="/blog" class="media__block-all">All articles</a>
+                    <a href="<?php echo esc_url($blog_archive_url); ?>" class="media__block-all">All articles</a>
                 </div>
-                <div class="media__block-articles swiper">
-                    <div class="swiper-wrapper">
-                        <?php
-                        foreach ($latest_articles as $article) {
-                            include(locate_template('components/parts/_article-card.php'));
-                        }
-                        ?>
+                <?php if ($latest_articles_query->have_posts()) : ?>
+                    <div class="media__block-articles swiper">
+                        <div class="swiper-wrapper">
+                            <?php
+                            while ($latest_articles_query->have_posts()) :
+                                $latest_articles_query->the_post();
+                                $post_id = get_the_ID();
+                                $author_id = (int) get_post_field('post_author', $post_id);
+                                $thumb_url = get_the_post_thumbnail_url($post_id, 'full');
+                                ?>
+                                <a href="<?php the_permalink(); ?>" class="article-card swiper-slide">
+                                    <picture class="article-card__image">
+                                        <?php if ($thumb_url) : ?>
+                                            <img
+                                                    src="<?php echo esc_url($thumb_url); ?>"
+                                                    alt="<?php echo esc_attr(get_the_title()); ?>"
+                                                    class="cover-image"
+                                                    loading="lazy">
+                                        <?php endif; ?>
+                                    </picture>
+
+                                    <div class="article-card__content">
+                                        <div class="article-card__categories">
+                                            <?php
+                                            echo display_category_and_tag_terms(
+                                                $post_id,
+                                                'blog-list',
+                                                'span',
+                                                'article-card__category',
+                                                'true'
+                                            );
+                                            ?>
+                                        </div>
+
+                                        <p class="article-card__desc">
+                                            <?php the_title(); ?>
+                                        </p>
+
+                                        <div class="article-card__meta">
+                                            <div class="article-card__author">
+                                                <?php echo esc_html(get_the_author_meta('display_name', $author_id)); ?>
+                                            </div>
+                                            <time
+                                                    datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>"
+                                                    class="article-card__date">
+                                                <?php echo esc_html(get_the_date('F j, Y')); ?>
+                                            </time>
+                                        </div>
+                                    </div>
+                                </a>
+                            <?php endwhile; ?>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
+                <?php wp_reset_postdata(); ?>
             </div>
         </div>
     </div>
