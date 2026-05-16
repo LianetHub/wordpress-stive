@@ -38,12 +38,15 @@ if (!isset($faq_items) || !is_array($faq_items)) {
 if (!isset($faq_section_title)) {
     $faq_section_title = 'Frequently Asked Questions';
 }
+if (!isset($faq_title_class)) {
+    $faq_title_class = 'faq__title title-xs';
+}
 ?>
 
 <?php if (!empty($faq_items)) : ?>
     <section class="faq" id="faq" itemscope itemtype="https://schema.org/FAQPage">
         <div class="container">
-            <h2 class="faq__title title-xs"><?php echo esc_html($faq_section_title); ?></h2>
+            <h2 class="<?php echo esc_attr($faq_title_class); ?>"><?php echo esc_html($faq_section_title); ?></h2>
             <ul class="faq__list">
                 <?php foreach ($faq_items as $index => $item) : ?>
                     <li class="faq__item" itemscope itemprop="mainEntity" typeof="Question">

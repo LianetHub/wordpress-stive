@@ -23,6 +23,8 @@ if ($faq_items === array()) {
     return;
 }
 
+$faq_title_class = 'faq__title title-xs gradient-text';
+
 $faq_tpl = locate_template('components/templates-parts/_faq.php');
 if (!$faq_tpl) {
     return;
