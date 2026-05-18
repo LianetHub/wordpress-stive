@@ -22,7 +22,7 @@ if (! is_string($blog_archive_url) || $blog_archive_url === '') {
 
 $latest_articles_query = new WP_Query([
         'post_type' => 'blog',
-        'posts_per_page' => 9,
+        'posts_per_page' => 3,
         'orderby' => 'date',
         'order' => 'DESC',
         'post_status' => 'publish',
