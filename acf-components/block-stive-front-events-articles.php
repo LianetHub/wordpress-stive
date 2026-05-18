@@ -68,7 +68,7 @@ $latest_articles_query = new WP_Query([
                                 $latest_articles_query->the_post();
                                 $post_id = get_the_ID();
                                 $author_id = (int) get_post_field('post_author', $post_id);
-                                $thumb_url = get_the_post_thumbnail_url($post_id, 'full');
+                                $thumb_url = get_the_post_thumbnail_url($post_id, 'large');
                                 ?>
                                 <a href="<?php the_permalink(); ?>" class="article-card swiper-slide">
                                     <picture class="article-card__image">
