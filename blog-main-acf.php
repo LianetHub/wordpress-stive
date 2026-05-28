@@ -25,7 +25,7 @@ $calendly = get_field('calendly_link', 'option');
             </div>
         </div>
     </section>
-
+<?php echo r4_custom_display_faq_from_schema_plugin($page_id); ?>
 <?php
 $module_ids = get_field('blog_after_main_content', get_queried_object());
 if ($module_ids) {

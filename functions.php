@@ -475,3 +475,85 @@ function r4_custom_validate_empty_fields($result, $tag)
 
     return $result;
 }
+
+function r4_custom_display_faq_from_schema_plugin($page_id=null) {
+    
+    if ( !$page_id ) {
+        return '';
+    }
+    
+    // Получаем все метаполя поста
+    $all_meta = get_post_meta( $page_id );
+    
+    // Массив для хранения всех FAQ
+    $faq_items = array();
+    
+    // Ищем поле faq_question_
+    foreach ( $all_meta as $meta_key => $meta_value ) {
+        if ( strpos( $meta_key, 'faq_question_' ) === 0 ) {
+            
+            // Получаем и десериализуем данные
+            $faq_data_raw = $meta_value[0] ?? '';
+            $faq_data = maybe_unserialize( $faq_data_raw );
+            
+            // Если данные - массив, обрабатываем каждый вопрос
+            if ( is_array( $faq_data ) ) {
+                foreach ( $faq_data as $faq_item_data ) {
+                    if ( is_array( $faq_item_data ) ) {
+                        $question = '';
+                        $answer = '';
+                        
+                        // Извлекаем вопрос
+                        if ( isset( $faq_item_data['saswp_faq_question_name'] ) ) {
+                            $question = trim( strip_tags( $faq_item_data['saswp_faq_question_name'] ) );
+                        }
+                        
+                        // Извлекаем ответ
+                        if ( isset( $faq_item_data['saswp_faq_question_answer'] ) ) {
+                            $answer = trim( $faq_item_data['saswp_faq_question_answer'] );
+                            $answer = wp_kses_post( $answer );
+                        }
+                        
+                        // Добавляем только если есть вопрос
+                        if ( ! empty( $question ) ) {
+                            $faq_items[] = array(
+                                'question' => $question,
+                                'answer'   => $answer
+                            );
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // Выводим FAQ
+    if ( ! empty( $faq_items ) ) {
+        $output = '<section class="faq" id="faq" itemscope itemtype="https://schema.org/FAQPage">';
+        $output .= '<div class="container">';
+        $output .= '<h2 class="faq__title title-xs">Frequently Asked Questions</h2>';
+        $output .= '<div class="saswp-faq-block-section">';
+        $output .= '<ol style="list-style-type:none">';
+        
+        foreach ( $faq_items as $faq_item ) {
+            $output .= '<li>';
+            $output .= '<h5 class="saswp-faq-question-title">';
+            $output .= '<strong>' . esc_html( $faq_item['question'] ) . '</strong>';
+            $output .= '</h5>';
+            $output .= '<p class="saswp-faq-answer-text">' . $faq_item['answer'] . '</p>';
+            $output .= '</li>';
+        }
+        
+        $output .= '</ol>';
+        $output .= '</div>';
+        $output .= '</div>';
+        $output .= '</section>';
+        
+        return $output;
+    }
+    
+    return '';
+}
+
+
+
