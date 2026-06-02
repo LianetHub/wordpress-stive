@@ -180,6 +180,26 @@ body {
 		}
 	}
 
+	&.heading--services-archive {
+		.heading__container {
+			@media (min-width: $md3) {
+				grid-template-columns: 1fr;
+			}
+
+			@media (min-width: $md2) {
+				display: block;
+			}
+		}
+
+		.heading__main {
+			max-width: rem(620);
+
+			@media (max-width: $md4) {
+				display: flex;
+			}
+		}
+	}
+
 	&.heading--blog {
 		.heading__title {
 			line-height: 120%;

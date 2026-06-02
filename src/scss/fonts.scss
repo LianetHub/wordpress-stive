@@ -13,17 +13,10 @@
                                 font-style: normal;
                             }
 @font-face {
-                                font-family: 'HelveticaNeue';
+                                font-family: 'icons';
                                 font-display: swap;
-                                src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
-                                font-weight: 100;
-                                font-style: normal;
-                            }
-@font-face {
-                                font-family: 'SFProDisplay';
-                                font-display: swap;
-                                src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
-                                font-weight: 700;
+                                src: url("../fonts/icons.woff2?v=1780403307146") format("woff2"), url("../fonts/icons.woff?v=1780403307146") format("woff");
+                                font-weight: 400;
                                 font-style: normal;
                             }
 @font-face {
@@ -34,17 +27,17 @@
                                 font-style: normal;
                             }
 @font-face {
-                                font-family: 'icons';
+                                font-family: 'SFProDisplay';
                                 font-display: swap;
-                                src: url("../fonts/icons.woff2?v=1778930319598") format("woff2"), url("../fonts/icons.woff?v=1778930319598") format("woff");
-                                font-weight: 400;
+                                src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
+                                font-weight: 700;
                                 font-style: normal;
                             }
 @font-face {
-                                font-family: 'SFProDisplay';
+                                font-family: 'HelveticaNeue';
                                 font-display: swap;
-                                src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
-                                font-weight: 300;
+                                src: url("../fonts/HelveticaNeue-Thin.woff2") format("woff2"), url("../fonts/HelveticaNeue-Thin.woff") format("woff");
+                                font-weight: 100;
                                 font-style: normal;
                             }
 @font-face {
@@ -71,8 +64,8 @@
 @font-face {
                                 font-family: 'SFProDisplay';
                                 font-display: swap;
-                                src: url("../fonts/SFProDisplay-Thin.woff2") format("woff2"), url("../fonts/SFProDisplay-Thin.woff") format("woff");
-                                font-weight: 100;
+                                src: url("../fonts/SFProDisplay-Light.woff2") format("woff2"), url("../fonts/SFProDisplay-Light.woff") format("woff");
+                                font-weight: 300;
                                 font-style: normal;
                             }
 @font-face {
@@ -80,5 +73,12 @@
                                 font-display: swap;
                                 src: url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff");
                                 font-weight: 600;
+                                font-style: normal;
+                            }
+@font-face {
+                                font-family: 'SFProDisplay';
+                                font-display: swap;
+                                src: url("../fonts/SFProDisplay-Thin.woff2") format("woff2"), url("../fonts/SFProDisplay-Thin.woff") format("woff");
+                                font-weight: 100;
                                 font-style: normal;
                             }
