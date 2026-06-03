@@ -33,9 +33,17 @@ $service-tag-border: rgba(229, 208, 149, 0.32);
 	}
 
 	&--bottom {
+		// 1 service + stats: card | wide stats (2 columns).
 		@media (min-width: $md3) {
 			grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
 			align-items: stretch;
+		}
+
+		// 2 services + stats: three equal columns in one row.
+		&-paired {
+			@media (min-width: $md3) {
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+			}
 		}
 	}
 }
@@ -132,6 +140,18 @@ $service-tag-border: rgba(229, 208, 149, 0.32);
 		flex-direction: row;
 		justify-content: space-between;
 		padding: rem(24) rem(64);
+	}
+
+	&--paired {
+		flex-direction: column;
+		justify-content: center;
+		padding: rem(24);
+
+		@media (min-width: $md3) {
+			flex-direction: column;
+			justify-content: center;
+			padding: rem(24);
+		}
 	}
 }
 

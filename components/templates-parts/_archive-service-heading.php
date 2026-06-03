@@ -1,16 +1,38 @@
-<?php $calendly = get_field('calendly_link', 'option'); ?>
+<?php
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+$heading = function_exists('stive_service_archive_heading_get_context')
+    ? stive_service_archive_heading_get_context()
+    : array();
+
+$calendly = isset($heading['calendly']) && is_array($heading['calendly'])
+    ? $heading['calendly']
+    : array('url' => '', 'title' => '', 'target' => '_self');
+$calendly_url = (string) ($calendly['url'] ?? '');
+?>
+
 <section class="heading heading--services heading--services-archive">
     <div class="heading__container container">
         <div class="heading__main">
-            <h1 class="heading__title title-sm">Our Solutions for<br>AI-First Marketing</h1>
-            <p class="heading__description">When someone asks ChatGPT &ldquo;what&rsquo;s the best payment solution&rdquo; or &ldquo;which fintech should I trust,&rdquo; your brand needs to be the answer. We build the AI presence, citations, and reputation signals that make that happen.</p>
+            <?php if (!empty($heading['title_html'])) : ?>
+                <h1 class="heading__title title-sm"><?php echo wp_kses_post((string) $heading['title_html']); ?></h1>
+            <?php endif; ?>
+            <?php if (!empty($heading['description'])) : ?>
+                <p class="heading__description"><?php echo wp_kses_post((string) $heading['description']); ?></p>
+            <?php endif; ?>
             <div class="heading__actions">
-                <a href="<?php echo $calendly['url']; ?>"
-                    data-calendly
-                    class="heading__btn btn btn-primary">Book Strategy Call</a>
+                <?php if ($calendly_url !== '') : ?>
+                    <a href="<?php echo esc_url($calendly_url); ?>"
+                        data-calendly
+                        class="heading__btn btn btn-primary"
+                        target="<?php echo esc_attr((string) ($calendly['target'] ?? '_self')); ?>"><?php echo esc_html((string) ($calendly['title'] ?? __('Book Strategy Call', 'stive'))); ?></a>
+                <?php endif; ?>
                 <a href="#get-proposal"
                     data-fancybox
-                    class="heading__btn btn btn-grey">Get Proposal</a>
+                    class="heading__btn btn btn-grey"><?php esc_html_e('Get Proposal', 'stive'); ?></a>
             </div>
         </div>
     </div>

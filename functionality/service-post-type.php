@@ -41,7 +41,7 @@ function stive_register_service_post_type()
                         'show_in_admin_bar' => true,
                         'menu_position' => 22,
                         'menu_icon' => 'dashicons-businessperson',
-                        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'revisions', 'author'),
+                        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'revisions', 'author', 'page-attributes'),
                         'hierarchical' => false,
                         'has_archive' => true,
                         'can_export' => true,

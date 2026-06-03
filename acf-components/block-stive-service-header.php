@@ -49,8 +49,11 @@ $has_heading_image = !empty($service_image['url']);
     <div class="heading__container container">
         <div class="heading__main">
             <?php
+            $category_taxonomy = defined('STIVE_SERVICE_CATEGORY_TAXONOMY')
+                ? STIVE_SERVICE_CATEGORY_TAXONOMY
+                : 'service-list';
             $service_categories = function_exists('display_category_and_tag_terms')
-                ? display_category_and_tag_terms(get_the_ID(), 'service-list', 'a', 'heading__category label-badge')
+                ? display_category_and_tag_terms(get_the_ID(), $category_taxonomy, 'a', 'heading__category label-badge')
                 : '';
             if (!empty($service_categories)) { ?>
                 <div class="heading__categories">
