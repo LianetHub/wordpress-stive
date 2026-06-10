@@ -97,7 +97,7 @@ $current_cat = $_GET['category'] ?? '';
                     </a>
 
                     <?php foreach ($terms as $term): ?>
-                        <a href="?category=<?php echo esc_attr($term->slug); ?>"
+                        <a href="/blog/?category=<?php echo esc_attr($term->slug); ?>"
                            data-category="<?php echo esc_attr($term->slug); ?>"
                            class="media__filter swiper-slide filter-btn <?php echo ($current_cat === $term->slug) ? 'active' : ''; ?>">
                             <?php echo esc_html($term->name); ?>
