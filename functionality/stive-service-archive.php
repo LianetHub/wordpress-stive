@@ -61,20 +61,17 @@ function stive_service_archive_get_posts(): array
 
     try {
         $query = new WP_Query(
-            array(
-                'post_type' => STIVE_SERVICE_POST_TYPE,
-                'post_status' => 'publish',
-                'posts_per_page' => -1,
-                'orderby' => array(
-                    'menu_order' => 'ASC',
-                    'title' => 'ASC',
-                ),
-                'order' => 'ASC',
-                'no_found_rows' => true,
-                'update_post_meta_cache' => true,
-                'update_post_term_cache' => true,
-            )
-        );
+    array(
+        'post_type' => STIVE_SERVICE_POST_TYPE,
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'orderby' => 'date',
+        'order' => 'DESC',  // DESC = новые сначала, ASC = старые сначала
+        'no_found_rows' => true,
+        'update_post_meta_cache' => true,
+        'update_post_term_cache' => true,
+    )
+);
 
         return is_array($query->posts) ? array_values($query->posts) : array();
     } catch (Throwable $exception) {
