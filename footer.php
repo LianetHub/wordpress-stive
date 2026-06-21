@@ -93,6 +93,7 @@ $socials_links = get_field('socials_links', 'option');
 <?php endif; ?>
 </div>
 <?php require_once(TEMPLATE_PATH . '_modal-get-proposal.php'); ?>
+<?php require_once(TEMPLATE_PATH . '_modal-ai-visibility-check.php'); ?>
 <?php wp_footer(); ?>
 </body>
 

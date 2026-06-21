@@ -1,6 +1,10 @@
 "use strict";
 
+import { heroWebsiteCheck } from './modules/heroWebsiteCheck.js';
+
 document.addEventListener('DOMContentLoaded', () => {
+
+    heroWebsiteCheck();
 
     //  init Fancybox
     if (typeof Fancybox !== "undefined" && Fancybox !== null) {

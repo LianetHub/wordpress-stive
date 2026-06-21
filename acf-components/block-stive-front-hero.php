@@ -86,12 +86,17 @@ $hero_features = [
                 </div>
             </div>
 
-            <form action="/coming-soon/" class="hero__form">
+            <form class="hero__form" novalidate data-ai-check-modal="#ai-visibility-check">
                 <div class="hero__form-caption">Do AI Models Know About&nbsp;Your Brand?</div>
                 <div class="hero__form-row">
                     <input type="text" name="website_url" class="form__control form__control--large"
                            placeholder="Enter your website url here">
-                    <button class="hero__form-submit btn btn-secondary">Free Check Now!</button>
+                    <button type="submit"
+                            class="hero__form-submit btn btn-secondary"
+                            data-default-text="Free Check Now!"
+                            data-invalid-url-text="Enter correct website url">
+                        Free Check Now!
+                    </button>
                 </div>
             </form>
 
